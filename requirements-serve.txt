@@ -1,0 +1,8 @@
+# Runtime-only dependencies for the slim ONNX serving image (no torch, no training libraries).
+# Versions match requirements.txt.
+numpy==2.4.6
+nltk==3.10.3
+PyYAML==6.0.3
+fastapi==0.149.0
+uvicorn==0.54.0
+onnxruntime==1.31.0
