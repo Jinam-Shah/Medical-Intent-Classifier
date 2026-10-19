@@ -14,12 +14,22 @@ from src.data import Vocabulary, encode_texts
 from src.model import BiLSTMAttention
 
 DEFAULT_CHECKPOINT = "outputs/models/bilstm/model.pt"
+SERVING_FILE = "serving.json"  # written next to the checkpoint by `python -m src.threshold`
+DEFAULT_CONFIDENCE_THRESHOLD = 0.75  # used only when no serving.json exists
+
+
+def softmax(logits, temperature=1.0):
+    z = logits / temperature
+    z = z - z.max(axis=1, keepdims=True)
+    e = np.exp(z)
+    return e / e.sum(axis=1, keepdims=True)
 
 
 class IntentClassifier:
     def __init__(self, checkpoint_path=DEFAULT_CHECKPOINT, device="cpu"):
         self.device = torch.device(device)
-        ckpt = torch.load(resolve(checkpoint_path), map_location=self.device, weights_only=True)
+        checkpoint_path = resolve(checkpoint_path)
+        ckpt = torch.load(checkpoint_path, map_location=self.device, weights_only=True)
         self.labels = ckpt["labels"]
         self.vocab = Vocabulary(ckpt["vocab"])
         self.max_seq_length = ckpt["max_seq_length"]
@@ -30,15 +40,24 @@ class IntentClassifier:
         self.model.load_state_dict(ckpt["model_state_dict"])
         self.model.to(self.device).eval()
 
+        # Calibration temperature and threshold, both chosen on validation.
+        serving_path = checkpoint_path.parent / SERVING_FILE
+        serving = json.loads(serving_path.read_text(encoding="utf-8")) if serving_path.exists() else {}
+        self.temperature = float(serving.get("temperature", 1.0))
+        self.confidence_threshold = float(serving.get("confidence_threshold", DEFAULT_CONFIDENCE_THRESHOLD))
+
     @torch.no_grad()
-    def predict_proba(self, texts, batch_size=64):
-        """Return class probabilities, shape (len(texts), num_labels)."""
-        probs = []
+    def logits(self, texts, batch_size=64):
+        """Return raw (uncalibrated) logits, shape (len(texts), num_labels)."""
+        out = []
         for i in range(0, len(texts), batch_size):
             ids, lengths = encode_texts(texts[i:i + batch_size], self.vocab, self.max_seq_length, self.stemming)
-            logits = self.model(ids.to(self.device), lengths)
-            probs.append(torch.softmax(logits, dim=1).cpu().numpy())
-        return np.concatenate(probs) if probs else np.zeros((0, len(self.labels)))
+            out.append(self.model(ids.to(self.device), lengths).cpu().numpy())
+        return np.concatenate(out) if out else np.zeros((0, len(self.labels)), dtype=np.float32)
+
+    def predict_proba(self, texts, batch_size=64):
+        """Return calibrated class probabilities, shape (len(texts), num_labels)."""
+        return softmax(self.logits(texts, batch_size), self.temperature)
 
     def predict(self, text, top_k=3):
         """Return {"intent", "confidence", "top_k": [{"intent", "confidence"}, ...]}."""
