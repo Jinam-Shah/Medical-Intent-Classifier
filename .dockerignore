@@ -19,3 +19,6 @@ outputs/**
 !outputs/models/bilstm/model_meta.json
 !outputs/models/bilstm/model.pt
 !outputs/models/bilstm/serving.json
+# data/ is needed only for intents.json (chat responses) in the UI image
+data/splits
+data/out_of_scope.json
