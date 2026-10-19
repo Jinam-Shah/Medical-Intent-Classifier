@@ -83,3 +83,27 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** When the top confidence is below the threshold, `intent` is `"unsure"` and a rephrasing message is added, while `top_k` still lists the model's guesses.
 
 **Why.** For a health-related chatbot, a wrong confident answer is worse than asking again. The client (the chatbot UI) gets a clear signal, and the guesses stay available for logging and debugging. A known limitation is that softmax confidence doesn't catch out-of-scope questions the model is confidently wrong about ("Is this serious?" gets 100% `headache`), so the threshold is a partial safeguard, not a complete one.
+
+## D13. A hand-written out-of-scope set to choose the threshold against
+
+**Problem.** A threshold for answering "unsure" can't be chosen from in-scope data alone: on in-scope data, the best threshold is always 0 (answer everything).
+
+**Choice.** 80 out-of-scope messages in 4 categories (other symptoms, severity and duration questions, clinic admin, non-medical chit-chat), written before any model scores were looked at, and split 50/50 per category into validation and test with the same seed as the main split. A test checks that none of them duplicates a labeled pattern.
+
+**Limitation.** I wrote them myself, so they reflect my guesses about what users might say off-topic. Real user logs would be better.
+
+## D14. Temperature scaling before thresholding
+
+**Problem.** The first threshold search landed at 0.999, the edge of the grid. The model's softmax was saturated: the median out-of-scope message scored 0.9967 and most in-scope messages 0.9999+. The ranking separated them reasonably well (AUROC 0.92), but on a scale where "0.9993 vs 0.9997" decides the outcome, which is fragile and impossible to explain.
+
+**Options.** (a) Search thresholds like 0.9993 directly. (b) Temperature scaling, i.e. divide logits by a scalar T fitted on validation. (c) Train with an explicit out-of-scope class.
+
+**Choice.** (b) now. Temperature scaling (Guo et al., 2017) is one parameter, can't change which intent is predicted, and is fitted on validation NLL, so it doesn't use the out-of-scope data. T = 1.85 confirmed the model was overconfident. (c) is worth revisiting once there is more out-of-scope data.
+
+**Storage.** T and the threshold are written to `serving.json` next to the checkpoint. `IntentClassifier` loads it automatically, so the API, the chatbot, and evaluation all use the same calibrated confidences.
+
+## D15. Threshold objective: equal weight on answering correctly and rejecting off-topic
+
+**Choice.** Maximize the mean of in-scope accuracy (with "unsure" counted as wrong) and out-of-scope rejection rate, fixed before seeing results. Ties go to the lowest threshold.
+
+**Trade-off.** On test, this rejects 82.5% of off-topic messages (vs 10% at the old 0.75) and is right 96.2% of the time when it answers, but it asks for a rephrase on 17% of genuine messages, including some simple ones ("my throat hurts" scores 0.93). Weighting the two terms differently is a product decision, not a modelling one. If it changes, it must be re-chosen on validation, not on test.

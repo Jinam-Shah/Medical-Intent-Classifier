@@ -17,6 +17,14 @@ BiLSTM + attention baseline on a fixed, committed split (596 train / 128 validat
 | Validation | 0.969 | 0.969 | 0.967 |
 | **Test** (evaluated once) | **0.891** | **0.892** | 0.866 |
 
+With the calibrated low-confidence fallback (threshold chosen on validation, test evaluated once):
+
+| Test split | No fallback | With fallback |
+|---|---|---|
+| Out-of-scope messages answered "unsure" | 0% | **82.5%** |
+| In-scope messages answered | 100% | 82.8% |
+| Accuracy when it does answer | 89.1% | **96.2%** |
+
 | | Value |
 |---|---|
 | CPU latency per query (preprocessing + model) | p50 9.6 ms, p95 12.1 ms |
@@ -77,6 +85,8 @@ python -m venv .venv
 pip install -r requirements-dev.txt --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
+On Windows PowerShell, if activation fails with "running scripts is disabled on this system", allow it for the current window only with `Set-ExecutionPolicy -Scope Process Bypass`, or skip activation and call `.venv\Scripts\python -m ...` directly.
+
 The NLTK tokenizer data (`punkt_tab`) downloads automatically on first use.
 
 ## Usage
@@ -132,7 +142,20 @@ uvicorn api.main:app --port 8000
 | `GET` | `/health` | liveness, and whether the model is loaded |
 | `GET` | `/model-info` | model name, labels, parameter count, threshold |
 
-If the top confidence is below `CONFIDENCE_THRESHOLD`, the response says `"intent": "unsure"` and asks the user to rephrase. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
+If the top confidence is below the threshold, the response says `"intent": "unsure"` and asks the user to rephrase. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
+
+### How the threshold is chosen
+
+The raw model is overconfident: most messages, including off-topic ones, score above 0.99. So the confidences are first **calibrated with temperature scaling**: the logits are divided by one number, T = 1.85, fitted on the validation set. This doesn't change any prediction; it only spreads out the confidences. The threshold (0.98) is then chosen on validation against 40 hand-written out-of-scope messages (`data/out_of_scope.json`), and the other 40 are kept for test.
+
+```bash
+python -m src.threshold --split val    # fit T, choose the threshold, write serving.json next to the model
+python -m src.threshold --split test   # report once
+```
+
+![Threshold selection on validation](reports/bilstm/threshold/val_curve.png)
+
+The fallback trades coverage for safety: about 1 in 6 genuine messages get "please rephrase" (see [docs/DECISIONS.md](docs/DECISIONS.md) D15).
 
 ```bash
 curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"text": "Hola"}'
@@ -141,15 +164,15 @@ curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"te
 {
   "text": "Hola",
   "intent": "unsure",
-  "confidence": 0.465,
+  "confidence": 0.294,
   "is_confident": false,
-  "top_k": [{"intent": "fever", "confidence": 0.465}, ...],
+  "top_k": [{"intent": "fever", "confidence": 0.294}, ...],
   "message": "I'm not sure what you mean. Could you rephrase, or describe your main symptom?",
   "disclaimer": "This service is a demo intent classifier and does not provide medical advice. ..."
 }
 ```
 
-Configuration (environment variables): `MODEL_PATH` (default `outputs/models/bilstm/model.pt`) and `CONFIDENCE_THRESHOLD` (default 0.75, provisional until it is chosen on validation).
+Configuration (environment variables): `MODEL_PATH` (default `outputs/models/bilstm/model.pt`) and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`.
 
 ## Tests
 
@@ -158,7 +181,7 @@ pytest
 ruff check src tests
 ```
 
-Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
+Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`, plus temperature fitting and threshold scoring. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
 
 ## Project structure
 
@@ -172,6 +195,8 @@ src/train.py             training with early stopping on validation
 src/evaluate.py          metrics, report, confusion matrix, error list
 src/predict.py           IntentClassifier for inference
 src/benchmark.py         latency measurement
+src/threshold.py         temperature calibration and threshold selection
+data/out_of_scope.json   off-topic messages for choosing and testing the threshold
 api/main.py              FastAPI app (endpoints, low-confidence fallback)
 api/schemas.py           Pydantic request and response models
 chatbot.py, run.py       command-line interface
@@ -199,7 +224,8 @@ Training history:
 
 - **Small dataset:** 852 patterns. With 128 test sentences, one sentence is 0.78 points of accuracy, and the 95% confidence interval on test accuracy is roughly 82.5% to 93.4%.
 - **Unseen words:** a word-level vocabulary maps unseen words to `<UNK>`. Sentences with unknown words are much less accurate (72% on test).
-- **Overconfident on out-of-scope questions:** "Is this serious?" is classified as `headache` with 100% confidence, and "I'm feeling sick" as `fever` with 99.9%. A confidence threshold alone won't catch these; Phase 4 will measure this on held-out out-of-scope examples.
+- **Out-of-scope messages still slip through:** the fallback catches 82.5% of held-out off-topic messages, not all of them. Among those it misses is a safety-relevant one: "I have chest pain when I exercise" is answered as `headache` (0.983). A real product would need an explicit emergency-symptom check in front of the classifier; this demo doesn't have one.
+- **The fallback also rejects some genuine messages:** 17% of in-scope test messages get "please rephrase", e.g. "my throat hurts" (0.93).
 - **Single intent per message:** "fever and cough" gets one label.
 - **No severity or duration intents**, and no conversation memory.
 - **Oversized model:** 16 M parameters for about 600 training sentences. Kept to match the original; to be right-sized in the hyperparameter sweep.

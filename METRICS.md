@@ -37,3 +37,20 @@ Different split from the table above (854 patterns, 129 test), so not directly c
 | 2026-10-19 | Test accuracy, rerun 2 | 0.9612 (124/129), weighted F1 0.9609 | A | `MPLBACKEND=Agg python train.py` at `be6922d` |
 | 2026-10-19 | Test accuracy, rerun 3 | 0.9070 (117/129), weighted F1 0.9067 | A | same command, same code |
 | 2026-10-19 | Rerun 1 | crashed at epoch 10 (Tk backend blocked) | A | `python train.py` at `be6922d` |
+
+## Phase 4b: calibration and low-confidence threshold (BiLSTM baseline)
+
+Out-of-scope set: 80 hand-written messages in 4 categories (`data/out_of_scope.json`), split 40 validation / 40 test. Temperature and threshold were chosen on validation; the test split was evaluated once.
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-19 | Temperature (fit on val NLL) | T = 1.849; val NLL 0.1320 → 0.0973 | A | `python -m src.threshold --split val` |
+| 2026-10-19 | Chosen threshold (calibrated) | 0.98 | A | same |
+| 2026-10-19 | Val, chosen threshold | OOS rejected 0.950 (38/40); in-scope answered 0.836; in-scope accuracy with unsure = wrong 0.836 | A | same |
+| 2026-10-19 | Val, previous default (0.75, uncalibrated) | OOS rejected 0.125; in-scope answered 0.969 | A | same |
+| 2026-10-19 | AUROC in-scope vs out-of-scope, val / test | 0.927 / 0.838 | A | max calibrated softmax as the score, `src.threshold` |
+| 2026-10-19 | **Test, chosen threshold** (evaluated once) | **OOS rejected 0.825 (33/40)**; in-scope answered 0.828; **accuracy when answered 0.962**; in-scope accuracy with unsure = wrong 0.797 | A | `python -m src.threshold --split test` |
+| 2026-10-19 | Test, previous default (0.75, uncalibrated) | OOS rejected 0.100; in-scope answered 0.953 | A | same |
+| 2026-10-19 | Test, no threshold | OOS rejected 0.000; in-scope accuracy 0.891 | A | same |
+
+Details: `reports/bilstm/threshold/{val,test}.json` and `val_curve.png`.
