@@ -1,416 +1,188 @@
-# 🏥 Healthcare Chatbot - NLP Project
+# Medical Intent Classifier
 
-An intelligent healthcare chatbot using **BiLSTM + Attention mechanism** for intent classification and symptom detection. Built with PyTorch, this chatbot can understand natural language queries about common health symptoms and provide appropriate responses.
+Intent classification for a healthcare chatbot. A PyTorch BiLSTM with attention maps a user message such as "my throat hurts" to one of 12 intents: 4 conversational ones (greeting, how are you, thanks, goodbye) and 8 symptoms (fever, cold, flu, cough, sore throat, congestion, shortness of breath, headache).
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
+> **Not medical advice.** This is a portfolio and learning project. It doesn't diagnose anything. For medical concerns, consult a healthcare professional; in an emergency, contact local emergency services.
+
+[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.14-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
+## Results
 
-## 📊 **Performance Metrics**
+BiLSTM + attention baseline on a fixed, committed split (596 train / 128 validation / 128 test). Full details, environment, and commands are in [METRICS.md](METRICS.md).
 
-- **Test Accuracy**: 94.57%
-- **F1 Score (Weighted)**: 94.48%
-- **F1 Score (Macro)**: 94.17%
-- **Model Size**: 16.3M parameters
-- **Training Time**: ~15 minutes (CPU)
-- **Inference Speed**: <100ms per query
+| Split | Accuracy | Weighted F1 | Macro F1 |
+|---|---|---|---|
+| Validation | 0.969 | 0.969 | 0.967 |
+| **Test** (evaluated once) | **0.891** | **0.892** | 0.866 |
 
----
+| | Value |
+|---|---|
+| CPU latency per query (preprocessing + model) | p50 9.6 ms, p95 12.1 ms |
+| Parameters | 16.3 M |
+| Training time (CPU) | about 3 minutes |
 
-## ✨ **Key Features**
+Most test errors come from words the model never saw in training; see [docs/AUDIT.md](docs/AUDIT.md). The original version of this project reported 94.6% test accuracy, but that number came from an unseeded run: rerunning the identical original code gave 96.1% and 90.7%. Training is now deterministic.
 
-- 🧠 **Advanced Architecture**: BiLSTM with Attention mechanism
-- 🎯 **High Accuracy**: 94%+ accuracy on test set
-- 💬 **Natural Language**: Understands variations like "I have a fever", "I got fever", "my temperature is high"
-- 🔍 **12 Intent Categories**: Greetings, farewells, thanks, and 8 health symptoms
-- 📈 **Word2Vec Embeddings**: 256-dimensional pre-trained embeddings
-- 🎨 **Interactive CLI**: Real-time chat interface with confidence scores
-- 📊 **Comprehensive Metrics**: Confusion matrices, training history, per-class performance
+## How it works
 
----
-
-## 🏗️ **Architecture**
-
-```
-User Input: "I have a fever"
-        ↓
-[Tokenization & Stemming]
-        ↓
-[Word2Vec Embeddings] (256-dim)
-        ↓
-[BiLSTM] (3 layers, 512 hidden units, bidirectional)
-        ↓
-[Attention Layer] (focuses on important words)
-        ↓
-[Fully Connected Layers]
-        ↓
-[Softmax] → Intent Classification
-        ↓
-Output: "fever" (100% confidence)
+```mermaid
+flowchart LR
+    A["User text"] --> B["Clean, tokenize (NLTK),<br/>Porter stem"]
+    B --> C["Token ids,<br/>pad to 50"]
+    C --> D["Embedding 256-d<br/>(Word2Vec init)"]
+    D --> E["3-layer BiLSTM<br/>512 per direction"]
+    E --> F["Attention pooling<br/>(padding masked)"]
+    F --> G["FC, ReLU, dropout, FC"]
+    G --> H["Softmax over<br/>12 intents"]
+    H --> I{"confidence ≥<br/>threshold?"}
+    I -- yes --> J["Intent + response"]
+    I -- no --> K["Ask to rephrase"]
 ```
 
-### **Model Components:**
-- **Embedding Layer**: 256-dimensional Word2Vec embeddings
-- **BiLSTM**: 3 layers with 512 hidden units (bidirectional)
-- **Attention Mechanism**: Weighted sum of LSTM outputs
-- **Dropout**: 0.7 for regularization
-- **Output**: 12 intent classes
+Training pipeline:
 
----
-
-## 📁 **Project Structure**
-
-```
-healthcare-chatbot/
-├── README.md                   # Project documentation
-├── requirements.txt            # Python dependencies
-├── .gitignore                 # Git ignore rules
-├── train.py                   # Model training script
-├── chatbot.py                 # Interactive chatbot interface
-├── run.py                     # Unified entry point
-│
-├── api/                       # API module (future implementation)
-│   └── __init__.py
-│
-├── config/
-│   └── config.py              # Configuration settings
-│
-├── data/
-│   └── intents_working.json   # Training data (854 patterns)
-│
-├── models/
-│   ├── __init__.py
-│   ├── neural_net.py          # BiLSTM + Attention model
-│   ├── data_processor.py      # Data preprocessing pipeline
-│   └── embeddings.py          # Word2Vec training
-│
-├── utils/
-│   ├── __init__.py
-│   ├── nltk_utils.py          # Text preprocessing utilities
-│   ├── evaluation.py          # Model evaluation & metrics
-│   └── logger.py              # Logging utilities
-│
-└── outputs/
-    ├── models/
-    │   ├── best_model.pth           # Trained model (94.57% accuracy)
-    │   ├── training_data.pkl        # Preprocessed data
-    │   └── embeddings.pkl           # Word2Vec embeddings
-    ├── logs/                        # Training logs
-    └── metrics/
-        ├── confusion_matrix.png            # Confusion matrix
-        ├── training_history.png            # Training curves
-        ├── per_class_metrics.png           # Per-intent metrics
-        └── classification_report.txt       # Detailed metrics
+```mermaid
+flowchart LR
+    S["data/intents.json<br/>854 patterns"] --> D["src.data<br/>dedupe, stratified split"]
+    D --> TR["train.jsonl"]
+    D --> VA["val.jsonl"]
+    D --> TE["test.jsonl"]
+    TR --> V["vocab + Word2Vec<br/>(train only)"]
+    V --> T["src.train"]
+    TR --> T
+    VA -- "early stopping,<br/>all tuning" --> T
+    T --> M["model.pt"]
+    M --> EV["src.evaluate"]
+    TE -- "once, final model" --> EV
 ```
 
----
+## Evaluation discipline
 
-## 🚀 **Quick Start**
+- The split is created once with a fixed seed and committed in `data/splits/`, so every model is scored on the same sentences.
+- The vocabulary and Word2Vec embeddings are fitted on the training split only.
+- Every decision (early stopping, hyperparameters, confidence threshold, where to add data) uses the **validation** split.
+- The **test** split is evaluated once per final model, and every result is recorded in `METRICS.md`, including disappointing ones.
 
-### **Prerequisites**
-- Python 3.8 or higher
-- pip (Python package manager)
-- 2GB RAM minimum
-- ~500MB disk space
+## Setup
 
-### **Installation**
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/healthcare-chatbot.git
-   cd healthcare-chatbot
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   
-   # Activate (Linux/Mac)
-   source venv/bin/activate
-   
-   # Activate (Windows)
-   venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-
-4. **Download NLTK data**
-   ```bash
-   python -c "import nltk; nltk.download('punkt'); nltk.download('wordnet'); nltk.download('stopwords'); nltk.download('punkt_tab'); nltk.download('omw-1.4')"
-   ```
-
----
-
-## 💻 **Usage**
-
-### **Option 1: Using run.py (Recommended)**
+Requires Python 3.11.
 
 ```bash
-# Train the model
-python run.py train
-
-# Run interactive chatbot
-python run.py chat
-
-# Quick test
-python run.py test
+git clone https://github.com/Jinam-Shah/Medical-Intent-Classifier.git
+cd Medical-Intent-Classifier
+python -m venv .venv
+# Windows: .venv\Scripts\activate     macOS/Linux: source .venv/bin/activate
+pip install -r requirements-dev.txt --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-### **Option 2: Direct Scripts**
+The NLTK tokenizer data (`punkt_tab`) downloads automatically on first use.
+
+## Usage
 
 ```bash
-# Train model
-python train.py
+# (Optional) recreate the split; the committed files are already there
+python -m src.data --config configs/bilstm.yaml
 
-# Run chatbot
-python chatbot.py
+# Train: reads train + val only, writes outputs/models/bilstm/model.pt and reports/bilstm/val/
+python -m src.train --config configs/bilstm.yaml
 
-# Test with samples
-python chatbot.py test
+# Evaluate on validation (any time) or test (once, for the final model)
+python -m src.evaluate --split val
+python -m src.evaluate --split test
+
+# Predict
+python -m src.predict "I have a fever" "my throat hurts"
+
+# Latency benchmark
+python -m src.benchmark --runs 500
+
+# Interactive chatbot
+python chatbot.py          # or: python run.py chat
+python chatbot.py test     # sample inputs
 ```
 
----
+Example prediction output:
 
-## 💬 **Example Conversation**
-
-```
-You: Hello
-
-Bot: Hi there! How can I assist you today?
-     🟢 [greeting | 100.0%]
-
-You: I have a fever
-
-Bot: A fever usually indicates an infection. Stay hydrated and rest.
-     If it's above 103°F or lasts more than 3 days, see a doctor.
-     🟢 [fever | 100.0%]
-
-You: My throat hurts
-
-Bot: Sore throats are often caused by viral infections. 
-     Gargle with warm salt water.
-     🟢 [sore_throat | 100.0%]
-
-You: I've been coughing
-
-Bot: A persistent cough can have many causes. 
-     Stay hydrated and avoid irritants.
-     🟢 [cough | 100.0%]
-
-You: Thank you
-
-Bot: You're welcome! Feel free to ask if you need more help.
-     🟢 [thanks | 100.0%]
-
-You: Goodbye
-
-Bot: Goodbye! Take care of your health! 👋
-```
-
----
-
-## 🎯 **Supported Intents**
-
-The chatbot recognizes **12 intent categories** with high accuracy:
-
-| Category | Examples | Patterns | Precision | Recall | F1-Score |
-|----------|----------|----------|-----------|--------|----------|
-| **Greeting** | "Hello", "Hi", "Good morning" | 91 | 1.00 | 0.71 | 0.83 |
-| **How Are You** | "How are you?", "How's it going?" | 30 | 1.00 | 0.75 | 0.86 |
-| **Goodbye** | "Bye", "See you", "Take care" | 86 | 0.92 | 0.92 | 0.92 |
-| **Thanks** | "Thank you", "Thanks", "Appreciate it" | 87 | 1.00 | 1.00 | 1.00 |
-| **Fever** | "I have a fever", "High temperature" | 70 | 1.00 | 1.00 | 1.00 |
-| **Cold** | "I have a cold", "Cold symptoms" | 70 | 1.00 | 1.00 | 1.00 |
-| **Flu** | "I think I have the flu" | 70 | 1.00 | 1.00 | 1.00 |
-| **Cough** | "I'm coughing", "Can't stop coughing" | 70 | 1.00 | 1.00 | 1.00 |
-| **Sore Throat** | "My throat hurts", "Throat pain" | 70 | 1.00 | 1.00 | 1.00 |
-| **Congestion** | "Stuffy nose", "Can't breathe" | 70 | 0.91 | 1.00 | 0.95 |
-| **Shortness of Breath** | "Hard to breathe", "Breathless" | 70 | 0.85 | 1.00 | 0.92 |
-| **Headache** | "I have a headache", "Head hurts" | 70 | 0.75 | 0.90 | 0.82 |
-
-**Total**: 854 training patterns • **Overall Accuracy**: 94.57%
-
----
-
-## 🔧 **Configuration**
-
-Edit `config/config.py` to customize:
-
-### **Model Architecture**
-```python
-MODEL_CONFIG = {
-    'embedding_dim': 256,      # Word embedding size
-    'hidden_dim': 512,         # LSTM hidden units
-    'num_layers': 3,           # Number of LSTM layers
-    'dropout': 0.7,            # Dropout rate
-    'bidirectional': True,     # Use BiLSTM
-    'attention': True          # Use attention mechanism
+```json
+{
+  "text": "my throat hurts",
+  "intent": "sore_throat",
+  "confidence": 0.9926,
+  "top_k": [
+    {"intent": "sore_throat", "confidence": 0.9926},
+    {"intent": "greeting", "confidence": 0.0073},
+    {"intent": "congestion", "confidence": 0.0001}
+  ]
 }
 ```
 
-### **Training Parameters**
-```python
-TRAINING_CONFIG = {
-    'num_epochs': 1000,               # Maximum epochs
-    'batch_size': 16,                 # Batch size
-    'learning_rate': 0.003,           # Learning rate
-    'early_stopping_patience': 30,    # Early stopping patience
-    'train_split': 0.7,               # 70% training
-    'val_split': 0.15,                # 15% validation
-    'test_split': 0.15                # 15% testing
-}
-```
+## Tests
 
----
-
-## 📊 **Training Results**
-
-### **Training History**
-![Training History](outputs/metrics/training_history.png)
-
-- **Best Validation Accuracy**: 89.84% (Epoch 30)
-- **Final Test Accuracy**: 94.57%
-- **Training stopped at**: Epoch 58 (early stopping)
-- **Training samples**: 597 • **Validation**: 128 • **Test**: 129
-
-### **Confusion Matrix**
-![Confusion Matrix](outputs/metrics/confusion_matrix.png)
-
-### **Per-Class Performance**
-![Per-Class Metrics](outputs/metrics/per_class_metrics.png)
-
----
-
-## 🛠️ **Technical Details**
-
-### **Model Architecture**
-- **Input**: Variable-length sequences (max 50 tokens)
-- **Embedding**: 256-dimensional Word2Vec (trained on domain data)
-- **Encoder**: 3-layer BiLSTM (512 hidden units per direction = 1024 total)
-- **Attention**: Weighted sum over LSTM outputs for context-aware predictions
-- **Classifier**: 2 fully-connected layers with ReLU activation + Dropout
-- **Output**: 12-class softmax
-- **Parameters**: 16,353,037 trainable parameters
-
-### **Training Process**
-1. **Data**: 854 patterns across 12 intent categories
-2. **Vocabulary**: 265 unique tokens (stemmed)
-3. **Word2Vec**: Skip-gram model, 256 dimensions, window=5, 20 epochs
-4. **Optimization**: Adam optimizer (lr=0.003, weight_decay=1e-5)
-5. **Regularization**: Dropout (0.7), Gradient clipping (max_norm=5.0)
-6. **Learning Rate**: ReduceLROnPlateau scheduler (factor=0.5, patience=20)
-7. **Early Stopping**: Patience=30 epochs (stops when validation loss plateaus)
-
-### **Preprocessing Pipeline**
-1. Text cleaning (remove special characters, normalize whitespace)
-2. Tokenization (NLTK word_tokenize)
-3. Lowercasing
-4. Stemming (Porter Stemmer)
-5. Vocabulary encoding (word → index mapping)
-6. Padding/Truncation to 50 tokens
-7. Sequence length tracking (for packed sequences in LSTM)
-
----
-
-## 📈 **Performance Analysis**
-
-### **Strengths**
-- ✅ **Perfect symptom detection**: Fever, cold, flu, cough, sore throat (100% precision & recall)
-- ✅ **Excellent conversational flow**: Thanks (100% F1), Goodbye (92% F1)
-- ✅ **Robust to variations**: Handles "I have fever", "I got a fever", "feeling feverish"
-- ✅ **Fast inference**: <100ms per query on CPU
-- ✅ **Well-balanced**: No overfitting (train 99.5% vs test 94.6%)
-
-### **Known Limitations**
-- ⚠️ Greeting intent has lower recall (71%) - some greetings classified as other intents
-- ⚠️ "I'm feeling sick" without specific symptom may classify as flu (general symptoms)
-- ⚠️ Questions like "How long does the flu last?" or "Is this serious?" not explicitly supported (were removed to improve core symptom detection)
-
-### **Future Enhancements**
-- 🔄 Re-add duration/severity intents with better data separation
-- 🔄 Multi-label classification for multiple symptoms ("fever and cough")
-- 🔄 Add more symptom categories (nausea, dizziness, fatigue, stomach ache)
-- 🔄 Implement conversation context/memory
-- 🔄 Deploy REST API (Flask/FastAPI)
-- 🔄 Add confidence threshold tuning
-- 🔄 Support for multilingual queries
-
----
-
-## 🐛 **Troubleshooting**
-
-### **Model Not Found Error**
 ```bash
-# Solution: Train the model first
-python run.py train
+pytest
+ruff check src tests
 ```
 
-### **NLTK Data Missing**
-```bash
-python -c "import nltk; nltk.download('punkt'); nltk.download('wordnet'); nltk.download('stopwords'); nltk.download('punkt_tab'); nltk.download('omw-1.4')"
+Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, and a check that a sentence gets the same prediction regardless of how much padding it has.
+
+## Project structure
+
+```
+configs/bilstm.yaml      hyperparameters and paths
+data/intents.json        labeled patterns and responses
+data/splits/             fixed train/val/test split + manifest
+src/data.py              preprocessing, splitting, vocabulary
+src/model.py             BiLSTM + attention
+src/train.py             training with early stopping on validation
+src/evaluate.py          metrics, report, confusion matrix, error list
+src/predict.py           IntentClassifier for inference
+src/benchmark.py         latency measurement
+chatbot.py, run.py       command-line interface
+reports/bilstm/          committed evaluation results and figures
+docs/AUDIT.md            what the original code did, and what was fixed
+docs/DECISIONS.md        design decisions
+METRICS.md               every measured number, with commands
 ```
 
-### **Import Errors**
-```bash
-# Reinstall dependencies
-pip install -r requirements.txt --upgrade
-```
+## Figures
 
-### **Incorrect Predictions**
-- Ensure you're using `intents_working.json` as training data
-- Check that `chatbot.py` loads model config from checkpoint
-- Verify sequence lengths are passed to the model during inference
+Validation confusion matrix:
 
----
+![Validation confusion matrix](reports/bilstm/val/confusion_matrix.png)
 
-## 📚 **Technical Stack**
+Test confusion matrix:
 
-| Component | Technology | Version |
-|-----------|-----------|---------|
-| **Deep Learning** | PyTorch | 2.0+ |
-| **NLP** | NLTK | 3.8+ |
-| **Embeddings** | Gensim (Word2Vec) | 4.3+ |
-| **Data Processing** | NumPy, Pandas | Latest |
-| **Visualization** | Matplotlib, Seaborn | Latest |
-| **Metrics** | Scikit-learn | 1.3+ |
-| **API (Planned)** | Flask | 2.3+ |
-| **Logging** | Colorlog | 6.7+ |
+![Test confusion matrix](reports/bilstm/test/confusion_matrix.png)
 
----
+Training history:
 
-## 🎓 **Learning Outcomes**
+![Training history](reports/bilstm/training_history.png)
 
-This project demonstrates:
-- ✅ **Deep Learning**: BiLSTM architecture with attention mechanism
-- ✅ **NLP Techniques**: Tokenization, stemming, word embeddings
-- ✅ **Model Training**: Proper train/val/test splits, early stopping, hyperparameter tuning
-- ✅ **Evaluation**: Comprehensive metrics, confusion matrices, performance analysis
-- ✅ **Production Code**: Modular design, configuration management, error handling
-- ✅ **Debugging Skills**: Identifying and fixing vocabulary mismatch, inference issues
+## Known limitations
 
----
+- **Small dataset:** 852 patterns. With 128 test sentences, one sentence is 0.78 points of accuracy, and the 95% confidence interval on test accuracy is roughly 82.5% to 93.4%.
+- **Unseen words:** a word-level vocabulary maps unseen words to `<UNK>`. Sentences with unknown words are much less accurate (72% on test).
+- **Overconfident on out-of-scope questions:** "Is this serious?" is classified as `headache` with 100% confidence, and "I'm feeling sick" as `fever` with 99.9%. A confidence threshold alone won't catch these; Phase 4 will measure this on held-out out-of-scope examples.
+- **Single intent per message:** "fever and cough" gets one label.
+- **No severity or duration intents**, and no conversation memory.
+- **Oversized model:** 16 M parameters for about 600 training sentences. Kept to match the original; to be right-sized in the hyperparameter sweep.
 
-## 🤝 **Contributing**
+## Roadmap
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- [x] Phase 0: audit, reproducible pipeline, fixed split, honest metrics
+- [ ] Phase 1: MLflow experiment tracking, model registry, hyperparameter sweep
+- [ ] Phase 2: DistilBERT fine-tuning and comparison
+- [ ] Phase 3: validation-driven data improvement
+- [ ] Phase 4: FastAPI service, low-confidence fallback, ONNX export, Docker
+- [ ] Phase 5: Gradio demo on Hugging Face Spaces
+- [ ] Phase 6: GitHub Actions CI
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Author
 
----
+**Jinam Shah**, [GitHub @Jinam-Shah](https://github.com/Jinam-Shah)
 
-## 👤 **Author**
+## License
 
-**Jinam Shah**
-- GitHub: [@Jinam-Shah](https://github.com/Jinam-Shah)
-
----
+MIT, see [LICENSE](LICENSE).
