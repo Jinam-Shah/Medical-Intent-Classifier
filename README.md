@@ -118,6 +118,39 @@ Example prediction output:
 }
 ```
 
+## REST API
+
+```bash
+uvicorn api.main:app --port 8000
+# Interactive OpenAPI docs: http://localhost:8000/docs
+```
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/predict` | `{"text": "..."}` returns the intent, confidence, and top 3 intents |
+| `POST` | `/predict/batch` | `{"texts": [...]}`, up to 64 texts |
+| `GET` | `/health` | liveness, and whether the model is loaded |
+| `GET` | `/model-info` | model name, labels, parameter count, threshold |
+
+If the top confidence is below `CONFIDENCE_THRESHOLD`, the response says `"intent": "unsure"` and asks the user to rephrase. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
+
+```bash
+curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"text": "Hola"}'
+```
+```json
+{
+  "text": "Hola",
+  "intent": "unsure",
+  "confidence": 0.465,
+  "is_confident": false,
+  "top_k": [{"intent": "fever", "confidence": 0.465}, ...],
+  "message": "I'm not sure what you mean. Could you rephrase, or describe your main symptom?",
+  "disclaimer": "This service is a demo intent classifier and does not provide medical advice. ..."
+}
+```
+
+Configuration (environment variables): `MODEL_PATH` (default `outputs/models/bilstm/model.pt`) and `CONFIDENCE_THRESHOLD` (default 0.75, provisional until it is chosen on validation).
+
 ## Tests
 
 ```bash
@@ -125,7 +158,7 @@ pytest
 ruff check src tests
 ```
 
-Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, and a check that a sentence gets the same prediction regardless of how much padding it has.
+Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
 
 ## Project structure
 
@@ -139,6 +172,8 @@ src/train.py             training with early stopping on validation
 src/evaluate.py          metrics, report, confusion matrix, error list
 src/predict.py           IntentClassifier for inference
 src/benchmark.py         latency measurement
+api/main.py              FastAPI app (endpoints, low-confidence fallback)
+api/schemas.py           Pydantic request and response models
 chatbot.py, run.py       command-line interface
 reports/bilstm/          committed evaluation results and figures
 docs/AUDIT.md            what the original code did, and what was fixed

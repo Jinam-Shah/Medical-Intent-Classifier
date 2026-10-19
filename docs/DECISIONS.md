@@ -61,3 +61,25 @@ Short records of the significant choices in this project: the problem, the optio
 **Problem.** The original training crashed at epoch 10 on a Windows machine because matplotlib picked the Tk GUI backend, whose DLL was blocked by Windows Application Control. The same failure happens on servers and CI with no display.
 
 **Choice.** `matplotlib.use("Agg")` in modules that plot.
+
+## D10. FastAPI over Flask for the model service
+
+**Problem.** The original README planned a Flask API. The service needs request validation, typed responses, and API documentation.
+
+**Options.** (a) Flask with hand-written validation and docs. (b) FastAPI.
+
+**Choice.** FastAPI with Pydantic models (`api/schemas.py`).
+
+**Why.** Pydantic rejects bad input (empty or whitespace-only text, over 500 characters, batches over 64, wrong types) with a 422 response before the model runs. The response schema is enforced, and OpenAPI docs at `/docs` are generated from the same models, so they can't drift from the code.
+
+## D11. Load the model once at startup; configure through environment variables
+
+**Choice.** `create_app()` loads the checkpoint in FastAPI's lifespan hook, not per request and not at import time. `MODEL_PATH` and `CONFIDENCE_THRESHOLD` come from environment variables, which is how Docker and Hugging Face Spaces pass configuration.
+
+**Why.** Loading per request would add hundreds of milliseconds. Loading at import time would make the module impossible to import in tests without a trained model. With the factory, tests pass a tiny random checkpoint, so they run in CI in seconds with no model artifact.
+
+## D12. Below the threshold, answer "unsure" but still return the best guess
+
+**Choice.** When the top confidence is below the threshold, `intent` is `"unsure"` and a rephrasing message is added, while `top_k` still lists the model's guesses.
+
+**Why.** For a health-related chatbot, a wrong confident answer is worse than asking again. The client (the chatbot UI) gets a clear signal, and the guesses stay available for logging and debugging. A known limitation is that softmax confidence doesn't catch out-of-scope questions the model is confidently wrong about ("Is this serious?" gets 100% `headache`), so the threshold is a partial safeguard, not a complete one.
