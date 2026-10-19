@@ -1,0 +1,21 @@
+.git
+.venv
+venv
+**/__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+mlruns
+reports
+docs
+tests
+*.log
+.idea
+.vscode
+
+# Only the serving artifacts from outputs/ go into the image
+outputs/**
+!outputs/models/bilstm/model.onnx
+!outputs/models/bilstm/model_meta.json
+!outputs/models/bilstm/model.pt
+!outputs/models/bilstm/serving.json
