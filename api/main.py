@@ -5,7 +5,8 @@
 
 Environment variables:
     MODEL_PATH            checkpoint path (default outputs/models/bilstm/model.pt)
-    CONFIDENCE_THRESHOLD  below this, the API answers "unsure" (default 0.75)
+    CONFIDENCE_THRESHOLD  optional override; by default the threshold chosen on validation
+                          (serving.json next to the checkpoint) is used
 """
 
 import os
@@ -32,18 +33,21 @@ DISCLAIMER = (
 )
 UNSURE_INTENT = "unsure"
 UNSURE_MESSAGE = "I'm not sure what you mean. Could you rephrase, or describe your main symptom?"
-DEFAULT_THRESHOLD = 0.75
 TOP_K = 3
 
 
 def create_app(model_path=None, confidence_threshold=None):
     model_path = model_path or os.getenv("MODEL_PATH", DEFAULT_CHECKPOINT)
-    if confidence_threshold is None:
-        confidence_threshold = float(os.getenv("CONFIDENCE_THRESHOLD", DEFAULT_THRESHOLD))
+    if confidence_threshold is None and os.getenv("CONFIDENCE_THRESHOLD"):
+        confidence_threshold = float(os.environ["CONFIDENCE_THRESHOLD"])
 
     @asynccontextmanager
     async def lifespan(app):
-        app.state.classifier = IntentClassifier(model_path)
+        clf = IntentClassifier(model_path)
+        app.state.classifier = clf
+        app.state.confidence_threshold = (
+            clf.confidence_threshold if confidence_threshold is None else confidence_threshold
+        )
         yield
         app.state.classifier = None
 
@@ -53,21 +57,20 @@ def create_app(model_path=None, confidence_threshold=None):
         description=f"Classifies a healthcare chatbot message into one of 12 intents.\n\n**{DISCLAIMER}**",
         lifespan=lifespan,
     )
-    app.state.confidence_threshold = confidence_threshold
-
     def classifier(request: Request) -> IntentClassifier:
         clf = getattr(request.app.state, "classifier", None)
         if clf is None:
             raise HTTPException(status_code=503, detail="Model not loaded")
         return clf
 
-    def to_predictions(clf, texts):
+    def to_predictions(request, texts):
+        clf, threshold = classifier(request), request.app.state.confidence_threshold
         probs = clf.predict_proba(texts)
         results = []
         for text, p in zip(texts, probs, strict=True):
             order = np.argsort(p)[::-1][:TOP_K]
             top = [IntentScore(intent=clf.labels[i], confidence=float(p[i])) for i in order]
-            confident = top[0].confidence >= confidence_threshold
+            confident = top[0].confidence >= threshold
             results.append(Prediction(
                 text=text,
                 intent=top[0].intent if confident else UNSURE_INTENT,
@@ -92,7 +95,8 @@ def create_app(model_path=None, confidence_threshold=None):
             backend="pytorch",
             labels=clf.labels,
             num_parameters=count_parameters(clf.model),
-            confidence_threshold=confidence_threshold,
+            confidence_threshold=request.app.state.confidence_threshold,
+            temperature=clf.temperature,
             best_epoch=clf.metadata.get("best_epoch"),
             trained_at=clf.metadata.get("trained_at"),
             disclaimer=DISCLAIMER,
@@ -100,11 +104,11 @@ def create_app(model_path=None, confidence_threshold=None):
 
     @app.post("/predict", response_model=Prediction)
     def predict(body: PredictRequest, request: Request):
-        return to_predictions(classifier(request), [body.text])[0]
+        return to_predictions(request, [body.text])[0]
 
     @app.post("/predict/batch", response_model=BatchPrediction)
     def predict_batch(body: BatchPredictRequest, request: Request):
-        return BatchPrediction(results=to_predictions(classifier(request), body.texts))
+        return BatchPrediction(results=to_predictions(request, body.texts))
 
     return app
 

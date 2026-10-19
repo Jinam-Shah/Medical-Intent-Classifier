@@ -15,7 +15,6 @@ from src.config import resolve
 from src.predict import DEFAULT_CHECKPOINT, IntentClassifier
 
 INTENTS_PATH = "data/intents.json"
-CONFIDENCE_THRESHOLD = 0.75  # provisional; Phase 4 picks this on the validation split
 FALLBACK = "I'm not sure I understood. Could you rephrase, or describe your main symptom?"
 DISCLAIMER = "This chatbot is a demo and is not medical advice. Consult a healthcare professional."
 
@@ -35,7 +34,7 @@ class HealthcareChatbot:
     def reply(self, text):
         """Return (response, prediction dict)."""
         pred = self.classifier.predict(text)
-        if pred["confidence"] < CONFIDENCE_THRESHOLD:
+        if pred["confidence"] < self.classifier.confidence_threshold:  # chosen on validation
             return FALLBACK, pred
         return random.choice(self.responses.get(pred["intent"], [FALLBACK])), pred
 

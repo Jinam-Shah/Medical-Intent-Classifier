@@ -27,7 +27,7 @@ class IntentScore(BaseModel):
 class Prediction(BaseModel):
     text: str
     intent: str = Field(description='Predicted intent, or "unsure" when confidence is below the threshold.')
-    confidence: float = Field(description="Probability of the top intent.")
+    confidence: float = Field(description="Calibrated probability of the top intent.")
     is_confident: bool
     top_k: list[IntentScore]
     message: str | None = Field(None, description="Set when the model is unsure.")
@@ -49,6 +49,7 @@ class ModelInfo(BaseModel):
     labels: list[str]
     num_parameters: int
     confidence_threshold: float
+    temperature: float = Field(description="Softmax temperature from calibration on validation.")
     best_epoch: int | None = None
     trained_at: str | None = None
     disclaimer: str

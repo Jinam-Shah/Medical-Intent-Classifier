@@ -1,8 +1,11 @@
+import json
+
 import pytest
 from fastapi.testclient import TestClient
 
 from api.main import UNSURE_INTENT, create_app
 from api.schemas import MAX_BATCH_SIZE, MAX_TEXT_CHARS
+from src.predict import SERVING_FILE
 from tests.conftest import LABELS
 
 
@@ -83,3 +86,12 @@ def test_batch_rejects_invalid_input(client, texts):
 def test_openapi_docs_available(client):
     assert client.get("/docs").status_code == 200
     assert "/predict/batch" in client.get("/openapi.json").json()["paths"]
+
+
+def test_threshold_defaults_to_serving_file(tiny_checkpoint, tmp_path):
+    ckpt = tmp_path / "model.pt"
+    ckpt.write_bytes(tiny_checkpoint.read_bytes())
+    (tmp_path / SERVING_FILE).write_text(json.dumps({"temperature": 2.0, "confidence_threshold": 0.66}))
+    with TestClient(create_app(model_path=ckpt)) as c:
+        info = c.get("/model-info").json()
+    assert (info["confidence_threshold"], info["temperature"]) == (0.66, 2.0)
