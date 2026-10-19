@@ -1,71 +1,35 @@
 #!/usr/bin/env python3
-"""
-Healthcare Chatbot - Main Entry Point
-Simple interface to run different components
+"""Shortcut entry point.
+
+    python run.py split    # create the fixed train/val/test split (already committed)
+    python run.py train    # train on the training split, select on validation
+    python run.py chat     # interactive chatbot
+    python run.py test     # chatbot on sample inputs
 """
 
 import argparse
 import sys
-import os
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Healthcare Chatbot - NLP Project',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  python run.py train      # Train the model
-  python run.py chat       # Run interactive chatbot
-  python run.py test       # Quick test with sample inputs
-        """
-    )
-
-    parser.add_argument(
-        'command',
-        choices=['train', 'chat', 'test'],
-        help='Command to execute'
-    )
-
+    parser = argparse.ArgumentParser(description="Medical Intent Classifier")
+    parser.add_argument("command", choices=["split", "train", "chat", "test"])
+    parser.add_argument("--config", default="configs/bilstm.yaml")
     args = parser.parse_args()
 
-    # Execute command
-    if args.command == 'train':
-        print("\n Starting model training...\n")
-        # Try to import from either train_FIXED or train
-        try:
-            import train_FIXED as train_module
-        except ImportError:
-            import train as train_module
-        train_module.main()
-
-    elif args.command == 'chat':
-        print("\n Starting interactive chatbot...\n")
-        from chatbot import HealthcareChatbot
-        try:
-            chatbot = HealthcareChatbot()
-            chatbot.chat()
-        except FileNotFoundError:
-            print("\n Error: Model not found!")
-            print("Please train the model first: python run.py train\n")
-            sys.exit(1)
-        except Exception as e:
-            print(f"\n Error: {e}\n")
-            sys.exit(1)
-
-    elif args.command == 'test':
-        print("\n Running quick test...\n")
-        from chatbot import test_chatbot
-        try:
-            test_chatbot()
-        except FileNotFoundError:
-            print("\n Error: Model not found!")
-            print("Please train the model first: python run.py train\n")
-            sys.exit(1)
-        except Exception as e:
-            print(f"\n Error: {e}\n")
-            sys.exit(1)
+    if args.command == "split":
+        sys.argv = ["src.data", "--config", args.config]
+        from src.data import main as split_main
+        split_main()
+    elif args.command == "train":
+        from src.config import load_config, resolve
+        from src.train import train
+        train(load_config(resolve(args.config)))
+    else:
+        sys.argv = ["chatbot.py"] + (["test"] if args.command == "test" else [])
+        from chatbot import main as chat_main
+        chat_main()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
