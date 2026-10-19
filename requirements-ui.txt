@@ -1,0 +1,3 @@
+# Optional chat UI, installed only in the `serve` Docker target.
+-r requirements-serve.txt
+gradio==6.30.0
