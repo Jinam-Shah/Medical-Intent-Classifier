@@ -8,6 +8,7 @@ Environment variables:
     MODEL_PATH            model file (default outputs/models/bilstm/model.pt, or model.onnx for onnx)
     CONFIDENCE_THRESHOLD  optional override; by default the threshold chosen on validation
                           (serving.json next to the checkpoint) is used
+    ENABLE_UI             "1" mounts the Gradio chat UI at /ui and redirects / there (needs gradio)
 """
 
 import os
@@ -37,8 +38,10 @@ UNSURE_MESSAGE = "I'm not sure what you mean. Could you rephrase, or describe yo
 TOP_K = 3
 
 
-def create_app(model_path=None, confidence_threshold=None, backend=None):
+def create_app(model_path=None, confidence_threshold=None, backend=None, enable_ui=None):
     backend = backend or os.getenv("MODEL_BACKEND", "pytorch")
+    if enable_ui is None:
+        enable_ui = os.getenv("ENABLE_UI", "0") == "1"
     model_path = model_path or os.getenv("MODEL_PATH") or None
     if confidence_threshold is None and os.getenv("CONFIDENCE_THRESHOLD"):
         confidence_threshold = float(os.environ["CONFIDENCE_THRESHOLD"])
@@ -87,7 +90,7 @@ def create_app(model_path=None, confidence_threshold=None, backend=None):
 
     @app.get("/", include_in_schema=False)
     def root():
-        return RedirectResponse(url="/docs")
+        return RedirectResponse(url="/ui" if enable_ui else "/docs")
 
     @app.get("/health", response_model=Health)
     def health(request: Request):
@@ -116,6 +119,21 @@ def create_app(model_path=None, confidence_threshold=None, backend=None):
     @app.post("/predict/batch", response_model=BatchPrediction)
     def predict_batch(body: BatchPredictRequest, request: Request):
         return BatchPrediction(results=to_predictions(request, body.texts))
+
+    if enable_ui:
+        import gradio as gr  # optional dependency, only in the UI image
+
+        from api.ui import build_demo, load_responses
+
+        def ui_classifier():
+            clf = getattr(app.state, "classifier", None)
+            if clf is None:
+                raise gr.Error("Model is still loading, try again in a few seconds.")
+            return clf
+
+        demo = build_demo(ui_classifier, lambda: app.state.confidence_threshold,
+                          DISCLAIMER, UNSURE_MESSAGE, load_responses())
+        app = gr.mount_gradio_app(app, demo, path="/ui")
 
     return app
 
