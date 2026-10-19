@@ -1,0 +1,77 @@
+{
+  "split": "test",
+  "n_in_scope": 128,
+  "n_out_of_scope": 40,
+  "temperature": 1.8493880445050044,
+  "nll_uncalibrated": 1.0275235176086426,
+  "nll_calibrated": 0.6157600283622742,
+  "auroc_in_vs_out_of_scope": 0.8384765625,
+  "no_threshold": {
+    "threshold": 0.0,
+    "in_scope_accuracy_with_unsure": 0.890625,
+    "in_scope_coverage": 1.0,
+    "in_scope_accuracy_when_answered": 0.890625,
+    "oos_rejection_rate": 0.0,
+    "objective": 0.4453125
+  },
+  "previous_default_0.75_uncalibrated": {
+    "threshold": 0.75,
+    "in_scope_accuracy_with_unsure": 0.890625,
+    "in_scope_coverage": 0.953125,
+    "in_scope_accuracy_when_answered": 0.9344262295081968,
+    "oos_rejection_rate": 0.1,
+    "objective": 0.4953125
+  },
+  "chosen": {
+    "threshold": 0.98,
+    "in_scope_accuracy_with_unsure": 0.796875,
+    "in_scope_coverage": 0.828125,
+    "in_scope_accuracy_when_answered": 0.9622641509433962,
+    "oos_rejection_rate": 0.825,
+    "objective": 0.8109375
+  },
+  "oos_still_answered": [
+    {
+      "text": "Translate hello into Spanish",
+      "category": "non_medical",
+      "pred": "greeting",
+      "confidence": 0.9999486207962036
+    },
+    {
+      "text": "I need a sick note for work",
+      "category": "admin",
+      "pred": "thanks",
+      "confidence": 0.9992949962615967
+    },
+    {
+      "text": "Set an alarm for 7am",
+      "category": "non_medical",
+      "pred": "thanks",
+      "confidence": 0.9958128333091736
+    },
+    {
+      "text": "Is it okay to take two different painkillers?",
+      "category": "medical_question",
+      "pred": "greeting",
+      "confidence": 0.9904097318649292
+    },
+    {
+      "text": "I have chest pain when I exercise",
+      "category": "other_symptom",
+      "pred": "headache",
+      "confidence": 0.9834754467010498
+    },
+    {
+      "text": "I have diarrhea",
+      "category": "other_symptom",
+      "pred": "headache",
+      "confidence": 0.9816177487373352
+    },
+    {
+      "text": "I keep throwing up",
+      "category": "other_symptom",
+      "pred": "fever",
+      "confidence": 0.9803401827812195
+    }
+  ]
+}

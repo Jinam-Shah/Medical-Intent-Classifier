@@ -1,0 +1,5 @@
+{
+  "temperature": 1.8493880445050044,
+  "confidence_threshold": 0.98,
+  "chosen_on": "validation split + oos_val, see reports/bilstm/threshold/val.json"
+}
