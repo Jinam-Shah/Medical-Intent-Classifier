@@ -1,6 +1,7 @@
 """Load a trained checkpoint and predict intents.
 
     python -m src.predict "I have a fever" "my throat hurts"
+    python -m src.predict --backend onnx "I have a fever"
 """
 
 import argparse
@@ -11,21 +12,20 @@ import torch
 
 from src.config import resolve
 from src.data import Vocabulary, encode_texts
-from src.model import BiLSTMAttention
-
-DEFAULT_CHECKPOINT = "outputs/models/bilstm/model.pt"
-SERVING_FILE = "serving.json"  # written next to the checkpoint by `python -m src.threshold`
-DEFAULT_CONFIDENCE_THRESHOLD = 0.75  # used only when no serving.json exists
-
-
-def softmax(logits, temperature=1.0):
-    z = logits / temperature
-    z = z - z.max(axis=1, keepdims=True)
-    e = np.exp(z)
-    return e / e.sum(axis=1, keepdims=True)
+from src.model import BiLSTMAttention, count_parameters
+from src.serving import (  # noqa: F401  (re-exported for callers that import them from here)
+    DEFAULT_CHECKPOINT,
+    DEFAULT_CONFIDENCE_THRESHOLD,
+    SERVING_FILE,
+    load_serving_config,
+    softmax,
+    top_k_prediction,
+)
 
 
 class IntentClassifier:
+    backend = "pytorch"
+
     def __init__(self, checkpoint_path=DEFAULT_CHECKPOINT, device="cpu"):
         self.device = torch.device(device)
         checkpoint_path = resolve(checkpoint_path)
@@ -39,12 +39,10 @@ class IntentClassifier:
         self.model = BiLSTMAttention(**ckpt["model_kwargs"])
         self.model.load_state_dict(ckpt["model_state_dict"])
         self.model.to(self.device).eval()
+        self.num_parameters = count_parameters(self.model)
 
         # Calibration temperature and threshold, both chosen on validation.
-        serving_path = checkpoint_path.parent / SERVING_FILE
-        serving = json.loads(serving_path.read_text(encoding="utf-8")) if serving_path.exists() else {}
-        self.temperature = float(serving.get("temperature", 1.0))
-        self.confidence_threshold = float(serving.get("confidence_threshold", DEFAULT_CONFIDENCE_THRESHOLD))
+        self.temperature, self.confidence_threshold = load_serving_config(checkpoint_path.parent)
 
     @torch.no_grad()
     def logits(self, texts, batch_size=64):
@@ -61,19 +59,19 @@ class IntentClassifier:
 
     def predict(self, text, top_k=3):
         """Return {"intent", "confidence", "top_k": [{"intent", "confidence"}, ...]}."""
-        probs = self.predict_proba([text])[0]
-        order = np.argsort(probs)[::-1][:top_k]
-        top = [{"intent": self.labels[i], "confidence": float(probs[i])} for i in order]
-        return {"intent": top[0]["intent"], "confidence": top[0]["confidence"], "top_k": top}
+        return top_k_prediction(self.predict_proba([text])[0], self.labels, top_k)
 
 
 def main():
+    from src.serving import load_classifier
+
     parser = argparse.ArgumentParser(description="Predict the intent of one or more sentences.")
     parser.add_argument("texts", nargs="+")
-    parser.add_argument("--checkpoint", default=DEFAULT_CHECKPOINT)
+    parser.add_argument("--backend", choices=["pytorch", "onnx"], default="pytorch")
+    parser.add_argument("--model-path", help="checkpoint (.pt) or ONNX model (.onnx)")
     args = parser.parse_args()
 
-    clf = IntentClassifier(args.checkpoint)
+    clf = load_classifier(args.backend, args.model_path)
     for text in args.texts:
         print(json.dumps({"text": text, **clf.predict(text)}, indent=2))
 

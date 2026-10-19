@@ -13,9 +13,7 @@ from collections import Counter
 from pathlib import Path
 
 import nltk
-import torch
 from nltk.stem.porter import PorterStemmer
-from sklearn.model_selection import train_test_split
 
 from src.config import load_config, resolve
 
@@ -85,6 +83,8 @@ def deduplicate(rows):
 
 def make_splits(rows, train_frac, val_frac, test_frac, seed):
     """Stratified train/val/test split."""
+    from sklearn.model_selection import train_test_split  # training-time only
+
     assert abs(train_frac + val_frac + test_frac - 1.0) < 1e-6, "split fractions must sum to 1"
     labels = [r["intent"] for r in rows]
     train, rest = train_test_split(
@@ -106,6 +106,8 @@ def load_out_of_scope(path):
 
 def make_oos_splits(rows, seed):
     """50/50 validation/test split of out-of-scope rows, stratified by category."""
+    from sklearn.model_selection import train_test_split
+
     val, test = train_test_split(rows, test_size=0.5, stratify=[r["category"] for r in rows], random_state=seed)
     return {"oos_val": val, "oos_test": test}
 
@@ -159,8 +161,16 @@ class Vocabulary:
         return list(self.itos[2:])
 
 
+def encode_ids(text, vocab, max_len, stemming=True):
+    """Encode one text to an unpadded list of token ids (at least one id). Torch-free."""
+    ids, length = vocab.encode(preprocess(text, stemming), max_len)
+    return ids[:length]
+
+
 def encode_texts(texts, vocab, max_len, stemming=True):
-    """Encode raw texts to (ids, lengths) tensors."""
+    """Encode raw texts to padded (ids, lengths) tensors."""
+    import torch  # keeps this module importable without torch (ONNX runtime image)
+
     encoded = [vocab.encode(preprocess(t, stemming), max_len) for t in texts]
     ids = torch.tensor([e[0] for e in encoded], dtype=torch.long)
     lengths = torch.tensor([e[1] for e in encoded], dtype=torch.long)

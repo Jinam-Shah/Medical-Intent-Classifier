@@ -5,7 +5,6 @@ import random
 from pathlib import Path
 
 import numpy as np
-import torch
 import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -24,6 +23,8 @@ def resolve(path):
 
 def set_seed(seed):
     """Seed every RNG the training run touches, and force deterministic kernels."""
+    import torch
+
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
