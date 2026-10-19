@@ -30,7 +30,11 @@ class OnnxIntentClassifier:
         options = ort.SessionOptions()
         num_threads = num_threads or int(os.getenv("ORT_NUM_THREADS", "0"))
         if num_threads:
+            # On a fractional-CPU host (Render free: 0.1 CPU) extra threads and spin-waiting
+            # only burn the CPU quota and get the container throttled.
             options.intra_op_num_threads = num_threads
+            options.inter_op_num_threads = 1
+            options.add_session_config_entry("session.intra_op.allow_spinning", "0")
         self.session = ort.InferenceSession(str(model_path), options, providers=["CPUExecutionProvider"])
 
         self.temperature, self.confidence_threshold = load_serving_config(model_path.parent)
