@@ -125,3 +125,19 @@ Short records of the significant choices in this project: the problem, the optio
 **Why.** The serving container can then install `onnxruntime` instead of torch, which should make the image much smaller and faster to start (measured in the Docker stage). `tests/test_onnx.py::test_onnx_serving_path_never_imports_torch` runs the API with torch imports blocked, so a stray `import torch` fails CI.
 
 **Why ONNX Runtime is faster here.** Not because of padding: PyTorch running the same unpadded graph is as slow as the padded model. The gain comes from ORT's fused LSTM kernel and from skipping PyTorch's per-operation dispatch overhead, which dominates for a 3-to-10-token input.
+
+## D18. The image packages the evaluated model instead of training during the build
+
+**Problem.** The first Dockerfile trained the model in a build stage. Two things went wrong. First, training on Linux took a different numerical path from the Windows run recorded in `METRICS.md` (Windows early-stopped at epoch 46; the Linux build was still training at epoch 57 with different losses), so the image would have served a model nobody had evaluated. Seeds make a run repeatable on one platform, not across CPU math libraries. Second, the build ran the laptop out of memory and Docker's engine crashed.
+
+**Options.** (a) Train in the build and re-evaluate inside it. (b) Commit the 62 MB model to Git. (c) Copy the locally trained artifacts from the build context. (d) Download artifacts from a model registry during the build.
+
+**Choice.** (c) now, (d) for CI and Hugging Face Spaces in Phase 5, using a free Hugging Face Hub model repo. `.dockerignore` excludes `outputs/` except the four serving files. (b) was rejected because GitHub warns above 50 MB and model binaries bloat history forever.
+
+**Why.** The artifact that is evaluated is the artifact that ships. The test numbers, threshold, and temperature in the image are the ones in `METRICS.md`.
+
+## D19. Slim ONNX Runtime image as the default target
+
+**Choice.** The final (default) stage installs only `requirements-serve.txt`: FastAPI, uvicorn, ONNX Runtime, NumPy, NLTK, PyYAML. It runs as a non-root user, downloads the NLTK tokenizer at build time (the container needs no network at runtime), honours a `PORT` variable (Hugging Face Spaces and Render set one), and has a `HEALTHCHECK` on `/health`. A `serve-pytorch` target is kept for comparison.
+
+**Result.** 604 MB vs 2.34 GB for the PyTorch image, and the Python packages layer is 212 MB vs 1.57 GB. Smaller images pull and cold-start faster on free hosting tiers.

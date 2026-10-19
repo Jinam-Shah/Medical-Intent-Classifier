@@ -77,3 +77,17 @@ Note: an earlier single-thread PyTorch measurement (Phase 0 table, 500 runs) gav
 | 2026-10-19 | ONNX vs PyTorch parity | 932/932 identical predictions; max abs probability difference 6.9e-07; max abs logit difference 9.5e-06 | A | `python -m src.export_onnx` (all train, val, test, and out-of-scope sentences) |
 | 2026-10-19 | Model file size | model.onnx 62.4 MB, model.pt 62.4 MB | A | same |
 | 2026-10-19 | Preprocessing alone (clean, tokenize, stem) | p50 0.077 ms | A | 2000 calls to `src.data.preprocess` on one 10-word sentence |
+
+## Phase 4d: Docker images
+
+Docker 29.6.2 (Docker Desktop, WSL 2 backend) on Environment A. Sizes are as reported by `docker images` and `docker history`.
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-19 | **Image size, `serve` (ONNX Runtime, no torch)** | **604 MB** (Python packages layer 212 MB, model 65 MB) | A, Docker | `docker build -t medical-intent-classifier:onnx .` then `docker images` / `docker history` |
+| 2026-10-19 | Image size, `serve-pytorch` | 2.34 GB (Python packages layer 1.57 GB). Includes the full training stack from `requirements.txt` (gensim, scikit-learn, matplotlib, onnx), not torch alone | A, Docker | `docker build --target serve-pytorch -t medical-intent-classifier:pytorch .` |
+| 2026-10-19 | Build time, `serve` (pip cache cold, base image cached) | 65 s | A, Docker | wall clock of the build command |
+| 2026-10-19 | Container memory, `serve`, idle after requests | 166.7 MiB | A, Docker | `docker stats --no-stream` |
+| 2026-10-19 | Startup to "Application startup complete", `serve`, restart | 3.1 s | A, Docker | `docker restart`, then timestamps from `docker logs -t` |
+| 2026-10-19 | Startup, `serve`, first start | 4 min 36 s. **Not representative:** the host had 79 MB of free RAM at the time and was swapping | A, Docker | timestamps from `docker logs -t` |
+| 2026-10-19 | Container predictions | Identical to local ONNX Runtime to 5 decimals on 4 spot-check inputs; runs as non-root user `app`; torch not installed; HEALTHCHECK reports `healthy` | A, Docker | `curl` against `/predict`, `/model-info`; `docker exec ... whoami`; `docker inspect` |

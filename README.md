@@ -31,6 +31,7 @@ With the calibrated low-confidence fallback (threshold chosen on validation, tes
 | CPU latency per query, **ONNX Runtime** | **p50 2.0 to 2.1 ms, p95 2.6 to 2.8 ms** (about 4.4× faster) |
 | Parameters | 16.3 M |
 | Training time (CPU) | about 3 minutes |
+| Docker image (ONNX Runtime) | 604 MB, vs 2.34 GB with PyTorch |
 
 Most test errors come from words the model never saw in training; see [docs/AUDIT.md](docs/AUDIT.md). The original version of this project reported 94.6% test accuracy, but that number came from an unseeded run: rerunning the identical original code gave 96.1% and 90.7%. Training is now deterministic.
 
@@ -179,6 +180,23 @@ curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"te
 
 Configuration (environment variables): `MODEL_BACKEND` (`pytorch` by default, or `onnx` to serve the exported model with ONNX Runtime, which needs no torch), `MODEL_PATH` (defaults to `outputs/models/bilstm/model.pt` or `model.onnx`), and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`.
 
+## Docker
+
+The image packages the trained and evaluated model; it doesn't train. Create the artifacts first (see Usage), then:
+
+```bash
+docker build -t medical-intent-classifier .
+docker run --rm -p 8000:8000 medical-intent-classifier
+# http://localhost:8000/docs
+```
+
+| Target | Serves with | Image size |
+|---|---|---|
+| `serve` (default) | ONNX Runtime, no torch, non-root user, health check | **604 MB** |
+| `serve-pytorch` | PyTorch (`docker build --target serve-pytorch ...`) | 2.34 GB |
+
+The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH` and `CONFIDENCE_THRESHOLD`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
+
 ## Tests
 
 ```bash
@@ -207,6 +225,8 @@ src/serving.py           helpers shared by both backends (no torch)
 data/out_of_scope.json   off-topic messages for choosing and testing the threshold
 api/main.py              FastAPI app (endpoints, low-confidence fallback)
 api/schemas.py           Pydantic request and response models
+Dockerfile               slim ONNX serving image (default) and a PyTorch variant
+requirements-serve.txt   runtime-only dependencies for the slim image
 chatbot.py, run.py       command-line interface
 reports/bilstm/          committed evaluation results and figures
 docs/AUDIT.md            what the original code did, and what was fixed
@@ -244,7 +264,7 @@ Training history:
 - [ ] Phase 1: MLflow experiment tracking, model registry, hyperparameter sweep
 - [ ] Phase 2: DistilBERT fine-tuning and comparison
 - [ ] Phase 3: validation-driven data improvement
-- [ ] Phase 4: FastAPI service, low-confidence fallback, ONNX export (done); Docker (next)
+- [x] Phase 4: FastAPI service, calibrated low-confidence fallback, ONNX export, Docker
 - [ ] Phase 5: Gradio demo on Hugging Face Spaces
 - [ ] Phase 6: GitHub Actions CI
 
