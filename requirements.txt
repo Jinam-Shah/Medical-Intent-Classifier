@@ -13,3 +13,8 @@ PyYAML==6.0.3
 # API
 fastapi==0.149.0
 uvicorn==0.54.0
+
+# ONNX export and serving
+onnx==1.23.2
+onnxscript==0.7.2
+onnxruntime==1.31.0
