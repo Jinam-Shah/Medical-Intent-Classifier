@@ -91,3 +91,21 @@ Docker 29.6.2 (Docker Desktop, WSL 2 backend) on Environment A. Sizes are as rep
 | 2026-10-19 | Startup to "Application startup complete", `serve`, restart | 3.1 s | A, Docker | `docker restart`, then timestamps from `docker logs -t` |
 | 2026-10-19 | Startup, `serve`, first start | 4 min 36 s. **Not representative:** the host had 79 MB of free RAM at the time and was swapping | A, Docker | timestamps from `docker logs -t` |
 | 2026-10-19 | Container predictions | Identical to local ONNX Runtime to 5 decimals on 4 spot-check inputs; runs as non-root user `app`; torch not installed; HEALTHCHECK reports `healthy` | A, Docker | `curl` against `/predict`, `/model-info`; `docker exec ... whoami`; `docker inspect` |
+
+## Phase 5 prep: containers under Render free-tier limits (simulated locally)
+
+`docker run --memory 512m --cpus 0.1`, which matches Render's free instance (512 MB RAM, 0.1 CPU). Environment A, Docker 29.6.2. The host had only 177 to 318 MB of free RAM during these runs, so the absolute times may be pessimistic.
+
+| Date | Image / setting | Metric | Value | How it was measured |
+|---|---|---|---|---|
+| 2026-10-19 | `serve-api`, ONNX Runtime default threads | `/predict` over HTTP, 10 requests | 2.2 to 11.1 s each | `curl -w %{time_total}` against the running container |
+| 2026-10-19 | `serve-api`, ONNX Runtime default threads | log "Started server" to "startup complete" | 2 min 54 s | `docker logs -t` timestamps |
+| 2026-10-19 | `serve-api`, `ORT_NUM_THREADS=1`, spinning off | `/predict` over HTTP, 20 requests | median 8.7 ms; 19 of 20 under 19 ms; max 4.75 s | same |
+| 2026-10-19 | `serve-api`, `ORT_NUM_THREADS=1` | log "Started server" to "startup complete" | 20 s | same |
+| 2026-10-19 | `serve-api`, `ORT_NUM_THREADS=1` | idle memory | 158.9 MiB of 512 MiB | `docker stats --no-stream` |
+| 2026-10-19 | `serve` (API + Gradio UI), `ORT_NUM_THREADS=1` | `/predict` over HTTP, 20 requests | median 8.0 ms; 19 of 20 under 10.3 ms; max 0.83 s | `curl -w %{time_total}` |
+| 2026-10-19 | `serve` | `/ui/` page load | 0.70 s | same |
+| 2026-10-19 | `serve` | memory after requests | 229 MiB of 512 MiB; not OOM-killed | `docker stats`, `docker inspect .State.OOMKilled` |
+| 2026-10-19 | `serve` | container start to "startup complete" | 60 s (first start), 73 s (restart) | `docker inspect .State.StartedAt` vs `docker logs -t` |
+| 2026-10-19 | Image size, `serve` (with Gradio) | | 924 MB | `docker images` |
+| 2026-10-19 | Image size, `serve-api` | | 604 MB | `docker images` |

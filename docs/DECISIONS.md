@@ -141,3 +141,27 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** The final (default) stage installs only `requirements-serve.txt`: FastAPI, uvicorn, ONNX Runtime, NumPy, NLTK, PyYAML. It runs as a non-root user, downloads the NLTK tokenizer at build time (the container needs no network at runtime), honours a `PORT` variable (Hugging Face Spaces and Render set one), and has a `HEALTHCHECK` on `/health`. A `serve-pytorch` target is kept for comparison.
 
 **Result.** 604 MB vs 2.34 GB for the PyTorch image, and the Python packages layer is 212 MB vs 1.57 GB. Smaller images pull and cold-start faster on free hosting tiers.
+
+## D20. Host the demo on Render, not Hugging Face Spaces (for now)
+
+**Problem.** The plan assumed free CPU Spaces. As of October 2026, the Hugging Face docs say Gradio and Docker Spaces need a paid plan to create. Free personal accounts can host up to 2 ZeroGPU Gradio Spaces, but only once the account is more than 30 days old, which for this account is after the Nov 7 deadline.
+
+**Options.** (a) Pay for PRO (rejected: free-only rule). (b) Wait for ZeroGPU eligibility. (c) A static Space running the model in the browser with ONNX Runtime Web (would mean re-implementing NLTK tokenization and Porter stemming in JavaScript, with a parity risk). (d) Render's free web service, which runs the existing Docker image.
+
+**Choice.** (d) now, with the API and the Gradio UI in one container. A ZeroGPU Gradio Space can be added after the account turns 30 days old.
+
+**Trade-offs.** Render's free instance has 0.1 CPU and 512 MB, and sleeps after 15 minutes without traffic. A visitor after an idle period waits for Render's wake-up (about a minute) plus about 60 to 75 s of app startup. After that, predictions take about 8 ms.
+
+## D21. One ONNX Runtime thread and no spin-waiting on fractional-CPU hosts
+
+**Problem.** Under a 0.1 CPU limit, ONNX Runtime's defaults (one thread per visible core, here 16, with spin-waiting) burned the CPU quota, so the container was throttled: `/predict` took 2 to 11 s and startup about 3 minutes.
+
+**Choice.** `ORT_NUM_THREADS=1` in the image; `OnnxIntentClassifier` then also sets inter-op threads to 1 and turns spinning off.
+
+**Result.** At 0.1 CPU, `/predict` median went from seconds to 8.7 ms, and startup from 2 min 54 s to 20 s (from the server log line). The input is 3 to 10 tokens, so there's nothing to parallelize anyway.
+
+## D22. Hugging Face Hub as the model registry, with pinned revisions
+
+**Choice.** `python -m src.hub publish` uploads `model.onnx`, `model_meta.json`, `serving.json`, `model.pt`, and a model card to a free HF model repo, and prints the commit hash. Docker builds with `MODEL_SOURCE=hub` download that exact commit (`HF_MODEL_REVISION`), never `main`.
+
+**Why.** Render and CI build from GitHub and don't have the local `outputs/` folder. Pinning the commit means a deploy can't silently pick up a different model. The model card's numbers are generated from the committed `reports/`, so they match `METRICS.md`. (MLflow's registry comes in Phase 1 for experiment tracking; the Hub is for distribution.)

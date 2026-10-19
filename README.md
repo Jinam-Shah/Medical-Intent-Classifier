@@ -192,10 +192,19 @@ docker run --rm -p 8000:8000 medical-intent-classifier
 
 | Target | Serves with | Image size |
 |---|---|---|
-| `serve` (default) | ONNX Runtime, no torch, non-root user, health check | **604 MB** |
-| `serve-pytorch` | PyTorch (`docker build --target serve-pytorch ...`) | 2.34 GB |
+| `serve` (default) | ONNX Runtime API + Gradio chat UI at `/ui`, no torch, non-root, health check | 924 MB |
+| `serve-api` | ONNX Runtime API only | **604 MB** |
+| `serve-pytorch` | PyTorch API (`docker build --target serve-pytorch ...`) | 2.34 GB |
 
-The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH` and `CONFIDENCE_THRESHOLD`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
+To build from the published Hugging Face Hub model instead of local files (this is what the hosted deploy does):
+
+```bash
+docker build --build-arg MODEL_SOURCE=hub --build-arg HF_MODEL_REPO=<user>/<repo>              --build-arg HF_MODEL_REVISION=<commit> -t medical-intent-classifier .
+```
+
+The image runs one ONNX Runtime thread (`ORT_NUM_THREADS=1`), because free hosting tiers give a fraction of a CPU. At 0.1 CPU and 512 MB it uses about 230 MB and answers `/predict` in about 8 ms ([METRICS.md](METRICS.md)).
+
+The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH`, `CONFIDENCE_THRESHOLD`, `ENABLE_UI` and `ORT_NUM_THREADS`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
 
 ## Tests
 
@@ -225,8 +234,11 @@ src/serving.py           helpers shared by both backends (no torch)
 data/out_of_scope.json   off-topic messages for choosing and testing the threshold
 api/main.py              FastAPI app (endpoints, low-confidence fallback)
 api/schemas.py           Pydantic request and response models
+api/ui.py                Gradio chat UI, mounted at /ui when ENABLE_UI=1
+src/hub.py               publish/download model artifacts on the Hugging Face Hub
 Dockerfile               slim ONNX serving image (default) and a PyTorch variant
 requirements-serve.txt   runtime-only dependencies for the slim image
+requirements-ui.txt      adds Gradio for the UI image
 chatbot.py, run.py       command-line interface
 reports/bilstm/          committed evaluation results and figures
 docs/AUDIT.md            what the original code did, and what was fixed
