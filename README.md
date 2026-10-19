@@ -27,7 +27,8 @@ With the calibrated low-confidence fallback (threshold chosen on validation, tes
 
 | | Value |
 |---|---|
-| CPU latency per query (preprocessing + model) | p50 9.6 ms, p95 12.1 ms |
+| CPU latency per query, PyTorch (preprocessing + model) | p50 8.7 to 9.6 ms, p95 10.5 to 12.7 ms |
+| CPU latency per query, **ONNX Runtime** | **p50 2.0 to 2.1 ms, p95 2.6 to 2.8 ms** (about 4.4× faster) |
 | Parameters | 16.3 M |
 | Training time (CPU) | about 3 minutes |
 
@@ -105,8 +106,12 @@ python -m src.evaluate --split test
 # Predict
 python -m src.predict "I have a fever" "my throat hurts"
 
+# Export to ONNX (writes model.onnx next to the checkpoint and checks it matches PyTorch)
+python -m src.export_onnx
+
 # Latency benchmark
-python -m src.benchmark --runs 500
+python -m src.benchmark --backend pytorch --runs 1000
+python -m src.benchmark --backend onnx --runs 1000
 
 # Interactive chatbot
 python chatbot.py          # or: python run.py chat
@@ -172,7 +177,7 @@ curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"te
 }
 ```
 
-Configuration (environment variables): `MODEL_PATH` (default `outputs/models/bilstm/model.pt`) and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`.
+Configuration (environment variables): `MODEL_BACKEND` (`pytorch` by default, or `onnx` to serve the exported model with ONNX Runtime, which needs no torch), `MODEL_PATH` (defaults to `outputs/models/bilstm/model.pt` or `model.onnx`), and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`.
 
 ## Tests
 
@@ -181,7 +186,7 @@ pytest
 ruff check src tests
 ```
 
-Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`, plus temperature fitting and threshold scoring. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
+Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`, plus temperature fitting and threshold scoring, ONNX/PyTorch parity, and a check that the ONNX serving path runs with torch imports blocked. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
 
 ## Project structure
 
@@ -196,6 +201,9 @@ src/evaluate.py          metrics, report, confusion matrix, error list
 src/predict.py           IntentClassifier for inference
 src/benchmark.py         latency measurement
 src/threshold.py         temperature calibration and threshold selection
+src/export_onnx.py       ONNX export and parity check
+src/onnx_predict.py      torch-free ONNX Runtime classifier
+src/serving.py           helpers shared by both backends (no torch)
 data/out_of_scope.json   off-topic messages for choosing and testing the threshold
 api/main.py              FastAPI app (endpoints, low-confidence fallback)
 api/schemas.py           Pydantic request and response models
@@ -236,7 +244,7 @@ Training history:
 - [ ] Phase 1: MLflow experiment tracking, model registry, hyperparameter sweep
 - [ ] Phase 2: DistilBERT fine-tuning and comparison
 - [ ] Phase 3: validation-driven data improvement
-- [ ] Phase 4: FastAPI service, low-confidence fallback, ONNX export, Docker
+- [ ] Phase 4: FastAPI service, low-confidence fallback, ONNX export (done); Docker (next)
 - [ ] Phase 5: Gradio demo on Hugging Face Spaces
 - [ ] Phase 6: GitHub Actions CI
 

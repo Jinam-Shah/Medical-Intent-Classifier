@@ -107,3 +107,21 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** Maximize the mean of in-scope accuracy (with "unsure" counted as wrong) and out-of-scope rejection rate, fixed before seeing results. Ties go to the lowest threshold.
 
 **Trade-off.** On test, this rejects 82.5% of off-topic messages (vs 10% at the old 0.75) and is right 96.2% of the time when it answers, but it asks for a rephrase on 17% of genuine messages, including some simple ones ("my throat hurts" scores 0.93). Weighting the two terms differently is a product decision, not a modelling one. If it changes, it must be re-chosen on validation, not on test.
+
+## D16. ONNX export through an unpadded single-sentence graph and the TorchScript exporter
+
+**Problem.** The model uses `pack_padded_sequence`, which ONNX can't represent. Also, the default `torch.export`-based exporter (`dynamo=True`) unrolled the LSTM with the example's fixed sequence length: the exported model crashed on any other length.
+
+**Options.** (a) Export with a fixed length of 50 and padding (wasteful, and the backward LSTM would read padding). (b) Export a wrapper that runs one unpadded sentence. (c) Rewrite the LSTM by hand.
+
+**Choice.** (b) with the legacy TorchScript exporter (`dynamo=False`), which emits ONNX's native `LSTM` op with a dynamic sequence length. With no padding, packing and the attention mask are no-ops, so the wrapper is the same function. `src.export_onnx` checks this on all 932 committed sentences and fails if any prediction differs or any probability differs by more than 1e-4 (observed maximum: 6.9e-07).
+
+**Risks.** The TorchScript exporter is deprecated, and torch is pinned. Batch requests are run one sentence at a time through ONNX, which is fine at 2 ms per sentence and a 64-sentence cap.
+
+## D17. Keep the ONNX serving path free of torch
+
+**Choice.** Shared helpers (softmax, serving config, backend selection) live in `src/serving.py`, which doesn't import torch. `src/data.py` and `src/config.py` import torch and scikit-learn only inside the functions that train. The API selects the backend with `MODEL_BACKEND` and imports it lazily.
+
+**Why.** The serving container can then install `onnxruntime` instead of torch, which should make the image much smaller and faster to start (measured in the Docker stage). `tests/test_onnx.py::test_onnx_serving_path_never_imports_torch` runs the API with torch imports blocked, so a stray `import torch` fails CI.
+
+**Why ONNX Runtime is faster here.** Not because of padding: PyTorch running the same unpadded graph is as slow as the padded model. The gain comes from ORT's fused LSTM kernel and from skipping PyTorch's per-operation dispatch overhead, which dominates for a 3-to-10-token input.

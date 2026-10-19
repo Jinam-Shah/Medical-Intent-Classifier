@@ -54,3 +54,26 @@ Out-of-scope set: 80 hand-written messages in 4 categories (`data/out_of_scope.j
 | 2026-10-19 | Test, no threshold | OOS rejected 0.000; in-scope accuracy 0.891 | A | same |
 
 Details: `reports/bilstm/threshold/{val,test}.json` and `val_curve.png`.
+
+## Phase 4c: ONNX export and CPU latency (BiLSTM baseline)
+
+Single query, preprocessing + model, 1000 timed runs after 20 warm-up runs, cycling through the 128 validation sentences. Each configuration was run twice; both runs are shown. Machine otherwise idle.
+
+| Date | Backend | Threads | p50 (ms) run 1 / run 2 | p95 (ms) run 1 / run 2 | Environment | Command |
+|---|---|---|---|---|---|---|
+| 2026-10-19 | PyTorch (padded to 50, packed) | 8 (torch default) | 8.65 / 9.63 | 10.47 / 12.70 | A | `python -m src.benchmark --backend pytorch --runs 1000` |
+| 2026-10-19 | PyTorch (padded to 50, packed) | 1 | 16.87 / 17.58 | 21.81 / 21.23 | A | `... --backend pytorch --runs 1000 --threads 1` |
+| 2026-10-19 | PyTorch, unpadded graph (same as ONNX export) | 8 | 8.27 / 8.34 | 10.21 / 9.69 | A | `... --backend pytorch-unpadded --runs 1000` |
+| 2026-10-19 | PyTorch, unpadded graph | 1 | 17.03 / 16.60 | 22.28 / 21.13 | A | `... --backend pytorch-unpadded --runs 1000 --threads 1` |
+| 2026-10-19 | **ONNX Runtime 1.31** | ORT default | **2.02 / 2.14** | **2.63 / 2.81** | A | `python -m src.benchmark --backend onnx --runs 1000` |
+| 2026-10-19 | **ONNX Runtime 1.31** | 1 | **3.41 / 3.19** | **5.78 / 5.43** | A | `... --backend onnx --runs 1000 --threads 1` |
+
+Speed-up of ONNX Runtime over PyTorch, p50: 4.3× to 4.5× with default threads, 4.9× to 5.5× on one thread. The unpadded PyTorch rows show that skipping padding explains almost none of it.
+
+Note: an earlier single-thread PyTorch measurement (Phase 0 table, 500 runs) gave p50 13.74 ms. Run-to-run variation on this laptop is real, which is why both runs are listed here.
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-19 | ONNX vs PyTorch parity | 932/932 identical predictions; max abs probability difference 6.9e-07; max abs logit difference 9.5e-06 | A | `python -m src.export_onnx` (all train, val, test, and out-of-scope sentences) |
+| 2026-10-19 | Model file size | model.onnx 62.4 MB, model.pt 62.4 MB | A | same |
+| 2026-10-19 | Preprocessing alone (clean, tokenize, stem) | p50 0.077 ms | A | 2000 calls to `src.data.preprocess` on one 10-word sentence |
