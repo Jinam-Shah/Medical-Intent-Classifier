@@ -15,6 +15,7 @@ from contextlib import asynccontextmanager
 
 import numpy as np
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import RedirectResponse
 
 from api.schemas import (
     BatchPrediction,
@@ -83,6 +84,10 @@ def create_app(model_path=None, confidence_threshold=None, backend=None):
                 disclaimer=DISCLAIMER,
             ))
         return results
+
+    @app.get("/", include_in_schema=False)
+    def root():
+        return RedirectResponse(url="/docs")
 
     @app.get("/health", response_model=Health)
     def health(request: Request):

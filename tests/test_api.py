@@ -83,6 +83,12 @@ def test_batch_rejects_invalid_input(client, texts):
     assert client.post("/predict/batch", json={"texts": texts}).status_code == 422
 
 
+def test_root_redirects_to_docs(client):
+    response = client.get("/", follow_redirects=False)
+    assert response.status_code == 307
+    assert response.headers["location"] == "/docs"
+
+
 def test_openapi_docs_available(client):
     assert client.get("/docs").status_code == 200
     assert "/predict/batch" in client.get("/openapi.json").json()["paths"]
