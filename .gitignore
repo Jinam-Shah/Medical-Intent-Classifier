@@ -136,3 +136,14 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+# ----- Project -----
+# Trained model weights and run logs are reproducible from code + data/splits; keep them out of Git.
+outputs/
+mlruns/
+*.pt
+*.pth
+*.onnx
+
+# IDEs
+.idea/
+.vscode/
