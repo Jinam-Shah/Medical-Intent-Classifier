@@ -1,0 +1,59 @@
+{
+  "source_file": "data/intents.json",
+  "source_rows_sha256": "17d0e7f24ff3b494f5d17a7a18e7f5e29596b116c474fe48151ce360bc9571c4",
+  "seed": 42,
+  "patterns_in_source": 854,
+  "patterns_after_dedup": 852,
+  "dropped_conflicting_patterns": [
+    "ciao"
+  ],
+  "counts": {
+    "train": 596,
+    "val": 128,
+    "test": 128
+  },
+  "per_intent": {
+    "train": {
+      "cold": 49,
+      "congestion": 49,
+      "cough": 49,
+      "fever": 49,
+      "flu": 49,
+      "goodbye": 59,
+      "greeting": 63,
+      "headache": 49,
+      "how_are_you": 21,
+      "shortness_of_breath": 49,
+      "sore_throat": 49,
+      "thanks": 61
+    },
+    "val": {
+      "cold": 11,
+      "congestion": 11,
+      "cough": 10,
+      "fever": 10,
+      "flu": 10,
+      "goodbye": 13,
+      "greeting": 14,
+      "headache": 10,
+      "how_are_you": 5,
+      "shortness_of_breath": 11,
+      "sore_throat": 10,
+      "thanks": 13
+    },
+    "test": {
+      "cold": 10,
+      "congestion": 10,
+      "cough": 11,
+      "fever": 11,
+      "flu": 11,
+      "goodbye": 13,
+      "greeting": 13,
+      "headache": 11,
+      "how_are_you": 4,
+      "shortness_of_breath": 10,
+      "sore_throat": 11,
+      "thanks": 13
+    }
+  }
+}

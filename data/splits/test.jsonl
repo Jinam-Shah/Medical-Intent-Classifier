@@ -1,0 +1,128 @@
+{"text": "Thanks understood", "intent": "thanks"}
+{"text": "Later gator", "intent": "goodbye"}
+{"text": "I've been experiencing a congestion", "intent": "congestion"}
+{"text": "I have been having a severe headache", "intent": "headache"}
+{"text": "I think I have some fever", "intent": "fever"}
+{"text": "I got a terrible headache", "intent": "headache"}
+{"text": "I think I have a bad cough", "intent": "cough"}
+{"text": "Appreciate the help", "intent": "thanks"}
+{"text": "I think I have a mild congestion", "intent": "congestion"}
+{"text": "I might have cold", "intent": "cold"}
+{"text": "I got some sore throat", "intent": "sore_throat"}
+{"text": "I'm suffering from a cough", "intent": "cough"}
+{"text": "I might have a terrible sore throat", "intent": "sore_throat"}
+{"text": "I have a high fever", "intent": "fever"}
+{"text": "I'm suffering from a bad cold", "intent": "cold"}
+{"text": "I've been experiencing a mild sore throat", "intent": "sore_throat"}
+{"text": "I have been having shortness of breath", "intent": "shortness_of_breath"}
+{"text": "I'm experiencing a bad flu", "intent": "flu"}
+{"text": "Looks like I have a cold", "intent": "cold"}
+{"text": "Awesome thank you", "intent": "thanks"}
+{"text": "I've got a mild cough", "intent": "cough"}
+{"text": "Fantastic thank you", "intent": "thanks"}
+{"text": "I'm experiencing a terrible fever", "intent": "fever"}
+{"text": "Hallo", "intent": "greeting"}
+{"text": "Hey I have a problem", "intent": "greeting"}
+{"text": "My throat is sore", "intent": "sore_throat"}
+{"text": "I'm dealing with a mild headache", "intent": "headache"}
+{"text": "Good evening I have symptoms", "intent": "greeting"}
+{"text": "I got some headache", "intent": "headache"}
+{"text": "I might have a fever", "intent": "fever"}
+{"text": "Until later", "intent": "goodbye"}
+{"text": "I'm dealing with a mild sore throat", "intent": "sore_throat"}
+{"text": "My head is pounding", "intent": "headache"}
+{"text": "I might have a severe flu", "intent": "flu"}
+{"text": "Stomach flu", "intent": "flu"}
+{"text": "See you bot", "intent": "goodbye"}
+{"text": "Amazing thanks", "intent": "thanks"}
+{"text": "I've got a terrible cold", "intent": "cold"}
+{"text": "Coughing fits", "intent": "cough"}
+{"text": "Struggling to breathe", "intent": "shortness_of_breath"}
+{"text": "Afternoon doctor", "intent": "greeting"}
+{"text": "Fantastic thanks", "intent": "thanks"}
+{"text": "Hey doctor", "intent": "greeting"}
+{"text": "Hola", "intent": "greeting"}
+{"text": "I've got a severe sore throat", "intent": "sore_throat"}
+{"text": "Hello I need help", "intent": "greeting"}
+{"text": "Suffocating feeling", "intent": "shortness_of_breath"}
+{"text": "Flu illness", "intent": "flu"}
+{"text": "I've got a mild shortness of breath", "intent": "shortness_of_breath"}
+{"text": "I've got a bad fever", "intent": "fever"}
+{"text": "Good afternoon doc", "intent": "greeting"}
+{"text": "I got a bad headache", "intent": "headache"}
+{"text": "I'm experiencing a severe cold", "intent": "cold"}
+{"text": "I think I have a severe shortness of breath", "intent": "shortness_of_breath"}
+{"text": "I've been experiencing congestion", "intent": "congestion"}
+{"text": "I have a mild cold", "intent": "cold"}
+{"text": "I have been having a mild cough", "intent": "cough"}
+{"text": "I have a severe headache", "intent": "headache"}
+{"text": "Alright goodbye", "intent": "goodbye"}
+{"text": "I got a mild fever", "intent": "fever"}
+{"text": "Thanks buddy", "intent": "thanks"}
+{"text": "Greetings", "intent": "greeting"}
+{"text": "I have been having some headache", "intent": "headache"}
+{"text": "Coughing a lot", "intent": "cough"}
+{"text": "Howdy partner", "intent": "greeting"}
+{"text": "How's everything?", "intent": "how_are_you"}
+{"text": "I think I have a congestion", "intent": "congestion"}
+{"text": "I got a terrible congestion", "intent": "congestion"}
+{"text": "Chesty cough", "intent": "cough"}
+{"text": "Ty", "intent": "thanks"}
+{"text": "Throat discomfort", "intent": "sore_throat"}
+{"text": "I'm suffering from a shortness of breath", "intent": "shortness_of_breath"}
+{"text": "Fever symptoms", "intent": "fever"}
+{"text": "I need to go", "intent": "goodbye"}
+{"text": "Influenza infection", "intent": "flu"}
+{"text": "Caught the cold", "intent": "cold"}
+{"text": "Hello how are you", "intent": "greeting"}
+{"text": "Winter cold", "intent": "cold"}
+{"text": "I have a bad headache", "intent": "headache"}
+{"text": "Dealing with flu", "intent": "flu"}
+{"text": "I've got a bad sore throat", "intent": "sore_throat"}
+{"text": "Thank you man", "intent": "thanks"}
+{"text": "Take care", "intent": "goodbye"}
+{"text": "I'm suffering from a severe sore throat", "intent": "sore_throat"}
+{"text": "Good to see you", "intent": "greeting"}
+{"text": "Thank you for the information", "intent": "thanks"}
+{"text": "Influenza B", "intent": "flu"}
+{"text": "I have flu", "intent": "flu"}
+{"text": "I might have a bad shortness of breath", "intent": "shortness_of_breath"}
+{"text": "All good?", "intent": "how_are_you"}
+{"text": "Feeling breathless", "intent": "shortness_of_breath"}
+{"text": "Coughing up phlegm", "intent": "cough"}
+{"text": "Later", "intent": "goodbye"}
+{"text": "Thanks mate", "intent": "thanks"}
+{"text": "Thank you bye", "intent": "goodbye"}
+{"text": "That's helpful thank you", "intent": "thanks"}
+{"text": "Got the flu", "intent": "flu"}
+{"text": "Headache won't go away", "intent": "headache"}
+{"text": "Speak soon", "intent": "goodbye"}
+{"text": "I have been having a terrible sore throat", "intent": "sore_throat"}
+{"text": "I have a bad fever", "intent": "fever"}
+{"text": "Thank you take care", "intent": "goodbye"}
+{"text": "I have a bad shortness of breath", "intent": "shortness_of_breath"}
+{"text": "Doing good?", "intent": "how_are_you"}
+{"text": "I'm dealing with some congestion", "intent": "congestion"}
+{"text": "I have been having a terrible headache", "intent": "headache"}
+{"text": "What's good", "intent": "greeting"}
+{"text": "Nose congestion", "intent": "congestion"}
+{"text": "I'm dealing with a terrible congestion", "intent": "congestion"}
+{"text": "My throat hurts", "intent": "sore_throat"}
+{"text": "I have been having a severe cold", "intent": "cold"}
+{"text": "Have a good day", "intent": "goodbye"}
+{"text": "I'm dealing with congestion", "intent": "congestion"}
+{"text": "I got a bad flu", "intent": "flu"}
+{"text": "Feverish feeling", "intent": "fever"}
+{"text": "Cheerio", "intent": "goodbye"}
+{"text": "Cold and flu", "intent": "cold"}
+{"text": "I'm done", "intent": "goodbye"}
+{"text": "I got a congestion", "intent": "congestion"}
+{"text": "I'm experiencing cough", "intent": "cough"}
+{"text": "I'm dealing with a mild cough", "intent": "cough"}
+{"text": "I have been having some flu", "intent": "flu"}
+{"text": "Can't get enough air", "intent": "shortness_of_breath"}
+{"text": "I'm suffering from cough", "intent": "cough"}
+{"text": "Thanks man", "intent": "thanks"}
+{"text": "I've got fever", "intent": "fever"}
+{"text": "What's your status?", "intent": "how_are_you"}
+{"text": "I have been having a mild fever", "intent": "fever"}

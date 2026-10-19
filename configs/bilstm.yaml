@@ -1,0 +1,42 @@
+# BiLSTM + attention intent classifier.
+# Hyperparameters match the original project so the baseline is comparable.
+
+seed: 42
+
+data:
+  intents_file: data/intents.json
+  splits_dir: data/splits
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+
+preprocessing:
+  max_seq_length: 50
+  stemming: true
+
+embeddings:          # Word2Vec, trained on the training split only
+  dim: 256
+  window: 5
+  min_count: 1
+  epochs: 20
+  skip_gram: true
+
+model:
+  hidden_dim: 512
+  num_layers: 3
+  dropout: 0.7
+  bidirectional: true
+
+training:
+  batch_size: 16
+  learning_rate: 0.003
+  weight_decay: 1.0e-5
+  max_epochs: 1000
+  grad_clip_norm: 5.0
+  early_stopping_patience: 30
+  early_stopping_min_delta: 0.001
+  lr_scheduler_factor: 0.5
+  lr_scheduler_patience: 20
+
+output_dir: outputs/models/bilstm
+reports_dir: reports/bilstm
