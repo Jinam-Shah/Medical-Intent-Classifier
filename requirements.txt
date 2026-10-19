@@ -9,3 +9,7 @@ nltk==3.10.3
 gensim==4.4.0
 matplotlib==3.11.2
 PyYAML==6.0.3
+
+# API
+fastapi==0.149.0
+uvicorn==0.54.0
