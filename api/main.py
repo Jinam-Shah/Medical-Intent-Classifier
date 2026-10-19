@@ -4,7 +4,8 @@
     # OpenAPI docs at http://localhost:8000/docs
 
 Environment variables:
-    MODEL_PATH            checkpoint path (default outputs/models/bilstm/model.pt)
+    MODEL_BACKEND         "pytorch" (default) or "onnx" (ONNX Runtime, no torch needed)
+    MODEL_PATH            model file (default outputs/models/bilstm/model.pt, or model.onnx for onnx)
     CONFIDENCE_THRESHOLD  optional override; by default the threshold chosen on validation
                           (serving.json next to the checkpoint) is used
 """
@@ -24,8 +25,7 @@ from api.schemas import (
     Prediction,
     PredictRequest,
 )
-from src.model import count_parameters
-from src.predict import DEFAULT_CHECKPOINT, IntentClassifier
+from src.serving import load_classifier  # torch-free; the chosen backend is imported lazily
 
 DISCLAIMER = (
     "This service is a demo intent classifier and does not provide medical advice. "
@@ -36,14 +36,15 @@ UNSURE_MESSAGE = "I'm not sure what you mean. Could you rephrase, or describe yo
 TOP_K = 3
 
 
-def create_app(model_path=None, confidence_threshold=None):
-    model_path = model_path or os.getenv("MODEL_PATH", DEFAULT_CHECKPOINT)
+def create_app(model_path=None, confidence_threshold=None, backend=None):
+    backend = backend or os.getenv("MODEL_BACKEND", "pytorch")
+    model_path = model_path or os.getenv("MODEL_PATH") or None
     if confidence_threshold is None and os.getenv("CONFIDENCE_THRESHOLD"):
         confidence_threshold = float(os.environ["CONFIDENCE_THRESHOLD"])
 
     @asynccontextmanager
     async def lifespan(app):
-        clf = IntentClassifier(model_path)
+        clf = load_classifier(backend, model_path)
         app.state.classifier = clf
         app.state.confidence_threshold = (
             clf.confidence_threshold if confidence_threshold is None else confidence_threshold
@@ -57,7 +58,8 @@ def create_app(model_path=None, confidence_threshold=None):
         description=f"Classifies a healthcare chatbot message into one of 12 intents.\n\n**{DISCLAIMER}**",
         lifespan=lifespan,
     )
-    def classifier(request: Request) -> IntentClassifier:
+
+    def classifier(request: Request):
         clf = getattr(request.app.state, "classifier", None)
         if clf is None:
             raise HTTPException(status_code=503, detail="Model not loaded")
@@ -92,9 +94,9 @@ def create_app(model_path=None, confidence_threshold=None):
         clf = classifier(request)
         return ModelInfo(
             model_name=clf.metadata.get("model_name", "bilstm_attention"),
-            backend="pytorch",
+            backend=clf.backend,
             labels=clf.labels,
-            num_parameters=count_parameters(clf.model),
+            num_parameters=clf.num_parameters,
             confidence_threshold=request.app.state.confidence_threshold,
             temperature=clf.temperature,
             best_epoch=clf.metadata.get("best_epoch"),
