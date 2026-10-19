@@ -1,0 +1,19 @@
+[project]
+name = "medical-intent-classifier"
+version = "0.2.0"
+description = "Intent classification for a healthcare chatbot: BiLSTM + attention baseline."
+requires-python = ">=3.11"
+authors = [{ name = "Jinam Shah" }]
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B"]
