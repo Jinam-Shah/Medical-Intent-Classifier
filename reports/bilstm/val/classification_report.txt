@@ -1,0 +1,18 @@
+                     precision    recall  f1-score   support
+
+               cold     1.0000    1.0000    1.0000        11
+         congestion     1.0000    1.0000    1.0000        11
+              cough     1.0000    1.0000    1.0000        10
+              fever     0.9091    1.0000    0.9524        10
+                flu     1.0000    1.0000    1.0000        10
+            goodbye     0.9231    0.9231    0.9231        13
+           greeting     0.8667    0.9286    0.8966        14
+           headache     1.0000    1.0000    1.0000        10
+        how_are_you     1.0000    0.8000    0.8889         5
+shortness_of_breath     1.0000    1.0000    1.0000        11
+        sore_throat     1.0000    0.9000    0.9474        10
+             thanks     1.0000    1.0000    1.0000        13
+
+           accuracy                         0.9688       128
+          macro avg     0.9749    0.9626    0.9674       128
+       weighted avg     0.9705    0.9688    0.9687       128

@@ -1,0 +1,26 @@
+[
+  {
+    "text": "Throat pain",
+    "true": "sore_throat",
+    "pred": "greeting",
+    "confidence": 0.5302621722221375
+  },
+  {
+    "text": "Farewell",
+    "true": "goodbye",
+    "pred": "fever",
+    "confidence": 0.46456286311149597
+  },
+  {
+    "text": "Pleased to meet you",
+    "true": "greeting",
+    "pred": "goodbye",
+    "confidence": 0.6552881002426147
+  },
+  {
+    "text": "You good?",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9993689656257629
+  }
+]

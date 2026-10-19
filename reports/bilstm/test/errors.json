@@ -1,0 +1,86 @@
+[
+  {
+    "text": "Hallo",
+    "true": "greeting",
+    "pred": "fever",
+    "confidence": 0.46456286311149597
+  },
+  {
+    "text": "Hola",
+    "true": "greeting",
+    "pred": "fever",
+    "confidence": 0.46456286311149597
+  },
+  {
+    "text": "Suffocating feeling",
+    "true": "shortness_of_breath",
+    "pred": "fever",
+    "confidence": 0.9058482050895691
+  },
+  {
+    "text": "Ty",
+    "true": "thanks",
+    "pred": "fever",
+    "confidence": 0.46456286311149597
+  },
+  {
+    "text": "Throat discomfort",
+    "true": "sore_throat",
+    "pred": "greeting",
+    "confidence": 0.6775622963905334
+  },
+  {
+    "text": "Take care",
+    "true": "goodbye",
+    "pred": "greeting",
+    "confidence": 1.0
+  },
+  {
+    "text": "All good?",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9999985694885254
+  },
+  {
+    "text": "Feeling breathless",
+    "true": "shortness_of_breath",
+    "pred": "fever",
+    "confidence": 0.9973382353782654
+  },
+  {
+    "text": "Headache won't go away",
+    "true": "headache",
+    "pred": "how_are_you",
+    "confidence": 0.944153904914856
+  },
+  {
+    "text": "Doing good?",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9999805688858032
+  },
+  {
+    "text": "Have a good day",
+    "true": "goodbye",
+    "pred": "greeting",
+    "confidence": 0.9909700155258179
+  },
+  {
+    "text": "Cheerio",
+    "true": "goodbye",
+    "pred": "fever",
+    "confidence": 0.46456286311149597
+  },
+  {
+    "text": "Cold and flu",
+    "true": "cold",
+    "pred": "greeting",
+    "confidence": 0.9999992847442627
+  },
+  {
+    "text": "What's your status?",
+    "true": "how_are_you",
+    "pred": "thanks",
+    "confidence": 0.5027939081192017
+  }
+]
