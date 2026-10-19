@@ -1,0 +1,22 @@
+# Render Blueprint: free Docker web service running the API + Gradio UI.
+# Render passes these env vars to the Docker build as build args, so the image downloads
+# the exact published model revision from the Hugging Face Hub (DECISIONS D18, D22).
+# Render sets PORT itself; the image's CMD listens on it.
+services:
+  - type: web
+    name: medical-intent-classifier
+    runtime: docker
+    plan: free
+    region: virginia
+    branch: main
+    autoDeployTrigger: commit
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: MODEL_SOURCE
+        value: hub
+      - key: HF_MODEL_REPO
+        value: Jinamshah/medical-intent-classifier
+      - key: HF_MODEL_REVISION
+        value: f5c65480a954df36f13c507da3c821d1b70339e0
