@@ -4,6 +4,8 @@ Intent classification for a healthcare chatbot. A PyTorch BiLSTM with attention 
 
 > **Not medical advice.** This is a portfolio and learning project. It doesn't diagnose anything. For medical concerns, consult a healthcare professional; in an emergency, contact local emergency services.
 
+**Model on Hugging Face:** [Jinamshah/medical-intent-classifier](https://huggingface.co/Jinamshah/medical-intent-classifier) · **Live demo:** coming soon (Render free tier)
+
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.14-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -237,6 +239,7 @@ api/schemas.py           Pydantic request and response models
 api/ui.py                Gradio chat UI, mounted at /ui when ENABLE_UI=1
 src/hub.py               publish/download model artifacts on the Hugging Face Hub
 Dockerfile               slim ONNX serving image (default) and a PyTorch variant
+render.yaml              Render Blueprint for the free hosted demo
 requirements-serve.txt   runtime-only dependencies for the slim image
 requirements-ui.txt      adds Gradio for the UI image
 chatbot.py, run.py       command-line interface

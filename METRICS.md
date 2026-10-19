@@ -109,3 +109,11 @@ Docker 29.6.2 (Docker Desktop, WSL 2 backend) on Environment A. Sizes are as rep
 | 2026-10-19 | `serve` | container start to "startup complete" | 60 s (first start), 73 s (restart) | `docker inspect .State.StartedAt` vs `docker logs -t` |
 | 2026-10-19 | Image size, `serve` (with Gradio) | | 924 MB | `docker images` |
 | 2026-10-19 | Image size, `serve-api` | | 604 MB | `docker images` |
+
+## Phase 5: published model
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-19 | Hugging Face Hub model repo | `Jinamshah/medical-intent-classifier`, revision `f5c65480a954df36f13c507da3c821d1b70339e0` | HF Hub | `python -m src.hub publish --repo Jinamshah/medical-intent-classifier` |
+| 2026-10-19 | Published vs evaluated artifacts | SHA-256 identical for `model.onnx`, `model_meta.json`, `serving.json` | A | `python -m src.hub download ... --revision f5c6548...`, then `sha256sum` against `outputs/models/bilstm/` |
+| 2026-10-19 | Image built from the Hub revision | builds in 53 s; `/predict` "I have a fever" → `fever` 0.99793, same as the local model | A, Docker | `docker build --build-arg MODEL_SOURCE=hub ...`, then `curl` |
