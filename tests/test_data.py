@@ -76,3 +76,11 @@ def test_committed_splits_are_disjoint_and_cover_all_intents():
     train_labels = {r["intent"] for r in splits["train"]}
     assert len(train_labels) == 12
     assert {r["intent"] for r in splits["test"]} == train_labels
+
+
+def test_out_of_scope_splits_are_disjoint_and_unlabelled():
+    oos = {name: {r["text"].lower() for r in load_split(SPLITS_DIR, name)} for name in ("oos_val", "oos_test")}
+    assert len(oos["oos_val"]) == len(oos["oos_test"]) == 40
+    assert not oos["oos_val"] & oos["oos_test"]
+    labelled = {r["text"].lower() for name in ("train", "val", "test") for r in load_split(SPLITS_DIR, name)}
+    assert not (oos["oos_val"] | oos["oos_test"]) & labelled

@@ -97,6 +97,19 @@ def make_splits(rows, train_frac, val_frac, test_frac, seed):
     return {"train": train, "val": val, "test": test}
 
 
+def load_out_of_scope(path):
+    """Return the out-of-scope file as a list of {"text", "category"} rows."""
+    with open(path, "r", encoding="utf-8") as f:
+        categories = json.load(f)["categories"]
+    return [{"text": t, "category": c} for c, texts in categories.items() for t in texts]
+
+
+def make_oos_splits(rows, seed):
+    """50/50 validation/test split of out-of-scope rows, stratified by category."""
+    val, test = train_test_split(rows, test_size=0.5, stratify=[r["category"] for r in rows], random_state=seed)
+    return {"oos_val": val, "oos_test": test}
+
+
 def write_splits(splits, splits_dir, manifest):
     splits_dir = Path(splits_dir)
     splits_dir.mkdir(parents=True, exist_ok=True)
@@ -181,6 +194,10 @@ def main():
             for name, split in splits.items()
         },
     }
+    if dcfg.get("out_of_scope_file"):
+        oos_splits = make_oos_splits(load_out_of_scope(resolve(dcfg["out_of_scope_file"])), cfg["seed"])
+        splits.update(oos_splits)
+        manifest["out_of_scope_counts"] = {name: len(split) for name, split in oos_splits.items()}
     write_splits(splits, resolve(dcfg["splits_dir"]), manifest)
     print(json.dumps({k: manifest[k] for k in ("patterns_in_source", "patterns_after_dedup",
                                                "dropped_conflicting_patterns", "counts")}, indent=2))

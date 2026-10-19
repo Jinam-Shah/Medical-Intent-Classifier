@@ -55,5 +55,9 @@
       "sore_throat": 11,
       "thanks": 13
     }
+  },
+  "out_of_scope_counts": {
+    "oos_val": 40,
+    "oos_test": 40
   }
 }

@@ -5,6 +5,7 @@ seed: 42
 
 data:
   intents_file: data/intents.json
+  out_of_scope_file: data/out_of_scope.json   # used only to choose and test the confidence threshold
   splits_dir: data/splits
   train_frac: 0.70
   val_frac: 0.15

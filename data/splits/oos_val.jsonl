@@ -1,0 +1,40 @@
+{"text": "When should I see a doctor?", "category": "medical_question"}
+{"text": "What are your opening hours?", "category": "admin"}
+{"text": "Can I talk to a real doctor?", "category": "admin"}
+{"text": "Is telehealth available?", "category": "admin"}
+{"text": "Can you send my test results?", "category": "admin"}
+{"text": "Can I get a copy of my medical records?", "category": "admin"}
+{"text": "What is your name?", "category": "non_medical"}
+{"text": "asdfghjkl", "category": "non_medical"}
+{"text": "I think I broke my finger", "category": "other_symptom"}
+{"text": "My ears are ringing", "category": "other_symptom"}
+{"text": "Will it go away on its own?", "category": "medical_question"}
+{"text": "I want to update my phone number", "category": "admin"}
+{"text": "Am I going to be okay?", "category": "medical_question"}
+{"text": "How do I cook pasta?", "category": "non_medical"}
+{"text": "I have a toothache", "category": "other_symptom"}
+{"text": "Can I get a vaccine for this?", "category": "medical_question"}
+{"text": "What medicine should I take?", "category": "medical_question"}
+{"text": "My eyes are itchy and watery", "category": "other_symptom"}
+{"text": "Is there parking at the hospital?", "category": "admin"}
+{"text": "Can I book an appointment?", "category": "admin"}
+{"text": "Who is the president?", "category": "non_medical"}
+{"text": "Can you recommend a good movie?", "category": "non_medical"}
+{"text": "What documents should I bring?", "category": "admin"}
+{"text": "I can't sleep at night", "category": "other_symptom"}
+{"text": "What time is it?", "category": "non_medical"}
+{"text": "Recommend a book to read", "category": "non_medical"}
+{"text": "Who won the game last night?", "category": "non_medical"}
+{"text": "My knee is swollen", "category": "other_symptom"}
+{"text": "My stomach hurts really bad", "category": "other_symptom"}
+{"text": "How much ibuprofen can I take?", "category": "medical_question"}
+{"text": "What should I eat when I'm sick?", "category": "medical_question"}
+{"text": "How do I know if it's getting worse?", "category": "medical_question"}
+{"text": "I like turtles", "category": "non_medical"}
+{"text": "What's the weather like today?", "category": "non_medical"}
+{"text": "I feel tired all the time", "category": "other_symptom"}
+{"text": "Do you accept my insurance?", "category": "admin"}
+{"text": "Is it contagious?", "category": "medical_question"}
+{"text": "I feel nauseous after eating", "category": "other_symptom"}
+{"text": "Can I go to work tomorrow?", "category": "medical_question"}
+{"text": "My ankle hurts after I twisted it", "category": "other_symptom"}

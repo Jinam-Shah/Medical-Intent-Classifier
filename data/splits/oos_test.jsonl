@@ -1,0 +1,40 @@
+{"text": "There's blood in my urine", "category": "other_symptom"}
+{"text": "Is this normal for my age?", "category": "medical_question"}
+{"text": "Where is the nearest pharmacy?", "category": "admin"}
+{"text": "How do I reset my password?", "category": "admin"}
+{"text": "How long is the wait time?", "category": "admin"}
+{"text": "What causes this?", "category": "medical_question"}
+{"text": "What is the capital of France?", "category": "non_medical"}
+{"text": "Is it okay to take two different painkillers?", "category": "medical_question"}
+{"text": "Is this serious?", "category": "medical_question"}
+{"text": "Do I need antibiotics?", "category": "medical_question"}
+{"text": "I have chest pain when I exercise", "category": "other_symptom"}
+{"text": "Should I go to the emergency room?", "category": "medical_question"}
+{"text": "Set an alarm for 7am", "category": "non_medical"}
+{"text": "How long does a cold usually last?", "category": "medical_question"}
+{"text": "There is a red rash on my arm", "category": "other_symptom"}
+{"text": "How much does a consultation cost?", "category": "admin"}
+{"text": "What's the best phone to buy?", "category": "non_medical"}
+{"text": "I feel dizzy when I stand up", "category": "other_symptom"}
+{"text": "My lower back has been aching all week", "category": "other_symptom"}
+{"text": "Can kids get this too?", "category": "medical_question"}
+{"text": "How do I prevent getting sick again?", "category": "medical_question"}
+{"text": "I have heartburn after meals", "category": "other_symptom"}
+{"text": "Order me a pizza", "category": "non_medical"}
+{"text": "Can I change my doctor?", "category": "admin"}
+{"text": "Play some music", "category": "non_medical"}
+{"text": "Translate hello into Spanish", "category": "non_medical"}
+{"text": "I have a burning feeling when I pee", "category": "other_symptom"}
+{"text": "I keep throwing up", "category": "other_symptom"}
+{"text": "I need a sick note for work", "category": "admin"}
+{"text": "I need a refill of my prescription", "category": "admin"}
+{"text": "Are you a robot?", "category": "non_medical"}
+{"text": "What's 25 times 4?", "category": "non_medical"}
+{"text": "Tell me a joke", "category": "non_medical"}
+{"text": "My skin is very dry and cracked", "category": "other_symptom"}
+{"text": "I have diarrhea", "category": "other_symptom"}
+{"text": "Is it safe to exercise while sick?", "category": "medical_question"}
+{"text": "What's the address of the clinic?", "category": "admin"}
+{"text": "Do you have weekend availability?", "category": "admin"}
+{"text": "Cancel my appointment please", "category": "admin"}
+{"text": "How tall is Mount Everest?", "category": "non_medical"}
