@@ -165,3 +165,12 @@ Validation by source: BiLSTM 0.675 (own) / 0.855 (CLINC); MiniLM 0.947 (own) / 0
 | 2026-10-21 | Image size, `serve` with MiniLM v2 | 990 MB | A, Docker | `docker images` |
 | 2026-10-21 | MLflow registry | `medical-intent-classifier` version 1 (ONNX fp32 MiniLM), status READY | A, local SQLite store | `python -m src.register` |
 | 2026-10-21 | Hugging Face Hub, v2 model | `Jinamshah/medical-intent-classifier` revision `4b3f12d2392044f73d2b75ff04bafa0a18b83bd6` (MiniLM v2, ONNX fp32); SHA-256 of all 4 downloaded files identical to the evaluated files; downloaded copy predicts correctly | HF Hub + A | `python -m src.hub publish --repo Jinamshah/medical-intent-classifier --model v2-minilm`, then `src.hub download` and `sha256sum` |
+
+## Live v2 deployment and the web chat (2026-10-21)
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-21 | Live smoke test, MiniLM v2 (Gradio UI) | 17/17 checks passed: ONNX transformer backend, 26 labels, threshold 0.49, T 1.082, 4 expected predictions, chest-pain safety alert, batch, three 422 cases, UI, docs | Render free + client A | `python scripts/smoke_test.py https://medical-intent-classifier.onrender.com --requests 30` |
+| 2026-10-21 | Live `/predict` latency over HTTPS, 30 sequential requests | p50 131 ms, p95 150 ms, min 115 ms, max 191 ms | Render free + client A | same command |
+| 2026-10-21 | Web chat image (no Gradio), built from HF revision `4b3f12d` | 703 MB (was 990 MB with Gradio) | A, Docker 29.6.2 | `docker build --build-arg MODEL_SOURCE=hub ...`, then `docker images` |
+| 2026-10-21 | Web chat image under Render limits (`--memory 512m --cpus 0.1`) | container start to ready 24 s (was 54 s); memory 181.4 MiB (was 240.6 MiB); smoke test passed including a 3-turn `/chat` conversation; `/predict` p50 100 ms, p95 201 ms over 20 requests | A, Docker | `docker run --memory 512m --cpus 0.1 ...`; `docker logs -t`; `docker stats`; `python scripts/smoke_test.py http://127.0.0.1:8798 --requests 20` |

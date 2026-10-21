@@ -209,3 +209,25 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** `src/tracking.py` logs every transformer training run (per-epoch losses), every calibration and test evaluation (metrics plus report artifacts), and the registered model to a local SQLite store in `mlruns/` (ignored by Git). `src/register.py` registers the chosen ONNX model as `medical-intent-classifier`. The Hugging Face Hub remains the distribution channel for deploys, pinned by commit.
 
 **Why local SQLite.** It's free, needs no account, and supports the model registry, which a plain file store doesn't. A shared server (DagsHub) is an option if others need to browse runs. Training still works without MLflow installed.
+
+## D29. Replace Gradio with a hand-built web chat
+
+**Problem.** Gradio is excellent for quick ML demos, but the result looks like a generic ML demo. It also brought about 300 MB of dependencies into the image, slowed startup on the 0.1-CPU free tier, and was hard to restyle (theme overrides, hidden footer links).
+
+**Options.** (a) Keep restyling Gradio. (b) A React/Vite app (build step, Node toolchain, more moving parts). (c) Plain HTML, CSS, and JavaScript served by FastAPI.
+
+**Choice.** (c): three static files in `web/`, with no framework and no CDN. Full control over the design (branded header, welcome screen with suggestions, typing indicator, quick-reply chips, a distinct emergency card with tap-to-call, light and dark themes, mobile layout, accessible roles and labels). Because the page loads nothing from other origins, it's served with a strict Content-Security-Policy (`default-src 'self'`, no inline scripts, `frame-ancestors 'none'`).
+
+**Result** (under Render-like limits, 512 MB / 0.1 CPU): image 990 MB → 703 MB, container start to ready 54 s → 24 s, memory 241 MB → 181 MB.
+
+**Cold starts.** The page pings `/health` on load and shows "Waking up the server…"; chat requests retry for up to two minutes instead of failing, which matters on Render's free tier.
+
+## D30. A stateless conversation engine with the state held by the client
+
+**Problem.** One-shot replies felt basic: the bot couldn't ask how long or how bad a symptom was, and "fever and a cough" got a single label.
+
+**Choice.** `src/dialogue.py` runs a short slot-filling conversation (symptom → duration → severity → advice plus a tailored note), splits multi-symptom messages into clauses, and adds symptoms mentioned mid-conversation. The server is stateless: `POST /chat` returns a small `state` object that the client sends back.
+
+**Why stateless.** No session store to run on a free tier, no user data kept on the server, and nothing breaks when Render restarts or sleeps the service. Because the state comes from the client, it's treated as untrusted: only known keys and values are kept (`clean_state`), and requests over 2 KB of state are rejected.
+
+**Limits.** Duration and severity are parsed with rules (`parse_duration`, `parse_severity`), not a model. The tailored note is generic guidance (for example "severe or longer than a week → see a doctor"), not clinical logic.

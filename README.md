@@ -4,7 +4,7 @@ Intent classification for a healthcare chatbot. A fine-tuned **MiniLM** transfor
 
 > **Not medical advice.** This is a portfolio and learning project. It doesn't diagnose anything. For medical concerns, consult a healthcare professional; in an emergency, contact local emergency services.
 
-**Live demo:** [medical-intent-classifier.onrender.com](https://medical-intent-classifier.onrender.com/ui/) (chat UI) · [API docs](https://medical-intent-classifier.onrender.com/docs) · **Model:** [Jinamshah/medical-intent-classifier](https://huggingface.co/Jinamshah/medical-intent-classifier) on Hugging Face
+**Live demo:** [medical-intent-classifier.onrender.com](https://medical-intent-classifier.onrender.com/) (chat) · [API docs](https://medical-intent-classifier.onrender.com/docs) · **Model:** [Jinamshah/medical-intent-classifier](https://huggingface.co/Jinamshah/medical-intent-classifier) on Hugging Face
 
 > The demo runs on Render's free tier, which sleeps after 15 minutes without traffic. The first visit after that can take a couple of minutes; after that it's fast.
 
@@ -143,7 +143,7 @@ To run the API and chat UI locally with the v2 model (PowerShell):
 
 ```powershell
 $env:MODEL_BACKEND="transformer-onnx"; $env:MODEL_PATH="outputs/models/minilm_v2/onnx_fp32"
-$env:INTENTS_FILE="data/v2/intents.json"; $env:ENABLE_UI="1"
+$env:INTENTS_FILE="data/v2/intents.json"
 .venv\Scripts\python -m uvicorn api.main:app --port 8000     # http://localhost:8000
 ```
 
@@ -172,8 +172,24 @@ uvicorn api.main:app --port 8000
 | `POST` | `/predict/batch` | `{"texts": [...]}`, up to 64 texts |
 | `GET` | `/health` | liveness, and whether the model is loaded |
 | `GET` | `/model-info` | model name, labels, parameter count, threshold |
+| `POST` | `/chat` | `{"message": "...", "state": {...}}` runs one turn of the symptom conversation (see below) |
 
 If the top confidence is below the threshold, the response says `"intent": "unsure"` and asks the user to rephrase. Before the model runs, a rule-based check (`src/safety.py`) looks for emergency and crisis phrases such as chest pain or self-harm. On a match, `safety_alert` is set and `message` points to emergency help. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
+
+### The chat conversation (`POST /chat`)
+
+The web chat at `/` uses a small, **stateless** conversation engine (`src/dialogue.py`). The server keeps nothing: each response includes a `state` object that the client sends back with the next message, so restarts or several open tabs can't break a conversation, and no user data is stored.
+
+```
+You:  my stomach hurts                 -> "Sorry to hear about a stomach ache. How long have you had it?"   [Started today] [1–3 days] ...
+You:  since yesterday                  -> "Thanks. And how bad would you say it is?"                         [Mild] [Moderate] [Severe]
+You:  pretty bad                       -> self-care advice + "Because it's severe, it's a good idea to see a doctor soon..."
+```
+
+- Follow-up answers can be typed freely ("since Monday", "for two weeks", "not too bad", "7/10").
+- Several symptoms in one message ("a fever and a cough") are split into clauses and answered together; a symptom mentioned mid-conversation is added.
+- The red-flag safety check runs on every turn and overrides everything (emergency and crisis messages with tap-to-call buttons in the UI).
+- Client-supplied state is validated (known keys only, at most 2 KB).
 
 ### How the threshold is chosen
 
@@ -217,19 +233,18 @@ docker run --rm -p 8000:8000 medical-intent-classifier
 
 | Target | Serves with | Image size |
 |---|---|---|
-| `serve` (default) | ONNX Runtime API + Gradio chat UI at `/ui`, no torch, non-root, health check | 924 MB |
-| `serve-api` | ONNX Runtime API only | **604 MB** |
+| `serve` (default) | ONNX Runtime API + web chat at `/`, MiniLM v2, no torch, non-root, health check | **703 MB** |
 | `serve-pytorch` | PyTorch API (`docker build --target serve-pytorch ...`) | 2.34 GB |
 
 To build from the published Hugging Face Hub model instead of local files (this is what the hosted deploy does):
 
 ```bash
-docker build --build-arg MODEL_SOURCE=hub --build-arg HF_MODEL_REPO=<user>/<repo>              --build-arg HF_MODEL_REVISION=<commit> -t medical-intent-classifier .
+docker build --build-arg MODEL_SOURCE=hub --build-arg HF_MODEL_REPO=<user>/<repo> --build-arg HF_MODEL_REVISION=<commit> -t medical-intent-classifier .
 ```
 
 The image runs one ONNX Runtime thread (`ORT_NUM_THREADS=1`), because free hosting tiers give a fraction of a CPU. At 0.1 CPU and 512 MB it uses about 230 MB and answers `/predict` in about 8 ms ([METRICS.md](METRICS.md)).
 
-The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH`, `CONFIDENCE_THRESHOLD`, `ENABLE_UI` and `ORT_NUM_THREADS`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
+The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH`, `CONFIDENCE_THRESHOLD`, `INTENTS_FILE` and `ORT_NUM_THREADS`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
 
 ## Smoke-testing a deployment
 
@@ -276,13 +291,13 @@ src/serving.py           helpers shared by both backends (no torch)
 data/out_of_scope.json   off-topic messages for choosing and testing the threshold
 api/main.py              FastAPI app (endpoints, low-confidence fallback)
 api/schemas.py           Pydantic request and response models
-api/ui.py                Gradio chat UI, mounted at /ui when ENABLE_UI=1
+web/                     chat frontend (plain HTML/CSS/JS, served at /)
+src/dialogue.py          stateless multi-turn symptom conversation behind POST /chat
 src/hub.py               publish/download model artifacts on the Hugging Face Hub
 Dockerfile               slim ONNX serving image (default) and a PyTorch variant
 render.yaml              Render Blueprint for the free hosted demo
 scripts/smoke_test.py    end-to-end checks against any running deployment
 requirements-serve.txt   runtime-only dependencies for the slim image
-requirements-ui.txt      adds Gradio for the UI image
 chatbot.py, run.py       command-line interface
 reports/bilstm/          committed evaluation results and figures
 docs/AUDIT.md            what the original code did, and what was fixed
@@ -316,7 +331,7 @@ BiLSTM v2 on the same test split, for comparison:
 - [x] Phase 2: DistilBERT fine-tuning and comparison, plus MiniLM (deployed)
 - [x] Phase 3 (reworked): dataset v2 with 14 new intents and CLINC150 data, replacing the planned small top-up of v1
 - [x] Phase 4: FastAPI service, calibrated low-confidence fallback, ONNX export, Docker
-- [x] Phase 5: Gradio chat demo, live on Render (free tier); model on the Hugging Face Hub. A Hugging Face ZeroGPU Space can follow once the account is 30 days old
+- [x] Phase 5: web chat demo (custom frontend, replacing an earlier Gradio UI), live on Render (free tier); model on the Hugging Face Hub. A Hugging Face ZeroGPU Space can follow once the account is 30 days old
 - [ ] Phase 6: GitHub Actions CI
 
 ## Author
