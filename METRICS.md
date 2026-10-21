@@ -127,3 +127,40 @@ URL: https://medical-intent-classifier.onrender.com (UI at `/ui/`, API docs at `
 | 2026-10-21 | End-to-end smoke test (service warm) | 16/16 checks passed: health, model-info (ONNX backend, threshold 0.98, T 1.849), 4 expected predictions including both fallback cases, batch, three 422 validation cases, `/` → `/ui` redirect, UI page, docs | Render free + client A | `python scripts/smoke_test.py https://medical-intent-classifier.onrender.com --requests 30` |
 | 2026-10-21 | `/predict` latency over HTTPS, warm, 30 sequential requests | p50 137 ms, p95 176 ms, min 111 ms, max 191 ms | Render free + client A | same command |
 | 2026-10-21 | `/ui/` page load, warm | 0.11 s | Render free + client A | same command |
+
+## Dataset v2 and the transformer models (2026-10-21)
+
+Dataset v2: 26 intents, 3,009 sentences (`data/v2/splits/manifest.json`). Train 1,818 / val 518 / test 673. The test split has 388 CLINC150 sentences (independent crowd-worker authors) and 285 project-written sentences (v1 + authored). Environment A, CPU only. The model choice (MiniLM, fp32 ONNX) was fixed on validation before the test split was read; then each compared model was evaluated on test once.
+
+### Validation (used for every decision)
+
+| Model | Accuracy (95% CI) | Macro F1 | Weighted F1 | End-to-end with fallback | T / threshold | Command |
+|---|---|---|---|---|---|---|
+| BiLSTM v2 | 0.7568 (0.718 to 0.792) | 0.5924 | 0.7527 | 0.7645 | 1.779 / 0.22 | `python -m src.evaluate_v2 calibrate --backend pytorch --model-path outputs/models/bilstm_v2/model.pt --name bilstm_v2` |
+| DistilBERT v2 | 0.9459 (0.923 to 0.962) | 0.9368 | 0.9452 | 0.9498 | 0.989 / 0.50 | `... --backend transformer --model-path outputs/models/distilbert_v2/hf --name distilbert_v2` |
+| MiniLM v2 (PyTorch) | 0.9556 (0.934 to 0.970) | 0.9427 | 0.9551 | 0.9556 | 1.082 / 0.49 | `... --backend transformer --model-path outputs/models/minilm_v2/hf --name minilm_v2` |
+| MiniLM v2, ONNX fp32 | 0.9556 | 0.9427 | 0.9551 | 0.9556 | same | `python -m src.evaluate_v2 val --backend transformer-onnx --model-path outputs/models/minilm_v2/onnx_fp32 --name minilm_v2_onnx_fp32` |
+| MiniLM v2, ONNX int8 | 0.9479 (0.925 to 0.964) | 0.9325 | 0.9469 | 0.9479 | same | `... --model-path outputs/models/minilm_v2/onnx --name minilm_v2_onnx` |
+
+Validation by source: BiLSTM 0.675 (own) / 0.855 (CLINC); MiniLM 0.947 (own) / 0.966 (CLINC).
+
+### Test (evaluated once, after the choice)
+
+| Model | Accuracy (95% CI) | Macro F1 | Weighted F1 | Acc. on CLINC (n=388) | Acc. on own (n=285) | End-to-end | OOS rejected | In-scope answered | Command |
+|---|---|---|---|---|---|---|---|---|---|
+| BiLSTM v2 | 0.7415 (0.707 to 0.773) | 0.5507 | 0.7492 | 0.8325 | 0.6175 | 0.7548 | 0.888 | 0.934 | `python -m src.evaluate_v2 test --backend pytorch --model-path outputs/models/bilstm_v2/model.pt --name bilstm_v2` |
+| DistilBERT v2 | 0.9361 (0.915 to 0.952) | 0.9308 | 0.9362 | 0.9433 | 0.9263 | 0.9287 | 0.964 | 0.934 | `... --backend transformer --model-path outputs/models/distilbert_v2/hf --name distilbert_v2` |
+| **MiniLM v2 (deployed)** | **0.9465 (0.927 to 0.961)** | **0.9422** | 0.9466 | **0.9407** | 0.9544 | **0.9435** | 0.960 | 0.967 | `... --backend transformer --model-path outputs/models/minilm_v2/hf --name minilm_v2` |
+| MiniLM v2, ONNX fp32 | identical to the row above | | | | | | | | `... --backend transformer-onnx --model-path outputs/models/minilm_v2/onnx_fp32 --name minilm_v2_onnx_fp32` |
+
+### Training, export, and speed
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-21 | Training time / best epoch | BiLSTM v2 699 s (best 15 of 45); MiniLM 184 s (best 7 of 10); DistilBERT 382 s (best 4 of 7) | A, CPU; the BiLSTM and MiniLM runs partly overlapped other work | `src.train` / `src.transformer train` summaries |
+| 2026-10-21 | Parameters | BiLSTM v2 16,632,859; MiniLM 22,723,226; DistilBERT 66,973,466 | | same |
+| 2026-10-21 | ONNX size and parity on all 3,009 sentences | MiniLM fp32 86.8 MB, 100% agreement, max prob diff 3.8e-06; MiniLM int8 22.0 MB, 99.34%; DistilBERT fp32 255.6 MB, 100%; DistilBERT int8 64.3 MB, 99.07%; BiLSTM v2 63.5 MB, 100% | A | `export_report.json` from `src.transformer export` / `src.export_onnx` |
+| 2026-10-21 | Single-query latency, 1 thread, 500 runs (p50 / p95 ms) | BiLSTM v2 4.09 / 7.65; MiniLM int8 0.85 / 1.32; **MiniLM fp32 2.37 / 3.24**; DistilBERT int8 3.26 / 4.92; DistilBERT fp32 10.34 / 15.77 | A, CPU otherwise idle | `python -m src.benchmark --config configs/bilstm_v2.yaml --backend <b> --model-path <p> --threads 1 --runs 500` |
+| 2026-10-21 | MiniLM v2 image under Render limits (`--memory 512m --cpus 0.1`) | `/predict` over HTTP, 30 requests: p50 72 ms, p95 96 ms, max 98 ms; memory 240.6 MiB; not OOM-killed; container start to ready 54 s | A, Docker 29.6.2 | `docker run --memory 512m --cpus 0.1 ...`, then timed `urllib` requests |
+| 2026-10-21 | Image size, `serve` with MiniLM v2 | 990 MB | A, Docker | `docker images` |
+| 2026-10-21 | MLflow registry | `medical-intent-classifier` version 1 (ONNX fp32 MiniLM), status READY | A, local SQLite store | `python -m src.register` |

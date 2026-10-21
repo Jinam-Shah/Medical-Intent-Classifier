@@ -165,3 +165,47 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** `python -m src.hub publish` uploads `model.onnx`, `model_meta.json`, `serving.json`, `model.pt`, and a model card to a free HF model repo, and prints the commit hash. Docker builds with `MODEL_SOURCE=hub` download that exact commit (`HF_MODEL_REVISION`), never `main`.
 
 **Why.** Render and CI build from GitHub and don't have the local `outputs/` folder. Pinning the commit means a deploy can't silently pick up a different model. The model card's numbers are generated from the committed `reports/`, so they match `METRICS.md`. (MLflow's registry comes in Phase 1 for experiment tracking; the Hub is for distribution.)
+
+## D23. A rule-based red-flag check in front of the classifier
+
+**Problem.** The classifier answered "I have chest pain" as `headache` with 0.996 confidence. It can't recognize symptoms it was never trained on, and a confidence threshold doesn't catch confident mistakes. For a health chatbot, giving routine self-care advice for an emergency is the worst possible failure.
+
+**Choice.** `src/safety.py` checks a short, explicit list of emergency phrases (chest pain, can't breathe, fainting, seizure, stroke signs, severe bleeding, swelling throat) and crisis phrases (suicide, self-harm) **before** the model runs. On a match, the UI shows an emergency or crisis message instead of the model's reply, and the API sets `safety_alert` and `message`.
+
+**Why rules, not the model.** The behaviour must be predictable, testable phrase by phrase (`tests/test_safety.py`), and independent of retraining. It deliberately errs toward false alarms. It is a safety net, not triage, and the disclaimer stays.
+
+## D24. Chat UI shows replies only
+
+**Choice.** The chat page shows the bot's reply, without the intent label, confidence, or links to the API docs and source code; Gradio's footer links are switched off. The API still returns intent, confidence, and top-3 for developers.
+
+**Why.** It's a demo for people, not a debugging console. Confidence numbers don't help a user and invite over-trust in a model this small.
+
+## D25. Dataset v2: more intents, an explicit out_of_scope class, and an independent data source
+
+**Problem.** The v1 model knew 226 words and 12 intents, so ordinary messages failed: "i have a stomach ache" → `headache` (0.995), because "ache" appeared in training only inside "headache". The v1 data was mostly templates ("I'm experiencing a terrible X"), and with no "other" option, everything off-topic was forced into the nearest keyword.
+
+**Choice.** 26 intents: 12 new symptoms, `capabilities`, and an explicit `out_of_scope` class trained on real off-topic queries. Data comes from three sources, each row marked with its `source`: the v1 patterns; patterns written for this project in varied, natural styles (`data/v2/authored.json`); and CLINC150 (CC BY 3.0) for greetings, thanks, goodbyes, capability questions and out-of-scope queries.
+
+**Why CLINC, and why keep its split.** Its sentences were written by crowd workers who never saw this project. Keeping CLINC's own train/validation/test assignment means 388 of the 673 test sentences are an independent test, reported separately. The symptom-to-diagnosis dataset (gretelai, Apache 2.0) was considered and rejected: its examples are multi-symptom paragraphs labeled by diagnosis, which would add label noise.
+
+**Limitation.** Symptom sentences are still mostly self-written, by the same author for train and test, so those scores may be optimistic.
+
+## D26. Deploy MiniLM-L6 rather than DistilBERT or the BiLSTM
+
+**Options (all trained on the same v2 split).** BiLSTM from scratch (16.6 M parameters), DistilBERT (67 M), MiniLM-L6 (22.7 M; `sentence-transformers/all-MiniLM-L6-v2`, pretrained for sentence similarity).
+
+**Choice, made on validation only.** MiniLM: the best validation accuracy (0.956 vs 0.946 DistilBERT, 0.757 BiLSTM), a third of DistilBERT's size, and the fastest on one CPU thread (2.4 ms p50 vs 10.3 ms DistilBERT, 4.1 ms BiLSTM). DistilBERT and MiniLM are statistically tied (their confidence intervals overlap), so the tie-break is size and speed, which matter on a 0.1-CPU free tier.
+
+**Why the transformers win.** Subword tokenization handles typos and unseen words ("stomache", "tummy", "diarrea"), and pretraining supplies paraphrase knowledge that about 1,800 sentences can't teach a model trained from scratch. The BiLSTM's macro-F1 (0.55 on test) shows it fails on most of the new, smaller intents.
+
+**Test.** Evaluated once after the choice: MiniLM 0.947 (CLINC subset 0.941), DistilBERT 0.936, BiLSTM 0.741.
+
+## D27. Serve fp32 ONNX, not int8
+
+**Trade-off measured on validation.** Dynamic int8 quantization made MiniLM 4× smaller (22 MB vs 87 MB) and 2.8× faster (0.85 ms vs 2.37 ms), but changed 20 of 3,009 predictions and cost 0.8 points of validation accuracy (0.948 vs 0.956). At 0.1 CPU the fp32 model already answers in about 72 ms over HTTP and uses 241 MB of 512 MB, so the speed and size gains don't buy anything users would notice. Accuracy wins.
+
+## D28. MLflow with a local SQLite store, and the Hub for distribution
+
+**Choice.** `src/tracking.py` logs every transformer training run (per-epoch losses), every calibration and test evaluation (metrics plus report artifacts), and the registered model to a local SQLite store in `mlruns/` (ignored by Git). `src/register.py` registers the chosen ONNX model as `medical-intent-classifier`. The Hugging Face Hub remains the distribution channel for deploys, pinned by commit.
+
+**Why local SQLite.** It's free, needs no account, and supports the model registry, which a plain file store doesn't. A shared server (DagsHub) is an option if others need to browse runs. Training still works without MLflow installed.
