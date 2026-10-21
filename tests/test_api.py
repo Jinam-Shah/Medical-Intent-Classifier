@@ -83,10 +83,11 @@ def test_batch_rejects_invalid_input(client, texts):
     assert client.post("/predict/batch", json={"texts": texts}).status_code == 422
 
 
-def test_root_redirects_to_docs(client):
-    response = client.get("/", follow_redirects=False)
-    assert response.status_code == 307
-    assert response.headers["location"] == "/docs"
+def test_root_serves_the_chat_page(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("text/html")
+    assert "frame-ancestors 'none'" in response.headers["content-security-policy"]
 
 
 def test_openapi_docs_available(client):

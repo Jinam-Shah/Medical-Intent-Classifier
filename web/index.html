@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Health Assistant</title>
+  <meta name="description" content="A demo symptom chatbot that shares general self-care guidance. Not medical advice.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <div class="brand-text">
+          <h1>Health Assistant</h1>
+          <p class="status" id="status"><span class="dot" aria-hidden="true"></span><span id="status-text">Connecting…</span></p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="icon-btn" id="new-chat" type="button" title="New chat" aria-label="Start a new chat">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="theme" type="button" title="Toggle theme" aria-label="Toggle light or dark theme">
+          <svg class="sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+          <svg class="moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="notice" id="notice" role="note">
+      <span><strong>Not medical advice.</strong> This demo shares general self-care information only. In an emergency, call your local emergency number.</span>
+      <button class="notice-close" id="notice-close" type="button" aria-label="Dismiss notice">×</button>
+    </div>
+
+    <main class="chat" id="chat">
+      <section class="welcome" id="welcome">
+        <div class="welcome-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </div>
+        <h2>How are you feeling today?</h2>
+        <p>Describe a symptom in your own words. I'll ask a couple of quick questions and share general self-care tips, plus when to see a doctor.</p>
+        <div class="suggestions" id="suggestions">
+          <button type="button" class="suggestion" data-text="My stomach has been hurting since last night"><span class="emoji" aria-hidden="true">🤢</span><span>My stomach has been hurting since last night</span></button>
+          <button type="button" class="suggestion" data-text="I've had a headache all day"><span class="emoji" aria-hidden="true">🤕</span><span>I've had a headache all day</span></button>
+          <button type="button" class="suggestion" data-text="I have a fever and a cough"><span class="emoji" aria-hidden="true">🤒</span><span>I have a fever and a cough</span></button>
+          <button type="button" class="suggestion" data-text="My throat is really sore"><span class="emoji" aria-hidden="true">😣</span><span>My throat is really sore</span></button>
+          <button type="button" class="suggestion" data-text="I can't sleep at night"><span class="emoji" aria-hidden="true">🌙</span><span>I can't sleep at night</span></button>
+          <button type="button" class="suggestion" data-text="What can you help with?"><span class="emoji" aria-hidden="true">💬</span><span>What can you help with?</span></button>
+        </div>
+      </section>
+      <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    </main>
+
+    <footer class="composer-wrap">
+      <form class="composer" id="composer" autocomplete="off">
+        <label class="sr-only" for="input">Message</label>
+        <textarea id="input" rows="1" maxlength="500" placeholder="Describe how you're feeling…" enterkeyhint="send"></textarea>
+        <span class="counter" id="counter" aria-live="polite"></span>
+        <button class="send" id="send" type="submit" aria-label="Send message" disabled>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z"/></svg>
+        </button>
+      </form>
+      <p class="fineprint">General information only · not a diagnosis</p>
+    </footer>
+  </div>
+</body>
+</html>

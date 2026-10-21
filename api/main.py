@@ -1,14 +1,14 @@
-"""FastAPI service.
+"""FastAPI service: REST API plus the web chat at /.
 
     uvicorn api.main:app --port 8000
-    # OpenAPI docs at http://localhost:8000/docs
+    # chat UI: http://localhost:8000      OpenAPI docs: http://localhost:8000/docs
 
 Environment variables:
-    MODEL_BACKEND         "pytorch" (default) or "onnx" (ONNX Runtime, no torch needed)
-    MODEL_PATH            model file (default outputs/models/bilstm/model.pt, or model.onnx for onnx)
+    MODEL_BACKEND         "pytorch" (default), "onnx", "transformer", or "transformer-onnx"
+    MODEL_PATH            model file or directory (defaults to the v1 BiLSTM files)
     CONFIDENCE_THRESHOLD  optional override; by default the threshold chosen on validation
-                          (serving.json next to the checkpoint) is used
-    ENABLE_UI             "1" mounts the Gradio chat UI at /ui and redirects / there (needs gradio)
+                          (serving.json next to the model) is used
+    INTENTS_FILE          intents file with the chat responses (default data/intents.json)
 """
 
 import os
@@ -16,17 +16,22 @@ from contextlib import asynccontextmanager
 
 import numpy as np
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 from api.schemas import (
     BatchPrediction,
     BatchPredictRequest,
+    ChatRequest,
+    ChatResponse,
     Health,
     IntentScore,
     ModelInfo,
     Prediction,
     PredictRequest,
 )
+from src.config import resolve
+from src.dialogue import Dialogue, load_responses
 from src.safety import red_flag
 from src.serving import load_classifier  # torch-free; the chosen backend is imported lazily
 
@@ -38,12 +43,18 @@ UNSURE_INTENT = "unsure"
 OUT_OF_SCOPE = "out_of_scope"  # explicit intent in dataset v2 models
 UNSURE_MESSAGE = "I'm not sure what you mean. Could you rephrase, or describe your main symptom?"
 TOP_K = 3
+WEB_DIR = resolve("web")
+PAGE_HEADERS = {
+    # The page loads nothing from other origins, so lock it down.
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; "
+                               "connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+}
 
 
-def create_app(model_path=None, confidence_threshold=None, backend=None, enable_ui=None):
+def create_app(model_path=None, confidence_threshold=None, backend=None, intents_file=None):
     backend = backend or os.getenv("MODEL_BACKEND", "pytorch")
-    if enable_ui is None:
-        enable_ui = os.getenv("ENABLE_UI", "0") == "1"
     model_path = model_path or os.getenv("MODEL_PATH") or None
     if confidence_threshold is None and os.getenv("CONFIDENCE_THRESHOLD"):
         confidence_threshold = float(os.environ["CONFIDENCE_THRESHOLD"])
@@ -55,13 +66,16 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
         app.state.confidence_threshold = (
             clf.confidence_threshold if confidence_threshold is None else confidence_threshold
         )
+        app.state.dialogue = Dialogue(clf, app.state.confidence_threshold, load_responses(intents_file))
         yield
         app.state.classifier = None
+        app.state.dialogue = None
 
     app = FastAPI(
         title="Medical Intent Classifier",
-        version="0.3.0",
-        description=f"Classifies a healthcare chatbot message into one of 12 intents.\n\n**{DISCLAIMER}**",
+        version="0.4.0",
+        description=f"Classifies a healthcare chatbot message into an intent, and runs a short symptom "
+                    f"conversation.\n\n**{DISCLAIMER}**",
         lifespan=lifespan,
     )
 
@@ -94,7 +108,15 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
 
     @app.get("/", include_in_schema=False)
     def root():
-        return RedirectResponse(url="/ui" if enable_ui else "/docs")
+        index = WEB_DIR / "index.html"
+        if not index.exists():
+            return RedirectResponse(url="/docs")
+        return FileResponse(index, headers={**PAGE_HEADERS, "Cache-Control": "no-cache"})
+
+    @app.get("/ui", include_in_schema=False)
+    @app.get("/ui/", include_in_schema=False)
+    def old_ui():
+        return RedirectResponse(url="/")  # the Gradio UI used to live here
 
     @app.get("/health", response_model=Health)
     def health(request: Request):
@@ -124,19 +146,14 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
     def predict_batch(body: BatchPredictRequest, request: Request):
         return BatchPrediction(results=to_predictions(request, body.texts))
 
-    if enable_ui:
-        import gradio as gr  # optional dependency, only in the UI image
+    @app.post("/chat", response_model=ChatResponse)
+    def chat(body: ChatRequest, request: Request):
+        """One conversation turn. Send back the returned `state` with the next message."""
+        classifier(request)  # 503 while the model is loading
+        return ChatResponse(**request.app.state.dialogue.respond(body.message, body.state), disclaimer=DISCLAIMER)
 
-        from api.ui import build_demo, load_responses, mount
-
-        def ui_classifier():
-            clf = getattr(app.state, "classifier", None)
-            if clf is None:
-                raise gr.Error("Model is still loading, try again in a few seconds.")
-            return clf
-
-        demo = build_demo(ui_classifier, lambda: app.state.confidence_threshold, load_responses())
-        app = mount(app, demo, path="/ui")
+    if WEB_DIR.exists():
+        app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
 
     return app
 
