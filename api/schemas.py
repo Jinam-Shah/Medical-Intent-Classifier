@@ -26,11 +26,14 @@ class IntentScore(BaseModel):
 
 class Prediction(BaseModel):
     text: str
-    intent: str = Field(description='Predicted intent, or "unsure" when confidence is below the threshold.')
+    intent: str = Field(description='Predicted intent; "out_of_scope" when the model says the message is '
+                                    'off-topic, "unsure" when confidence is below the threshold.')
     confidence: float = Field(description="Calibrated probability of the top intent.")
     is_confident: bool
     top_k: list[IntentScore]
-    message: str | None = Field(None, description="Set when the model is unsure.")
+    message: str | None = Field(None, description="Set when the model is unsure, or on a safety alert.")
+    safety_alert: str | None = Field(
+        None, description='"emergency" or "crisis" when a red-flag phrase is detected; overrides the model.')
     disclaimer: str
 
 
