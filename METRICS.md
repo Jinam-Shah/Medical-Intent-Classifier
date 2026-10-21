@@ -117,3 +117,13 @@ Docker 29.6.2 (Docker Desktop, WSL 2 backend) on Environment A. Sizes are as rep
 | 2026-10-19 | Hugging Face Hub model repo | `Jinamshah/medical-intent-classifier`, revision `f5c65480a954df36f13c507da3c821d1b70339e0` | HF Hub | `python -m src.hub publish --repo Jinamshah/medical-intent-classifier` |
 | 2026-10-19 | Published vs evaluated artifacts | SHA-256 identical for `model.onnx`, `model_meta.json`, `serving.json` | A | `python -m src.hub download ... --revision f5c6548...`, then `sha256sum` against `outputs/models/bilstm/` |
 | 2026-10-19 | Image built from the Hub revision | builds in 53 s; `/predict` "I have a fever" → `fever` 0.99793, same as the local model | A, Docker | `docker build --build-arg MODEL_SOURCE=hub ...`, then `curl` |
+
+## Phase 5: live deployment (Render free tier)
+
+URL: https://medical-intent-classifier.onrender.com (UI at `/ui/`, API docs at `/docs`). Render free web service, Docker, region virginia, image built from HF revision `f5c6548`. Client: Environment A on a home network, so the latency figures include the internet round trip.
+
+| Date | Metric | Value | Environment | How it was measured |
+|---|---|---|---|---|
+| 2026-10-21 | End-to-end smoke test (service warm) | 16/16 checks passed: health, model-info (ONNX backend, threshold 0.98, T 1.849), 4 expected predictions including both fallback cases, batch, three 422 validation cases, `/` → `/ui` redirect, UI page, docs | Render free + client A | `python scripts/smoke_test.py https://medical-intent-classifier.onrender.com --requests 30` |
+| 2026-10-21 | `/predict` latency over HTTPS, warm, 30 sequential requests | p50 137 ms, p95 176 ms, min 111 ms, max 191 ms | Render free + client A | same command |
+| 2026-10-21 | `/ui/` page load, warm | 0.11 s | Render free + client A | same command |

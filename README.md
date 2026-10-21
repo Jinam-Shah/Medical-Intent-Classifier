@@ -4,7 +4,9 @@ Intent classification for a healthcare chatbot. A PyTorch BiLSTM with attention 
 
 > **Not medical advice.** This is a portfolio and learning project. It doesn't diagnose anything. For medical concerns, consult a healthcare professional; in an emergency, contact local emergency services.
 
-**Model on Hugging Face:** [Jinamshah/medical-intent-classifier](https://huggingface.co/Jinamshah/medical-intent-classifier) · **Live demo:** coming soon (Render free tier)
+**Live demo:** [medical-intent-classifier.onrender.com](https://medical-intent-classifier.onrender.com/ui/) (chat UI) · [API docs](https://medical-intent-classifier.onrender.com/docs) · **Model:** [Jinamshah/medical-intent-classifier](https://huggingface.co/Jinamshah/medical-intent-classifier) on Hugging Face
+
+> The demo runs on Render's free tier, which sleeps after 15 minutes without traffic. The first visit after that can take a couple of minutes; after that it's fast.
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.14-red.svg)](https://pytorch.org/)
@@ -208,6 +210,15 @@ The image runs one ONNX Runtime thread (`ORT_NUM_THREADS=1`), because free hosti
 
 The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH`, `CONFIDENCE_THRESHOLD`, `ENABLE_UI` and `ORT_NUM_THREADS`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
 
+## Smoke-testing a deployment
+
+`scripts/smoke_test.py` uses only the standard library. It waits through a cold start, then checks every endpoint, input validation, the low-confidence fallback, the UI, and latency. It exits non-zero on any failure.
+
+```bash
+python scripts/smoke_test.py https://medical-intent-classifier.onrender.com
+python scripts/smoke_test.py http://localhost:8000
+```
+
 ## Tests
 
 ```bash
@@ -240,6 +251,7 @@ api/ui.py                Gradio chat UI, mounted at /ui when ENABLE_UI=1
 src/hub.py               publish/download model artifacts on the Hugging Face Hub
 Dockerfile               slim ONNX serving image (default) and a PyTorch variant
 render.yaml              Render Blueprint for the free hosted demo
+scripts/smoke_test.py    end-to-end checks against any running deployment
 requirements-serve.txt   runtime-only dependencies for the slim image
 requirements-ui.txt      adds Gradio for the UI image
 chatbot.py, run.py       command-line interface
@@ -280,7 +292,7 @@ Training history:
 - [ ] Phase 2: DistilBERT fine-tuning and comparison
 - [ ] Phase 3: validation-driven data improvement
 - [x] Phase 4: FastAPI service, calibrated low-confidence fallback, ONNX export, Docker
-- [ ] Phase 5: Gradio demo on Hugging Face Spaces
+- [x] Phase 5: Gradio demo, live on Render (free tier); model on the Hugging Face Hub. A Hugging Face ZeroGPU Space can follow once the account is 30 days old
 - [ ] Phase 6: GitHub Actions CI
 
 ## Author
