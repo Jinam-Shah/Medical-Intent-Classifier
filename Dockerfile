@@ -12,8 +12,7 @@
 #                    (HF_MODEL_REPO, HF_MODEL_REVISION); used by Render and CI
 #
 # Targets:
-#   serve          default: ONNX Runtime API + Gradio chat UI at /ui  (what gets deployed)
-#   serve-api      ONNX Runtime API only, no UI
+#   serve          default: ONNX Runtime API + web chat at /  (what gets deployed)
 #   serve-pytorch  PyTorch-backed API (kept for the size comparison; local model only)
 #
 #   docker build -t medical-intent-classifier .
@@ -66,13 +65,15 @@ ENV MODEL_BACKEND=pytorch MODEL_PATH=/app/model/model.pt
 EXPOSE 8000
 CMD ["sh", "-c", "exec uvicorn api.main:app --host 0.0.0.0 --port ${PORT}"]
 
-# ---------------------------------------------------------------- serve-api: ONNX Runtime, no torch
-FROM base AS serve-api
+# ---------------------------------------------------------------- serve (default, last stage)
+# FastAPI + the web chat (static files) + ONNX Runtime. No torch, no Gradio.
+FROM base AS serve
 COPY requirements-serve.txt .
 RUN pip install -r requirements-serve.txt \
  && python -m nltk.downloader -d "$NLTK_DATA" punkt_tab
 COPY src src
 COPY api api
+COPY web web
 COPY --from=model /model/ /app/model/
 COPY data/intents.json data/intents.json
 COPY data/v2/intents.json data/v2/intents.json
@@ -83,11 +84,3 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD python -c "import os, urllib.request; urllib.request.urlopen(f'http://127.0.0.1:{os.environ[\"PORT\"]}/health', timeout=4)"
 CMD ["sh", "-c", "exec uvicorn api.main:app --host 0.0.0.0 --port ${PORT}"]
-
-# ---------------------------------------------------------------- serve (default, last stage): + Gradio UI
-FROM serve-api AS serve
-USER root
-COPY requirements-ui.txt .
-RUN pip install -r requirements-ui.txt
-USER app
-ENV ENABLE_UI=1 GRADIO_ANALYTICS_ENABLED=False

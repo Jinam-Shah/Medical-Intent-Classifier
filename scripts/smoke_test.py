@@ -125,12 +125,24 @@ def main():
         status, _, _, _ = request(base, "/predict", payload)
         check(f"rejects {name} with 422", status == 422, f"HTTP {status}")
 
-    status, headers, _, _ = request(base, "/", follow=False)
-    check("GET / redirects to the UI", status in (301, 302, 307, 308) and "/ui" in headers.get("location", ""),
-          f"HTTP {status} -> {headers.get('location')}")
-    status, _, page, secs = request(base, "/ui/")
-    check("GET /ui/ serves the Gradio app", status == 200 and "gradio" in str(page).lower(),
-          f"HTTP {status}, {secs:.2f}s")
+    status, headers, page, secs = request(base, "/")
+    check("GET / serves the chat page", status == 200 and "Health Assistant" in str(page)
+          and "default-src 'self'" in headers.get("content-security-policy", ""), f"HTTP {status}, {secs:.2f}s")
+    status, _, _, _ = request(base, "/static/app.js")
+    check("GET /static/app.js", status == 200, f"HTTP {status}")
+
+    state, turns = None, []
+    for message in ("my stomach hurts", "since yesterday", "pretty bad"):
+        status, _, body, _ = request(base, "/chat", {"message": message, "state": state})
+        if status != 200 or not isinstance(body, dict):
+            break
+        state = body["state"]
+        turns.append(body)
+    ok = (len(turns) == 3 and turns[0]["state"]["stage"] == "ask_duration"
+          and turns[1]["state"]["stage"] == "ask_severity" and turns[2]["state"]["stage"] == "idle"
+          and "doctor" in turns[2]["reply"])
+    check("POST /chat three-turn symptom conversation", ok,
+          " -> ".join(t["state"]["stage"] for t in turns) or f"HTTP {status}")
     status, _, _, _ = request(base, "/docs")
     check("GET /docs", status == 200, f"HTTP {status}")
 
