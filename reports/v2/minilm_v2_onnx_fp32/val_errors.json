@@ -1,0 +1,163 @@
+[
+  {
+    "text": "help",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.9763103723526001,
+    "source": "authored"
+  },
+  {
+    "text": "can you tell me what kind of life form you are",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9611396789550781,
+    "source": "clinc"
+  },
+  {
+    "text": "my baby's nose is stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.9054701924324036,
+    "source": "authored"
+  },
+  {
+    "text": "my nose is so stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.9356393218040466,
+    "source": "authored"
+  },
+  {
+    "text": "my head feels light",
+    "true": "dizziness",
+    "pred": "headache",
+    "confidence": 0.9430583715438843,
+    "source": "authored"
+  },
+  {
+    "text": "i'm tired even after sleeping",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.9213247299194336,
+    "source": "authored"
+  },
+  {
+    "text": "i'm wiped",
+    "true": "fatigue",
+    "pred": "goodbye",
+    "confidence": 0.9746353030204773,
+    "source": "authored"
+  },
+  {
+    "text": "i'm worn out",
+    "true": "fatigue",
+    "pred": "shortness_of_breath",
+    "confidence": 0.3147684335708618,
+    "source": "authored"
+  },
+  {
+    "text": "hows are ya",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.7975082993507385,
+    "source": "clinc"
+  },
+  {
+    "text": "how r u",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9350414276123047,
+    "source": "authored"
+  },
+  {
+    "text": "insomina",
+    "true": "insomnia",
+    "pred": "out_of_scope",
+    "confidence": 0.5486053228378296,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep anything down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.9475145936012268,
+    "source": "authored"
+  },
+  {
+    "text": "i feel queasy and dizzy-ish",
+    "true": "nausea_vomiting",
+    "pred": "dizziness",
+    "confidence": 0.9629794955253601,
+    "source": "authored"
+  },
+  {
+    "text": "i keep retching",
+    "true": "nausea_vomiting",
+    "pred": "skin_rash",
+    "confidence": 0.34342196583747864,
+    "source": "authored"
+  },
+  {
+    "text": "my period is late",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.7929884791374207,
+    "source": "authored"
+  },
+  {
+    "text": "what causes this",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.980222761631012,
+    "source": "authored"
+  },
+  {
+    "text": "absolutely not",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.8862459063529968,
+    "source": "clinc"
+  },
+  {
+    "text": "are you from here",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9772019982337952,
+    "source": "clinc"
+  },
+  {
+    "text": "i need you to stop talking",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.9683176279067993,
+    "source": "clinc"
+  },
+  {
+    "text": "my card is scuffed up and won't work",
+    "true": "out_of_scope",
+    "pred": "toothache",
+    "confidence": 0.48621460795402527,
+    "source": "clinc"
+  },
+  {
+    "text": "possibly either one",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.584023118019104,
+    "source": "clinc"
+  },
+  {
+    "text": "what was said",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9015461802482605,
+    "source": "clinc"
+  },
+  {
+    "text": "abscess in my mouth",
+    "true": "toothache",
+    "pred": "diarrhea",
+    "confidence": 0.6503043174743652,
+    "source": "authored"
+  }
+]

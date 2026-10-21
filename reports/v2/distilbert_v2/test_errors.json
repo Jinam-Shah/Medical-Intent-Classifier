@@ -1,0 +1,303 @@
+[
+  {
+    "text": "lumbar pain",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.6225584149360657,
+    "source": "authored"
+  },
+  {
+    "text": "sore from head to toe",
+    "true": "body_aches",
+    "pred": "headache",
+    "confidence": 0.60822594165802,
+    "source": "authored"
+  },
+  {
+    "text": "can you diagnose me",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9954018592834473,
+    "source": "authored"
+  },
+  {
+    "text": "how do i use this",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9964761137962341,
+    "source": "authored"
+  },
+  {
+    "text": "can you tell me if your a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.986237645149231,
+    "source": "clinc"
+  },
+  {
+    "text": "how do you describe yourself: as a computer or a human",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.8438334465026855,
+    "source": "clinc"
+  },
+  {
+    "text": "i want to know if your a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9837195873260498,
+    "source": "clinc"
+  },
+  {
+    "text": "is your voice from a human or is it synthesized",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.868830144405365,
+    "source": "clinc"
+  },
+  {
+    "text": "what kid of subjects do you excel in",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.7259682416915894,
+    "source": "clinc"
+  },
+  {
+    "text": "would you call yourself a human or a computer",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9514968991279602,
+    "source": "clinc"
+  },
+  {
+    "text": "Cold and flu",
+    "true": "cold",
+    "pred": "flu",
+    "confidence": 0.6314907073974609,
+    "source": "v1"
+  },
+  {
+    "text": "mucus in my nose",
+    "true": "congestion",
+    "pred": "allergy",
+    "confidence": 0.3226642310619354,
+    "source": "authored"
+  },
+  {
+    "text": "Stuffy nose",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.6744292974472046,
+    "source": "v1"
+  },
+  {
+    "text": "runny poop",
+    "true": "diarrhea",
+    "pred": "cold",
+    "confidence": 0.8113945126533508,
+    "source": "authored"
+  },
+  {
+    "text": "i feel lethargic",
+    "true": "fatigue",
+    "pred": "dizziness",
+    "confidence": 0.6802993416786194,
+    "source": "authored"
+  },
+  {
+    "text": "i'm exausted",
+    "true": "fatigue",
+    "pred": "nausea_vomiting",
+    "confidence": 0.46500852704048157,
+    "source": "authored"
+  },
+  {
+    "text": "i have chills",
+    "true": "fever",
+    "pred": "cold",
+    "confidence": 0.8976481556892395,
+    "source": "authored"
+  },
+  {
+    "text": "do i have the flu",
+    "true": "flu",
+    "pred": "out_of_scope",
+    "confidence": 0.6630817651748657,
+    "source": "authored"
+  },
+  {
+    "text": "great talk, thanks",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.8209757804870605,
+    "source": "clinc"
+  },
+  {
+    "text": "regards",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.7835387587547302,
+    "source": "clinc"
+  },
+  {
+    "text": "signing off",
+    "true": "goodbye",
+    "pred": "out_of_scope",
+    "confidence": 0.7890188694000244,
+    "source": "clinc"
+  },
+  {
+    "text": "Logging off",
+    "true": "goodbye",
+    "pred": "out_of_scope",
+    "confidence": 0.8782294392585754,
+    "source": "v1"
+  },
+  {
+    "text": "is everything ok today",
+    "true": "greeting",
+    "pred": "capabilities",
+    "confidence": 0.3586643636226654,
+    "source": "clinc"
+  },
+  {
+    "text": "Bonjour",
+    "true": "greeting",
+    "pred": "goodbye",
+    "confidence": 0.6399061679840088,
+    "source": "v1"
+  },
+  {
+    "text": "will you tell me how the ai is doing",
+    "true": "how_are_you",
+    "pred": "out_of_scope",
+    "confidence": 0.9893418550491333,
+    "source": "clinc"
+  },
+  {
+    "text": "would you tell me how the ai is doing",
+    "true": "how_are_you",
+    "pred": "out_of_scope",
+    "confidence": 0.9818774461746216,
+    "source": "clinc"
+  },
+  {
+    "text": "i can't switch off at night",
+    "true": "insomnia",
+    "pred": "out_of_scope",
+    "confidence": 0.5092484354972839,
+    "source": "authored"
+  },
+  {
+    "text": "barfing",
+    "true": "nausea_vomiting",
+    "pred": "cold",
+    "confidence": 0.3432905375957489,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep food down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.4517648220062256,
+    "source": "authored"
+  },
+  {
+    "text": "my ears are ringing",
+    "true": "out_of_scope",
+    "pred": "ear_pain",
+    "confidence": 0.9345393180847168,
+    "source": "authored"
+  },
+  {
+    "text": "are you from around here",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9629375338554382,
+    "source": "clinc"
+  },
+  {
+    "text": "how young are you",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.944563090801239,
+    "source": "clinc"
+  },
+  {
+    "text": "i have a rash, what can i use for it",
+    "true": "out_of_scope",
+    "pred": "skin_rash",
+    "confidence": 0.9793083071708679,
+    "source": "clinc"
+  },
+  {
+    "text": "no, you are wrong",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9442598223686218,
+    "source": "clinc"
+  },
+  {
+    "text": "okay",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.799838662147522,
+    "source": "clinc"
+  },
+  {
+    "text": "pardon, i didn't hear you",
+    "true": "out_of_scope",
+    "pred": "thanks",
+    "confidence": 0.48004716634750366,
+    "source": "clinc"
+  },
+  {
+    "text": "the male voice please",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.6956935524940491,
+    "source": "clinc"
+  },
+  {
+    "text": "what kinds of hobbies do you have",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9837952852249146,
+    "source": "clinc"
+  },
+  {
+    "text": "whom do you work for",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9901154041290283,
+    "source": "clinc"
+  },
+  {
+    "text": "my throat is scratchy",
+    "true": "sore_throat",
+    "pred": "cold",
+    "confidence": 0.6876398324966431,
+    "source": "authored"
+  },
+  {
+    "text": "tonsillitis",
+    "true": "sore_throat",
+    "pred": "skin_rash",
+    "confidence": 0.4947611391544342,
+    "source": "authored"
+  },
+  {
+    "text": "i apprecaite the help from you",
+    "true": "thanks",
+    "pred": "capabilities",
+    "confidence": 0.4078300893306732,
+    "source": "clinc"
+  },
+  {
+    "text": "Ty",
+    "true": "thanks",
+    "pred": "greeting",
+    "confidence": 0.46693360805511475,
+    "source": "v1"
+  }
+]

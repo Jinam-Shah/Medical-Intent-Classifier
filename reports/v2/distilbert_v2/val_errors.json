@@ -1,0 +1,198 @@
+[
+  {
+    "text": "my spine hurts",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.6991589069366455,
+    "source": "authored"
+  },
+  {
+    "text": "can you give medical advice",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9967228770256042,
+    "source": "authored"
+  },
+  {
+    "text": "help",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.8589677810668945,
+    "source": "authored"
+  },
+  {
+    "text": "what's your purpose",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.5754784345626831,
+    "source": "authored"
+  },
+  {
+    "text": "can you act and think like a real person",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.5250772833824158,
+    "source": "clinc"
+  },
+  {
+    "text": "would you be classified as a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9937232136726379,
+    "source": "clinc"
+  },
+  {
+    "text": "my baby's nose is stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.5534009337425232,
+    "source": "authored"
+  },
+  {
+    "text": "my nose is clogged",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.49827447533607483,
+    "source": "authored"
+  },
+  {
+    "text": "my nose is so stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.871555745601654,
+    "source": "authored"
+  },
+  {
+    "text": "i feel sluggish",
+    "true": "fatigue",
+    "pred": "nausea_vomiting",
+    "confidence": 0.5356169939041138,
+    "source": "authored"
+  },
+  {
+    "text": "i'm tired even after sleeping",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.8898018598556519,
+    "source": "authored"
+  },
+  {
+    "text": "i'm wiped",
+    "true": "fatigue",
+    "pred": "goodbye",
+    "confidence": 0.3068038821220398,
+    "source": "authored"
+  },
+  {
+    "text": "i'm wiped out",
+    "true": "fatigue",
+    "pred": "out_of_scope",
+    "confidence": 0.38853228092193604,
+    "source": "authored"
+  },
+  {
+    "text": "i keep getting chills and sweats",
+    "true": "fever",
+    "pred": "cold",
+    "confidence": 0.6350656747817993,
+    "source": "authored"
+  },
+  {
+    "text": "Signing out",
+    "true": "goodbye",
+    "pred": "out_of_scope",
+    "confidence": 0.7903773188591003,
+    "source": "v1"
+  },
+  {
+    "text": "hows are ya",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.9084365963935852,
+    "source": "clinc"
+  },
+  {
+    "text": "how r u",
+    "true": "how_are_you",
+    "pred": "out_of_scope",
+    "confidence": 0.8768083453178406,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep anything down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.6137608885765076,
+    "source": "authored"
+  },
+  {
+    "text": "i feel queasy and dizzy-ish",
+    "true": "nausea_vomiting",
+    "pred": "dizziness",
+    "confidence": 0.9679955840110779,
+    "source": "authored"
+  },
+  {
+    "text": "i got stung by a bee",
+    "true": "out_of_scope",
+    "pred": "allergy",
+    "confidence": 0.492260605096817,
+    "source": "authored"
+  },
+  {
+    "text": "what causes this",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.7855088114738464,
+    "source": "authored"
+  },
+  {
+    "text": "absolutely not",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.4243391156196594,
+    "source": "clinc"
+  },
+  {
+    "text": "are you from here",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9756149053573608,
+    "source": "clinc"
+  },
+  {
+    "text": "are you involved in hobbies",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9234763383865356,
+    "source": "clinc"
+  },
+  {
+    "text": "i need you to stop talking",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.7356661558151245,
+    "source": "clinc"
+  },
+  {
+    "text": "king of acid",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.45850425958633423,
+    "source": "clinc"
+  },
+  {
+    "text": "who conjured you",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.907628059387207,
+    "source": "clinc"
+  },
+  {
+    "text": "abscess in my mouth",
+    "true": "toothache",
+    "pred": "stomach_ache",
+    "confidence": 0.8463459014892578,
+    "source": "authored"
+  }
+]

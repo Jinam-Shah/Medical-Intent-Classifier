@@ -1,0 +1,5 @@
+{
+  "temperature": 1.0817917785598352,
+  "confidence_threshold": 0.49,
+  "chosen_on": "v2 validation split, see reports/v2/minilm_v2/calibration.json"
+}

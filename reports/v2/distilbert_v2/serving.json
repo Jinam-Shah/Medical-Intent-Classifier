@@ -1,0 +1,5 @@
+{
+  "temperature": 0.988809833388132,
+  "confidence_threshold": 0.5,
+  "chosen_on": "v2 validation split, see reports/v2/distilbert_v2/calibration.json"
+}

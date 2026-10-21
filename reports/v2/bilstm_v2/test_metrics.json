@@ -1,0 +1,55 @@
+{
+  "n": 673,
+  "classification": {
+    "accuracy": 0.7414561664190193,
+    "accuracy_ci95": [
+      0.7071,
+      0.7731
+    ],
+    "f1_macro": 0.5506899700225956,
+    "f1_weighted": 0.7492177438352555
+  },
+  "end_to_end": {
+    "threshold": 0.22,
+    "end_to_end_accuracy": 0.7548291233283804,
+    "in_scope_accuracy_with_unsure": 0.6753554502369669,
+    "in_scope_coverage": 0.933649289099526,
+    "in_scope_accuracy_when_answered": 0.7233502538071066,
+    "oos_rejection_rate": 0.8884462151394422,
+    "objective": 0.7819008326882045,
+    "ci95": [
+      0.7209,
+      0.7858
+    ]
+  },
+  "by_source": {
+    "own (v1 + authored)": {
+      "n": 285,
+      "classification_accuracy": 0.6175438596491228,
+      "threshold": 0.22,
+      "end_to_end_accuracy": 0.6105263157894737,
+      "in_scope_accuracy_with_unsure": 0.6094890510948905,
+      "in_scope_coverage": 0.9562043795620438,
+      "in_scope_accuracy_when_answered": 0.6374045801526718,
+      "oos_rejection_rate": 0.6363636363636364,
+      "objective": 0.6229263437292634
+    },
+    "clinc (independent)": {
+      "n": 388,
+      "classification_accuracy": 0.8324742268041238,
+      "threshold": 0.22,
+      "end_to_end_accuracy": 0.8608247422680413,
+      "in_scope_accuracy_with_unsure": 0.7972972972972973,
+      "in_scope_coverage": 0.8918918918918919,
+      "in_scope_accuracy_when_answered": 0.8939393939393939,
+      "oos_rejection_rate": 0.9,
+      "objective": 0.8486486486486486
+    }
+  },
+  "split": "test",
+  "model": "bilstm_v2",
+  "backend": "pytorch",
+  "temperature": 1.7787489463329336,
+  "num_parameters": 16632859,
+  "evaluated_at": "2026-10-21T17:26:07+00:00"
+}

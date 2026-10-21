@@ -1,0 +1,254 @@
+[
+  {
+    "text": "achiness",
+    "true": "body_aches",
+    "pred": "fatigue",
+    "confidence": 0.6982438564300537,
+    "source": "authored"
+  },
+  {
+    "text": "sore from head to toe",
+    "true": "body_aches",
+    "pred": "headache",
+    "confidence": 0.9010649919509888,
+    "source": "authored"
+  },
+  {
+    "text": "how do i use this",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9913766384124756,
+    "source": "authored"
+  },
+  {
+    "text": "are you a computer generated voice",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9474178552627563,
+    "source": "clinc"
+  },
+  {
+    "text": "i think your a bot",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.4585864841938019,
+    "source": "clinc"
+  },
+  {
+    "text": "is your voice from a human or is it synthesized",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9819944500923157,
+    "source": "clinc"
+  },
+  {
+    "text": "what are you programmed to do for me",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9902440905570984,
+    "source": "clinc"
+  },
+  {
+    "text": "what kid of subjects do you excel in",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9936813116073608,
+    "source": "clinc"
+  },
+  {
+    "text": "Cold and flu",
+    "true": "cold",
+    "pred": "flu",
+    "confidence": 0.6417086720466614,
+    "source": "v1"
+  },
+  {
+    "text": "Stuffy nose",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.6579358577728271,
+    "source": "v1"
+  },
+  {
+    "text": "i feel lethargic",
+    "true": "fatigue",
+    "pred": "shortness_of_breath",
+    "confidence": 0.2918667495250702,
+    "source": "authored"
+  },
+  {
+    "text": "i'm too tired to get out of bed",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.8074995875358582,
+    "source": "authored"
+  },
+  {
+    "text": "i have chills",
+    "true": "fever",
+    "pred": "cold",
+    "confidence": 0.49650436639785767,
+    "source": "authored"
+  },
+  {
+    "text": "regards",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.9812938570976257,
+    "source": "clinc"
+  },
+  {
+    "text": "I'm heading out",
+    "true": "goodbye",
+    "pred": "fatigue",
+    "confidence": 0.6718565821647644,
+    "source": "v1"
+  },
+  {
+    "text": "hello, how's your day",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.8897188305854797,
+    "source": "clinc"
+  },
+  {
+    "text": "hey there, how are you today",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9523712396621704,
+    "source": "clinc"
+  },
+  {
+    "text": "hey, how are you",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.974462628364563,
+    "source": "clinc"
+  },
+  {
+    "text": "hi, how are you",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9737997651100159,
+    "source": "clinc"
+  },
+  {
+    "text": "hi, how are you today",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.8294986486434937,
+    "source": "clinc"
+  },
+  {
+    "text": "i can't switch off at night",
+    "true": "insomnia",
+    "pred": "out_of_scope",
+    "confidence": 0.39067336916923523,
+    "source": "authored"
+  },
+  {
+    "text": "barfing",
+    "true": "nausea_vomiting",
+    "pred": "sore_throat",
+    "confidence": 0.2854577302932739,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep food down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.6872819662094116,
+    "source": "authored"
+  },
+  {
+    "text": "my ears are ringing",
+    "true": "out_of_scope",
+    "pred": "ear_pain",
+    "confidence": 0.9360471963882446,
+    "source": "authored"
+  },
+  {
+    "text": "are you from around here",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9393573999404907,
+    "source": "clinc"
+  },
+  {
+    "text": "check to see if i still have allergy medication",
+    "true": "out_of_scope",
+    "pred": "allergy",
+    "confidence": 0.953768789768219,
+    "source": "clinc"
+  },
+  {
+    "text": "how do you refer to me",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.8572959303855896,
+    "source": "clinc"
+  },
+  {
+    "text": "how should i address you",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9732738137245178,
+    "source": "clinc"
+  },
+  {
+    "text": "okay",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.9270755648612976,
+    "source": "clinc"
+  },
+  {
+    "text": "pardon, i didn't hear you",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.9179141521453857,
+    "source": "clinc"
+  },
+  {
+    "text": "start whisper mode",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.9249213933944702,
+    "source": "clinc"
+  },
+  {
+    "text": "watch the fbi",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.6401445865631104,
+    "source": "clinc"
+  },
+  {
+    "text": "whom do you work for",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9626476764678955,
+    "source": "clinc"
+  },
+  {
+    "text": "ai is a helpful item to have in my home, thank you",
+    "true": "thanks",
+    "pred": "out_of_scope",
+    "confidence": 0.9015190601348877,
+    "source": "clinc"
+  },
+  {
+    "text": "i appeciate it",
+    "true": "thanks",
+    "pred": "out_of_scope",
+    "confidence": 0.9922701120376587,
+    "source": "clinc"
+  },
+  {
+    "text": "i apprecaite the help from you",
+    "true": "thanks",
+    "pred": "out_of_scope",
+    "confidence": 0.597783625125885,
+    "source": "clinc"
+  }
+]

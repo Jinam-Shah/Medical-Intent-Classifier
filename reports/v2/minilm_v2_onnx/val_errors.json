@@ -1,0 +1,191 @@
+[
+  {
+    "text": "help",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.9740319848060608,
+    "source": "authored"
+  },
+  {
+    "text": "what's your purpose",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.5282965898513794,
+    "source": "authored"
+  },
+  {
+    "text": "can you tell me what kind of life form you are",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9456996917724609,
+    "source": "clinc"
+  },
+  {
+    "text": "would you be classified as a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9579700231552124,
+    "source": "clinc"
+  },
+  {
+    "text": "my baby's nose is stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.8883733749389648,
+    "source": "authored"
+  },
+  {
+    "text": "my nose is so stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.8798892498016357,
+    "source": "authored"
+  },
+  {
+    "text": "my head feels light",
+    "true": "dizziness",
+    "pred": "headache",
+    "confidence": 0.937557578086853,
+    "source": "authored"
+  },
+  {
+    "text": "i feel sluggish",
+    "true": "fatigue",
+    "pred": "dizziness",
+    "confidence": 0.4696487784385681,
+    "source": "authored"
+  },
+  {
+    "text": "i'm tired even after sleeping",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.9041720628738403,
+    "source": "authored"
+  },
+  {
+    "text": "i'm wiped",
+    "true": "fatigue",
+    "pred": "goodbye",
+    "confidence": 0.9421679973602295,
+    "source": "authored"
+  },
+  {
+    "text": "i'm worn out",
+    "true": "fatigue",
+    "pred": "shortness_of_breath",
+    "confidence": 0.46475642919540405,
+    "source": "authored"
+  },
+  {
+    "text": "hows are ya",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.5932905673980713,
+    "source": "clinc"
+  },
+  {
+    "text": "how r u",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.9644293189048767,
+    "source": "authored"
+  },
+  {
+    "text": "insomina",
+    "true": "insomnia",
+    "pred": "diarrhea",
+    "confidence": 0.47151869535446167,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep anything down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.9339243769645691,
+    "source": "authored"
+  },
+  {
+    "text": "i feel queasy and dizzy-ish",
+    "true": "nausea_vomiting",
+    "pred": "dizziness",
+    "confidence": 0.9657137989997864,
+    "source": "authored"
+  },
+  {
+    "text": "i keep retching",
+    "true": "nausea_vomiting",
+    "pred": "out_of_scope",
+    "confidence": 0.9585225582122803,
+    "source": "authored"
+  },
+  {
+    "text": "my period is late",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.8049792051315308,
+    "source": "authored"
+  },
+  {
+    "text": "what causes this",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9793024659156799,
+    "source": "authored"
+  },
+  {
+    "text": "absolutely not",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.9488003849983215,
+    "source": "clinc"
+  },
+  {
+    "text": "are you from here",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9752734899520874,
+    "source": "clinc"
+  },
+  {
+    "text": "i need you to stop talking",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.9613057971000671,
+    "source": "clinc"
+  },
+  {
+    "text": "my card is scuffed up and won't work",
+    "true": "out_of_scope",
+    "pred": "toothache",
+    "confidence": 0.41008028388023376,
+    "source": "clinc"
+  },
+  {
+    "text": "possibly either one",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.34938517212867737,
+    "source": "clinc"
+  },
+  {
+    "text": "what was said",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.8927896618843079,
+    "source": "clinc"
+  },
+  {
+    "text": "i think i have a stomach bug, my stomach hurts",
+    "true": "stomach_ache",
+    "pred": "nausea_vomiting",
+    "confidence": 0.32627448439598083,
+    "source": "authored"
+  },
+  {
+    "text": "abscess in my mouth",
+    "true": "toothache",
+    "pred": "sore_throat",
+    "confidence": 0.3714859187602997,
+    "source": "authored"
+  }
+]

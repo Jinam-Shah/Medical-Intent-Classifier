@@ -1,0 +1,738 @@
+{
+  "temperature": 1.7787489463329336,
+  "confidence_threshold": 0.22,
+  "chosen_on": "v2 validation split, see reports/v2/bilstm_v2/calibration.json",
+  "nll_uncalibrated": 0.9240161776542664,
+  "nll_calibrated": 0.7935429215431213,
+  "curve": [
+    {
+      "threshold": 0.0,
+      "end_to_end_accuracy": 0.7567567567567568,
+      "in_scope_accuracy_with_unsure": 0.6951219512195121,
+      "in_scope_coverage": 0.9847560975609756,
+      "in_scope_accuracy_when_answered": 0.7058823529411765,
+      "oos_rejection_rate": 0.8631578947368421,
+      "objective": 0.7791399229781771
+    },
+    {
+      "threshold": 0.2,
+      "end_to_end_accuracy": 0.7644787644787645,
+      "in_scope_accuracy_with_unsure": 0.6890243902439024,
+      "in_scope_coverage": 0.9573170731707317,
+      "in_scope_accuracy_when_answered": 0.7197452229299363,
+      "oos_rejection_rate": 0.8947368421052632,
+      "objective": 0.7918806161745828
+    },
+    {
+      "threshold": 0.21,
+      "end_to_end_accuracy": 0.7625482625482626,
+      "in_scope_accuracy_with_unsure": 0.6859756097560976,
+      "in_scope_coverage": 0.9542682926829268,
+      "in_scope_accuracy_when_answered": 0.7188498402555911,
+      "oos_rejection_rate": 0.8947368421052632,
+      "objective": 0.7903562259306804
+    },
+    {
+      "threshold": 0.22,
+      "end_to_end_accuracy": 0.7644787644787645,
+      "in_scope_accuracy_with_unsure": 0.6829268292682927,
+      "in_scope_coverage": 0.9420731707317073,
+      "in_scope_accuracy_when_answered": 0.7249190938511327,
+      "oos_rejection_rate": 0.9052631578947369,
+      "objective": 0.7940949935815148
+    },
+    {
+      "threshold": 0.23,
+      "end_to_end_accuracy": 0.7644787644787645,
+      "in_scope_accuracy_with_unsure": 0.6829268292682927,
+      "in_scope_coverage": 0.9390243902439024,
+      "in_scope_accuracy_when_answered": 0.7272727272727273,
+      "oos_rejection_rate": 0.9052631578947369,
+      "objective": 0.7940949935815148
+    },
+    {
+      "threshold": 0.24,
+      "end_to_end_accuracy": 0.7606177606177607,
+      "in_scope_accuracy_with_unsure": 0.676829268292683,
+      "in_scope_coverage": 0.9237804878048781,
+      "in_scope_accuracy_when_answered": 0.7326732673267327,
+      "oos_rejection_rate": 0.9052631578947369,
+      "objective": 0.7910462130937099
+    },
+    {
+      "threshold": 0.25,
+      "end_to_end_accuracy": 0.7586872586872587,
+      "in_scope_accuracy_with_unsure": 0.6707317073170732,
+      "in_scope_coverage": 0.9054878048780488,
+      "in_scope_accuracy_when_answered": 0.7407407407407407,
+      "oos_rejection_rate": 0.9105263157894737,
+      "objective": 0.7906290115532735
+    },
+    {
+      "threshold": 0.26,
+      "end_to_end_accuracy": 0.7567567567567568,
+      "in_scope_accuracy_with_unsure": 0.6615853658536586,
+      "in_scope_coverage": 0.8719512195121951,
+      "in_scope_accuracy_when_answered": 0.7587412587412588,
+      "oos_rejection_rate": 0.9210526315789473,
+      "objective": 0.791318998716303
+    },
+    {
+      "threshold": 0.27,
+      "end_to_end_accuracy": 0.752895752895753,
+      "in_scope_accuracy_with_unsure": 0.6554878048780488,
+      "in_scope_coverage": 0.8536585365853658,
+      "in_scope_accuracy_when_answered": 0.7678571428571429,
+      "oos_rejection_rate": 0.9210526315789473,
+      "objective": 0.7882702182284981
+    },
+    {
+      "threshold": 0.28,
+      "end_to_end_accuracy": 0.7432432432432432,
+      "in_scope_accuracy_with_unsure": 0.6402439024390244,
+      "in_scope_coverage": 0.8109756097560976,
+      "in_scope_accuracy_when_answered": 0.7894736842105263,
+      "oos_rejection_rate": 0.9210526315789473,
+      "objective": 0.7806482670089858
+    },
+    {
+      "threshold": 0.29,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.6189024390243902,
+      "in_scope_coverage": 0.7591463414634146,
+      "in_scope_accuracy_when_answered": 0.8152610441767069,
+      "oos_rejection_rate": 0.9210526315789473,
+      "objective": 0.7699775353016688
+    },
+    {
+      "threshold": 0.3,
+      "end_to_end_accuracy": 0.7258687258687259,
+      "in_scope_accuracy_with_unsure": 0.6067073170731707,
+      "in_scope_coverage": 0.7408536585365854,
+      "in_scope_accuracy_when_answered": 0.8189300411522634,
+      "oos_rejection_rate": 0.9315789473684211,
+      "objective": 0.7691431322207959
+    },
+    {
+      "threshold": 0.31,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.6067073170731707,
+      "in_scope_coverage": 0.7347560975609756,
+      "in_scope_accuracy_when_answered": 0.8257261410788381,
+      "oos_rejection_rate": 0.9421052631578948,
+      "objective": 0.7744062901155327
+    },
+    {
+      "threshold": 0.32,
+      "end_to_end_accuracy": 0.7316602316602316,
+      "in_scope_accuracy_with_unsure": 0.6067073170731707,
+      "in_scope_coverage": 0.7347560975609756,
+      "in_scope_accuracy_when_answered": 0.8257261410788381,
+      "oos_rejection_rate": 0.9473684210526315,
+      "objective": 0.7770378690629012
+    },
+    {
+      "threshold": 0.33,
+      "end_to_end_accuracy": 0.7316602316602316,
+      "in_scope_accuracy_with_unsure": 0.600609756097561,
+      "in_scope_coverage": 0.7286585365853658,
+      "in_scope_accuracy_when_answered": 0.8242677824267782,
+      "oos_rejection_rate": 0.9578947368421052,
+      "objective": 0.779252246469833
+    },
+    {
+      "threshold": 0.34,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.5975609756097561,
+      "in_scope_coverage": 0.725609756097561,
+      "in_scope_accuracy_when_answered": 0.8235294117647058,
+      "oos_rejection_rate": 0.9578947368421052,
+      "objective": 0.7777278562259307
+    },
+    {
+      "threshold": 0.35,
+      "end_to_end_accuracy": 0.7277992277992278,
+      "in_scope_accuracy_with_unsure": 0.5945121951219512,
+      "in_scope_coverage": 0.7225609756097561,
+      "in_scope_accuracy_when_answered": 0.8227848101265823,
+      "oos_rejection_rate": 0.9578947368421052,
+      "objective": 0.7762034659820283
+    },
+    {
+      "threshold": 0.36,
+      "end_to_end_accuracy": 0.7277992277992278,
+      "in_scope_accuracy_with_unsure": 0.5945121951219512,
+      "in_scope_coverage": 0.7164634146341463,
+      "in_scope_accuracy_when_answered": 0.8297872340425532,
+      "oos_rejection_rate": 0.9578947368421052,
+      "objective": 0.7762034659820283
+    },
+    {
+      "threshold": 0.37,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.5945121951219512,
+      "in_scope_coverage": 0.7164634146341463,
+      "in_scope_accuracy_when_answered": 0.8297872340425532,
+      "oos_rejection_rate": 0.9631578947368421,
+      "objective": 0.7788350449293966
+    },
+    {
+      "threshold": 0.38,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.5914634146341463,
+      "in_scope_coverage": 0.7012195121951219,
+      "in_scope_accuracy_when_answered": 0.8434782608695652,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7799422336328626
+    },
+    {
+      "threshold": 0.39,
+      "end_to_end_accuracy": 0.7297297297297297,
+      "in_scope_accuracy_with_unsure": 0.5914634146341463,
+      "in_scope_coverage": 0.698170731707317,
+      "in_scope_accuracy_when_answered": 0.8471615720524017,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7799422336328626
+    },
+    {
+      "threshold": 0.4,
+      "end_to_end_accuracy": 0.7277992277992278,
+      "in_scope_accuracy_with_unsure": 0.5884146341463414,
+      "in_scope_coverage": 0.6920731707317073,
+      "in_scope_accuracy_when_answered": 0.8502202643171806,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7784178433889601
+    },
+    {
+      "threshold": 0.41,
+      "end_to_end_accuracy": 0.7277992277992278,
+      "in_scope_accuracy_with_unsure": 0.5884146341463414,
+      "in_scope_coverage": 0.6920731707317073,
+      "in_scope_accuracy_when_answered": 0.8502202643171806,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7784178433889601
+    },
+    {
+      "threshold": 0.42,
+      "end_to_end_accuracy": 0.722007722007722,
+      "in_scope_accuracy_with_unsure": 0.5792682926829268,
+      "in_scope_coverage": 0.676829268292683,
+      "in_scope_accuracy_when_answered": 0.8558558558558559,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7738446726572529
+    },
+    {
+      "threshold": 0.43,
+      "end_to_end_accuracy": 0.7200772200772201,
+      "in_scope_accuracy_with_unsure": 0.5762195121951219,
+      "in_scope_coverage": 0.6737804878048781,
+      "in_scope_accuracy_when_answered": 0.8552036199095022,
+      "oos_rejection_rate": 0.968421052631579,
+      "objective": 0.7723202824133504
+    },
+    {
+      "threshold": 0.44,
+      "end_to_end_accuracy": 0.7200772200772201,
+      "in_scope_accuracy_with_unsure": 0.573170731707317,
+      "in_scope_coverage": 0.6707317073170732,
+      "in_scope_accuracy_when_answered": 0.8545454545454545,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7734274711168164
+    },
+    {
+      "threshold": 0.45,
+      "end_to_end_accuracy": 0.7181467181467182,
+      "in_scope_accuracy_with_unsure": 0.5701219512195121,
+      "in_scope_coverage": 0.6676829268292683,
+      "in_scope_accuracy_when_answered": 0.8538812785388128,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7719030808729139
+    },
+    {
+      "threshold": 0.46,
+      "end_to_end_accuracy": 0.7162162162162162,
+      "in_scope_accuracy_with_unsure": 0.5670731707317073,
+      "in_scope_coverage": 0.6646341463414634,
+      "in_scope_accuracy_when_answered": 0.8532110091743119,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7703786906290115
+    },
+    {
+      "threshold": 0.47,
+      "end_to_end_accuracy": 0.7162162162162162,
+      "in_scope_accuracy_with_unsure": 0.5670731707317073,
+      "in_scope_coverage": 0.6615853658536586,
+      "in_scope_accuracy_when_answered": 0.8571428571428571,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7703786906290115
+    },
+    {
+      "threshold": 0.48,
+      "end_to_end_accuracy": 0.7123552123552124,
+      "in_scope_accuracy_with_unsure": 0.5609756097560976,
+      "in_scope_coverage": 0.649390243902439,
+      "in_scope_accuracy_when_answered": 0.863849765258216,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7673299101412068
+    },
+    {
+      "threshold": 0.49,
+      "end_to_end_accuracy": 0.7084942084942085,
+      "in_scope_accuracy_with_unsure": 0.5548780487804879,
+      "in_scope_coverage": 0.6432926829268293,
+      "in_scope_accuracy_when_answered": 0.8625592417061612,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7642811296534018
+    },
+    {
+      "threshold": 0.5,
+      "end_to_end_accuracy": 0.7084942084942085,
+      "in_scope_accuracy_with_unsure": 0.5548780487804879,
+      "in_scope_coverage": 0.6371951219512195,
+      "in_scope_accuracy_when_answered": 0.8708133971291866,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.7642811296534018
+    },
+    {
+      "threshold": 0.51,
+      "end_to_end_accuracy": 0.7046332046332047,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.6280487804878049,
+      "in_scope_accuracy_when_answered": 0.8737864077669902,
+      "oos_rejection_rate": 0.9736842105263158,
+      "objective": 0.761232349165597
+    },
+    {
+      "threshold": 0.52,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.625,
+      "in_scope_accuracy_when_answered": 0.8780487804878049,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7638639281129653
+    },
+    {
+      "threshold": 0.53,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.6097560975609756,
+      "in_scope_accuracy_when_answered": 0.9,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7638639281129653
+    },
+    {
+      "threshold": 0.54,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.6067073170731707,
+      "in_scope_accuracy_when_answered": 0.9045226130653267,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7638639281129653
+    },
+    {
+      "threshold": 0.55,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.6067073170731707,
+      "in_scope_accuracy_when_answered": 0.9045226130653267,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7638639281129653
+    },
+    {
+      "threshold": 0.56,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5487804878048781,
+      "in_scope_coverage": 0.6036585365853658,
+      "in_scope_accuracy_when_answered": 0.9090909090909091,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7638639281129653
+    },
+    {
+      "threshold": 0.57,
+      "end_to_end_accuracy": 0.7046332046332047,
+      "in_scope_accuracy_with_unsure": 0.5457317073170732,
+      "in_scope_coverage": 0.5975609756097561,
+      "in_scope_accuracy_when_answered": 0.9132653061224489,
+      "oos_rejection_rate": 0.9789473684210527,
+      "objective": 0.7623395378690629
+    },
+    {
+      "threshold": 0.58,
+      "end_to_end_accuracy": 0.7065637065637066,
+      "in_scope_accuracy_with_unsure": 0.5457317073170732,
+      "in_scope_coverage": 0.5945121951219512,
+      "in_scope_accuracy_when_answered": 0.9179487179487179,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7649711168164313
+    },
+    {
+      "threshold": 0.59,
+      "end_to_end_accuracy": 0.7027027027027027,
+      "in_scope_accuracy_with_unsure": 0.5396341463414634,
+      "in_scope_coverage": 0.5884146341463414,
+      "in_scope_accuracy_when_answered": 0.917098445595855,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7619223363286265
+    },
+    {
+      "threshold": 0.6,
+      "end_to_end_accuracy": 0.7007722007722008,
+      "in_scope_accuracy_with_unsure": 0.5365853658536586,
+      "in_scope_coverage": 0.5762195121951219,
+      "in_scope_accuracy_when_answered": 0.9312169312169312,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.760397946084724
+    },
+    {
+      "threshold": 0.61,
+      "end_to_end_accuracy": 0.6988416988416989,
+      "in_scope_accuracy_with_unsure": 0.5335365853658537,
+      "in_scope_coverage": 0.5701219512195121,
+      "in_scope_accuracy_when_answered": 0.9358288770053476,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7588735558408215
+    },
+    {
+      "threshold": 0.62,
+      "end_to_end_accuracy": 0.6988416988416989,
+      "in_scope_accuracy_with_unsure": 0.5335365853658537,
+      "in_scope_coverage": 0.5670731707317073,
+      "in_scope_accuracy_when_answered": 0.9408602150537635,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7588735558408215
+    },
+    {
+      "threshold": 0.63,
+      "end_to_end_accuracy": 0.696911196911197,
+      "in_scope_accuracy_with_unsure": 0.5304878048780488,
+      "in_scope_coverage": 0.5640243902439024,
+      "in_scope_accuracy_when_answered": 0.9405405405405406,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7573491655969191
+    },
+    {
+      "threshold": 0.64,
+      "end_to_end_accuracy": 0.696911196911197,
+      "in_scope_accuracy_with_unsure": 0.5304878048780488,
+      "in_scope_coverage": 0.5640243902439024,
+      "in_scope_accuracy_when_answered": 0.9405405405405406,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7573491655969191
+    },
+    {
+      "threshold": 0.65,
+      "end_to_end_accuracy": 0.696911196911197,
+      "in_scope_accuracy_with_unsure": 0.5304878048780488,
+      "in_scope_coverage": 0.5609756097560976,
+      "in_scope_accuracy_when_answered": 0.9456521739130435,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7573491655969191
+    },
+    {
+      "threshold": 0.66,
+      "end_to_end_accuracy": 0.694980694980695,
+      "in_scope_accuracy_with_unsure": 0.5274390243902439,
+      "in_scope_coverage": 0.5548780487804879,
+      "in_scope_accuracy_when_answered": 0.9505494505494505,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7558247753530167
+    },
+    {
+      "threshold": 0.67,
+      "end_to_end_accuracy": 0.6891891891891891,
+      "in_scope_accuracy_with_unsure": 0.5182926829268293,
+      "in_scope_coverage": 0.5457317073170732,
+      "in_scope_accuracy_when_answered": 0.9497206703910615,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7512516046213094
+    },
+    {
+      "threshold": 0.68,
+      "end_to_end_accuracy": 0.6891891891891891,
+      "in_scope_accuracy_with_unsure": 0.5182926829268293,
+      "in_scope_coverage": 0.5426829268292683,
+      "in_scope_accuracy_when_answered": 0.9550561797752809,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7512516046213094
+    },
+    {
+      "threshold": 0.69,
+      "end_to_end_accuracy": 0.6872586872586872,
+      "in_scope_accuracy_with_unsure": 0.5152439024390244,
+      "in_scope_coverage": 0.5396341463414634,
+      "in_scope_accuracy_when_answered": 0.9548022598870056,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.749727214377407
+    },
+    {
+      "threshold": 0.7,
+      "end_to_end_accuracy": 0.6872586872586872,
+      "in_scope_accuracy_with_unsure": 0.5152439024390244,
+      "in_scope_coverage": 0.5396341463414634,
+      "in_scope_accuracy_when_answered": 0.9548022598870056,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.749727214377407
+    },
+    {
+      "threshold": 0.71,
+      "end_to_end_accuracy": 0.6853281853281853,
+      "in_scope_accuracy_with_unsure": 0.5121951219512195,
+      "in_scope_coverage": 0.5365853658536586,
+      "in_scope_accuracy_when_answered": 0.9545454545454546,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7482028241335045
+    },
+    {
+      "threshold": 0.72,
+      "end_to_end_accuracy": 0.6814671814671814,
+      "in_scope_accuracy_with_unsure": 0.5060975609756098,
+      "in_scope_coverage": 0.5304878048780488,
+      "in_scope_accuracy_when_answered": 0.9540229885057471,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7451540436456996
+    },
+    {
+      "threshold": 0.73,
+      "end_to_end_accuracy": 0.6814671814671814,
+      "in_scope_accuracy_with_unsure": 0.5060975609756098,
+      "in_scope_coverage": 0.5304878048780488,
+      "in_scope_accuracy_when_answered": 0.9540229885057471,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7451540436456996
+    },
+    {
+      "threshold": 0.74,
+      "end_to_end_accuracy": 0.6776061776061776,
+      "in_scope_accuracy_with_unsure": 0.5,
+      "in_scope_coverage": 0.524390243902439,
+      "in_scope_accuracy_when_answered": 0.9534883720930233,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7421052631578947
+    },
+    {
+      "threshold": 0.75,
+      "end_to_end_accuracy": 0.6756756756756757,
+      "in_scope_accuracy_with_unsure": 0.4969512195121951,
+      "in_scope_coverage": 0.5182926829268293,
+      "in_scope_accuracy_when_answered": 0.9588235294117647,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7405808729139922
+    },
+    {
+      "threshold": 0.76,
+      "end_to_end_accuracy": 0.6718146718146718,
+      "in_scope_accuracy_with_unsure": 0.49085365853658536,
+      "in_scope_coverage": 0.5091463414634146,
+      "in_scope_accuracy_when_answered": 0.9640718562874252,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7375320924261874
+    },
+    {
+      "threshold": 0.77,
+      "end_to_end_accuracy": 0.6718146718146718,
+      "in_scope_accuracy_with_unsure": 0.49085365853658536,
+      "in_scope_coverage": 0.5091463414634146,
+      "in_scope_accuracy_when_answered": 0.9640718562874252,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7375320924261874
+    },
+    {
+      "threshold": 0.78,
+      "end_to_end_accuracy": 0.6698841698841699,
+      "in_scope_accuracy_with_unsure": 0.4878048780487805,
+      "in_scope_coverage": 0.5060975609756098,
+      "in_scope_accuracy_when_answered": 0.963855421686747,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.736007702182285
+    },
+    {
+      "threshold": 0.79,
+      "end_to_end_accuracy": 0.667953667953668,
+      "in_scope_accuracy_with_unsure": 0.4847560975609756,
+      "in_scope_coverage": 0.5,
+      "in_scope_accuracy_when_answered": 0.9695121951219512,
+      "oos_rejection_rate": 0.9842105263157894,
+      "objective": 0.7344833119383825
+    },
+    {
+      "threshold": 0.8,
+      "end_to_end_accuracy": 0.666023166023166,
+      "in_scope_accuracy_with_unsure": 0.47865853658536583,
+      "in_scope_coverage": 0.49390243902439024,
+      "in_scope_accuracy_when_answered": 0.9691358024691358,
+      "oos_rejection_rate": 0.9894736842105263,
+      "objective": 0.734066110397946
+    },
+    {
+      "threshold": 0.81,
+      "end_to_end_accuracy": 0.6640926640926641,
+      "in_scope_accuracy_with_unsure": 0.47560975609756095,
+      "in_scope_coverage": 0.49085365853658536,
+      "in_scope_accuracy_when_answered": 0.968944099378882,
+      "oos_rejection_rate": 0.9894736842105263,
+      "objective": 0.7325417201540436
+    },
+    {
+      "threshold": 0.82,
+      "end_to_end_accuracy": 0.6640926640926641,
+      "in_scope_accuracy_with_unsure": 0.47560975609756095,
+      "in_scope_coverage": 0.49085365853658536,
+      "in_scope_accuracy_when_answered": 0.968944099378882,
+      "oos_rejection_rate": 0.9894736842105263,
+      "objective": 0.7325417201540436
+    },
+    {
+      "threshold": 0.83,
+      "end_to_end_accuracy": 0.666023166023166,
+      "in_scope_accuracy_with_unsure": 0.47560975609756095,
+      "in_scope_coverage": 0.4878048780487805,
+      "in_scope_accuracy_when_answered": 0.975,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.735173299101412
+    },
+    {
+      "threshold": 0.84,
+      "end_to_end_accuracy": 0.6640926640926641,
+      "in_scope_accuracy_with_unsure": 0.4725609756097561,
+      "in_scope_coverage": 0.4847560975609756,
+      "in_scope_accuracy_when_answered": 0.9748427672955975,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.7336489088575096
+    },
+    {
+      "threshold": 0.85,
+      "end_to_end_accuracy": 0.6621621621621622,
+      "in_scope_accuracy_with_unsure": 0.4695121951219512,
+      "in_scope_coverage": 0.4817073170731707,
+      "in_scope_accuracy_when_answered": 0.9746835443037974,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.7321245186136072
+    },
+    {
+      "threshold": 0.86,
+      "end_to_end_accuracy": 0.6602316602316602,
+      "in_scope_accuracy_with_unsure": 0.46646341463414637,
+      "in_scope_coverage": 0.47560975609756095,
+      "in_scope_accuracy_when_answered": 0.9807692307692307,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.7306001283697048
+    },
+    {
+      "threshold": 0.87,
+      "end_to_end_accuracy": 0.6467181467181468,
+      "in_scope_accuracy_with_unsure": 0.4451219512195122,
+      "in_scope_coverage": 0.45426829268292684,
+      "in_scope_accuracy_when_answered": 0.9798657718120806,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.7199293966623876
+    },
+    {
+      "threshold": 0.88,
+      "end_to_end_accuracy": 0.640926640926641,
+      "in_scope_accuracy_with_unsure": 0.43597560975609756,
+      "in_scope_coverage": 0.4420731707317073,
+      "in_scope_accuracy_when_answered": 0.9862068965517241,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.7153562259306804
+    },
+    {
+      "threshold": 0.89,
+      "end_to_end_accuracy": 0.6351351351351351,
+      "in_scope_accuracy_with_unsure": 0.4268292682926829,
+      "in_scope_coverage": 0.4329268292682927,
+      "in_scope_accuracy_when_answered": 0.9859154929577465,
+      "oos_rejection_rate": 0.9947368421052631,
+      "objective": 0.710783055198973
+    },
+    {
+      "threshold": 0.9,
+      "end_to_end_accuracy": 0.6351351351351351,
+      "in_scope_accuracy_with_unsure": 0.42378048780487804,
+      "in_scope_coverage": 0.4298780487804878,
+      "in_scope_accuracy_when_answered": 0.9858156028368794,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.711890243902439
+    },
+    {
+      "threshold": 0.91,
+      "end_to_end_accuracy": 0.6312741312741312,
+      "in_scope_accuracy_with_unsure": 0.4176829268292683,
+      "in_scope_coverage": 0.42378048780487804,
+      "in_scope_accuracy_when_answered": 0.9856115107913669,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.7088414634146342
+    },
+    {
+      "threshold": 0.92,
+      "end_to_end_accuracy": 0.6216216216216216,
+      "in_scope_accuracy_with_unsure": 0.4024390243902439,
+      "in_scope_coverage": 0.40853658536585363,
+      "in_scope_accuracy_when_answered": 0.9850746268656716,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.7012195121951219
+    },
+    {
+      "threshold": 0.93,
+      "end_to_end_accuracy": 0.6158301158301158,
+      "in_scope_accuracy_with_unsure": 0.3932926829268293,
+      "in_scope_coverage": 0.39939024390243905,
+      "in_scope_accuracy_when_answered": 0.9847328244274809,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6966463414634146
+    },
+    {
+      "threshold": 0.94,
+      "end_to_end_accuracy": 0.5984555984555985,
+      "in_scope_accuracy_with_unsure": 0.36585365853658536,
+      "in_scope_coverage": 0.3719512195121951,
+      "in_scope_accuracy_when_answered": 0.9836065573770492,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6829268292682926
+    },
+    {
+      "threshold": 0.95,
+      "end_to_end_accuracy": 0.5907335907335908,
+      "in_scope_accuracy_with_unsure": 0.35365853658536583,
+      "in_scope_coverage": 0.3597560975609756,
+      "in_scope_accuracy_when_answered": 0.9830508474576272,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6768292682926829
+    },
+    {
+      "threshold": 0.96,
+      "end_to_end_accuracy": 0.5675675675675675,
+      "in_scope_accuracy_with_unsure": 0.3170731707317073,
+      "in_scope_coverage": 0.3231707317073171,
+      "in_scope_accuracy_when_answered": 0.9811320754716981,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6585365853658537
+    },
+    {
+      "threshold": 0.97,
+      "end_to_end_accuracy": 0.5501930501930502,
+      "in_scope_accuracy_with_unsure": 0.2896341463414634,
+      "in_scope_coverage": 0.29573170731707316,
+      "in_scope_accuracy_when_answered": 0.979381443298969,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6448170731707317
+    },
+    {
+      "threshold": 0.98,
+      "end_to_end_accuracy": 0.5212355212355212,
+      "in_scope_accuracy_with_unsure": 0.24390243902439024,
+      "in_scope_coverage": 0.24390243902439024,
+      "in_scope_accuracy_when_answered": 1.0,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.6219512195121951
+    },
+    {
+      "threshold": 0.99,
+      "end_to_end_accuracy": 0.4671814671814672,
+      "in_scope_accuracy_with_unsure": 0.15853658536585366,
+      "in_scope_coverage": 0.15853658536585366,
+      "in_scope_accuracy_when_answered": 1.0,
+      "oos_rejection_rate": 1.0,
+      "objective": 0.5792682926829268
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+[
+  {
+    "text": "allergies are bothering me",
+    "true": "allergy",
+    "pred": "diarrhea",
+    "confidence": 0.3192008435726166
+  },
+  {
+    "text": "allergy attack",
+    "true": "allergy",
+    "pred": "nausea_vomiting",
+    "confidence": 0.3703440725803375
+  },
+  {
+    "text": "i keep sneezing in the morning",
+    "true": "allergy",
+    "pred": "nausea_vomiting",
+    "confidence": 0.3545779287815094
+  },
+  {
+    "text": "my allergies are acting up",
+    "true": "allergy",
+    "pred": "nausea_vomiting",
+    "confidence": 0.33923599123954773
+  },
+  {
+    "text": "my allergies are so bad",
+    "true": "allergy",
+    "pred": "diarrhea",
+    "confidence": 0.4479779303073883
+  },
+  {
+    "text": "my allergies make my eyes itch",
+    "true": "allergy",
+    "pred": "nausea_vomiting",
+    "confidence": 0.34476420283317566
+  },
+  {
+    "text": "sneezing a lot",
+    "true": "allergy",
+    "pred": "skin_rash",
+    "confidence": 0.40915653109550476
+  },
+  {
+    "text": "watery eyes",
+    "true": "allergy",
+    "pred": "diarrhea",
+    "confidence": 0.45739904046058655
+  },
+  {
+    "text": "back pain after a long drive",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.3004318177700043
+  },
+  {
+    "text": "back pain from sleeping wrong",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.261798232793808
+  },
+  {
+    "text": "back pain when i bend over",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.3542540967464447
+  },
+  {
+    "text": "i can barely stand up straight because of my back",
+    "true": "back_pain",
+    "pred": "out_of_scope",
+    "confidence": 0.9994223117828369
+  },
+  {
+    "text": "lower back stiffness",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.33780449628829956
+  },
+  {
+    "text": "my back hurts when i sit too long",
+    "true": "back_pain",
+    "pred": "toothache",
+    "confidence": 0.4108337461948395
+  },
+  {
+    "text": "my spine hurts",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.4492804706096649
+  },
+  {
+    "text": "pain in my mid back",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.35881656408309937
+  },
+  {
+    "text": "stiff back",
+    "true": "back_pain",
+    "pred": "body_aches",
+    "confidence": 0.3185825049877167
+  },
+  {
+    "text": "aching all over",
+    "true": "body_aches",
+    "pred": "headache",
+    "confidence": 0.8453488349914551
+  },
+  {
+    "text": "i feel stiff and achy",
+    "true": "body_aches",
+    "pred": "stomach_ache",
+    "confidence": 0.45797300338745117
+  },
+  {
+    "text": "muscle aches",
+    "true": "body_aches",
+    "pred": "toothache",
+    "confidence": 0.35590189695358276
+  },
+  {
+    "text": "muscle pain everywhere",
+    "true": "body_aches",
+    "pred": "toothache",
+    "confidence": 0.6900872588157654
+  },
+  {
+    "text": "my body hurts all over",
+    "true": "body_aches",
+    "pred": "stomach_ache",
+    "confidence": 0.45360681414604187
+  },
+  {
+    "text": "my muscles are sore all over",
+    "true": "body_aches",
+    "pred": "stomach_ache",
+    "confidence": 0.4074912667274475
+  },
+  {
+    "text": "are you a bot",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.8627839088439941
+  },
+  {
+    "text": "can you give medical advice",
+    "true": "capabilities",
+    "pred": "greeting",
+    "confidence": 0.19927354156970978
+  },
+  {
+    "text": "help",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.9987768530845642
+  },
+  {
+    "text": "what's your purpose",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.4430505335330963
+  },
+  {
+    "text": "are you a robot",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.9467835426330566
+  },
+  {
+    "text": "clear something up, are you a robot",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.4892524480819702
+  },
+  {
+    "text": "i would like to know if you are an artificial intelligence being",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 1.0
+  },
+  {
+    "text": "would you be classified as a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 1.0
+  },
+  {
+    "text": "my nose is clogged",
+    "true": "congestion",
+    "pred": "diarrhea",
+    "confidence": 0.4296949505805969
+  },
+  {
+    "text": "my nose is so stuffy",
+    "true": "congestion",
+    "pred": "cough",
+    "confidence": 0.965353786945343
+  },
+  {
+    "text": "i had diarrhea all night",
+    "true": "diarrhea",
+    "pred": "fatigue",
+    "confidence": 0.5559381246566772
+  },
+  {
+    "text": "the runs",
+    "true": "diarrhea",
+    "pred": "dizziness",
+    "confidence": 0.19264137744903564
+  },
+  {
+    "text": "dizzy and can't focus",
+    "true": "dizziness",
+    "pred": "diarrhea",
+    "confidence": 0.47568631172180176
+  },
+  {
+    "text": "i feel dizzy when i bend down",
+    "true": "dizziness",
+    "pred": "diarrhea",
+    "confidence": 0.4562477171421051
+  },
+  {
+    "text": "i feel lightheaded when i get up",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.34388846158981323
+  },
+  {
+    "text": "i feel spaced out and dizzy",
+    "true": "dizziness",
+    "pred": "diarrhea",
+    "confidence": 0.39920318126678467
+  },
+  {
+    "text": "i feel woozy",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.641098141670227
+  },
+  {
+    "text": "i'm feeling dizzy",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.31079792976379395
+  },
+  {
+    "text": "i've been dizzy for two days",
+    "true": "dizziness",
+    "pred": "diarrhea",
+    "confidence": 0.4777943193912506
+  },
+  {
+    "text": "lightheaded all day",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.60063236951828
+  },
+  {
+    "text": "my head feels light",
+    "true": "dizziness",
+    "pred": "fever",
+    "confidence": 0.5304728746414185
+  },
+  {
+    "text": "ear pain and some fluid",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.7229518890380859
+  },
+  {
+    "text": "earache",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.7080463767051697
+  },
+  {
+    "text": "i have a painful ear",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.78382807970047
+  },
+  {
+    "text": "my ears feel plugged",
+    "true": "ear_pain",
+    "pred": "sore_throat",
+    "confidence": 0.47682055830955505
+  },
+  {
+    "text": "my ears hurt",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.8277497291564941
+  },
+  {
+    "text": "my ears popped and now hurt",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.8067413568496704
+  },
+  {
+    "text": "my kid has an earache",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.8336739540100098
+  },
+  {
+    "text": "sharp pain in my ear",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.7396566271781921
+  },
+  {
+    "text": "stabbing pain in ear",
+    "true": "ear_pain",
+    "pred": "toothache",
+    "confidence": 0.7048562169075012
+  },
+  {
+    "text": "i feel weak and shaky",
+    "true": "fatigue",
+    "pred": "diarrhea",
+    "confidence": 0.33159899711608887
+  },
+  {
+    "text": "i'm tired even after sleeping",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.5681802034378052
+  },
+  {
+    "text": "i keep getting chills and sweats",
+    "true": "fever",
+    "pred": "cold",
+    "confidence": 0.8184882402420044
+  },
+  {
+    "text": "Fever and chills",
+    "true": "fever",
+    "pred": "shortness_of_breath",
+    "confidence": 0.9673038721084595
+  },
+  {
+    "text": "high fever, chills and aches, i think it's flu",
+    "true": "flu",
+    "pred": "cough",
+    "confidence": 0.702584445476532
+  },
+  {
+    "text": "my whole family has the flu",
+    "true": "flu",
+    "pred": "cough",
+    "confidence": 0.8913283944129944
+  },
+  {
+    "text": "until next time",
+    "true": "goodbye",
+    "pred": "fatigue",
+    "confidence": 0.4860927164554596
+  },
+  {
+    "text": "Farewell",
+    "true": "goodbye",
+    "pred": "fever",
+    "confidence": 0.7427436113357544
+  },
+  {
+    "text": "Stop",
+    "true": "goodbye",
+    "pred": "diarrhea",
+    "confidence": 0.3481258451938629
+  },
+  {
+    "text": "Thank you that's all",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.316231906414032
+  },
+  {
+    "text": "hi there, i have a question",
+    "true": "greeting",
+    "pred": "capabilities",
+    "confidence": 0.9861102104187012
+  },
+  {
+    "text": "good morning, ai",
+    "true": "greeting",
+    "pred": "goodbye",
+    "confidence": 0.6210711598396301
+  },
+  {
+    "text": "heyo",
+    "true": "greeting",
+    "pred": "fatigue",
+    "confidence": 0.47700777649879456
+  },
+  {
+    "text": "hows are ya",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.9995073080062866
+  },
+  {
+    "text": "wassup",
+    "true": "greeting",
+    "pred": "fatigue",
+    "confidence": 0.47700777649879456
+  },
+  {
+    "text": "Good morning I need help",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.5629404187202454
+  },
+  {
+    "text": "Hello I need help",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.8406868577003479
+  },
+  {
+    "text": "Hello I'm sick",
+    "true": "greeting",
+    "pred": "skin_rash",
+    "confidence": 0.32822275161743164
+  },
+  {
+    "text": "Hi I'm not feeling well",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.9011582136154175
+  },
+  {
+    "text": "Top of the morning",
+    "true": "greeting",
+    "pred": "fatigue",
+    "confidence": 0.3108217120170593
+  },
+  {
+    "text": "my head hurts so much",
+    "true": "headache",
+    "pred": "diarrhea",
+    "confidence": 0.3197929263114929
+  },
+  {
+    "text": "i can't sleep",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6814725995063782
+  },
+  {
+    "text": "i can't stay asleep",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6898242235183716
+  },
+  {
+    "text": "i cant sleep",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6814725995063782
+  },
+  {
+    "text": "i lie in bed and can't sleep",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6864421367645264
+  },
+  {
+    "text": "i sleep two hours a night",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6656106114387512
+  },
+  {
+    "text": "i wake up a lot during the night",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.6080100536346436
+  },
+  {
+    "text": "insomina",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.47700777649879456
+  },
+  {
+    "text": "no sleep for two nights",
+    "true": "insomnia",
+    "pred": "fatigue",
+    "confidence": 0.5888561010360718
+  },
+  {
+    "text": "can't keep anything down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.70408034324646
+  },
+  {
+    "text": "feeling queasy all day",
+    "true": "nausea_vomiting",
+    "pred": "diarrhea",
+    "confidence": 0.43579673767089844
+  },
+  {
+    "text": "i ate something bad and i'm vomiting",
+    "true": "nausea_vomiting",
+    "pred": "stomach_ache",
+    "confidence": 0.3832664489746094
+  },
+  {
+    "text": "i feel woozy and nauseous",
+    "true": "nausea_vomiting",
+    "pred": "skin_rash",
+    "confidence": 0.42869627475738525
+  },
+  {
+    "text": "i keep retching",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.5904294848442078
+  },
+  {
+    "text": "i've been sick, as in vomiting",
+    "true": "nausea_vomiting",
+    "pred": "skin_rash",
+    "confidence": 0.44240444898605347
+  },
+  {
+    "text": "my child keeps vomiting",
+    "true": "nausea_vomiting",
+    "pred": "stomach_ache",
+    "confidence": 0.394202321767807
+  },
+  {
+    "text": "i need a refill of my prescription",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.5478481650352478
+  },
+  {
+    "text": "my period is late",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.5331562757492065
+  },
+  {
+    "text": "play some music",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.5093581676483154
+  },
+  {
+    "text": "should i go to the emergency room",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.5869637131690979
+  },
+  {
+    "text": "absolutely not",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.32843586802482605
+  },
+  {
+    "text": "are you from here",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.9856115579605103
+  },
+  {
+    "text": "confirm my friday reservation at 2:00",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.3943604826927185
+  },
+  {
+    "text": "do my tires have enough air in them",
+    "true": "out_of_scope",
+    "pred": "cold",
+    "confidence": 0.5313674807548523
+  },
+  {
+    "text": "enable whisper mode",
+    "true": "out_of_scope",
+    "pred": "dizziness",
+    "confidence": 0.15056383609771729
+  },
+  {
+    "text": "i need to block all transactions from going through on my citi checking account straight away",
+    "true": "out_of_scope",
+    "pred": "stomach_ache",
+    "confidence": 0.1692640334367752
+  },
+  {
+    "text": "i need to obtain and uber",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.4437592327594757
+  },
+  {
+    "text": "i need you to stop talking",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.9954677820205688
+  },
+  {
+    "text": "king of acid",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.3506055474281311
+  },
+  {
+    "text": "location currently, where",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.8825631141662598
+  },
+  {
+    "text": "my card is scuffed up and won't work",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.3483147919178009
+  },
+  {
+    "text": "nice song what is it",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.9150388836860657
+  },
+  {
+    "text": "possibly either one",
+    "true": "out_of_scope",
+    "pred": "goodbye",
+    "confidence": 0.9820225834846497
+  },
+  {
+    "text": "report a card lost for me",
+    "true": "out_of_scope",
+    "pred": "stomach_ache",
+    "confidence": 0.053635239601135254
+  },
+  {
+    "text": "roll an 8 sided dice",
+    "true": "out_of_scope",
+    "pred": "toothache",
+    "confidence": 0.5818249583244324
+  },
+  {
+    "text": "the birds fly with there wings",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.5166010856628418
+  },
+  {
+    "text": "what amount of gas do i have left",
+    "true": "out_of_scope",
+    "pred": "allergy",
+    "confidence": 0.1892162710428238
+  },
+  {
+    "text": "what holiday is coming up",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.6200138330459595
+  },
+  {
+    "text": "what was said",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.2757689654827118
+  },
+  {
+    "text": "who conjured you",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.46731024980545044
+  },
+  {
+    "text": "why do we dream",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.5366108417510986
+  },
+  {
+    "text": "you want to know about current time now",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.6400747895240784
+  },
+  {
+    "text": "itchy spots",
+    "true": "skin_rash",
+    "pred": "nausea_vomiting",
+    "confidence": 0.3335190415382385
+  },
+  {
+    "text": "my baby has a rash",
+    "true": "skin_rash",
+    "pred": "stomach_ache",
+    "confidence": 0.44566765427589417
+  },
+  {
+    "text": "my throat is on fire",
+    "true": "sore_throat",
+    "pred": "congestion",
+    "confidence": 0.7896333932876587
+  },
+  {
+    "text": "i feel bloated and my stomach hurts",
+    "true": "stomach_ache",
+    "pred": "skin_rash",
+    "confidence": 0.4058825671672821
+  },
+  {
+    "text": "i think i have a stomach bug, my stomach hurts",
+    "true": "stomach_ache",
+    "pred": "skin_rash",
+    "confidence": 0.3810049593448639
+  },
+  {
+    "text": "my stomach is upset",
+    "true": "stomach_ache",
+    "pred": "skin_rash",
+    "confidence": 0.40971195697784424
+  },
+  {
+    "text": "i am happy you did that for me",
+    "true": "thanks",
+    "pred": "insomnia",
+    "confidence": 0.1777244210243225
+  },
+  {
+    "text": "i owe you one",
+    "true": "thanks",
+    "pred": "goodbye",
+    "confidence": 0.9865554571151733
+  },
+  {
+    "text": "you have my sincere gratitude",
+    "true": "thanks",
+    "pred": "out_of_scope",
+    "confidence": 0.999915361404419
+  },
+  {
+    "text": "abscess in my mouth",
+    "true": "toothache",
+    "pred": "fatigue",
+    "confidence": 0.6504570841789246
+  },
+  {
+    "text": "dental pain",
+    "true": "toothache",
+    "pred": "stomach_ache",
+    "confidence": 0.40486472845077515
+  }
+]

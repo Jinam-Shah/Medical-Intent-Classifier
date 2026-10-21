@@ -1,0 +1,172 @@
+{
+  "n_samples": 518,
+  "accuracy": 0.7567567567567568,
+  "f1_weighted": 0.7526982019078462,
+  "f1_macro": 0.592435061245387,
+  "per_class": {
+    "allergy": {
+      "precision": 0.5,
+      "recall": 0.1111111111111111,
+      "f1-score": 0.18181818181818182,
+      "support": 9.0
+    },
+    "back_pain": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 9.0
+    },
+    "body_aches": {
+      "precision": 0.375,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.35294117647058826,
+      "support": 9.0
+    },
+    "capabilities": {
+      "precision": 0.8947368421052632,
+      "recall": 0.68,
+      "f1-score": 0.7727272727272727,
+      "support": 25.0
+    },
+    "cold": {
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 14.0
+    },
+    "congestion": {
+      "precision": 0.9285714285714286,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.896551724137931,
+      "support": 15.0
+    },
+    "cough": {
+      "precision": 0.8125,
+      "recall": 1.0,
+      "f1-score": 0.896551724137931,
+      "support": 13.0
+    },
+    "diarrhea": {
+      "precision": 0.35,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.4827586206896552,
+      "support": 9.0
+    },
+    "dizziness": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 9.0
+    },
+    "ear_pain": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 9.0
+    },
+    "fatigue": {
+      "precision": 0.21212121212121213,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.3333333333333333,
+      "support": 9.0
+    },
+    "fever": {
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8571428571428571,
+      "support": 14.0
+    },
+    "flu": {
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.9230769230769231,
+      "support": 14.0
+    },
+    "goodbye": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 20.0
+    },
+    "greeting": {
+      "precision": 0.8333333333333334,
+      "recall": 0.6,
+      "f1-score": 0.6976744186046512,
+      "support": 25.0
+    },
+    "headache": {
+      "precision": 0.9285714285714286,
+      "recall": 0.9285714285714286,
+      "f1-score": 0.9285714285714286,
+      "support": 14.0
+    },
+    "how_are_you": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "f1-score": 0.7,
+      "support": 14.0
+    },
+    "insomnia": {
+      "precision": 0.2,
+      "recall": 0.1111111111111111,
+      "f1-score": 0.14285714285714285,
+      "support": 9.0
+    },
+    "nausea_vomiting": {
+      "precision": 0.25,
+      "recall": 0.2222222222222222,
+      "f1-score": 0.23529411764705882,
+      "support": 9.0
+    },
+    "out_of_scope": {
+      "precision": 0.9704142011834319,
+      "recall": 0.8631578947368421,
+      "f1-score": 0.9136490250696379,
+      "support": 190.0
+    },
+    "shortness_of_breath": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1-score": 0.967741935483871,
+      "support": 15.0
+    },
+    "skin_rash": {
+      "precision": 0.5,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.6086956521739131,
+      "support": 9.0
+    },
+    "sore_throat": {
+      "precision": 0.9333333333333333,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9333333333333333,
+      "support": 15.0
+    },
+    "stomach_ache": {
+      "precision": 0.35294117647058826,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.46153846153846156,
+      "support": 9.0
+    },
+    "thanks": {
+      "precision": 0.9047619047619048,
+      "recall": 0.8636363636363636,
+      "f1-score": 0.8837209302325582,
+      "support": 22.0
+    },
+    "toothache": {
+      "precision": 0.3684210526315789,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.5,
+      "support": 9.0
+    }
+  },
+  "split": "val",
+  "mean_confidence": 0.8371931910514832,
+  "evaluated_at": "2026-10-21T17:07:31+00:00",
+  "model": {
+    "model_name": "bilstm_attention",
+    "best_epoch": 15,
+    "trained_at": "2026-10-21T17:07:29+00:00"
+  }
+}
