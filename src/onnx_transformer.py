@@ -23,6 +23,10 @@ class OnnxTransformerClassifier:
         model_path = resolve(model_path)
         model_dir = model_path.parent if model_path.suffix == ".onnx" else model_path
         meta = json.loads((model_dir / ONNX_META_FILE).read_text(encoding="utf-8"))
+        if "input_names" not in meta or not (model_dir / "tokenizer.json").exists():
+            raise RuntimeError(
+                f"{model_dir} doesn't contain a transformer model (no input_names / tokenizer.json). "
+                "It looks like BiLSTM artifacts: check HF_MODEL_REVISION, or use MODEL_BACKEND=onnx.")
         self.labels = meta["labels"]
         self.input_names = meta["input_names"]
         self.max_length = meta["max_length"]

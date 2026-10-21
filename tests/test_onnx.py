@@ -73,3 +73,11 @@ def test_onnx_serving_path_never_imports_torch(onnx_model):
     result = subprocess.run([sys.executable, "-c", script], cwd=PROJECT_ROOT, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip().endswith("ok")
+
+
+def test_transformer_backend_rejects_bilstm_artifacts_with_a_clear_error(onnx_model):
+    from src.onnx_transformer import OnnxTransformerClassifier
+
+    _, path = onnx_model
+    with pytest.raises(RuntimeError, match="HF_MODEL_REVISION"):
+        OnnxTransformerClassifier(path.parent)
