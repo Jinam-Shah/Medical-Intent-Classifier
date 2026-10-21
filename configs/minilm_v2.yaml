@@ -1,0 +1,27 @@
+# Fine-tuned MiniLM-L6 (22M params, sentence-embedding pretraining) on dataset v2 (26 intents).
+# Hyperparameters are common fine-tuning defaults; tuning decisions use the validation split only.
+
+seed: 42
+run_name: minilm_v2
+
+data:
+  intents_file: data/v2/intents.json
+  splits_dir: data/v2/splits
+
+model:
+  base_model: sentence-transformers/all-MiniLM-L6-v2
+  revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41   # pinned Hugging Face commit, Apache 2.0
+  max_length: 64
+
+training:
+  batch_size: 16
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_epochs: 20
+  early_stopping_patience: 3
+  early_stopping_min_delta: 0.001
+
+output_dir: outputs/models/minilm_v2/hf
+onnx_dir: outputs/models/minilm_v2/onnx
+reports_dir: reports/v2/minilm_v2

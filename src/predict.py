@@ -67,8 +67,9 @@ def main():
 
     parser = argparse.ArgumentParser(description="Predict the intent of one or more sentences.")
     parser.add_argument("texts", nargs="+")
-    parser.add_argument("--backend", choices=["pytorch", "onnx"], default="pytorch")
-    parser.add_argument("--model-path", help="checkpoint (.pt) or ONNX model (.onnx)")
+    parser.add_argument("--backend", choices=["pytorch", "onnx", "transformer", "transformer-onnx"],
+                        default="pytorch")
+    parser.add_argument("--model-path", help="checkpoint (.pt), ONNX model (.onnx), or transformer model directory")
     args = parser.parse_args()
 
     clf = load_classifier(args.backend, args.model_path)

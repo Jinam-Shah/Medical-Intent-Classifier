@@ -38,7 +38,13 @@ def load_classifier(backend="pytorch", model_path=None):
     if backend == "onnx":
         from src.onnx_predict import OnnxIntentClassifier
         return OnnxIntentClassifier(model_path or DEFAULT_ONNX_MODEL)
-    raise ValueError(f"unknown backend {backend!r}; use 'pytorch' or 'onnx'")
+    if backend == "transformer":
+        from src.transformer import TransformerClassifier
+        return TransformerClassifier(model_path)
+    if backend == "transformer-onnx":
+        from src.onnx_transformer import OnnxTransformerClassifier
+        return OnnxTransformerClassifier(model_path)
+    raise ValueError(f"unknown backend {backend!r}; use 'pytorch', 'onnx', 'transformer' or 'transformer-onnx'")
 
 
 def top_k_prediction(probs, labels, k=3):

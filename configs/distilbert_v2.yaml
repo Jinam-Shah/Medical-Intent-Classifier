@@ -1,0 +1,27 @@
+# Fine-tuned DistilBERT base uncased (66M params) on dataset v2 (26 intents).
+# Hyperparameters are common fine-tuning defaults; tuning decisions use the validation split only.
+
+seed: 42
+run_name: distilbert_v2
+
+data:
+  intents_file: data/v2/intents.json
+  splits_dir: data/v2/splits
+
+model:
+  base_model: distilbert/distilbert-base-uncased
+  revision: 12040accade4e8a0f71eabdb258fecc2e7e948be   # pinned Hugging Face commit, Apache 2.0
+  max_length: 64
+
+training:
+  batch_size: 16
+  learning_rate: 0.00005
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_epochs: 20
+  early_stopping_patience: 3
+  early_stopping_min_delta: 0.001
+
+output_dir: outputs/models/distilbert_v2/hf
+onnx_dir: outputs/models/distilbert_v2/onnx
+reports_dir: reports/v2/distilbert_v2
