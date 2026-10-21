@@ -19,4 +19,4 @@ services:
       - key: HF_MODEL_REPO
         value: Jinamshah/medical-intent-classifier
       - key: HF_MODEL_REVISION
-        value: f5c65480a954df36f13c507da3c821d1b70339e0
+        value: 4b3f12d2392044f73d2b75ff04bafa0a18b83bd6   # MiniLM v2 (26 intents); BiLSTM v1 was f5c6548...
