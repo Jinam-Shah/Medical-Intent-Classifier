@@ -20,7 +20,8 @@ from src.serving import load_classifier
 def main():
     parser = argparse.ArgumentParser(description="Single-query latency benchmark.")
     parser.add_argument("--config", default="configs/bilstm.yaml")
-    parser.add_argument("--backend", choices=["pytorch", "pytorch-unpadded", "onnx"], default="pytorch",
+    parser.add_argument("--backend", choices=["pytorch", "pytorch-unpadded", "onnx", "transformer",
+                                              "transformer-onnx"], default="pytorch",
                         help="pytorch-unpadded runs the ONNX export's graph in PyTorch, to separate "
                              "the effect of skipping padding from the effect of ONNX Runtime")
     parser.add_argument("--model-path", help="checkpoint (.pt) or ONNX model (.onnx); default per backend")
@@ -45,11 +46,21 @@ def main():
                 return np.concatenate([wrapper(torch.tensor([encode_ids(t, clf.vocab, clf.max_seq_length,
                                                                          clf.stemming)])).numpy() for t in texts])
             clf.logits = unpadded_logits
+    elif args.backend == "transformer":
+        import torch
+        if args.threads:
+            torch.set_num_threads(args.threads)
+        clf = load_classifier("transformer", args.model_path)
+        threads, version = torch.get_num_threads(), f"torch {torch.__version__}"
     else:
         import onnxruntime as ort
 
-        from src.onnx_predict import OnnxIntentClassifier
-        clf = OnnxIntentClassifier(args.model_path or "outputs/models/bilstm/model.onnx", num_threads=args.threads)
+        if args.backend == "transformer-onnx":
+            from src.onnx_transformer import OnnxTransformerClassifier
+            clf = OnnxTransformerClassifier(args.model_path, num_threads=args.threads)
+        else:
+            from src.onnx_predict import OnnxIntentClassifier
+            clf = OnnxIntentClassifier(args.model_path or "outputs/models/bilstm/model.onnx", num_threads=args.threads)
         threads, version = args.threads or "default", f"onnxruntime {ort.__version__}"
 
     cfg = load_config(resolve(args.config))

@@ -96,6 +96,7 @@ def main():
     cfg = load_config(resolve(args.config))
     splits_dir = resolve(cfg["data"]["splits_dir"])
     texts = [r["text"] for name in ("train", "val", "test", "oos_val", "oos_test")
+             if (splits_dir / f"{name}.jsonl").exists()  # oos_* exist only for dataset v1
              for r in load_split(splits_dir, name)]
     report = {"onnx_file": str(onnx_path), "size_mb": round(onnx_path.stat().st_size / 2**20, 1),
               "checkpoint_size_mb": round(checkpoint.stat().st_size / 2**20, 1),
