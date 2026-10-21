@@ -27,6 +27,7 @@ from api.schemas import (
     Prediction,
     PredictRequest,
 )
+from src.safety import red_flag
 from src.serving import load_classifier  # torch-free; the chosen backend is imported lazily
 
 DISCLAIMER = (
@@ -34,6 +35,7 @@ DISCLAIMER = (
     "Consult a healthcare professional; in an emergency, contact local emergency services."
 )
 UNSURE_INTENT = "unsure"
+OUT_OF_SCOPE = "out_of_scope"  # explicit intent in dataset v2 models
 UNSURE_MESSAGE = "I'm not sure what you mean. Could you rephrase, or describe your main symptom?"
 TOP_K = 3
 
@@ -76,14 +78,16 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
         for text, p in zip(texts, probs, strict=True):
             order = np.argsort(p)[::-1][:TOP_K]
             top = [IntentScore(intent=clf.labels[i], confidence=float(p[i])) for i in order]
-            confident = top[0].confidence >= threshold
+            confident = top[0].confidence >= threshold and top[0].intent != OUT_OF_SCOPE
+            flag = red_flag(text)
             results.append(Prediction(
                 text=text,
-                intent=top[0].intent if confident else UNSURE_INTENT,
+                intent=top[0].intent if confident or top[0].intent == OUT_OF_SCOPE else UNSURE_INTENT,
                 confidence=top[0].confidence,
                 is_confident=confident,
                 top_k=top,
-                message=None if confident else UNSURE_MESSAGE,
+                message=flag[1] if flag else (None if confident else UNSURE_MESSAGE),
+                safety_alert=flag[0] if flag else None,
                 disclaimer=DISCLAIMER,
             ))
         return results
@@ -123,7 +127,7 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
     if enable_ui:
         import gradio as gr  # optional dependency, only in the UI image
 
-        from api.ui import build_demo, load_responses
+        from api.ui import build_demo, load_responses, mount
 
         def ui_classifier():
             clf = getattr(app.state, "classifier", None)
@@ -131,9 +135,8 @@ def create_app(model_path=None, confidence_threshold=None, backend=None, enable_
                 raise gr.Error("Model is still loading, try again in a few seconds.")
             return clf
 
-        demo = build_demo(ui_classifier, lambda: app.state.confidence_threshold,
-                          DISCLAIMER, UNSURE_MESSAGE, load_responses())
-        app = gr.mount_gradio_app(app, demo, path="/ui")
+        demo = build_demo(ui_classifier, lambda: app.state.confidence_threshold, load_responses())
+        app = mount(app, demo, path="/ui")
 
     return app
 
