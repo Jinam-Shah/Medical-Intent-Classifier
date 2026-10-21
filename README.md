@@ -8,6 +8,7 @@ Intent classification for a healthcare chatbot. A fine-tuned **MiniLM** transfor
 
 > The demo runs on Render's free tier, which sleeps after 15 minutes without traffic. The first visit after that can take a couple of minutes; after that it's fast.
 
+[![CI](https://github.com/Jinam-Shah/Medical-Intent-Classifier/actions/workflows/ci.yml/badge.svg)](https://github.com/Jinam-Shah/Medical-Intent-Classifier/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.14-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -255,6 +256,16 @@ python scripts/smoke_test.py https://medical-intent-classifier.onrender.com
 python scripts/smoke_test.py http://localhost:8000
 ```
 
+## Continuous integration
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push and pull request:
+
+1. **Lint:** `ruff check .`
+2. **Tests:** the full pytest suite on a clean Ubuntu runner, installed from the pinned requirements (CPU-only torch).
+3. **Docker build + smoke test:** builds the image exactly as Render does (model downloaded from the Hugging Face revision pinned in `render.yaml`), runs it with Render's free-tier limits (512 MB, 0.1 CPU), and runs `scripts/smoke_test.py` against it.
+
+Render is set to `autoDeployTrigger: checksPass`, so it only deploys commits that passed CI. `tests/test_deploy_config.py` checks that `render.yaml` pins a full commit hash and that the last Dockerfile stage serves the same model type the deploy downloads (a mismatch between the two once broke a deploy).
+
 ## Tests
 
 ```bash
@@ -297,6 +308,7 @@ src/hub.py               publish/download model artifacts on the Hugging Face Hu
 Dockerfile               slim ONNX serving image (default) and a PyTorch variant
 render.yaml              Render Blueprint for the free hosted demo
 scripts/smoke_test.py    end-to-end checks against any running deployment
+.github/workflows/ci.yml lint, tests, Docker build + smoke test on every push
 requirements-serve.txt   runtime-only dependencies for the slim image
 chatbot.py, run.py       command-line interface
 reports/bilstm/          committed evaluation results and figures
@@ -332,7 +344,7 @@ BiLSTM v2 on the same test split, for comparison:
 - [x] Phase 3 (reworked): dataset v2 with 14 new intents and CLINC150 data, replacing the planned small top-up of v1
 - [x] Phase 4: FastAPI service, calibrated low-confidence fallback, ONNX export, Docker
 - [x] Phase 5: web chat demo (custom frontend, replacing an earlier Gradio UI), live on Render (free tier); model on the Hugging Face Hub. A Hugging Face ZeroGPU Space can follow once the account is 30 days old
-- [ ] Phase 6: GitHub Actions CI
+- [x] Phase 6: GitHub Actions CI (lint, tests, Docker build + smoke test); Render deploys only after CI passes
 
 ## Author
 

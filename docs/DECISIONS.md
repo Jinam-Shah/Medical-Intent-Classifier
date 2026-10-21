@@ -231,3 +231,11 @@ Short records of the significant choices in this project: the problem, the optio
 **Why stateless.** No session store to run on a free tier, no user data kept on the server, and nothing breaks when Render restarts or sleeps the service. Because the state comes from the client, it's treated as untrusted: only known keys and values are kept (`clean_state`), and requests over 2 KB of state are rejected.
 
 **Limits.** Duration and severity are parsed with rules (`parse_duration`, `parse_severity`), not a model. The tailored note is generic guidance (for example "severe or longer than a week → see a doctor"), not clinical logic.
+
+## D31. CI that builds and smoke-tests the real image, and Render deploys only after CI passes
+
+**Problem.** A push once reached Render with code expecting the MiniLM model while `render.yaml` still pointed at the BiLSTM files. The deploy crashed at startup (`KeyError: 'input_names'`), and nothing had checked the combination before Render did.
+
+**Choice.** Three GitHub Actions jobs: ruff, the full test suite, and a Docker job that builds the image the way Render does (model from the Hugging Face revision pinned in `render.yaml`), runs it under the free-tier limits (512 MB, 0.1 CPU), and runs the smoke test against it. `render.yaml` uses `autoDeployTrigger: checksPass`. `tests/test_deploy_config.py` adds fast checks for the same failure class: a full commit hash is pinned, the last Dockerfile stage is the served one (Render can't pick a target), and its backend matches the model type.
+
+**Cost.** Free for a public repository. The Docker job reuses layers through the GitHub Actions cache.

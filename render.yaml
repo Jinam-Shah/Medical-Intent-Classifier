@@ -9,7 +9,7 @@ services:
     plan: free
     region: virginia
     branch: main
-    autoDeployTrigger: commit
+    autoDeployTrigger: checksPass   # deploy only after GitHub Actions CI passes
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /health
