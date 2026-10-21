@@ -16,14 +16,16 @@ import time
 import urllib.error
 import urllib.request
 
-# Expected behaviour of the published model (revision f5c6548..., threshold 0.98, T = 1.849).
-EXPECTED_THRESHOLD = 0.98
+# Expected behaviour of the deployed v2 model (MiniLM-L6, 26 intents, threshold chosen on validation).
+EXPECTED_LABELS = 26
+EXPECTED_THRESHOLD = 0.49
 CASES = [
     ("I have a fever", "fever"),
+    ("my stomach hurts", "stomach_ache"),
     ("thank you so much", "thanks"),
-    ("Hola", "unsure"),             # unknown word -> low confidence
-    ("Is this serious?", "unsure"),  # out of scope -> fallback
+    ("what's the weather like today", "out_of_scope"),
 ]
+SAFETY_CASE = ("I have chest pain", "emergency")
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -94,7 +96,8 @@ def main():
         sys.exit(1)
 
     status, _, info, _ = request(base, "/model-info")
-    check("GET /model-info", status == 200 and info.get("backend") == "onnx" and len(info.get("labels", [])) == 12,
+    check("GET /model-info", status == 200 and info.get("backend") == "transformer-onnx"
+          and len(info.get("labels", [])) == EXPECTED_LABELS,
           f"backend={info.get('backend')}, labels={len(info.get('labels', []))}")
     check("validated threshold in use", info.get("confidence_threshold") == EXPECTED_THRESHOLD,
           f"threshold={info.get('confidence_threshold')}, temperature={info.get('temperature')}")
@@ -106,6 +109,11 @@ def main():
         conf = body.get("confidence", 0) if isinstance(body, dict) else 0
         check(f"POST /predict {text!r} -> {expected}", status == 200 and got == expected,
               f"got {got} @ {conf:.3f}, {secs * 1000:.0f} ms")
+
+    status, _, body, _ = request(base, "/predict", {"text": SAFETY_CASE[0]})
+    check(f"safety rule: {SAFETY_CASE[0]!r} -> {SAFETY_CASE[1]}",
+          status == 200 and isinstance(body, dict) and body.get("safety_alert") == SAFETY_CASE[1],
+          f"safety_alert={body.get('safety_alert') if isinstance(body, dict) else None}")
 
     status, _, body, _ = request(base, "/predict/batch", {"texts": ["hello", "my head hurts a lot"]})
     results = body.get("results", []) if isinstance(body, dict) else []

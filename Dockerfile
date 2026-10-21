@@ -4,9 +4,10 @@
 # (Training on Linux takes a different numerical path than the run recorded in METRICS.md,
 #  so an image that trained itself would serve a model nobody evaluated. See DECISIONS D18.)
 #
+# Served model (default): MiniLM-L6 fine-tuned on dataset v2, fp32 ONNX (DECISIONS D26).
 # Model source (build arg MODEL_SOURCE):
-#   local (default)  copy outputs/models/bilstm/ from the build context; create it first with
-#                    python -m src.train && python -m src.threshold --split val && python -m src.export_onnx
+#   local (default)  copy MODEL_LOCAL_DIR from the build context (default outputs/models/minilm_v2/onnx_fp32;
+#                    create it with `python -m src.transformer train/export` and `python -m src.evaluate_v2 calibrate`)
 #   hub              download a pinned revision from the Hugging Face Hub
 #                    (HF_MODEL_REPO, HF_MODEL_REVISION); used by Render and CI
 #
@@ -22,6 +23,7 @@
 
 ARG PYTHON_IMAGE=python:3.11.9-slim-bookworm
 ARG MODEL_SOURCE=local
+ARG MODEL_LOCAL_DIR=outputs/models/minilm_v2/onnx_fp32
 
 # ---------------------------------------------------------------- shared base
 FROM ${PYTHON_IMAGE} AS base
@@ -36,10 +38,8 @@ RUN useradd --create-home --uid 10001 app
 
 # ---------------------------------------------------------------- model artifacts
 FROM scratch AS model-local
-COPY outputs/models/bilstm/model.onnx \
-     outputs/models/bilstm/model_meta.json \
-     outputs/models/bilstm/serving.json \
-     /model/
+ARG MODEL_LOCAL_DIR
+COPY ${MODEL_LOCAL_DIR}/ /model/
 
 FROM base AS model-hub
 ARG HF_MODEL_REPO
@@ -74,9 +74,11 @@ RUN pip install -r requirements-serve.txt \
 COPY src src
 COPY api api
 COPY --from=model /model/ /app/model/
+COPY data/intents.json data/intents.json
+COPY data/v2/intents.json data/v2/intents.json
 USER app
 # one ONNX Runtime thread, no spin-waiting: free hosting tiers give a fraction of one CPU
-ENV MODEL_BACKEND=onnx MODEL_PATH=/app/model/model.onnx ORT_NUM_THREADS=1
+ENV MODEL_BACKEND=transformer-onnx MODEL_PATH=/app/model ORT_NUM_THREADS=1 INTENTS_FILE=data/v2/intents.json
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD python -c "import os, urllib.request; urllib.request.urlopen(f'http://127.0.0.1:{os.environ[\"PORT\"]}/health', timeout=4)"
@@ -87,6 +89,5 @@ FROM serve-api AS serve
 USER root
 COPY requirements-ui.txt .
 RUN pip install -r requirements-ui.txt
-COPY data/intents.json data/intents.json
 USER app
 ENV ENABLE_UI=1 GRADIO_ANALYTICS_ENABLED=False

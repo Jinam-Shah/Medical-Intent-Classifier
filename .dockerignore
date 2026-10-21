@@ -19,6 +19,12 @@ outputs/**
 !outputs/models/bilstm/model_meta.json
 !outputs/models/bilstm/model.pt
 !outputs/models/bilstm/serving.json
-# data/ is needed only for intents.json (chat responses) in the UI image
+!outputs/models/minilm_v2/onnx_fp32/model.onnx
+!outputs/models/minilm_v2/onnx_fp32/model_meta.json
+!outputs/models/minilm_v2/onnx_fp32/serving.json
+!outputs/models/minilm_v2/onnx_fp32/tokenizer.json
+# data/ is needed only for the intents files (chat responses)
 data/splits
+data/v2/splits
+data/v2/authored.json
 data/out_of_scope.json
