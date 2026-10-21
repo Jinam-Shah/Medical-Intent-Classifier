@@ -1,0 +1,1818 @@
+{"text": "allergic reaction", "intent": "allergy", "source": "authored"}
+{"text": "allergic rhinitis", "intent": "allergy", "source": "authored"}
+{"text": "allergic to dust mites", "intent": "allergy", "source": "authored"}
+{"text": "allergic to grass", "intent": "allergy", "source": "authored"}
+{"text": "allergies", "intent": "allergy", "source": "authored"}
+{"text": "allergy flare up", "intent": "allergy", "source": "authored"}
+{"text": "allergy season is killing me", "intent": "allergy", "source": "authored"}
+{"text": "allergy symptoms", "intent": "allergy", "source": "authored"}
+{"text": "allergys", "intent": "allergy", "source": "authored"}
+{"text": "constant sneezing", "intent": "allergy", "source": "authored"}
+{"text": "dust allergy", "intent": "allergy", "source": "authored"}
+{"text": "eyes itchy and sneezing", "intent": "allergy", "source": "authored"}
+{"text": "i get allergies every spring", "intent": "allergy", "source": "authored"}
+{"text": "i get sneezy around cats", "intent": "allergy", "source": "authored"}
+{"text": "i have hayfever", "intent": "allergy", "source": "authored"}
+{"text": "i keep rubbing my itchy eyes", "intent": "allergy", "source": "authored"}
+{"text": "i keep sneezing", "intent": "allergy", "source": "authored"}
+{"text": "i keep sneezing and my eyes are itchy", "intent": "allergy", "source": "authored"}
+{"text": "i sneeze every time i go outside", "intent": "allergy", "source": "authored"}
+{"text": "i think i have allergies", "intent": "allergy", "source": "authored"}
+{"text": "i think i'm having a mild allergic reaction", "intent": "allergy", "source": "authored"}
+{"text": "i'm allergic to cats and my eyes are swollen", "intent": "allergy", "source": "authored"}
+{"text": "i'm allergic to something", "intent": "allergy", "source": "authored"}
+{"text": "i'm reacting to pollen", "intent": "allergy", "source": "authored"}
+{"text": "i'm sneezing nonstop", "intent": "allergy", "source": "authored"}
+{"text": "itchy eyes", "intent": "allergy", "source": "authored"}
+{"text": "itchy eyes and nose", "intent": "allergy", "source": "authored"}
+{"text": "itchy roof of my mouth and sneezing", "intent": "allergy", "source": "authored"}
+{"text": "itchy watery eyes", "intent": "allergy", "source": "authored"}
+{"text": "my allergies are worse today", "intent": "allergy", "source": "authored"}
+{"text": "my eyes are red and itchy", "intent": "allergy", "source": "authored"}
+{"text": "my eyes are swollen and itchy", "intent": "allergy", "source": "authored"}
+{"text": "my eyes won't stop watering", "intent": "allergy", "source": "authored"}
+{"text": "my hay fever is bad today", "intent": "allergy", "source": "authored"}
+{"text": "my nose and eyes itch", "intent": "allergy", "source": "authored"}
+{"text": "pet allergy", "intent": "allergy", "source": "authored"}
+{"text": "pollen allergy", "intent": "allergy", "source": "authored"}
+{"text": "red itchy eyes", "intent": "allergy", "source": "authored"}
+{"text": "seasonal allergies", "intent": "allergy", "source": "authored"}
+{"text": "seasonal hay fever", "intent": "allergy", "source": "authored"}
+{"text": "sneezing and itchy nose", "intent": "allergy", "source": "authored"}
+{"text": "sneezy and itchy", "intent": "allergy", "source": "authored"}
+{"text": "back ache", "intent": "back_pain", "source": "authored"}
+{"text": "back hurts so much", "intent": "back_pain", "source": "authored"}
+{"text": "back is acting up again", "intent": "back_pain", "source": "authored"}
+{"text": "back muscle pain", "intent": "back_pain", "source": "authored"}
+{"text": "back pain for two weeks", "intent": "back_pain", "source": "authored"}
+{"text": "backpain", "intent": "back_pain", "source": "authored"}
+{"text": "bakc pain", "intent": "back_pain", "source": "authored"}
+{"text": "chronic back pain", "intent": "back_pain", "source": "authored"}
+{"text": "dull ache in my lower back", "intent": "back_pain", "source": "authored"}
+{"text": "i have a bad back today", "intent": "back_pain", "source": "authored"}
+{"text": "i have a sore back", "intent": "back_pain", "source": "authored"}
+{"text": "i have back pain", "intent": "back_pain", "source": "authored"}
+{"text": "i have pain across my lower back", "intent": "back_pain", "source": "authored"}
+{"text": "i hurt my back", "intent": "back_pain", "source": "authored"}
+{"text": "i pulled something in my back", "intent": "back_pain", "source": "authored"}
+{"text": "i strained my back at the gym", "intent": "back_pain", "source": "authored"}
+{"text": "i think i slipped a disc", "intent": "back_pain", "source": "authored"}
+{"text": "i threw my back out", "intent": "back_pain", "source": "authored"}
+{"text": "low back ache", "intent": "back_pain", "source": "authored"}
+{"text": "lower back pain", "intent": "back_pain", "source": "authored"}
+{"text": "middle back pain", "intent": "back_pain", "source": "authored"}
+{"text": "my back aches", "intent": "back_pain", "source": "authored"}
+{"text": "my back has been aching all week", "intent": "back_pain", "source": "authored"}
+{"text": "my back has been sore for days", "intent": "back_pain", "source": "authored"}
+{"text": "my back hurts", "intent": "back_pain", "source": "authored"}
+{"text": "my back hurts after lifting", "intent": "back_pain", "source": "authored"}
+{"text": "my back hurts bad", "intent": "back_pain", "source": "authored"}
+{"text": "my back hurts from my desk chair", "intent": "back_pain", "source": "authored"}
+{"text": "my back hurts when i walk", "intent": "back_pain", "source": "authored"}
+{"text": "my back is so sore i can't move much", "intent": "back_pain", "source": "authored"}
+{"text": "my back is stiff in the morning", "intent": "back_pain", "source": "authored"}
+{"text": "my back is tender", "intent": "back_pain", "source": "authored"}
+{"text": "my back went out", "intent": "back_pain", "source": "authored"}
+{"text": "my lower back is killing me", "intent": "back_pain", "source": "authored"}
+{"text": "my lower back is sore after work", "intent": "back_pain", "source": "authored"}
+{"text": "my tailbone hurts", "intent": "back_pain", "source": "authored"}
+{"text": "pain between my shoulder blades", "intent": "back_pain", "source": "authored"}
+{"text": "pain in my back", "intent": "back_pain", "source": "authored"}
+{"text": "pain in my back and hips", "intent": "back_pain", "source": "authored"}
+{"text": "pain on the left side of my lower back", "intent": "back_pain", "source": "authored"}
+{"text": "sharp pain in my lower back", "intent": "back_pain", "source": "authored"}
+{"text": "throbbing back pain", "intent": "back_pain", "source": "authored"}
+{"text": "aches and pains all over", "intent": "body_aches", "source": "authored"}
+{"text": "aches in my muscles", "intent": "body_aches", "source": "authored"}
+{"text": "achy and sore", "intent": "body_aches", "source": "authored"}
+{"text": "achy joints in the morning", "intent": "body_aches", "source": "authored"}
+{"text": "achy muscles", "intent": "body_aches", "source": "authored"}
+{"text": "body ache and tired", "intent": "body_aches", "source": "authored"}
+{"text": "body aches", "intent": "body_aches", "source": "authored"}
+{"text": "body is achy", "intent": "body_aches", "source": "authored"}
+{"text": "body pain", "intent": "body_aches", "source": "authored"}
+{"text": "bodyache", "intent": "body_aches", "source": "authored"}
+{"text": "every muscle hurts", "intent": "body_aches", "source": "authored"}
+{"text": "everything hurts", "intent": "body_aches", "source": "authored"}
+{"text": "general body aches", "intent": "body_aches", "source": "authored"}
+{"text": "i ache everywhere", "intent": "body_aches", "source": "authored"}
+{"text": "i feel achy", "intent": "body_aches", "source": "authored"}
+{"text": "i feel achy and stiff", "intent": "body_aches", "source": "authored"}
+{"text": "i feel beat up, everything aches", "intent": "body_aches", "source": "authored"}
+{"text": "i have muscle cramps", "intent": "body_aches", "source": "authored"}
+{"text": "i woke up achy", "intent": "body_aches", "source": "authored"}
+{"text": "i'm sore all over", "intent": "body_aches", "source": "authored"}
+{"text": "joint pain", "intent": "body_aches", "source": "authored"}
+{"text": "leg cramps at night", "intent": "body_aches", "source": "authored"}
+{"text": "muscle soreness", "intent": "body_aches", "source": "authored"}
+{"text": "my arms and legs are aching", "intent": "body_aches", "source": "authored"}
+{"text": "my body aches today", "intent": "body_aches", "source": "authored"}
+{"text": "my body feels sore and heavy", "intent": "body_aches", "source": "authored"}
+{"text": "my body is aching", "intent": "body_aches", "source": "authored"}
+{"text": "my body is sore", "intent": "body_aches", "source": "authored"}
+{"text": "my calves are cramping", "intent": "body_aches", "source": "authored"}
+{"text": "my hips ache", "intent": "body_aches", "source": "authored"}
+{"text": "my joints ache", "intent": "body_aches", "source": "authored"}
+{"text": "my joints hurt", "intent": "body_aches", "source": "authored"}
+{"text": "my knees and elbows ache", "intent": "body_aches", "source": "authored"}
+{"text": "my legs and arms ache", "intent": "body_aches", "source": "authored"}
+{"text": "my limbs ache", "intent": "body_aches", "source": "authored"}
+{"text": "my muscles are aching after working out", "intent": "body_aches", "source": "authored"}
+{"text": "my muscles feel tender", "intent": "body_aches", "source": "authored"}
+{"text": "my muscles hurt", "intent": "body_aches", "source": "authored"}
+{"text": "my shoulders and legs ache", "intent": "body_aches", "source": "authored"}
+{"text": "my whole body feels sore", "intent": "body_aches", "source": "authored"}
+{"text": "my whole body is sore", "intent": "body_aches", "source": "authored"}
+{"text": "sore body", "intent": "body_aches", "source": "authored"}
+{"text": "are you a doctor", "intent": "capabilities", "source": "authored"}
+{"text": "are you a real person", "intent": "capabilities", "source": "authored"}
+{"text": "are you an ai", "intent": "capabilities", "source": "authored"}
+{"text": "how does this work", "intent": "capabilities", "source": "authored"}
+{"text": "is this a real doctor", "intent": "capabilities", "source": "authored"}
+{"text": "list what you can help with", "intent": "capabilities", "source": "authored"}
+{"text": "tell me what you can do", "intent": "capabilities", "source": "authored"}
+{"text": "what are you", "intent": "capabilities", "source": "authored"}
+{"text": "what can i ask you", "intent": "capabilities", "source": "authored"}
+{"text": "what can you do", "intent": "capabilities", "source": "authored"}
+{"text": "what can you help me with", "intent": "capabilities", "source": "authored"}
+{"text": "what do you do", "intent": "capabilities", "source": "authored"}
+{"text": "what do you know about", "intent": "capabilities", "source": "authored"}
+{"text": "what illnesses do you cover", "intent": "capabilities", "source": "authored"}
+{"text": "what is this", "intent": "capabilities", "source": "authored"}
+{"text": "what kind of questions can i ask", "intent": "capabilities", "source": "authored"}
+{"text": "what symptoms do you know", "intent": "capabilities", "source": "authored"}
+{"text": "who are you", "intent": "capabilities", "source": "authored"}
+{"text": "who made you", "intent": "capabilities", "source": "authored"}
+{"text": "ai, tell me what things i should ask of you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "am i talking to a real person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "am i talking with real person or ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are an an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are there certain types of questions i can ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "are you a bot or a person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a computer, or are you a real person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a human or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a live person or a computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a real human", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a real person or a bot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a real person or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a real person or automated", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you a real person or software", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you actually a bot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you an ai or person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you an automated assistance", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you considered a bot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you human or a bot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you real or are you an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you real or automated", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "are you really a person or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "can you specify if you are a human or a computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "can you tell me the subjects you know best", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "do you know if you are a robot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "do you know whether you are a human or whether you're a computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "do you know you are not human", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "how do i know if you are a real person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "how do i know that you're a person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "how real are you", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "i need to know if you are a real person or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "i need to know what kind of things you can help with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "i wanna know the types of subjects are you familiar with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "i wish to know the types of subjects are you familiar with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "is there a way to tell if you are real or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "is there anything real about you", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "is this a computer right now or a human being", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "is this a person talking to me or a computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "let me know what subjects you comprehend well", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "let me know what you can assist me with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "may i know if you are a real person or an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "please specify if you are human or computer", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "please tell me if you are an ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "so are you a real person", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "so are you real", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "tell me now if you are a bot", "intent": "capabilities", "source": "clinc", "clinc_intent": "are_you_a_bot"}
+{"text": "tell me the types of things i can ask you about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what are the things you can help me with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what are you able to help me with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what can i ask you all about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what can i ask you, ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what can i use you to help me with", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what can you be asked about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what can you help me with exactly", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what do you know", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what information can i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what kind of questions can i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what kinds of questions can i ask of you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what kinds of questions can i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what kinds of things can i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what kinds of things can you do", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what questions am i allowed to ask", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what questions do you respond to", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what should i ask you about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what sorts of queries should i give you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what sorts of things am i able to ask of you ai", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what sorts of things can i ask you about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what things can you do", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what things can you help me with exactly", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what things do you know about", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what types of questions do you have a response for", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what types of things can i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what types of things do you know", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "what's the sort of thing i should ask", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "which types of questions may i ask you", "intent": "capabilities", "source": "clinc", "clinc_intent": "what_can_i_ask_you"}
+{"text": "cold and runny nose", "intent": "cold", "source": "authored"}
+{"text": "cold symptoms started yesterday", "intent": "cold", "source": "authored"}
+{"text": "colds keep coming back", "intent": "cold", "source": "authored"}
+{"text": "i caught a chill and now have a cold", "intent": "cold", "source": "authored"}
+{"text": "i feel like i'm getting a cold", "intent": "cold", "source": "authored"}
+{"text": "i have a runny nose", "intent": "cold", "source": "authored"}
+{"text": "i have the sniffles", "intent": "cold", "source": "authored"}
+{"text": "i think i caught a cold", "intent": "cold", "source": "authored"}
+{"text": "i'm coming down with something, runny nose", "intent": "cold", "source": "authored"}
+{"text": "i'm full of cold", "intent": "cold", "source": "authored"}
+{"text": "just a cold i think", "intent": "cold", "source": "authored"}
+{"text": "my nose is runny and my throat is scratchy", "intent": "cold", "source": "authored"}
+{"text": "my nose keeps dripping", "intent": "cold", "source": "authored"}
+{"text": "my nose won't stop running", "intent": "cold", "source": "authored"}
+{"text": "runny nose", "intent": "cold", "source": "authored"}
+{"text": "sneezy and runny nose", "intent": "cold", "source": "authored"}
+{"text": "sniffly and tired", "intent": "cold", "source": "authored"}
+{"text": "Came down with a cold", "intent": "cold", "source": "v1"}
+{"text": "Caught the cold", "intent": "cold", "source": "v1"}
+{"text": "Cold infection", "intent": "cold", "source": "v1"}
+{"text": "Cold symptoms", "intent": "cold", "source": "v1"}
+{"text": "Cold virus", "intent": "cold", "source": "v1"}
+{"text": "Common cold", "intent": "cold", "source": "v1"}
+{"text": "Could this be cold?", "intent": "cold", "source": "v1"}
+{"text": "Dealing with a cold", "intent": "cold", "source": "v1"}
+{"text": "Experiencing cold symptoms", "intent": "cold", "source": "v1"}
+{"text": "Got a cold", "intent": "cold", "source": "v1"}
+{"text": "Head cold", "intent": "cold", "source": "v1"}
+{"text": "I caught a cold", "intent": "cold", "source": "v1"}
+{"text": "I got a cold", "intent": "cold", "source": "v1"}
+{"text": "I got a mild cold", "intent": "cold", "source": "v1"}
+{"text": "I got a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I got cold", "intent": "cold", "source": "v1"}
+{"text": "I have a cold", "intent": "cold", "source": "v1"}
+{"text": "I have been having a cold", "intent": "cold", "source": "v1"}
+{"text": "I have been having a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I have been having cold", "intent": "cold", "source": "v1"}
+{"text": "I have some cold", "intent": "cold", "source": "v1"}
+{"text": "I might have a bad cold", "intent": "cold", "source": "v1"}
+{"text": "I might have a cold", "intent": "cold", "source": "v1"}
+{"text": "I think I have a mild cold", "intent": "cold", "source": "v1"}
+{"text": "I think I have a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I think it's a cold", "intent": "cold", "source": "v1"}
+{"text": "I'm dealing with a bad cold", "intent": "cold", "source": "v1"}
+{"text": "I'm dealing with a cold", "intent": "cold", "source": "v1"}
+{"text": "I'm dealing with a severe cold", "intent": "cold", "source": "v1"}
+{"text": "I'm dealing with a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I'm experiencing a bad cold", "intent": "cold", "source": "v1"}
+{"text": "I'm experiencing a cold", "intent": "cold", "source": "v1"}
+{"text": "I'm experiencing a mild cold", "intent": "cold", "source": "v1"}
+{"text": "I'm experiencing a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I'm experiencing some cold", "intent": "cold", "source": "v1"}
+{"text": "I'm suffering from a bad cold", "intent": "cold", "source": "v1"}
+{"text": "I'm suffering from a cold", "intent": "cold", "source": "v1"}
+{"text": "I'm suffering from a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I've been experiencing a cold", "intent": "cold", "source": "v1"}
+{"text": "I've been experiencing a severe cold", "intent": "cold", "source": "v1"}
+{"text": "I've been experiencing a terrible cold", "intent": "cold", "source": "v1"}
+{"text": "I've been experiencing cold", "intent": "cold", "source": "v1"}
+{"text": "I've been experiencing some cold", "intent": "cold", "source": "v1"}
+{"text": "I've got a bad cold", "intent": "cold", "source": "v1"}
+{"text": "I've got a cold", "intent": "cold", "source": "v1"}
+{"text": "I've got cold", "intent": "cold", "source": "v1"}
+{"text": "I've got some cold", "intent": "cold", "source": "v1"}
+{"text": "Looks like I have a cold", "intent": "cold", "source": "v1"}
+{"text": "Mild cold", "intent": "cold", "source": "v1"}
+{"text": "Winter cold", "intent": "cold", "source": "v1"}
+{"text": "blocked nose at night", "intent": "congestion", "source": "authored"}
+{"text": "chest and nose congestion", "intent": "congestion", "source": "authored"}
+{"text": "congeston", "intent": "congestion", "source": "authored"}
+{"text": "i can't breathe through my nose", "intent": "congestion", "source": "authored"}
+{"text": "i'm congested", "intent": "congestion", "source": "authored"}
+{"text": "my head feels congested", "intent": "congestion", "source": "authored"}
+{"text": "my nasal passages are blocked", "intent": "congestion", "source": "authored"}
+{"text": "my nose is blocked", "intent": "congestion", "source": "authored"}
+{"text": "my nose is plugged", "intent": "congestion", "source": "authored"}
+{"text": "my sinuses are blocked", "intent": "congestion", "source": "authored"}
+{"text": "nasal congestion", "intent": "congestion", "source": "authored"}
+{"text": "sinus headache and stuffiness", "intent": "congestion", "source": "authored"}
+{"text": "sinus infection", "intent": "congestion", "source": "authored"}
+{"text": "sinus pressure", "intent": "congestion", "source": "authored"}
+{"text": "sinuses hurt", "intent": "congestion", "source": "authored"}
+{"text": "sinusitis", "intent": "congestion", "source": "authored"}
+{"text": "stuffed up nose", "intent": "congestion", "source": "authored"}
+{"text": "stuffy and congested", "intent": "congestion", "source": "authored"}
+{"text": "Blocked nose", "intent": "congestion", "source": "v1"}
+{"text": "Blocked sinuses", "intent": "congestion", "source": "v1"}
+{"text": "Breathing difficulty through nose", "intent": "congestion", "source": "v1"}
+{"text": "Can't breathe through nose", "intent": "congestion", "source": "v1"}
+{"text": "Can't smell", "intent": "congestion", "source": "v1"}
+{"text": "Chest congestion", "intent": "congestion", "source": "v1"}
+{"text": "Congested", "intent": "congestion", "source": "v1"}
+{"text": "Congested nose", "intent": "congestion", "source": "v1"}
+{"text": "Congested sinuses", "intent": "congestion", "source": "v1"}
+{"text": "Could this be congestion?", "intent": "congestion", "source": "v1"}
+{"text": "Do I have congestion?", "intent": "congestion", "source": "v1"}
+{"text": "Head congestion", "intent": "congestion", "source": "v1"}
+{"text": "I got a congestion", "intent": "congestion", "source": "v1"}
+{"text": "I got a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I got a terrible congestion", "intent": "congestion", "source": "v1"}
+{"text": "I have a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I have a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I have been having a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I have congestion", "intent": "congestion", "source": "v1"}
+{"text": "I might have a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I think I have a congestion", "intent": "congestion", "source": "v1"}
+{"text": "I think I have a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I think I have a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I think I have a terrible congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm dealing with a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm dealing with a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm dealing with congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm dealing with some congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm experiencing a bad congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm experiencing a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm experiencing a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm experiencing a terrible congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm experiencing some congestion", "intent": "congestion", "source": "v1"}
+{"text": "I'm suffering from some congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing a bad congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing a congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing a severe congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've been experiencing some congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've got a bad congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've got a mild congestion", "intent": "congestion", "source": "v1"}
+{"text": "I've got congestion", "intent": "congestion", "source": "v1"}
+{"text": "Is this congestion?", "intent": "congestion", "source": "v1"}
+{"text": "Nose congestion", "intent": "congestion", "source": "v1"}
+{"text": "Nose feels blocked", "intent": "congestion", "source": "v1"}
+{"text": "Plugged nose", "intent": "congestion", "source": "v1"}
+{"text": "Sinus congestion", "intent": "congestion", "source": "v1"}
+{"text": "Stuffed up", "intent": "congestion", "source": "v1"}
+{"text": "a cough that keeps me up", "intent": "cough", "source": "authored"}
+{"text": "coff", "intent": "cough", "source": "authored"}
+{"text": "cough and mucus", "intent": "cough", "source": "authored"}
+{"text": "coughing all day", "intent": "cough", "source": "authored"}
+{"text": "coughing at night", "intent": "cough", "source": "authored"}
+{"text": "coughing up mucus", "intent": "cough", "source": "authored"}
+{"text": "dry tickly cough", "intent": "cough", "source": "authored"}
+{"text": "hacking cough", "intent": "cough", "source": "authored"}
+{"text": "i have a cough", "intent": "cough", "source": "authored"}
+{"text": "i have a nasty cough", "intent": "cough", "source": "authored"}
+{"text": "i'm coughing up phlegm", "intent": "cough", "source": "authored"}
+{"text": "i've been coughing for a week", "intent": "cough", "source": "authored"}
+{"text": "my cough won't go away", "intent": "cough", "source": "authored"}
+{"text": "my kid has a bad cough", "intent": "cough", "source": "authored"}
+{"text": "smokers cough", "intent": "cough", "source": "authored"}
+{"text": "tickly cough", "intent": "cough", "source": "authored"}
+{"text": "Barking cough", "intent": "cough", "source": "v1"}
+{"text": "Can't stop coughing", "intent": "cough", "source": "v1"}
+{"text": "Chesty cough", "intent": "cough", "source": "v1"}
+{"text": "Chronic cough", "intent": "cough", "source": "v1"}
+{"text": "Cough symptoms", "intent": "cough", "source": "v1"}
+{"text": "Coughing a lot", "intent": "cough", "source": "v1"}
+{"text": "Coughing fits", "intent": "cough", "source": "v1"}
+{"text": "Coughing up phlegm", "intent": "cough", "source": "v1"}
+{"text": "Could this be cough?", "intent": "cough", "source": "v1"}
+{"text": "Do I have cough?", "intent": "cough", "source": "v1"}
+{"text": "Having coughing fits", "intent": "cough", "source": "v1"}
+{"text": "I got a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I got a mild cough", "intent": "cough", "source": "v1"}
+{"text": "I have a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I have a severe cough", "intent": "cough", "source": "v1"}
+{"text": "I have been having a mild cough", "intent": "cough", "source": "v1"}
+{"text": "I have been having a severe cough", "intent": "cough", "source": "v1"}
+{"text": "I have been having some cough", "intent": "cough", "source": "v1"}
+{"text": "I have cough", "intent": "cough", "source": "v1"}
+{"text": "I have some cough", "intent": "cough", "source": "v1"}
+{"text": "I might have a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I might have a mild cough", "intent": "cough", "source": "v1"}
+{"text": "I might have a terrible cough", "intent": "cough", "source": "v1"}
+{"text": "I might have some cough", "intent": "cough", "source": "v1"}
+{"text": "I think I have a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I think I have a severe cough", "intent": "cough", "source": "v1"}
+{"text": "I'm dealing with a severe cough", "intent": "cough", "source": "v1"}
+{"text": "I'm dealing with a terrible cough", "intent": "cough", "source": "v1"}
+{"text": "I'm experiencing a severe cough", "intent": "cough", "source": "v1"}
+{"text": "I'm experiencing cough", "intent": "cough", "source": "v1"}
+{"text": "I'm experiencing some cough", "intent": "cough", "source": "v1"}
+{"text": "I'm suffering from a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I'm suffering from a cough", "intent": "cough", "source": "v1"}
+{"text": "I'm suffering from cough", "intent": "cough", "source": "v1"}
+{"text": "I'm suffering from some cough", "intent": "cough", "source": "v1"}
+{"text": "I've been experiencing a bad cough", "intent": "cough", "source": "v1"}
+{"text": "I've been experiencing cough", "intent": "cough", "source": "v1"}
+{"text": "I've been experiencing some cough", "intent": "cough", "source": "v1"}
+{"text": "I've got cough", "intent": "cough", "source": "v1"}
+{"text": "Keep coughing", "intent": "cough", "source": "v1"}
+{"text": "Non-stop coughing", "intent": "cough", "source": "v1"}
+{"text": "Persistent cough", "intent": "cough", "source": "v1"}
+{"text": "Productive cough", "intent": "cough", "source": "v1"}
+{"text": "Terrible cough", "intent": "cough", "source": "v1"}
+{"text": "Wet cough", "intent": "cough", "source": "v1"}
+{"text": "What if I have cough?", "intent": "cough", "source": "v1"}
+{"text": "Whooping cough", "intent": "cough", "source": "v1"}
+{"text": "bowel movements are loose and frequent", "intent": "diarrhea", "source": "authored"}
+{"text": "constant urge to go to the bathroom", "intent": "diarrhea", "source": "authored"}
+{"text": "diahrrea", "intent": "diarrhea", "source": "authored"}
+{"text": "diarea", "intent": "diarrhea", "source": "authored"}
+{"text": "diarrhea after antibiotics", "intent": "diarrhea", "source": "authored"}
+{"text": "diarrhea and cramps", "intent": "diarrhea", "source": "authored"}
+{"text": "diarrhea every morning", "intent": "diarrhea", "source": "authored"}
+{"text": "diarrhea since yesterday", "intent": "diarrhea", "source": "authored"}
+{"text": "diarrhea won't stop", "intent": "diarrhea", "source": "authored"}
+{"text": "explosive diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "frequent bowel movements", "intent": "diarrhea", "source": "authored"}
+{"text": "frequent loose stools", "intent": "diarrhea", "source": "authored"}
+{"text": "i can't stop going to the bathroom", "intent": "diarrhea", "source": "authored"}
+{"text": "i got the runs from bad food", "intent": "diarrhea", "source": "authored"}
+{"text": "i have an upset stomach and diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "i have diarreah", "intent": "diarrhea", "source": "authored"}
+{"text": "i have diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "i have diarrhea and feel weak", "intent": "diarrhea", "source": "authored"}
+{"text": "i have the runs", "intent": "diarrhea", "source": "authored"}
+{"text": "i have the squirts", "intent": "diarrhea", "source": "authored"}
+{"text": "i keep getting diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "i keep having diarrhea after coffee", "intent": "diarrhea", "source": "authored"}
+{"text": "i keep having to poop", "intent": "diarrhea", "source": "authored"}
+{"text": "i think food poisoning gave me diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "i've been having diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "i've been on the toilet all morning", "intent": "diarrhea", "source": "authored"}
+{"text": "i've had diarrhea for three days", "intent": "diarrhea", "source": "authored"}
+{"text": "loose motions", "intent": "diarrhea", "source": "authored"}
+{"text": "loose stool problems", "intent": "diarrhea", "source": "authored"}
+{"text": "loose stools", "intent": "diarrhea", "source": "authored"}
+{"text": "my bowels are loose", "intent": "diarrhea", "source": "authored"}
+{"text": "my kid has diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "my poop is runny", "intent": "diarrhea", "source": "authored"}
+{"text": "my stomach is running", "intent": "diarrhea", "source": "authored"}
+{"text": "my stool is watery", "intent": "diarrhea", "source": "authored"}
+{"text": "my stools are loose", "intent": "diarrhea", "source": "authored"}
+{"text": "soft watery stools", "intent": "diarrhea", "source": "authored"}
+{"text": "stomach bug with diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "sudden diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "travelers diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "upset bowels", "intent": "diarrhea", "source": "authored"}
+{"text": "watery diarrhea", "intent": "diarrhea", "source": "authored"}
+{"text": "a bit dizzy today", "intent": "dizziness", "source": "authored"}
+{"text": "dizziness", "intent": "dizziness", "source": "authored"}
+{"text": "dizziness on and off", "intent": "dizziness", "source": "authored"}
+{"text": "dizziness since this morning", "intent": "dizziness", "source": "authored"}
+{"text": "dizziness when walking", "intent": "dizziness", "source": "authored"}
+{"text": "dizzy after standing", "intent": "dizziness", "source": "authored"}
+{"text": "dizzy all the time", "intent": "dizziness", "source": "authored"}
+{"text": "dizzy when i turn my head", "intent": "dizziness", "source": "authored"}
+{"text": "dizzyness", "intent": "dizziness", "source": "authored"}
+{"text": "everything is spinning", "intent": "dizziness", "source": "authored"}
+{"text": "feeling dizzy and weak", "intent": "dizziness", "source": "authored"}
+{"text": "feeling faint", "intent": "dizziness", "source": "authored"}
+{"text": "head rush when i stand", "intent": "dizziness", "source": "authored"}
+{"text": "i feel dizy", "intent": "dizziness", "source": "authored"}
+{"text": "i feel dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "i feel dizzy after exercise", "intent": "dizziness", "source": "authored"}
+{"text": "i feel dizzy and tired", "intent": "dizziness", "source": "authored"}
+{"text": "i feel dizzy and unsteady", "intent": "dizziness", "source": "authored"}
+{"text": "i feel faint", "intent": "dizziness", "source": "authored"}
+{"text": "i feel lightheaded", "intent": "dizziness", "source": "authored"}
+{"text": "i feel like i'm going to faint", "intent": "dizziness", "source": "authored"}
+{"text": "i feel off and dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "i feel off balance", "intent": "dizziness", "source": "authored"}
+{"text": "i feel unsteady on my feet", "intent": "dizziness", "source": "authored"}
+{"text": "i get dizzy when i stand up", "intent": "dizziness", "source": "authored"}
+{"text": "i get vertigo when i lie down", "intent": "dizziness", "source": "authored"}
+{"text": "i got dizzy at work", "intent": "dizziness", "source": "authored"}
+{"text": "i have vertigo", "intent": "dizziness", "source": "authored"}
+{"text": "i keep feeling dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "i keep getting lightheaded", "intent": "dizziness", "source": "authored"}
+{"text": "i'm a little dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "i'm dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "i'm lightheaded", "intent": "dizziness", "source": "authored"}
+{"text": "i'm unsteady and dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "my balance is off", "intent": "dizziness", "source": "authored"}
+{"text": "my head is spinning", "intent": "dizziness", "source": "authored"}
+{"text": "random dizzy spells", "intent": "dizziness", "source": "authored"}
+{"text": "spinning sensation", "intent": "dizziness", "source": "authored"}
+{"text": "the room is spinning", "intent": "dizziness", "source": "authored"}
+{"text": "the world is spinning", "intent": "dizziness", "source": "authored"}
+{"text": "vertigo", "intent": "dizziness", "source": "authored"}
+{"text": "very dizzy", "intent": "dizziness", "source": "authored"}
+{"text": "aching ear", "intent": "ear_pain", "source": "authored"}
+{"text": "ear ach", "intent": "ear_pain", "source": "authored"}
+{"text": "ear discomfort", "intent": "ear_pain", "source": "authored"}
+{"text": "ear hurting", "intent": "ear_pain", "source": "authored"}
+{"text": "ear hurts when i touch it", "intent": "ear_pain", "source": "authored"}
+{"text": "ear infection", "intent": "ear_pain", "source": "authored"}
+{"text": "ear infection pain", "intent": "ear_pain", "source": "authored"}
+{"text": "ear pain at night", "intent": "ear_pain", "source": "authored"}
+{"text": "ear pain for a week", "intent": "ear_pain", "source": "authored"}
+{"text": "ear pain when i swallow", "intent": "ear_pain", "source": "authored"}
+{"text": "ear pain with a cold", "intent": "ear_pain", "source": "authored"}
+{"text": "ear pressure and pain", "intent": "ear_pain", "source": "authored"}
+{"text": "earache and headache", "intent": "ear_pain", "source": "authored"}
+{"text": "earache on one side", "intent": "ear_pain", "source": "authored"}
+{"text": "earache since yesterday", "intent": "ear_pain", "source": "authored"}
+{"text": "hurts inside my ear", "intent": "ear_pain", "source": "authored"}
+{"text": "i have an ear ache", "intent": "ear_pain", "source": "authored"}
+{"text": "i have pain behind my ear", "intent": "ear_pain", "source": "authored"}
+{"text": "i think i have an ear infection", "intent": "ear_pain", "source": "authored"}
+{"text": "muffled hearing and ear pain", "intent": "ear_pain", "source": "authored"}
+{"text": "my baby keeps pulling at her ear", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear canal hurts", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear feels blocked and painful", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear feels clogged", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear feels full and hurts", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear has been hurting for days", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear hurts", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear hurts after swimming", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is aching", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is killing me", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is leaking a bit and hurts", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is really painful", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is sore and red", "intent": "ear_pain", "source": "authored"}
+{"text": "my ear is throbbing", "intent": "ear_pain", "source": "authored"}
+{"text": "my ears ache", "intent": "ear_pain", "source": "authored"}
+{"text": "my ears are sore", "intent": "ear_pain", "source": "authored"}
+{"text": "my right ear is sore", "intent": "ear_pain", "source": "authored"}
+{"text": "outer ear is sore", "intent": "ear_pain", "source": "authored"}
+{"text": "pain deep in my ear", "intent": "ear_pain", "source": "authored"}
+{"text": "pain in my ear", "intent": "ear_pain", "source": "authored"}
+{"text": "swimmer's ear", "intent": "ear_pain", "source": "authored"}
+{"text": "throbbing ear pain", "intent": "ear_pain", "source": "authored"}
+{"text": "always exhausted", "intent": "fatigue", "source": "authored"}
+{"text": "chronic fatigue", "intent": "fatigue", "source": "authored"}
+{"text": "constant tiredness", "intent": "fatigue", "source": "authored"}
+{"text": "daytime sleepiness", "intent": "fatigue", "source": "authored"}
+{"text": "fatigue", "intent": "fatigue", "source": "authored"}
+{"text": "i can't shake this tiredness", "intent": "fatigue", "source": "authored"}
+{"text": "i can't stay awake during the day", "intent": "fatigue", "source": "authored"}
+{"text": "i feel burnt out and tired", "intent": "fatigue", "source": "authored"}
+{"text": "i feel drained", "intent": "fatigue", "source": "authored"}
+{"text": "i feel run down", "intent": "fatigue", "source": "authored"}
+{"text": "i feel shattered", "intent": "fatigue", "source": "authored"}
+{"text": "i feel sleepy all day", "intent": "fatigue", "source": "authored"}
+{"text": "i feel so lazy and tired", "intent": "fatigue", "source": "authored"}
+{"text": "i feel so tired", "intent": "fatigue", "source": "authored"}
+{"text": "i feel super tired", "intent": "fatigue", "source": "authored"}
+{"text": "i feel tired all the time", "intent": "fatigue", "source": "authored"}
+{"text": "i feel tired and can't concentrate", "intent": "fatigue", "source": "authored"}
+{"text": "i feel tired and heavy", "intent": "fatigue", "source": "authored"}
+{"text": "i feel weak", "intent": "fatigue", "source": "authored"}
+{"text": "i feel weak and tired", "intent": "fatigue", "source": "authored"}
+{"text": "i get tired so easily", "intent": "fatigue", "source": "authored"}
+{"text": "i have no energy", "intent": "fatigue", "source": "authored"}
+{"text": "i have no strength", "intent": "fatigue", "source": "authored"}
+{"text": "i have zero energy", "intent": "fatigue", "source": "authored"}
+{"text": "i'm always sleepy", "intent": "fatigue", "source": "authored"}
+{"text": "i'm always tired", "intent": "fatigue", "source": "authored"}
+{"text": "i'm completely drained", "intent": "fatigue", "source": "authored"}
+{"text": "i'm exhausted", "intent": "fatigue", "source": "authored"}
+{"text": "i'm fatigued all the time", "intent": "fatigue", "source": "authored"}
+{"text": "i'm feeling very weak", "intent": "fatigue", "source": "authored"}
+{"text": "i'm knackered", "intent": "fatigue", "source": "authored"}
+{"text": "i'm so fatigued", "intent": "fatigue", "source": "authored"}
+{"text": "i'm so sleepy", "intent": "fatigue", "source": "authored"}
+{"text": "i'm tired all the time and don't know why", "intent": "fatigue", "source": "authored"}
+{"text": "i've been really tired lately", "intent": "fatigue", "source": "authored"}
+{"text": "my body feels so tired", "intent": "fatigue", "source": "authored"}
+{"text": "my energy levels are really low", "intent": "fatigue", "source": "authored"}
+{"text": "no energy to do anything", "intent": "fatigue", "source": "authored"}
+{"text": "tired all day", "intent": "fatigue", "source": "authored"}
+{"text": "tired and weak", "intent": "fatigue", "source": "authored"}
+{"text": "tired for weeks", "intent": "fatigue", "source": "authored"}
+{"text": "weakness and tiredness", "intent": "fatigue", "source": "authored"}
+{"text": "a slight temperature", "intent": "fever", "source": "authored"}
+{"text": "fever of 102", "intent": "fever", "source": "authored"}
+{"text": "fever since last night", "intent": "fever", "source": "authored"}
+{"text": "fevr", "intent": "fever", "source": "authored"}
+{"text": "hot and cold flushes", "intent": "fever", "source": "authored"}
+{"text": "i feel feverish and shivery", "intent": "fever", "source": "authored"}
+{"text": "i feel hot all over", "intent": "fever", "source": "authored"}
+{"text": "i feel hot and feverish", "intent": "fever", "source": "authored"}
+{"text": "i have a high temperature", "intent": "fever", "source": "authored"}
+{"text": "i think i'm feverish", "intent": "fever", "source": "authored"}
+{"text": "i'm hot and sweaty with a fever", "intent": "fever", "source": "authored"}
+{"text": "i've got a temp", "intent": "fever", "source": "authored"}
+{"text": "low grade fever", "intent": "fever", "source": "authored"}
+{"text": "mild fever", "intent": "fever", "source": "authored"}
+{"text": "my forehead is really hot", "intent": "fever", "source": "authored"}
+{"text": "my temp is 38.5", "intent": "fever", "source": "authored"}
+{"text": "my temperature is 101", "intent": "fever", "source": "authored"}
+{"text": "my thermometer says 100.4", "intent": "fever", "source": "authored"}
+{"text": "temperature keeps going up", "intent": "fever", "source": "authored"}
+{"text": "Could this be fever?", "intent": "fever", "source": "v1"}
+{"text": "Dealing with a fever", "intent": "fever", "source": "v1"}
+{"text": "Experiencing fever", "intent": "fever", "source": "v1"}
+{"text": "Feeling hot and cold", "intent": "fever", "source": "v1"}
+{"text": "Fever symptoms", "intent": "fever", "source": "v1"}
+{"text": "Feverish", "intent": "fever", "source": "v1"}
+{"text": "High temp", "intent": "fever", "source": "v1"}
+{"text": "Hot and cold", "intent": "fever", "source": "v1"}
+{"text": "I feel hot", "intent": "fever", "source": "v1"}
+{"text": "I feel like I have a fever", "intent": "fever", "source": "v1"}
+{"text": "I got a bad fever", "intent": "fever", "source": "v1"}
+{"text": "I got a fever", "intent": "fever", "source": "v1"}
+{"text": "I got some fever", "intent": "fever", "source": "v1"}
+{"text": "I have a bad fever", "intent": "fever", "source": "v1"}
+{"text": "I have a fever", "intent": "fever", "source": "v1"}
+{"text": "I have a temperature", "intent": "fever", "source": "v1"}
+{"text": "I have been having a bad fever", "intent": "fever", "source": "v1"}
+{"text": "I have been having a terrible fever", "intent": "fever", "source": "v1"}
+{"text": "I have been having fever", "intent": "fever", "source": "v1"}
+{"text": "I have fever", "intent": "fever", "source": "v1"}
+{"text": "I might have a bad fever", "intent": "fever", "source": "v1"}
+{"text": "I might have a fever", "intent": "fever", "source": "v1"}
+{"text": "I might have a severe fever", "intent": "fever", "source": "v1"}
+{"text": "I think I have a severe fever", "intent": "fever", "source": "v1"}
+{"text": "I think I have a terrible fever", "intent": "fever", "source": "v1"}
+{"text": "I think I have some fever", "intent": "fever", "source": "v1"}
+{"text": "I'm burning up", "intent": "fever", "source": "v1"}
+{"text": "I'm dealing with a mild fever", "intent": "fever", "source": "v1"}
+{"text": "I'm experiencing a mild fever", "intent": "fever", "source": "v1"}
+{"text": "I'm experiencing some fever", "intent": "fever", "source": "v1"}
+{"text": "I'm feeling feverish", "intent": "fever", "source": "v1"}
+{"text": "I'm running a temperature", "intent": "fever", "source": "v1"}
+{"text": "I'm suffering from a fever", "intent": "fever", "source": "v1"}
+{"text": "I'm suffering from a mild fever", "intent": "fever", "source": "v1"}
+{"text": "I'm suffering from a terrible fever", "intent": "fever", "source": "v1"}
+{"text": "I've been experiencing a fever", "intent": "fever", "source": "v1"}
+{"text": "I've been experiencing a severe fever", "intent": "fever", "source": "v1"}
+{"text": "I've been experiencing some fever", "intent": "fever", "source": "v1"}
+{"text": "I've got a bad fever", "intent": "fever", "source": "v1"}
+{"text": "I've got a fever", "intent": "fever", "source": "v1"}
+{"text": "I've got a mild fever", "intent": "fever", "source": "v1"}
+{"text": "I've got a severe fever", "intent": "fever", "source": "v1"}
+{"text": "I've got fever", "intent": "fever", "source": "v1"}
+{"text": "Is this fever?", "intent": "fever", "source": "v1"}
+{"text": "My forehead is burning", "intent": "fever", "source": "v1"}
+{"text": "Running a fever right now", "intent": "fever", "source": "v1"}
+{"text": "Suffering from fever", "intent": "fever", "source": "v1"}
+{"text": "Temperature elevated", "intent": "fever", "source": "v1"}
+{"text": "What if I have fever?", "intent": "fever", "source": "v1"}
+{"text": "bad case of flu", "intent": "flu", "source": "authored"}
+{"text": "feels like flu", "intent": "flu", "source": "authored"}
+{"text": "flu", "intent": "flu", "source": "authored"}
+{"text": "flu like illness", "intent": "flu", "source": "authored"}
+{"text": "flu like symptoms", "intent": "flu", "source": "authored"}
+{"text": "flue", "intent": "flu", "source": "authored"}
+{"text": "i feel terrible, probably flu", "intent": "flu", "source": "authored"}
+{"text": "i have a bad flu", "intent": "flu", "source": "authored"}
+{"text": "i have influenza", "intent": "flu", "source": "authored"}
+{"text": "i might have the flu", "intent": "flu", "source": "authored"}
+{"text": "i tested positive for flu", "intent": "flu", "source": "authored"}
+{"text": "i think i have the flu", "intent": "flu", "source": "authored"}
+{"text": "i'm down with flu", "intent": "flu", "source": "authored"}
+{"text": "i'm sick with the flu", "intent": "flu", "source": "authored"}
+{"text": "i've had the flu for 3 days", "intent": "flu", "source": "authored"}
+{"text": "the flu hit me hard", "intent": "flu", "source": "authored"}
+{"text": "Bad flu", "intent": "flu", "source": "v1"}
+{"text": "Came down with the flu", "intent": "flu", "source": "v1"}
+{"text": "Could this be flu?", "intent": "flu", "source": "v1"}
+{"text": "Flu illness", "intent": "flu", "source": "v1"}
+{"text": "Flu infection", "intent": "flu", "source": "v1"}
+{"text": "Flu pandemic", "intent": "flu", "source": "v1"}
+{"text": "Flu virus", "intent": "flu", "source": "v1"}
+{"text": "Got the flu", "intent": "flu", "source": "v1"}
+{"text": "Having flu symptoms", "intent": "flu", "source": "v1"}
+{"text": "I caught the flu", "intent": "flu", "source": "v1"}
+{"text": "I got flu", "intent": "flu", "source": "v1"}
+{"text": "I got the flu", "intent": "flu", "source": "v1"}
+{"text": "I have a mild flu", "intent": "flu", "source": "v1"}
+{"text": "I have a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I have a terrible flu", "intent": "flu", "source": "v1"}
+{"text": "I have been having a bad flu", "intent": "flu", "source": "v1"}
+{"text": "I have been having a flu", "intent": "flu", "source": "v1"}
+{"text": "I have been having a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I have been having a terrible flu", "intent": "flu", "source": "v1"}
+{"text": "I have flu", "intent": "flu", "source": "v1"}
+{"text": "I have some flu", "intent": "flu", "source": "v1"}
+{"text": "I have the flu", "intent": "flu", "source": "v1"}
+{"text": "I might have a bad flu", "intent": "flu", "source": "v1"}
+{"text": "I might have a mild flu", "intent": "flu", "source": "v1"}
+{"text": "I might have some flu", "intent": "flu", "source": "v1"}
+{"text": "I think I have a bad flu", "intent": "flu", "source": "v1"}
+{"text": "I think I have a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I think I have a terrible flu", "intent": "flu", "source": "v1"}
+{"text": "I think I have flu", "intent": "flu", "source": "v1"}
+{"text": "I think I have some flu", "intent": "flu", "source": "v1"}
+{"text": "I'm dealing with a mild flu", "intent": "flu", "source": "v1"}
+{"text": "I'm dealing with a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I'm dealing with a terrible flu", "intent": "flu", "source": "v1"}
+{"text": "I'm dealing with some flu", "intent": "flu", "source": "v1"}
+{"text": "I'm experiencing a bad flu", "intent": "flu", "source": "v1"}
+{"text": "I'm experiencing a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I'm experiencing flu", "intent": "flu", "source": "v1"}
+{"text": "I'm suffering from a mild flu", "intent": "flu", "source": "v1"}
+{"text": "I'm suffering from a severe flu", "intent": "flu", "source": "v1"}
+{"text": "I'm suffering from flu", "intent": "flu", "source": "v1"}
+{"text": "I'm suffering from some flu", "intent": "flu", "source": "v1"}
+{"text": "I've been experiencing a flu", "intent": "flu", "source": "v1"}
+{"text": "I've been experiencing a mild flu", "intent": "flu", "source": "v1"}
+{"text": "I've been experiencing flu", "intent": "flu", "source": "v1"}
+{"text": "I've got a flu", "intent": "flu", "source": "v1"}
+{"text": "I've got some flu", "intent": "flu", "source": "v1"}
+{"text": "Influenza infection", "intent": "flu", "source": "v1"}
+{"text": "Looks like flu", "intent": "flu", "source": "v1"}
+{"text": "Stomach flu", "intent": "flu", "source": "v1"}
+{"text": "What if I have flu?", "intent": "flu", "source": "v1"}
+{"text": "cya", "intent": "goodbye", "source": "authored"}
+{"text": "good night", "intent": "goodbye", "source": "authored"}
+{"text": "ok bye", "intent": "goodbye", "source": "authored"}
+{"text": "that's all, thanks bye", "intent": "goodbye", "source": "authored"}
+{"text": "always nice to talk to you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "catch you around", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "cya later", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "fairwell", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "farewell!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "good seeing you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "have a good one", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i am glad we got to talk again, see you soon", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i had fun speaking with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i have to say goodbye", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i'm saying goodbye now", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "ill see you around", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it is time to say goodbye", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was enjoyable talking with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was great chatting with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was great to have this conversation with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was great to see you again, see ya later!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was nice to converse with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was nice to talk it out with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was pleasant conversing with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was pleasant having a conversation with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "it was really nice to be able to chat with you", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i’ll be leaving now", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "i’m leaving-goodbye!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "later!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "later, thanks for chatting", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "nice talk, talk to you later", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "nice to see you again", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "see you again soon", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "see you later, alligator", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "talk to you later!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "tata for now", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "that's all, bye", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "until next time!", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "we'll talk later ai", "intent": "goodbye", "source": "clinc", "clinc_intent": "goodbye"}
+{"text": "Adios", "intent": "goodbye", "source": "v1"}
+{"text": "Alright bye", "intent": "goodbye", "source": "v1"}
+{"text": "Alright goodbye", "intent": "goodbye", "source": "v1"}
+{"text": "Alright we're done", "intent": "goodbye", "source": "v1"}
+{"text": "Be seeing you", "intent": "goodbye", "source": "v1"}
+{"text": "Bye bye", "intent": "goodbye", "source": "v1"}
+{"text": "Bye chatbot", "intent": "goodbye", "source": "v1"}
+{"text": "Bye doctor", "intent": "goodbye", "source": "v1"}
+{"text": "Bye for now", "intent": "goodbye", "source": "v1"}
+{"text": "Catch ya later", "intent": "goodbye", "source": "v1"}
+{"text": "Cheerio", "intent": "goodbye", "source": "v1"}
+{"text": "Close", "intent": "goodbye", "source": "v1"}
+{"text": "Complete", "intent": "goodbye", "source": "v1"}
+{"text": "End", "intent": "goodbye", "source": "v1"}
+{"text": "Exit", "intent": "goodbye", "source": "v1"}
+{"text": "Finished", "intent": "goodbye", "source": "v1"}
+{"text": "Goodbye doctor", "intent": "goodbye", "source": "v1"}
+{"text": "Goodbye for now", "intent": "goodbye", "source": "v1"}
+{"text": "Got it bye", "intent": "goodbye", "source": "v1"}
+{"text": "Got it goodbye", "intent": "goodbye", "source": "v1"}
+{"text": "Gotta go", "intent": "goodbye", "source": "v1"}
+{"text": "Gotta leave", "intent": "goodbye", "source": "v1"}
+{"text": "Gotta run", "intent": "goodbye", "source": "v1"}
+{"text": "I must go", "intent": "goodbye", "source": "v1"}
+{"text": "I'm leaving", "intent": "goodbye", "source": "v1"}
+{"text": "I'm leaving now", "intent": "goodbye", "source": "v1"}
+{"text": "I'm off", "intent": "goodbye", "source": "v1"}
+{"text": "Later gator", "intent": "goodbye", "source": "v1"}
+{"text": "Leaving now", "intent": "goodbye", "source": "v1"}
+{"text": "Okay bye", "intent": "goodbye", "source": "v1"}
+{"text": "Okay that's it", "intent": "goodbye", "source": "v1"}
+{"text": "Peace out", "intent": "goodbye", "source": "v1"}
+{"text": "Quit", "intent": "goodbye", "source": "v1"}
+{"text": "See ya", "intent": "goodbye", "source": "v1"}
+{"text": "See you", "intent": "goodbye", "source": "v1"}
+{"text": "See you bot", "intent": "goodbye", "source": "v1"}
+{"text": "See you chatbot", "intent": "goodbye", "source": "v1"}
+{"text": "See you doc", "intent": "goodbye", "source": "v1"}
+{"text": "See you doctor", "intent": "goodbye", "source": "v1"}
+{"text": "See you soon", "intent": "goodbye", "source": "v1"}
+{"text": "Speak soon", "intent": "goodbye", "source": "v1"}
+{"text": "Take care", "intent": "goodbye", "source": "v1"}
+{"text": "Talk soon", "intent": "goodbye", "source": "v1"}
+{"text": "Talk to you later", "intent": "goodbye", "source": "v1"}
+{"text": "Thank you bye", "intent": "goodbye", "source": "v1"}
+{"text": "Thank you see you later", "intent": "goodbye", "source": "v1"}
+{"text": "Thank you take care", "intent": "goodbye", "source": "v1"}
+{"text": "Thanks bye", "intent": "goodbye", "source": "v1"}
+{"text": "Thanks see you later", "intent": "goodbye", "source": "v1"}
+{"text": "Thanks take care", "intent": "goodbye", "source": "v1"}
+{"text": "Thanks that's all", "intent": "goodbye", "source": "v1"}
+{"text": "That's it", "intent": "goodbye", "source": "v1"}
+{"text": "Time to go", "intent": "goodbye", "source": "v1"}
+{"text": "We're done", "intent": "goodbye", "source": "v1"}
+{"text": "hello!", "intent": "greeting", "source": "authored"}
+{"text": "hello, anyone there?", "intent": "greeting", "source": "authored"}
+{"text": "helo", "intent": "greeting", "source": "authored"}
+{"text": "heyy", "intent": "greeting", "source": "authored"}
+{"text": "ahoy hoy", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "greetings to you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "heller", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello siri", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello there!", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello, anyone there", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello, friend", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello, what's up", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hey hey!", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hey there fellow", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hey there!", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hi ai", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hi there alexa", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hiya!", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "howdy, what's new", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "is everything ok with you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "it's good to see you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "it's nice to see you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "salutations!", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "wake up, ai", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "what's happening", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "what's up with you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "whats up", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "whats up with you", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "why hello", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "why, hello bandit", "intent": "greeting", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "Afternoon", "intent": "greeting", "source": "v1"}
+{"text": "Evening doctor", "intent": "greeting", "source": "v1"}
+{"text": "Good afternoon", "intent": "greeting", "source": "v1"}
+{"text": "Good afternoon can you help", "intent": "greeting", "source": "v1"}
+{"text": "Good afternoon doc", "intent": "greeting", "source": "v1"}
+{"text": "Good day", "intent": "greeting", "source": "v1"}
+{"text": "Good evening", "intent": "greeting", "source": "v1"}
+{"text": "Good evening I have symptoms", "intent": "greeting", "source": "v1"}
+{"text": "Good evening doc", "intent": "greeting", "source": "v1"}
+{"text": "Good morning", "intent": "greeting", "source": "v1"}
+{"text": "Good morning doc", "intent": "greeting", "source": "v1"}
+{"text": "Good morrow", "intent": "greeting", "source": "v1"}
+{"text": "Good to see you", "intent": "greeting", "source": "v1"}
+{"text": "Greetings", "intent": "greeting", "source": "v1"}
+{"text": "Greetings I need medical help", "intent": "greeting", "source": "v1"}
+{"text": "Greetings and salutations", "intent": "greeting", "source": "v1"}
+{"text": "Greetings doc", "intent": "greeting", "source": "v1"}
+{"text": "Greetings doctor", "intent": "greeting", "source": "v1"}
+{"text": "Greetings friend", "intent": "greeting", "source": "v1"}
+{"text": "Greetings my friend", "intent": "greeting", "source": "v1"}
+{"text": "Hallo", "intent": "greeting", "source": "v1"}
+{"text": "Hello bot", "intent": "greeting", "source": "v1"}
+{"text": "Hello doc", "intent": "greeting", "source": "v1"}
+{"text": "Hello healthcare bot", "intent": "greeting", "source": "v1"}
+{"text": "Hello how are you", "intent": "greeting", "source": "v1"}
+{"text": "Hello pal", "intent": "greeting", "source": "v1"}
+{"text": "Hey I feel bad", "intent": "greeting", "source": "v1"}
+{"text": "Hey I have a problem", "intent": "greeting", "source": "v1"}
+{"text": "Hey bot", "intent": "greeting", "source": "v1"}
+{"text": "Hey can you help", "intent": "greeting", "source": "v1"}
+{"text": "Hey chatbot", "intent": "greeting", "source": "v1"}
+{"text": "Hey doc", "intent": "greeting", "source": "v1"}
+{"text": "Hey doctor", "intent": "greeting", "source": "v1"}
+{"text": "Hey friend", "intent": "greeting", "source": "v1"}
+{"text": "Hey health assistant", "intent": "greeting", "source": "v1"}
+{"text": "Hey pal", "intent": "greeting", "source": "v1"}
+{"text": "Hi I need help", "intent": "greeting", "source": "v1"}
+{"text": "Hi doc", "intent": "greeting", "source": "v1"}
+{"text": "Hi there", "intent": "greeting", "source": "v1"}
+{"text": "Hi there I need assistance", "intent": "greeting", "source": "v1"}
+{"text": "Hi there bot", "intent": "greeting", "source": "v1"}
+{"text": "Hola", "intent": "greeting", "source": "v1"}
+{"text": "Howdy", "intent": "greeting", "source": "v1"}
+{"text": "Konnichiwa", "intent": "greeting", "source": "v1"}
+{"text": "Morning doctor", "intent": "greeting", "source": "v1"}
+{"text": "Namaste", "intent": "greeting", "source": "v1"}
+{"text": "Nice to meet you", "intent": "greeting", "source": "v1"}
+{"text": "Pleased to meet you", "intent": "greeting", "source": "v1"}
+{"text": "Salutations", "intent": "greeting", "source": "v1"}
+{"text": "Salutations friend", "intent": "greeting", "source": "v1"}
+{"text": "Sup", "intent": "greeting", "source": "v1"}
+{"text": "Welcome", "intent": "greeting", "source": "v1"}
+{"text": "What's good", "intent": "greeting", "source": "v1"}
+{"text": "Yo", "intent": "greeting", "source": "v1"}
+{"text": "Yo what's up", "intent": "greeting", "source": "v1"}
+{"text": "a bad headache", "intent": "headache", "source": "authored"}
+{"text": "constant headaches", "intent": "headache", "source": "authored"}
+{"text": "dull headache", "intent": "headache", "source": "authored"}
+{"text": "hangover headache", "intent": "headache", "source": "authored"}
+{"text": "headach", "intent": "headache", "source": "authored"}
+{"text": "headache behind my eyes", "intent": "headache", "source": "authored"}
+{"text": "headache every afternoon", "intent": "headache", "source": "authored"}
+{"text": "headache since this morning", "intent": "headache", "source": "authored"}
+{"text": "i keep getting headaches", "intent": "headache", "source": "authored"}
+{"text": "i've had a headache for two days", "intent": "headache", "source": "authored"}
+{"text": "migraine with sensitivity to light", "intent": "headache", "source": "authored"}
+{"text": "migranes", "intent": "headache", "source": "authored"}
+{"text": "my head aches", "intent": "headache", "source": "authored"}
+{"text": "my head feels like it's going to explode", "intent": "headache", "source": "authored"}
+{"text": "my head hurts", "intent": "headache", "source": "authored"}
+{"text": "my temples hurt", "intent": "headache", "source": "authored"}
+{"text": "pain at the back of my head", "intent": "headache", "source": "authored"}
+{"text": "pain in my forehead", "intent": "headache", "source": "authored"}
+{"text": "pressure in my head", "intent": "headache", "source": "authored"}
+{"text": "splitting headache", "intent": "headache", "source": "authored"}
+{"text": "Chronic headache", "intent": "headache", "source": "v1"}
+{"text": "Cluster headache", "intent": "headache", "source": "v1"}
+{"text": "Do I have headache?", "intent": "headache", "source": "v1"}
+{"text": "Head pain", "intent": "headache", "source": "v1"}
+{"text": "Headache symptoms", "intent": "headache", "source": "v1"}
+{"text": "Headache won't go away", "intent": "headache", "source": "v1"}
+{"text": "I got a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I got a headache", "intent": "headache", "source": "v1"}
+{"text": "I got a mild headache", "intent": "headache", "source": "v1"}
+{"text": "I got a terrible headache", "intent": "headache", "source": "v1"}
+{"text": "I got some headache", "intent": "headache", "source": "v1"}
+{"text": "I have a terrible headache", "intent": "headache", "source": "v1"}
+{"text": "I have been having a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I have been having a mild headache", "intent": "headache", "source": "v1"}
+{"text": "I have been having a severe headache", "intent": "headache", "source": "v1"}
+{"text": "I have been having headache", "intent": "headache", "source": "v1"}
+{"text": "I have been having some headache", "intent": "headache", "source": "v1"}
+{"text": "I have headache", "intent": "headache", "source": "v1"}
+{"text": "I might have a mild headache", "intent": "headache", "source": "v1"}
+{"text": "I think I have a headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with a headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with a severe headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with a terrible headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with headache", "intent": "headache", "source": "v1"}
+{"text": "I'm dealing with some headache", "intent": "headache", "source": "v1"}
+{"text": "I'm experiencing a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I'm experiencing a headache", "intent": "headache", "source": "v1"}
+{"text": "I'm experiencing a terrible headache", "intent": "headache", "source": "v1"}
+{"text": "I'm experiencing headache", "intent": "headache", "source": "v1"}
+{"text": "I'm experiencing some headache", "intent": "headache", "source": "v1"}
+{"text": "I'm suffering from a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I'm suffering from a severe headache", "intent": "headache", "source": "v1"}
+{"text": "I'm suffering from a terrible headache", "intent": "headache", "source": "v1"}
+{"text": "I'm suffering from headache", "intent": "headache", "source": "v1"}
+{"text": "I've been experiencing a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I've been experiencing a mild headache", "intent": "headache", "source": "v1"}
+{"text": "I've been experiencing some headache", "intent": "headache", "source": "v1"}
+{"text": "I've got a bad headache", "intent": "headache", "source": "v1"}
+{"text": "I've got some headache", "intent": "headache", "source": "v1"}
+{"text": "Is this headache?", "intent": "headache", "source": "v1"}
+{"text": "Might this be headache?", "intent": "headache", "source": "v1"}
+{"text": "Migraine", "intent": "headache", "source": "v1"}
+{"text": "Pounding headache", "intent": "headache", "source": "v1"}
+{"text": "Terrible headache", "intent": "headache", "source": "v1"}
+{"text": "What if I have headache?", "intent": "headache", "source": "v1"}
+{"text": "how are things", "intent": "how_are_you", "source": "authored"}
+{"text": "how are you", "intent": "how_are_you", "source": "authored"}
+{"text": "how are you doing today", "intent": "how_are_you", "source": "authored"}
+{"text": "how have you been", "intent": "how_are_you", "source": "authored"}
+{"text": "ai how are you doing on this fine day", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "ai how are you doing today", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "ai, how are you feeling", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are things going well for you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are you doing okay", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are you doing well", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are you feeling okay", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are you okay right now", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "are you well", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "have you been good", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello how's it going", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello, are you doing alright", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hello, how are you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hey how's it hanging", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hi how is everything", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hi there, how are things", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "hi! are you doing okay", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are things going for you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are things treating you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are things with you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are you doing today, ai", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are you doing, ai", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are you this day", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how are you today", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how do you feel", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how goes it", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how is everything going", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how is everything going for you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how is life treating you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how is my ai doing", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how is your day", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how're you doing", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how's everything", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how's ife treating you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how's it going right now", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how's it going with you", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how's life", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "how've you been feeling", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "is everything going okay", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "so how is everything", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "tell me how you've been", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "what's going on", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "yo, hows it going", "intent": "how_are_you", "source": "clinc", "clinc_intent": "greeting"}
+{"text": "All good?", "intent": "how_are_you", "source": "v1"}
+{"text": "All okay?", "intent": "how_are_you", "source": "v1"}
+{"text": "Are you doing well?", "intent": "how_are_you", "source": "v1"}
+{"text": "Are you okay?", "intent": "how_are_you", "source": "v1"}
+{"text": "Doing good?", "intent": "how_are_you", "source": "v1"}
+{"text": "Doing okay?", "intent": "how_are_you", "source": "v1"}
+{"text": "Everything alright?", "intent": "how_are_you", "source": "v1"}
+{"text": "Everything okay?", "intent": "how_are_you", "source": "v1"}
+{"text": "How are things?", "intent": "how_are_you", "source": "v1"}
+{"text": "How are ya?", "intent": "how_are_you", "source": "v1"}
+{"text": "How are you doing?", "intent": "how_are_you", "source": "v1"}
+{"text": "How are you today?", "intent": "how_are_you", "source": "v1"}
+{"text": "How do you feel?", "intent": "how_are_you", "source": "v1"}
+{"text": "How goes it?", "intent": "how_are_you", "source": "v1"}
+{"text": "How you doing?", "intent": "how_are_you", "source": "v1"}
+{"text": "How's everything?", "intent": "how_are_you", "source": "v1"}
+{"text": "How's it going?", "intent": "how_are_you", "source": "v1"}
+{"text": "How's life?", "intent": "how_are_you", "source": "v1"}
+{"text": "How's things?", "intent": "how_are_you", "source": "v1"}
+{"text": "Status check?", "intent": "how_are_you", "source": "v1"}
+{"text": "What's up with you?", "intent": "how_are_you", "source": "v1"}
+{"text": "You good?", "intent": "how_are_you", "source": "v1"}
+{"text": "You well?", "intent": "how_are_you", "source": "v1"}
+{"text": "can't get to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "can't sleep because of stress", "intent": "insomnia", "source": "authored"}
+{"text": "can't sleep properly", "intent": "insomnia", "source": "authored"}
+{"text": "help i can't sleep", "intent": "insomnia", "source": "authored"}
+{"text": "how do i fall asleep", "intent": "insomnia", "source": "authored"}
+{"text": "i barely slept last night", "intent": "insomnia", "source": "authored"}
+{"text": "i can't get any sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i can't seem to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i can't sleep at night", "intent": "insomnia", "source": "authored"}
+{"text": "i have insomnia", "intent": "insomnia", "source": "authored"}
+{"text": "i have trouble falling asleep", "intent": "insomnia", "source": "authored"}
+{"text": "i haven't been sleeping", "intent": "insomnia", "source": "authored"}
+{"text": "i haven't slept in days", "intent": "insomnia", "source": "authored"}
+{"text": "i haven't slept well in weeks", "intent": "insomnia", "source": "authored"}
+{"text": "i keep waking up", "intent": "insomnia", "source": "authored"}
+{"text": "i keep waking up at night", "intent": "insomnia", "source": "authored"}
+{"text": "i keep waking up early and can't get back to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i lie awake for hours", "intent": "insomnia", "source": "authored"}
+{"text": "i need help sleeping", "intent": "insomnia", "source": "authored"}
+{"text": "i only sleep a few hours", "intent": "insomnia", "source": "authored"}
+{"text": "i sleep badly", "intent": "insomnia", "source": "authored"}
+{"text": "i struggle to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i toss and turn all night", "intent": "insomnia", "source": "authored"}
+{"text": "i wake up tired because i can't sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i'm awake all night", "intent": "insomnia", "source": "authored"}
+{"text": "i'm having sleep issues", "intent": "insomnia", "source": "authored"}
+{"text": "i'm not able to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "i'm not sleeping well", "intent": "insomnia", "source": "authored"}
+{"text": "i'm up all night", "intent": "insomnia", "source": "authored"}
+{"text": "insomnia", "intent": "insomnia", "source": "authored"}
+{"text": "insomnia for weeks", "intent": "insomnia", "source": "authored"}
+{"text": "light sleeper, always waking up", "intent": "insomnia", "source": "authored"}
+{"text": "my mind races when i try to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "my sleep is broken", "intent": "insomnia", "source": "authored"}
+{"text": "my sleep is terrible", "intent": "insomnia", "source": "authored"}
+{"text": "poor sleep", "intent": "insomnia", "source": "authored"}
+{"text": "restless sleep", "intent": "insomnia", "source": "authored"}
+{"text": "sleep problems", "intent": "insomnia", "source": "authored"}
+{"text": "sleeping problems", "intent": "insomnia", "source": "authored"}
+{"text": "sleepless nights", "intent": "insomnia", "source": "authored"}
+{"text": "trouble sleeping", "intent": "insomnia", "source": "authored"}
+{"text": "unable to sleep", "intent": "insomnia", "source": "authored"}
+{"text": "feeling sick and want to puke", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "food poisoning, i keep throwing up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i can't stop vomiting", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel like i need to vomit", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel like throwing up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel nauseous", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel nauseous and sweaty", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel nauseous when i eat", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel queasy", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel really nauseous today", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel sick in my stomach", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i feel sick to my stomach", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i get carsick", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i keep gagging", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i keep throwing up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i puked", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i think i'm going to be sick", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i threw up this morning", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i threw up twice today", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i vomited after eating", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i vomited three times", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i'm going to throw up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i'm throwing up a lot", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i've been puking", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i've been throwing up all night", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i've been vomiting", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "i've had nausea for two days", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "morning nausea", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "motion sickness", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "my stomach is churning and i feel sick", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "nausea", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "nausea after taking my medicine", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "nausea since this morning", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "nausea won't go away", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "seasick", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "sick to my stomach after dinner", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "slight nausea", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "the smell of food makes me want to throw up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "throwing up", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "vomiting and nausea", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "vomitting", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "waves of nausea", "intent": "nausea_vomiting", "source": "authored"}
+{"text": "am i going to be okay", "intent": "out_of_scope", "source": "authored"}
+{"text": "asdfghjkl", "intent": "out_of_scope", "source": "authored"}
+{"text": "can i change my doctor", "intent": "out_of_scope", "source": "authored"}
+{"text": "can i get a vaccine for this", "intent": "out_of_scope", "source": "authored"}
+{"text": "can i go to work tomorrow", "intent": "out_of_scope", "source": "authored"}
+{"text": "can you send my test results", "intent": "out_of_scope", "source": "authored"}
+{"text": "cancel my appointment please", "intent": "out_of_scope", "source": "authored"}
+{"text": "do i need antibiotics", "intent": "out_of_scope", "source": "authored"}
+{"text": "do you accept my insurance", "intent": "out_of_scope", "source": "authored"}
+{"text": "how do i cook pasta", "intent": "out_of_scope", "source": "authored"}
+{"text": "how do i prevent getting sick again", "intent": "out_of_scope", "source": "authored"}
+{"text": "how do i quit smoking", "intent": "out_of_scope", "source": "authored"}
+{"text": "how do i reset my password", "intent": "out_of_scope", "source": "authored"}
+{"text": "how many calories should i eat", "intent": "out_of_scope", "source": "authored"}
+{"text": "how much does a consultation cost", "intent": "out_of_scope", "source": "authored"}
+{"text": "how much ibuprofen can i take", "intent": "out_of_scope", "source": "authored"}
+{"text": "how tall is mount everest", "intent": "out_of_scope", "source": "authored"}
+{"text": "i cut my finger", "intent": "out_of_scope", "source": "authored"}
+{"text": "i have a lump in my breast", "intent": "out_of_scope", "source": "authored"}
+{"text": "i have a splinter", "intent": "out_of_scope", "source": "authored"}
+{"text": "i like turtles", "intent": "out_of_scope", "source": "authored"}
+{"text": "i need a sick note for work", "intent": "out_of_scope", "source": "authored"}
+{"text": "i think i broke my finger", "intent": "out_of_scope", "source": "authored"}
+{"text": "i twisted my ankle", "intent": "out_of_scope", "source": "authored"}
+{"text": "i want to update my phone number", "intent": "out_of_scope", "source": "authored"}
+{"text": "is it contagious", "intent": "out_of_scope", "source": "authored"}
+{"text": "is it okay to mix ibuprofen and paracetamol", "intent": "out_of_scope", "source": "authored"}
+{"text": "is it safe to exercise while sick", "intent": "out_of_scope", "source": "authored"}
+{"text": "is this normal for my age", "intent": "out_of_scope", "source": "authored"}
+{"text": "it burns when i pee", "intent": "out_of_scope", "source": "authored"}
+{"text": "my blood sugar is high", "intent": "out_of_scope", "source": "authored"}
+{"text": "my dog is sick", "intent": "out_of_scope", "source": "authored"}
+{"text": "order me a pizza", "intent": "out_of_scope", "source": "authored"}
+{"text": "recommend a good movie", "intent": "out_of_scope", "source": "authored"}
+{"text": "tell me a joke", "intent": "out_of_scope", "source": "authored"}
+{"text": "there's blood in my urine", "intent": "out_of_scope", "source": "authored"}
+{"text": "translate hello into spanish", "intent": "out_of_scope", "source": "authored"}
+{"text": "what are your opening hours", "intent": "out_of_scope", "source": "authored"}
+{"text": "what does high blood pressure mean", "intent": "out_of_scope", "source": "authored"}
+{"text": "what is the capital of france", "intent": "out_of_scope", "source": "authored"}
+{"text": "what medicine should i take", "intent": "out_of_scope", "source": "authored"}
+{"text": "what vitamins should i take", "intent": "out_of_scope", "source": "authored"}
+{"text": "what's 25 times 4", "intent": "out_of_scope", "source": "authored"}
+{"text": "what's my bmi", "intent": "out_of_scope", "source": "authored"}
+{"text": "what's the weather like today", "intent": "out_of_scope", "source": "authored"}
+{"text": "when should i see a doctor", "intent": "out_of_scope", "source": "authored"}
+{"text": "where is the nearest pharmacy", "intent": "out_of_scope", "source": "authored"}
+{"text": "who won the game last night", "intent": "out_of_scope", "source": "authored"}
+{"text": "will it go away on its own", "intent": "out_of_scope", "source": "authored"}
+{"text": "a the bike looks very nice", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "add my birthday to my calendar for next month on the 5th", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "calendar_update"}
+{"text": "adjust windshield wipers", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "ai, please roll the dice", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "roll_dice"}
+{"text": "alert my bank and let them know that i'm travelling to china", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "travel_notification"}
+{"text": "am i in need of an international visa to go to france", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "international_visa"}
+{"text": "am i using cruise control", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "any suggestions for a peruvian meal", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "meal_suggestion"}
+{"text": "are deer indigenous to north america", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are hawks domesticated or wild", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are semitic languages harder to learn than arabic languages", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are tattoos safe to get", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are there any local stations covering the moral march in raleigh in februaryu", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are there any vacancies in new york city from april 2 through april 8", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "book_hotel"}
+{"text": "are trees absolutely necessary to survive", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "are you able to answer algebra equations", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "call an uber to mcdonalds", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "uber"}
+{"text": "can i substitute ginger for garlic", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "ingredient_substitution"}
+{"text": "can we put sunscreen on my list for shopping", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "shopping_list_update"}
+{"text": "can you check what fuel type to use with this car", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "gas_type"}
+{"text": "can you confirm my reservation for torris at 7:00", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "confirm_reservation"}
+{"text": "can you figure out the meaning of life", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "meaning_of_life"}
+{"text": "can you find out for me how many mushroom species are there", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you find out if my vacation time off request has been approved or not", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pto_request_status"}
+{"text": "can you forward this email to my boss", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you help me study for a history exam", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you hook me up with a meeting room on saturday morning at 10am", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "schedule_meeting"}
+{"text": "can you list me tiger wood's stats", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you read me the last text", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you reserve a table for 2 at red lobster at 8pm", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "restaurant_reservation"}
+{"text": "can you restart my phone", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you see the second right inside the fridge", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you show me my 3-digit credit card verification number", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you tell me how to figure a percentage of a number", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you tell me my income tax", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "taxes"}
+{"text": "can you tell me something about the nfl", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you tell me the best place for cajun shrimp in tampa", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "restaurant_suggestion"}
+{"text": "can you tell me what things i was trying to remember", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "reminder"}
+{"text": "can you tell me when the bank closes", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "can you tell me where flight dl123 is", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "flight_status"}
+{"text": "can you tell me who else is on my account", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "could you play the next song on this playlist", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "next_song"}
+{"text": "could you put a stop on my bank account", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "freeze_account"}
+{"text": "could you tell me what 30% off 235 is, please", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "calculator"}
+{"text": "cross volunteering off my todo list", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "todo_list_update"}
+{"text": "destroy process", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "cancel"}
+{"text": "did anyone securely lock the door", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "smart_home"}
+{"text": "do i have meetings scheduled today", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "meeting_schedule"}
+{"text": "do i need a socket converter if i'm going to be in germany", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "plug_type"}
+{"text": "do you have a date for the last time the car was in the shop", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "last_maintenance"}
+{"text": "do you have anything you enjoy to do", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "what_are_your_hobbies"}
+{"text": "do you know anything about the status of my order", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "order_status"}
+{"text": "do you know how busy outback steakhouse tends to be at 7:00 pm", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "how_busy"}
+{"text": "do you know the name of your boss", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "who_do_you_work_for"}
+{"text": "does bar tartine in san francisco take reservations", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "accept_reservations"}
+{"text": "does my usaa card have international transaction fees", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "international_fees"}
+{"text": "file a report for a lost american express card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "report_lost_card"}
+{"text": "find instructions for how to change the oil in a 2015 passat", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oil_change_how"}
+{"text": "find out for me what kind of benefits military veterans have after retirement", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "find out what happened to make my card get declined yesterday", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "card_declined"}
+{"text": "find the minimum due on my peco energy bill for february", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "min_payment"}
+{"text": "get me dwight howard shooting average", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "give me the local newsi", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "gps coordinates share with home", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "share_location"}
+{"text": "has anyone ever time traveled before", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how are my sports teams doing", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how can i get involved in restaurant marketing", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how can i get more checks for my commerce bank checking account", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "order_checks"}
+{"text": "how can i protect myself online", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how can i report fraudulent charges on my card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "report_fraud"}
+{"text": "how do i change my billing address", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do i change my flight", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do i change your options so that you speak more slowly", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_speed"}
+{"text": "how do i decide on a good first tattoo", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do i find a common denominator", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do i know when to pay my gas bill", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "bill_due"}
+{"text": "how do i start my own marketing firm", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do i stop the beeping noise when my seatbelt is off in my honda civic", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do the anti-lock brakes work", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do you get an oscar", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do you know if a mushroom is edible", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how do you report a burned debit card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "damaged_card"}
+{"text": "how do you store my card information", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how does a optical mouse work", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how expensive is an apple share", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how fast does an airplane travel", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how high is the air in my tires", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "tire_pressure"}
+{"text": "how long can i leave pizza in the fridge", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "food_last"}
+{"text": "how long do chipmunks usually live", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how long do mosquito's live", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how long does it take to cook ham", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "cook_time"}
+{"text": "how long does it take to get to phoenix by bus", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "distance"}
+{"text": "how long until i need to change my oil", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oil_change_when"}
+{"text": "how long was the siege of leningrad", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many cs are in acquiescence", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "spelling"}
+{"text": "how many generations of pokemon are there now", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many people fall victim to internet scams per year", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many people live in taiwan", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many players are on the chicago bulls", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many points has the nyse gone up by this month", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many rewards do i have on my chase card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "rewards_balance"}
+{"text": "how many seasons of rick and morty are there", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many sides are in a hexagon", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many students attend ucsb", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how many ways can i make $1 using standard us coins", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how much is 1 share of aapl", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how much is an overdraft fee for bank", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how the bikes looks", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "how will traffic be at 7am on the way to my job", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "traffic"}
+{"text": "how win money in internet", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "i have how many vacation days left this year", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pto_balance"}
+{"text": "i just used up my toothpaste and need you to order more", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "order"}
+{"text": "i managed to get a new job but i need help with my 401k rollover", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "rollover_401k"}
+{"text": "i need to know what the latest is with my application for a visa credit card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "application_status"}
+{"text": "i need to speak to customer service regarding my flight", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "i need to switch back to my factory settings", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "reset_settings"}
+{"text": "i need your setting switched to whisper mode right away", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "whisper_mode"}
+{"text": "i really need to find the interest rate for my checking account", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "interest_rate"}
+{"text": "i wanna set up a direct deposit for my paycheck", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "direct_deposit"}
+{"text": "i want to pay my rent bill", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pay_bill"}
+{"text": "i want to play my maroon 5 playlist", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "play_music"}
+{"text": "i want to redeem points on my chase card, but how", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "redeem_rewards"}
+{"text": "i want to view my balance", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "balance"}
+{"text": "i want you to guess my name", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "user_name"}
+{"text": "i would like to apply for a master card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "new_card"}
+{"text": "i would like to know how to say hello in french", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "translate"}
+{"text": "i would love to know the exchange rate between rubles and pounds", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "exchange_rate"}
+{"text": "i'm not sure of that", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "maybe"}
+{"text": "if you're dishonorably discharged, are you still a veteran", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "include happy on my rb playlist", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "update_playlist"}
+{"text": "is it difficult to be successful on wall street", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is it difficult to learn a semitic language", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is it legal to breed and sell rabbits without a license", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is it worth investing in target", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is k-12 education required outside of the united states", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is patriarchy wrong", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is the bachelor on tonight", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is there a car in my blind spot", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is there a travel alert for russia", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "travel_alert"}
+{"text": "is there a video-on-demand function (vod)", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is there overtime in college football", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is va treatment free for veterans", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "is yoga healthy", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "let me know how the outback steakhouse reviews are", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "restaurant_reviews"}
+{"text": "let me know the amounts i owe for my utilities and tuition bills", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "bill_balance"}
+{"text": "make an appointment to check my tires", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "schedule_maintenance"}
+{"text": "make up a new alarm", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "alarm"}
+{"text": "may i take a pto on february 7 and 8", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pto_request"}
+{"text": "move money from one account to another", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "transfer"}
+{"text": "please cancel the table for two at burger king", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "cancel_reservation"}
+{"text": "please change my checking account pin to 1234", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pin_change"}
+{"text": "please change your accent the male british one", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_accent"}
+{"text": "please explain the catch rule to me", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "please find the capital of pakistan and its population", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "please flip a coin i hope its tails", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "flip_coin"}
+{"text": "please phone lizzy", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "make_call"}
+{"text": "please repeat that phrase", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "repeat"}
+{"text": "please save my draft for me so i can work on it later", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "please set a timer for 20 minutes", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "timer"}
+{"text": "please tell me my spending limit", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "credit_limit"}
+{"text": "remind me to take out the garbage in the morning", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "reminder_update"}
+{"text": "rewind one minute", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "should i invest in microsoft stock", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "show me an example of an algebraic expression", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "show me something funny about food", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "tell_joke"}
+{"text": "switch your language setting to english", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_language"}
+{"text": "tell me something cool about elephants", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "fun_fact"}
+{"text": "tell me the exact amount of pto i have used", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "pto_used"}
+{"text": "tell me what my credit rating is", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "credit_score"}
+{"text": "tell me when i get paid", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "payday"}
+{"text": "text my boss for me and tell them i will be a little bit late", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "text"}
+{"text": "that would be a no", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "label_30"}
+{"text": "the name i go by is sandy", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_user_name"}
+{"text": "think about if you could only say one or the other, which animal do you see yourself choosing, cats or dogs", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "do_you_have_pets"}
+{"text": "what airlines have flights round trip on april 1st to april 7th from lax to sfo", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "book_flight"}
+{"text": "what are my local news stations", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what are some deals on amazon", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what are some ways to keep my credit score up", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "improve_credit_score"}
+{"text": "what are some ways to prepare portabello mushrooms", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what are some ways to reduce spending", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what are the requirements for carry on on flights with united airlines", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "carry_on"}
+{"text": "what are van gogh's best pieces", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what caused a freeze to be put on my bank account", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "account_blocked"}
+{"text": "what did i put on my shopping list so far", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "shopping_list"}
+{"text": "what did i spend on groceries this month", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "spending_history"}
+{"text": "what did the president say todayu", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what do i have to do tomorrow, according to my to-do list", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "todo_list"}
+{"text": "what do i make yearly", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "income"}
+{"text": "what do i need if i want to make lasagna", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "ingredients_list"}
+{"text": "what do rabbits eat", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what do you call someone who was born in segovia", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what does ajar mean", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "definition"}
+{"text": "what does my personality mean", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what have i got planned for the date of april 23", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "calendar"}
+{"text": "what holiday's are comming up next", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "next_holiday"}
+{"text": "what is npr reporting on right now", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is rhineland", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the account number", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the apr rate on my bank of america card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "apr"}
+{"text": "what is the current market trend", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the formula for the circumference of a circle", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the formula for the surface area of a cylinder", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the largest state in the us", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the largest tree in the world", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the location of my phone", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "find_phone"}
+{"text": "what is the most popular airline", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the most popular sport in new york", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the mpg for this car in city", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "mpg"}
+{"text": "what is the origin of the name michael", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what is the quickest way to get a new card", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "replacement_card_duration"}
+{"text": "what is the time zone of france", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "timezone"}
+{"text": "what is the title of this tune", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "what_song"}
+{"text": "what is the way to jump start my car", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "jump_start"}
+{"text": "what is the weather forecast for seattle", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "weather"}
+{"text": "what is tomorrow's date, please", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "date"}
+{"text": "what is your birthday again", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "how_old_are_you"}
+{"text": "what languages are considered semitic", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what month are mosquitoes the worst in the united states", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what other nations were involved in the chinese trade war", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what other personality type is most compatible with infjs", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what percentage of species display cold blooded traits", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what place do you call home", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "where_are_you_from"}
+{"text": "what show am i watching", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what size wipers does this car take", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what species of oak tree grows to be the tallest", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what stage of evolution am i", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what team does eli mannign play for", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what time does the louvre open", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what year was shawshank redemption released", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what year was the first pokemon game released", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what years did world war i occur", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what years has korea been at war", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's 32 degrees fahrenheit in celsisus", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "measurement_conversion"}
+{"text": "what's a good resource to learn beginner's yoga", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's a good use of my time in toronto", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "travel_suggestion"}
+{"text": "what's a puffin's natural habitat", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's an otter's primary diet", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's bank of america's routing number", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "routing"}
+{"text": "what's left in my gas tank", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "gas"}
+{"text": "what's the alma mater of the man that started youtube", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the best price on super smash bros ultimate right now", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the biggest saas marketing company in the united states", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the dominant minor for the key of bflat", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the exact date that my chase card will no longer work", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "expiration_date"}
+{"text": "what's the last transaction i made yesterday", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "transactions"}
+{"text": "what's the most dominant scale in bluegrass", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the most effective bug repellant", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the order of the circle of fifths", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the precise coordinates of this place", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "current_location"}
+{"text": "what's the procedure to deal with lost luggage", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "lost_luggage"}
+{"text": "what's the recipe for rice noodles", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "recipe"}
+{"text": "what's the runtime of all the lord of the rings movies combined", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "what's the time in london", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "time"}
+{"text": "what's trending in 90s television shows on netflix", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when did camus die", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when did the mls start", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when do the utah jazz play next", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when is the next nintendo direct", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when referring to you, what name should i use", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "what_is_your_name"}
+{"text": "when should i replace my tires if i replaced them last year", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "tire_change"}
+{"text": "when was kobe bryant born", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "when was the theory of evolution first considered", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where can i find a w2 form", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "w2"}
+{"text": "where can i find lyrical inspiration for songwriting", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where can i find the cruise control on my kia sportage 2010", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where can i rent a car soon", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "car_rental"}
+{"text": "where can i see art", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where did abraham lincoln live", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where did the first tattoo originate", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where is the closest mcdonalds", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "directions"}
+{"text": "where is the dipstick", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "where was john denver born", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "which character is the most famous from titanic", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "which marvel character has appeared in the most movies", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "which sport is the most fun", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "which state has the best airlines", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "who are dan and dave", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "who developed your internal code", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "who_made_you"}
+{"text": "who is the coach of the chicago bulls", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "who is the current captain of this ship", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "who is the oscar who \"the oscar's\" is named after", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "who's toledo's starting point guard for the next game", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "why can't you divide by zero", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "why do males want to be alpha", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "will there be a new season of true detective", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "oos"}
+{"text": "will you answer if i call you lexi", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_ai_name"}
+{"text": "would i be able to increase my available credit by 600 dollars", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "credit_limit_change"}
+{"text": "yes, that is true", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "label_107"}
+{"text": "you must increase your volume", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "change_volume"}
+{"text": "you need to connect to my phone", "intent": "out_of_scope", "source": "clinc", "clinc_intent": "sync_device"}
+{"text": "asthma flare", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "breathing feels harder than usual", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "breathing is difficult when i lie down", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "breathless after walking", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "breathlessness", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "i feel out of breath", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "i get out of breath talking", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "i get winded", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "i'm wheezing", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "i'm wheezy", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "my breathing feels tight", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "my breathing is shallow", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "my inhaler isn't helping much", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "short of breath when i exercise", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "short of breth", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "shortness of breath", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "wheezing at night", "intent": "shortness_of_breath", "source": "authored"}
+{"text": "Air hunger", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Breathing difficulty", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Can't get enough air", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Do I have shortness of breath?", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Feeling breathless", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Hard to breathe", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I can't breathe properly", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I got a severe shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have a mild shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have been having a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have been having a severe shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have been having a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have been having shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have been having some shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I have shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I might have a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I might have a mild shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I might have a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I might have shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I think I have a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I think I have a mild shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I think I have a terrible shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I think I have shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I think I have some shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm dealing with a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm dealing with a severe shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm dealing with a terrible shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm dealing with shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm experiencing a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm experiencing a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm experiencing shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm suffering from a mild shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm suffering from a severe shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm suffering from a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm suffering from a terrible shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I'm suffering from some shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've been experiencing a bad shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've been experiencing a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've been experiencing some shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've got a severe shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've got a shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've got a terrible shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "I've got some shortness of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Is this shortness of breath?", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Out of breath", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Rapid breathing", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Shallow breathing", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Shortness of breath symptoms", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Struggling to breathe", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Suffocating feeling", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "Wheezing", "intent": "shortness_of_breath", "source": "v1"}
+{"text": "a rash on my feet", "intent": "skin_rash", "source": "authored"}
+{"text": "a rash that won't go away", "intent": "skin_rash", "source": "authored"}
+{"text": "allergic rash on my skin", "intent": "skin_rash", "source": "authored"}
+{"text": "blotchy skin", "intent": "skin_rash", "source": "authored"}
+{"text": "dry patches of skin", "intent": "skin_rash", "source": "authored"}
+{"text": "i broke out in hives", "intent": "skin_rash", "source": "authored"}
+{"text": "i got a rash from a new soap", "intent": "skin_rash", "source": "authored"}
+{"text": "i got hives after eating", "intent": "skin_rash", "source": "authored"}
+{"text": "i have a heat rash", "intent": "skin_rash", "source": "authored"}
+{"text": "i have a rash", "intent": "skin_rash", "source": "authored"}
+{"text": "i have a skin rash", "intent": "skin_rash", "source": "authored"}
+{"text": "i have spots all over", "intent": "skin_rash", "source": "authored"}
+{"text": "i think i have contact dermatitis", "intent": "skin_rash", "source": "authored"}
+{"text": "i'm itching all over", "intent": "skin_rash", "source": "authored"}
+{"text": "irritated skin", "intent": "skin_rash", "source": "authored"}
+{"text": "itchy bumps", "intent": "skin_rash", "source": "authored"}
+{"text": "itchy rash", "intent": "skin_rash", "source": "authored"}
+{"text": "itchy red skin", "intent": "skin_rash", "source": "authored"}
+{"text": "itchy skin", "intent": "skin_rash", "source": "authored"}
+{"text": "my arm has a rash", "intent": "skin_rash", "source": "authored"}
+{"text": "my eczema is flaring", "intent": "skin_rash", "source": "authored"}
+{"text": "my rash is spreading", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin burns and itches", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin is breaking out", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin is flaky and itchy", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin is inflamed", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin is red and irritated", "intent": "skin_rash", "source": "authored"}
+{"text": "my skin itches like crazy", "intent": "skin_rash", "source": "authored"}
+{"text": "pimple like rash", "intent": "skin_rash", "source": "authored"}
+{"text": "raised red bumps", "intent": "skin_rash", "source": "authored"}
+{"text": "rash", "intent": "skin_rash", "source": "authored"}
+{"text": "rash after the sun", "intent": "skin_rash", "source": "authored"}
+{"text": "rash on my hands", "intent": "skin_rash", "source": "authored"}
+{"text": "rash on my legs", "intent": "skin_rash", "source": "authored"}
+{"text": "rashes", "intent": "skin_rash", "source": "authored"}
+{"text": "red itchy patches", "intent": "skin_rash", "source": "authored"}
+{"text": "red rash on my stomach", "intent": "skin_rash", "source": "authored"}
+{"text": "red spots on my skin", "intent": "skin_rash", "source": "authored"}
+{"text": "skin irritation", "intent": "skin_rash", "source": "authored"}
+{"text": "skin rash on my back", "intent": "skin_rash", "source": "authored"}
+{"text": "there's a red rash on my arm", "intent": "skin_rash", "source": "authored"}
+{"text": "welts on my skin", "intent": "skin_rash", "source": "authored"}
+{"text": "i think i have strep throat", "intent": "sore_throat", "source": "authored"}
+{"text": "it hurts to swallow", "intent": "sore_throat", "source": "authored"}
+{"text": "my throat feels raw", "intent": "sore_throat", "source": "authored"}
+{"text": "my throat has been sore all week", "intent": "sore_throat", "source": "authored"}
+{"text": "my throat is irritated", "intent": "sore_throat", "source": "authored"}
+{"text": "my throat is killing me today", "intent": "sore_throat", "source": "authored"}
+{"text": "my throat is really sore", "intent": "sore_throat", "source": "authored"}
+{"text": "my tonsils hurt", "intent": "sore_throat", "source": "authored"}
+{"text": "my voice is hoarse and my throat hurts", "intent": "sore_throat", "source": "authored"}
+{"text": "pain in my throat", "intent": "sore_throat", "source": "authored"}
+{"text": "red sore throat", "intent": "sore_throat", "source": "authored"}
+{"text": "sore and scratchy throat", "intent": "sore_throat", "source": "authored"}
+{"text": "sore throat for three days", "intent": "sore_throat", "source": "authored"}
+{"text": "sore throte", "intent": "sore_throat", "source": "authored"}
+{"text": "throat feels rough", "intent": "sore_throat", "source": "authored"}
+{"text": "throat pain when i swallow", "intent": "sore_throat", "source": "authored"}
+{"text": "Aching throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Difficulty swallowing", "intent": "sore_throat", "source": "v1"}
+{"text": "Hurts to swallow", "intent": "sore_throat", "source": "v1"}
+{"text": "I got a bad sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I got a sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I got some sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I got sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have been having a bad sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have been having a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have been having a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have been having sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have some sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I have sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I might have a mild sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I might have a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I think I have a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm dealing with a mild sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm dealing with a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm dealing with a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm dealing with some sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing a bad sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing a sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing some sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm experiencing sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm suffering from a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm suffering from a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I'm suffering from sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've been experiencing a mild sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've been experiencing a severe sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've been experiencing some sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've got a mild sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've got a sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've got a terrible sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "I've got sore throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Might this be sore throat?", "intent": "sore_throat", "source": "v1"}
+{"text": "My throat is painful", "intent": "sore_throat", "source": "v1"}
+{"text": "Pain in throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Painful swallowing", "intent": "sore_throat", "source": "v1"}
+{"text": "Raw throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Severe throat pain", "intent": "sore_throat", "source": "v1"}
+{"text": "Sore throat symptoms", "intent": "sore_throat", "source": "v1"}
+{"text": "Swollen throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Tender throat", "intent": "sore_throat", "source": "v1"}
+{"text": "Throat ache", "intent": "sore_throat", "source": "v1"}
+{"text": "Throat discomfort", "intent": "sore_throat", "source": "v1"}
+{"text": "Throat hurts", "intent": "sore_throat", "source": "v1"}
+{"text": "Throat is sore", "intent": "sore_throat", "source": "v1"}
+{"text": "Throat pain", "intent": "sore_throat", "source": "v1"}
+{"text": "abdominal pain", "intent": "stomach_ache", "source": "authored"}
+{"text": "aching stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "acid indigestion", "intent": "stomach_ache", "source": "authored"}
+{"text": "belly pain", "intent": "stomach_ache", "source": "authored"}
+{"text": "burning feeling in my stomach after meals", "intent": "stomach_ache", "source": "authored"}
+{"text": "dull ache in my stomach all day", "intent": "stomach_ache", "source": "authored"}
+{"text": "heartburn after eating", "intent": "stomach_ache", "source": "authored"}
+{"text": "i ate something and now my stomach hurts", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have a bellyache", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have a pain in my side and stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have a sore stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have a stomach ache", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have acid reflux", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have cramps in my stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "i have really bad indigestion", "intent": "stomach_ache", "source": "authored"}
+{"text": "i keep getting stomach pains", "intent": "stomach_ache", "source": "authored"}
+{"text": "it hurts in my stomach when i move", "intent": "stomach_ache", "source": "authored"}
+{"text": "lower abdominal cramps", "intent": "stomach_ache", "source": "authored"}
+{"text": "mild stomach pain", "intent": "stomach_ache", "source": "authored"}
+{"text": "my belly is really sore", "intent": "stomach_ache", "source": "authored"}
+{"text": "my insides hurt", "intent": "stomach_ache", "source": "authored"}
+{"text": "my kid has a tummy ache", "intent": "stomach_ache", "source": "authored"}
+{"text": "my stomach aches when i eat", "intent": "stomach_ache", "source": "authored"}
+{"text": "my stomach feels knotted", "intent": "stomach_ache", "source": "authored"}
+{"text": "my stomach has been off all week", "intent": "stomach_ache", "source": "authored"}
+{"text": "my stomach is cramping up", "intent": "stomach_ache", "source": "authored"}
+{"text": "my stomach is killing me", "intent": "stomach_ache", "source": "authored"}
+{"text": "my tummy hurts", "intent": "stomach_ache", "source": "authored"}
+{"text": "pain around my belly button", "intent": "stomach_ache", "source": "authored"}
+{"text": "pain in my lower belly", "intent": "stomach_ache", "source": "authored"}
+{"text": "pain in my tummy after lunch", "intent": "stomach_ache", "source": "authored"}
+{"text": "really bad gas pains", "intent": "stomach_ache", "source": "authored"}
+{"text": "sharp pain in my stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach ache since this morning", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach been aching on and off", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach cramps won't go away", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach discomfort", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach hurts a lot", "intent": "stomach_ache", "source": "authored"}
+{"text": "stomach pain after eating", "intent": "stomach_ache", "source": "authored"}
+{"text": "tummy ache", "intent": "stomach_ache", "source": "authored"}
+{"text": "upper stomach pain", "intent": "stomach_ache", "source": "authored"}
+{"text": "upset stomach", "intent": "stomach_ache", "source": "authored"}
+{"text": "great, thanks", "intent": "thanks", "source": "authored"}
+{"text": "perfect, thank you", "intent": "thanks", "source": "authored"}
+{"text": "thank u", "intent": "thanks", "source": "authored"}
+{"text": "that's helpful, thanks", "intent": "thanks", "source": "authored"}
+{"text": "good answer, thanks for providing it", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "good looking out", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate that answer!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate the assistance", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate the help", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate what you did", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate you helping me", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate your help!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i appreciate your help, thank you", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i want to thank you for helping", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i wish you were here earlier", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "i'm grateful", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "merci beaucoup", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "much obliged", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "okay thanks", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thank ya!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thank you a lot for that answer", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thank you for the answer", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thank you very much for the answer", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thank you very much for the assistance", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks again", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks again!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks for helping out", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks for letting me know", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks for that!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks for the help!", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks please", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "thanks, that's helpful", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "why thank you", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "you are so nice to think of me", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "you were so kind to do that", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "your answer was enjoyable", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "your answer was good", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "your efforts don't go unnoticed", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "your help is appreciated", "intent": "thanks", "source": "clinc", "clinc_intent": "thank_you"}
+{"text": "Amazing thank you", "intent": "thanks", "source": "v1"}
+{"text": "Amazing thanks", "intent": "thanks", "source": "v1"}
+{"text": "Appreciate it", "intent": "thanks", "source": "v1"}
+{"text": "Appreciate that", "intent": "thanks", "source": "v1"}
+{"text": "Appreciate the help", "intent": "thanks", "source": "v1"}
+{"text": "Appreciate your help", "intent": "thanks", "source": "v1"}
+{"text": "Awesome thank you", "intent": "thanks", "source": "v1"}
+{"text": "Cheers", "intent": "thanks", "source": "v1"}
+{"text": "Fantastic thank you", "intent": "thanks", "source": "v1"}
+{"text": "Fantastic thanks", "intent": "thanks", "source": "v1"}
+{"text": "Great thank you", "intent": "thanks", "source": "v1"}
+{"text": "Great thanks", "intent": "thanks", "source": "v1"}
+{"text": "I appreciate it", "intent": "thanks", "source": "v1"}
+{"text": "I appreciate your assistance", "intent": "thanks", "source": "v1"}
+{"text": "I appreciate your help", "intent": "thanks", "source": "v1"}
+{"text": "Much appreciated", "intent": "thanks", "source": "v1"}
+{"text": "Much appreciated doctor", "intent": "thanks", "source": "v1"}
+{"text": "Perfect thank you", "intent": "thanks", "source": "v1"}
+{"text": "Really helpful thank you", "intent": "thanks", "source": "v1"}
+{"text": "Really helpful thanks", "intent": "thanks", "source": "v1"}
+{"text": "Thank you", "intent": "thanks", "source": "v1"}
+{"text": "Thank you a bunch", "intent": "thanks", "source": "v1"}
+{"text": "Thank you bot", "intent": "thanks", "source": "v1"}
+{"text": "Thank you chatbot", "intent": "thanks", "source": "v1"}
+{"text": "Thank you doctor", "intent": "thanks", "source": "v1"}
+{"text": "Thank you for everything", "intent": "thanks", "source": "v1"}
+{"text": "Thank you for helping", "intent": "thanks", "source": "v1"}
+{"text": "Thank you for that", "intent": "thanks", "source": "v1"}
+{"text": "Thank you for the advice", "intent": "thanks", "source": "v1"}
+{"text": "Thank you for the information", "intent": "thanks", "source": "v1"}
+{"text": "Thank you friend", "intent": "thanks", "source": "v1"}
+{"text": "Thank you got it", "intent": "thanks", "source": "v1"}
+{"text": "Thank you man", "intent": "thanks", "source": "v1"}
+{"text": "Thank you pal", "intent": "thanks", "source": "v1"}
+{"text": "Thank you so much for your help", "intent": "thanks", "source": "v1"}
+{"text": "Thank you that helps", "intent": "thanks", "source": "v1"}
+{"text": "Thanks a bunch", "intent": "thanks", "source": "v1"}
+{"text": "Thanks a ton", "intent": "thanks", "source": "v1"}
+{"text": "Thanks bot", "intent": "thanks", "source": "v1"}
+{"text": "Thanks buddy", "intent": "thanks", "source": "v1"}
+{"text": "Thanks chatbot", "intent": "thanks", "source": "v1"}
+{"text": "Thanks doc", "intent": "thanks", "source": "v1"}
+{"text": "Thanks for that", "intent": "thanks", "source": "v1"}
+{"text": "Thanks for the advice", "intent": "thanks", "source": "v1"}
+{"text": "Thanks for the info", "intent": "thanks", "source": "v1"}
+{"text": "Thanks friend", "intent": "thanks", "source": "v1"}
+{"text": "Thanks got it", "intent": "thanks", "source": "v1"}
+{"text": "Thanks mate", "intent": "thanks", "source": "v1"}
+{"text": "Thanks pal", "intent": "thanks", "source": "v1"}
+{"text": "Thanks so much for your help", "intent": "thanks", "source": "v1"}
+{"text": "Thanks that helps", "intent": "thanks", "source": "v1"}
+{"text": "Thanks that's useful", "intent": "thanks", "source": "v1"}
+{"text": "Thanks understood", "intent": "thanks", "source": "v1"}
+{"text": "That's helpful thank you", "intent": "thanks", "source": "v1"}
+{"text": "Thx", "intent": "thanks", "source": "v1"}
+{"text": "Very helpful thanks", "intent": "thanks", "source": "v1"}
+{"text": "Wonderful thank you", "intent": "thanks", "source": "v1"}
+{"text": "Wonderful thanks", "intent": "thanks", "source": "v1"}
+{"text": "a tooth is hurting", "intent": "toothache", "source": "authored"}
+{"text": "aching tooth", "intent": "toothache", "source": "authored"}
+{"text": "constant tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "i cracked my tooth and it hurts", "intent": "toothache", "source": "authored"}
+{"text": "i have a bad toothache", "intent": "toothache", "source": "authored"}
+{"text": "i have a toothache", "intent": "toothache", "source": "authored"}
+{"text": "i have tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "i think i have a cavity", "intent": "toothache", "source": "authored"}
+{"text": "my child has a toothache", "intent": "toothache", "source": "authored"}
+{"text": "my filling fell out and it hurts", "intent": "toothache", "source": "authored"}
+{"text": "my front tooth hurts", "intent": "toothache", "source": "authored"}
+{"text": "my gum hurts", "intent": "toothache", "source": "authored"}
+{"text": "my gum is swollen", "intent": "toothache", "source": "authored"}
+{"text": "my gums are bleeding and sore", "intent": "toothache", "source": "authored"}
+{"text": "my gums hurt", "intent": "toothache", "source": "authored"}
+{"text": "my jaw and tooth hurt", "intent": "toothache", "source": "authored"}
+{"text": "my jaw hurts near my tooth", "intent": "toothache", "source": "authored"}
+{"text": "my molar is killing me", "intent": "toothache", "source": "authored"}
+{"text": "my mouth hurts around a tooth", "intent": "toothache", "source": "authored"}
+{"text": "my teeth are aching", "intent": "toothache", "source": "authored"}
+{"text": "my teeth are sensitive", "intent": "toothache", "source": "authored"}
+{"text": "my teeth hurt", "intent": "toothache", "source": "authored"}
+{"text": "my tooth has been aching for days", "intent": "toothache", "source": "authored"}
+{"text": "my tooth hurts when i chew", "intent": "toothache", "source": "authored"}
+{"text": "my tooth is sensitive to cold", "intent": "toothache", "source": "authored"}
+{"text": "my tooth is so painful", "intent": "toothache", "source": "authored"}
+{"text": "my tooth is throbbing", "intent": "toothache", "source": "authored"}
+{"text": "my top teeth hurt", "intent": "toothache", "source": "authored"}
+{"text": "my wisdom teeth are coming in and hurt", "intent": "toothache", "source": "authored"}
+{"text": "pain in my back tooth", "intent": "toothache", "source": "authored"}
+{"text": "sharp pain in my tooth", "intent": "toothache", "source": "authored"}
+{"text": "sharp tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "sore gums", "intent": "toothache", "source": "authored"}
+{"text": "sore tooth", "intent": "toothache", "source": "authored"}
+{"text": "swollen gums and tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "teeth hurt when i eat sweets", "intent": "toothache", "source": "authored"}
+{"text": "throbbing tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "tooth pain", "intent": "toothache", "source": "authored"}
+{"text": "tooth sensitivity", "intent": "toothache", "source": "authored"}
+{"text": "toothache", "intent": "toothache", "source": "authored"}
+{"text": "toothache at night", "intent": "toothache", "source": "authored"}
+{"text": "toothache won't go away", "intent": "toothache", "source": "authored"}

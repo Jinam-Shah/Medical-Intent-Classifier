@@ -1,0 +1,488 @@
+{
+  "description": "Hand-written patterns for dataset v2 (author: project maintainer with an AI assistant, October 2026). New intents plus extra natural phrasings for the original 12. Merged with data/intents.json (v1 patterns) and CLINC150 rows by `python -m src.data_v2`. Deliberately varied: casual, short, long, lowercase, a few typos, durations. Emergency phrasings (chest pain, can't breathe) are left out on purpose; src/safety.py handles them before the model.",
+  "intents": [
+    {
+      "tag": "stomach_ache",
+      "patterns": [
+        "my stomach hurts", "i have a stomach ache", "stomach ache since this morning", "my tummy hurts",
+        "my belly is really sore", "i have cramps in my stomach", "sharp pain in my stomach", "my stomach is killing me",
+        "abdominal pain", "i've got a pain in my abdomen", "pain in my lower belly", "my stomache hurts",
+        "stomach pain after eating", "my gut hurts", "i have a bellyache", "dull ache in my stomach all day",
+        "my stomach has been hurting for two days", "cramping in my abdomen", "upper stomach pain", "tummy ache",
+        "i have a sore stomach", "my stomach feels awful and crampy", "pain around my belly button",
+        "stomach cramps won't go away", "i ate something and now my stomach hurts", "i feel bloated and my stomach hurts",
+        "my stomach is upset", "upset stomach", "indigestion after dinner", "i have really bad indigestion",
+        "burning feeling in my stomach after meals", "heartburn after eating", "my stomach aches when i eat",
+        "my kid has a tummy ache", "stomach cramps", "abdomen is tender and sore", "i keep getting stomach pains",
+        "really bad gas pains", "my stomach has been off all week", "aching stomach", "i have a pain in my side and stomach",
+        "my insides hurt", "belly pain", "my stomach is cramping up", "it hurts in my stomach when i move",
+        "i've had a stomach ache since yesterday", "terrible stomach pain", "mild stomach pain",
+        "my stomach feels knotted", "lower abdominal cramps", "i have acid reflux", "acid indigestion",
+        "stomach discomfort", "ugh my stomach", "pain in my tummy after lunch", "stomach hurts a lot",
+        "my abdomen hurts", "i think i have a stomach bug, my stomach hurts", "constant stomach ache",
+        "stomach been aching on and off"
+      ],
+      "responses": [
+        "For a mild stomach ache, try resting, sipping water, and eating small, bland meals (toast, rice, bananas). Avoid fatty, spicy food and alcohol for a day. See a doctor if the pain is severe, lasts more than a couple of days, or comes with fever, vomiting blood, or black stools.",
+        "Stomach aches often settle on their own. A warm compress, small sips of fluids, and bland food can help. Get medical care quickly if the pain is sudden and severe, is in the lower right of your belly, or your stomach is hard and tender.",
+        "Rest and stay hydrated, and skip heavy or greasy meals until you feel better. If it's heartburn, avoid lying down right after eating. Pain that keeps coming back or wakes you up at night is worth checking with a doctor."
+      ]
+    },
+    {
+      "tag": "nausea_vomiting",
+      "patterns": [
+        "i feel nauseous", "i feel sick to my stomach", "i keep throwing up", "i've been vomiting", "i feel like throwing up",
+        "i threw up twice today", "nausea", "i feel queasy", "i'm nauseated", "i feel nauseus", "i can't stop vomiting",
+        "i vomited after eating", "feeling sick and want to puke", "i keep gagging", "i think i'm going to be sick",
+        "i've been throwing up all night", "constant nausea", "nausea since this morning", "i feel like i need to vomit",
+        "my stomach is churning and i feel sick", "i puked", "i've been sick, as in vomiting", "can't keep food down",
+        "can't keep anything down", "i feel nauseous when i eat", "morning nausea", "motion sickness", "i get carsick",
+        "seasick", "i feel woozy and nauseous", "vomiting and nausea", "my child keeps vomiting", "i threw up this morning",
+        "feeling queasy all day", "i keep retching", "the smell of food makes me want to throw up",
+        "nausea after taking my medicine", "i feel sick in my stomach", "i'm going to throw up", "throwing up",
+        "i vomited three times", "i've had nausea for two days", "i feel really nauseous today", "nauseous and weak",
+        "waves of nausea", "i keep feeling like i'll be sick", "vomitting", "i've been puking",
+        "sick to my stomach after dinner", "i get nauseous in the car", "food poisoning, i keep throwing up",
+        "i ate something bad and i'm vomiting", "upset stomach and nausea", "i feel queasy and dizzy-ish",
+        "i'm throwing up a lot", "barfing", "nausea won't go away", "slight nausea", "i feel nauseous and sweaty",
+        "i feel like i'm going to puke"
+      ],
+      "responses": [
+        "With nausea or vomiting, the main thing is to avoid dehydration: take small, frequent sips of water or an oral rehydration drink. Wait to eat until the vomiting stops, then start with bland food. See a doctor if you can't keep fluids down for a day, see blood, or have severe belly pain.",
+        "Rest, sip clear fluids slowly, and avoid strong smells and greasy food. Ginger or plain crackers help some people. Get medical help if vomiting lasts more than a day or two, or you notice signs of dehydration like very little urine, dizziness, or a dry mouth.",
+        "Nausea often passes on its own. Sit upright, get fresh air, and sip water. For children, older adults, or anyone who can't keep fluids down, contact a doctor sooner."
+      ]
+    },
+    {
+      "tag": "diarrhea",
+      "patterns": [
+        "i have diarrhea", "i've got diarrhoea", "loose stools", "i keep running to the toilet", "watery stool",
+        "i have the runs", "diarrhea since yesterday", "diarea", "i have an upset stomach and diarrhea",
+        "i keep having to poop", "my stool is watery", "bad diarrhea", "i've had diarrhea for three days",
+        "frequent bowel movements", "i can't stop going to the bathroom", "runny poop", "my bowels are loose",
+        "i have diarreah", "stomach bug with diarrhea", "diarrhea after eating out", "travelers diarrhea",
+        "diarrhea and cramps", "i've been on the toilet all morning", "liquid stool", "i have the squirts",
+        "my kid has diarrhea", "diarrhoea", "mild diarrhea", "explosive diarrhea", "i keep getting diarrhea",
+        "loose motions", "loose bowels", "i have had loose stools for a week", "diarrhea won't stop",
+        "going to the bathroom a lot, it's all watery", "i think food poisoning gave me diarrhea",
+        "i have diarrhea and feel weak", "diarrhea every morning", "my stomach is running", "soft watery stools",
+        "frequent loose stools", "i keep having diarrhea after coffee", "diarrhea and gas",
+        "constant urge to go to the bathroom", "i had diarrhea all night", "diahrrea", "upset bowels",
+        "my poop is runny", "diarrhea for two days now", "watery diarrhea",
+        "i've been having diarrhea", "diarrhea after antibiotics", "sudden diarrhea", "i got the runs from bad food",
+        "bowel movements are loose and frequent", "the runs", "had diarrhea this morning", "loose stool problems",
+        "diarrhea and stomach cramps", "my stools are loose"
+      ],
+      "responses": [
+        "Diarrhea usually clears up within a few days. Drink plenty of fluids, ideally an oral rehydration solution, and eat bland foods. Wash your hands often. See a doctor if it lasts more than 2 days (1 day for a child), if there's blood in it, or if you have a high fever or signs of dehydration.",
+        "Keep sipping fluids to replace what you're losing, and avoid alcohol, caffeine, and fatty foods for now. Rest helps. Get medical advice if it's severe, bloody, black, or comes with strong belly pain.",
+        "Most diarrhea is from a short-lived infection or something you ate. Stay hydrated and eat small, plain meals. Older adults, young children, and people with other health conditions should contact a doctor sooner."
+      ]
+    },
+    {
+      "tag": "back_pain",
+      "patterns": [
+        "my back hurts", "lower back pain", "i have back pain", "my lower back is killing me", "i hurt my back",
+        "pain in my back", "back ache", "my back is sore", "i pulled something in my back", "upper back pain",
+        "my back has been aching all week", "sharp pain in my lower back", "i threw my back out", "backache",
+        "my spine hurts", "back pain when i bend over", "my back hurts after lifting", "stiff back",
+        "my back is stiff in the morning", "pain between my shoulder blades", "my back hurts when i sit too long",
+        "i have a bad back today", "back spasms", "my back is spasming", "middle back pain", "lumbar pain",
+        "my back hurts when i walk", "dull ache in my lower back", "i strained my back at the gym",
+        "my back has been sore for days", "i can barely stand up straight because of my back", "back hurts so much",
+        "my lower back is sore after work", "pain in my lower back on the right", "pain on the left side of my lower back",
+        "back pain from sleeping wrong", "my back aches", "i have a sore back", "bakc pain", "my back really hurts",
+        "back pain for two weeks", "my tailbone hurts", "pain in my back and hips", "lower back stiffness",
+        "aching back", "i think i slipped a disc", "my back went out", "back pain after a long drive",
+        "i have pain across my lower back", "back muscle pain", "my back is tender", "throbbing back pain",
+        "my back hurts from my desk chair", "backpain", "low back ache", "pain in my mid back",
+        "my back is so sore i can't move much", "chronic back pain", "back is acting up again", "my back hurts bad"
+      ],
+      "responses": [
+        "Most back pain gets better within a few weeks. Keep gently moving rather than resting in bed, use heat or a cold pack, and consider an over-the-counter pain reliever if it's safe for you. See a doctor if it's from a fall or injury, doesn't improve, or spreads down your leg.",
+        "Try gentle stretching, a warm shower or heat pad, and avoid heavy lifting for a few days. Good posture and breaks from sitting help. Get urgent care if back pain comes with numbness around your groin, trouble controlling your bladder or bowels, weakness in your legs, or a fever.",
+        "Back strain is very common. Stay active within what's comfortable, and use heat or ice. If the pain is severe, keeps getting worse, or lasts more than a few weeks, see a doctor or physiotherapist."
+      ]
+    },
+    {
+      "tag": "body_aches",
+      "patterns": [
+        "my whole body aches", "body aches", "my muscles are sore all over", "i ache everywhere", "muscle aches",
+        "everything hurts", "my body is sore", "i feel achy", "aching all over", "my joints ache", "achy muscles",
+        "my legs and arms ache", "my body hurts all over", "sore muscles", "muscle pain everywhere", "my joints hurt",
+        "achy and sore", "my whole body is sore", "i feel achy and stiff", "body pain", "my body aches today",
+        "my muscles hurt", "every muscle hurts", "general body aches", "my body feels sore and heavy",
+        "i've been achy for two days", "aching joints", "my knees and elbows ache", "i'm sore all over",
+        "muscle soreness", "my limbs ache", "i feel stiff and achy", "aches and pains all over", "bodyache",
+        "my muscles feel tender", "my arms and legs are aching", "full body aches", "joint pain", "achy body",
+        "my body is aching", "my muscles are aching after working out", "sore from head to toe",
+        "i feel beat up, everything aches", "body ache and tired", "my shoulders and legs ache", "my hips ache",
+        "my joints are sore and stiff", "i have muscle cramps", "muscle cramps in my legs", "leg cramps at night",
+        "my calves are cramping", "my muscles are tight and sore", "i woke up achy", "achiness",
+        "my whole body feels sore", "achy joints in the morning", "sore body", "my body really aches",
+        "aches in my muscles", "body is achy"
+      ],
+      "responses": [
+        "Body aches are often from a viral illness, overexertion, or poor sleep. Rest, drink plenty of fluids, and consider a warm bath or an over-the-counter pain reliever if it's safe for you. See a doctor if the aches are severe, last more than a few days, or come with a high fever or a rash.",
+        "Gentle stretching, rest, and staying hydrated can ease achy muscles. If you also have a fever, cough, or sore throat, it may be a cold or flu. Get checked if a joint is red, hot, and swollen, or if you have unexplained aches for weeks.",
+        "Sore muscles after exercise usually ease within a few days: keep moving gently and use heat. Aches with dark urine, severe weakness, or a stiff neck need medical attention."
+      ]
+    },
+    {
+      "tag": "ear_pain",
+      "patterns": [
+        "my ear hurts", "earache", "i have an ear ache", "pain in my ear", "my left ear hurts", "my right ear is sore",
+        "ear pain", "my ear feels blocked and painful", "sharp pain in my ear", "my kid has an earache",
+        "i think i have an ear infection", "ear infection", "my ears hurt", "throbbing ear pain", "my ear is throbbing",
+        "my ear feels full and hurts", "pain inside my ear", "ear pain when i swallow", "my ear is aching",
+        "i have pain behind my ear", "my ears are sore", "aching ear", "earache since yesterday",
+        "my ear has been hurting for days", "ear hurts when i touch it", "ear pain at night", "ear is sore and itchy",
+        "my ear feels clogged", "my ears feel plugged", "muffled hearing and ear pain", "swimmer's ear",
+        "my ear hurts after swimming", "ear ach", "my ear canal hurts", "ear discomfort", "ear pressure and pain",
+        "ear pain on a plane", "my ears popped and now hurt", "my ear is killing me", "ear pain and some fluid",
+        "my ear is leaking a bit and hurts", "dull ache in my ear", "my baby keeps pulling at her ear",
+        "inner ear pain", "outer ear is sore", "i have a painful ear", "hurts inside my ear", "ear infection pain",
+        "my ears ache", "ear pain with a cold", "ear hurting", "pain deep in my ear", "my ear is really painful",
+        "earache on one side", "both ears hurt", "my ear is sore and red", "ear pain for a week", "ear sore",
+        "earache and headache", "stabbing pain in ear"
+      ],
+      "responses": [
+        "Earaches often come from a cold or a mild ear infection and many get better on their own within a few days. A warm compress and an over-the-counter pain reliever (if safe for you) can help. Don't put cotton buds in your ear. See a doctor if there's discharge, high fever, swelling behind the ear, or hearing loss.",
+        "For ear pain, rest, keep the ear dry, and try a warm cloth over it. If it started after swimming, it may be swimmer's ear, which may need drops from a doctor or pharmacist. Children with earaches and a fever should be checked.",
+        "Ear pain that lasts more than 2 to 3 days, is severe, or comes with fluid coming out of the ear should be checked by a doctor."
+      ]
+    },
+    {
+      "tag": "toothache",
+      "patterns": [
+        "i have a toothache", "my tooth hurts", "tooth pain", "my teeth hurt", "my molar is killing me", "toothache",
+        "sharp pain in my tooth", "my tooth is sensitive to cold", "my gums hurt", "sore gums", "my jaw and tooth hurt",
+        "i think i have a cavity", "tooth ache", "throbbing tooth pain", "my wisdom tooth hurts",
+        "pain in my back tooth", "my tooth hurts when i chew", "my teeth are sensitive", "my gum is swollen",
+        "swollen gums and tooth pain", "my tooth has been aching for days", "dental pain", "my front tooth hurts",
+        "i cracked my tooth and it hurts", "tooth sensitivity", "my tooth hurts when i drink something hot",
+        "my gums are bleeding and sore", "toothache at night", "aching tooth", "my bottom tooth hurts",
+        "my top teeth hurt", "my filling fell out and it hurts", "teeth pain", "tooth pain on the left side",
+        "my tooth is throbbing", "i have a bad toothache", "my wisdom teeth are coming in and hurt", "toothach",
+        "tooth hurts to bite down", "pain in my gums", "i think my tooth is infected", "abscess in my mouth",
+        "my mouth hurts around a tooth", "my child has a toothache", "sore tooth", "my molars ache",
+        "teeth hurt when i eat sweets", "my tooth is so painful", "constant tooth pain", "sharp tooth pain",
+        "my jaw hurts near my tooth", "tooth pain since yesterday", "i have tooth pain", "my teeth ache",
+        "pain in my tooth", "my gum hurts", "my teeth are aching", "toothache won't go away", "tooth is sore",
+        "a tooth is hurting"
+      ],
+      "responses": [
+        "A toothache usually needs a dentist to fix the cause. Until then, rinse with warm salt water, use an over-the-counter pain reliever if it's safe for you, and avoid very hot, cold, or sweet foods. Don't put aspirin directly on your gum.",
+        "Try a cold compress on your cheek and keep the area clean. Book a dentist appointment if the pain lasts more than a day or two. Get urgent care if your face or jaw is swelling, or you have a fever with the toothache.",
+        "Tooth sensitivity can improve with a toothpaste for sensitive teeth and a soft brush. Persistent or throbbing pain often means a cavity or infection that a dentist should look at."
+      ]
+    },
+    {
+      "tag": "dizziness",
+      "patterns": [
+        "i feel dizzy", "i'm dizzy", "the room is spinning", "i feel lightheaded", "i get dizzy when i stand up",
+        "dizziness", "i feel faint", "i feel off balance", "i keep feeling dizzy", "vertigo", "i have vertigo",
+        "i feel woozy", "lightheaded all day", "my head is spinning", "i feel dizzy and unsteady",
+        "everything is spinning", "dizzy spells", "i feel wobbly", "i feel dizy", "i got dizzy at work",
+        "dizzy when i turn my head", "dizziness since this morning", "i feel giddy and off balance",
+        "i've been dizzy for two days", "i feel lightheaded when i get up", "feeling dizzy and weak", "dizzyness",
+        "i feel unsteady on my feet", "spinning sensation", "i keep losing my balance", "i feel like i'm going to faint",
+        "i feel lightheaded and sweaty", "my balance is off", "dizzy after standing", "dizzy and nauseous",
+        "i feel dizzy when i bend down", "light headed", "i get vertigo when i lie down", "i feel spaced out and dizzy",
+        "dizziness on and off", "i'm feeling dizzy", "feeling faint", "i'm lightheaded", "the world is spinning",
+        "head rush when i stand", "dizzy all the time", "i feel dizzy after exercise", "a bit dizzy today",
+        "i feel like the floor is moving", "very dizzy", "dizziness when walking", "i feel dizzy and tired",
+        "i keep getting lightheaded", "dizzy and can't focus", "random dizzy spells", "feeling woozy",
+        "i'm a little dizzy", "my head feels light", "i feel off and dizzy", "i'm unsteady and dizzy"
+      ],
+      "responses": [
+        "Dizziness often passes. Sit or lie down until it does, then get up slowly. Drink some water, as dehydration is a common cause, and avoid driving while dizzy. See a doctor if it keeps happening or comes with a bad headache, fainting, vision changes, or weakness.",
+        "If you feel lightheaded when standing, rise slowly and keep well hydrated. A spinning feeling (vertigo) can come from the inner ear. Get emergency help if dizziness comes with slurred speech, a drooping face, numbness, or chest pain.",
+        "Rest somewhere safe until the dizziness eases, and have a snack if you haven't eaten. Repeated dizzy spells are worth discussing with a doctor, especially if you take blood pressure medicine."
+      ]
+    },
+    {
+      "tag": "fatigue",
+      "patterns": [
+        "i feel tired all the time", "i'm exhausted", "i have no energy", "i feel so tired", "fatigue",
+        "i feel weak and tired", "i'm always tired", "constant tiredness", "i can't stay awake during the day",
+        "i feel drained", "i'm worn out", "i'm so fatigued", "i have zero energy", "i feel sluggish", "low energy",
+        "i'm tired even after sleeping", "i feel run down", "i'm wiped out", "extreme tiredness", "i feel lethargic",
+        "i'm exausted", "no energy to do anything", "i feel weak", "i've been really tired lately",
+        "tired for weeks", "i feel tired and heavy", "i get tired so easily", "i'm fatigued all the time",
+        "i'm always sleepy", "i feel sleepy all day", "my energy is so low", "i feel burnt out and tired",
+        "i feel tired and can't concentrate", "i'm completely drained", "tiredness", "i feel exhausted after little effort",
+        "i'm too tired to get out of bed", "i'm feeling very weak", "weakness and tiredness", "i feel shattered",
+        "i've been feeling run down for days", "i feel so lazy and tired", "daytime sleepiness", "always exhausted",
+        "i feel tired every afternoon", "i can't shake this tiredness", "i feel physically exhausted",
+        "my body feels so tired", "chronic fatigue", "tired all day", "i'm knackered", "i feel super tired",
+        "i have no strength", "i feel weak and shaky", "i'm so sleepy", "i'm tired all the time and don't know why",
+        "my energy levels are really low", "i'm wiped", "feeling exhausted", "tired and weak"
+      ],
+      "responses": [
+        "Tiredness is very common and often linked to sleep, stress, diet, or a recent illness. Try a regular sleep schedule, regular meals, staying hydrated, and some daily activity. If you've felt tired for more than a few weeks without a clear reason, see a doctor, who may check things like iron or thyroid levels.",
+        "Rest when you need to, but gentle activity and daylight can actually boost energy. Limit caffeine and alcohol. See a doctor if the fatigue comes with weight loss, fever, shortness of breath, or low mood that won't lift.",
+        "Feeling run down after a cold or flu can last a week or two. If it goes on longer, or you're struggling with daily tasks, it's worth a check-up."
+      ]
+    },
+    {
+      "tag": "insomnia",
+      "patterns": [
+        "i can't sleep", "i have insomnia", "i can't fall asleep", "i keep waking up at night", "trouble sleeping",
+        "i haven't slept in days", "i can't stay asleep", "i wake up at 3am every night", "i'm not sleeping well",
+        "sleeping problems", "i toss and turn all night", "i can't sleep at night", "i only sleep a few hours",
+        "insomnia for weeks", "i lie awake for hours", "i have trouble falling asleep", "poor sleep",
+        "my sleep is terrible", "i keep waking up early and can't get back to sleep", "can't get to sleep",
+        "i haven't been sleeping", "i struggle to sleep", "i can't switch off at night", "insomina",
+        "i'm awake all night", "sleepless nights", "i barely slept last night", "i have trouble staying asleep",
+        "i wake up a lot during the night", "can't sleep because of stress", "my mind races when i try to sleep",
+        "i've had trouble sleeping lately", "bad sleep", "i'm having sleep issues", "i can't seem to sleep",
+        "i wake up tired because i can't sleep", "no sleep for two nights", "restless sleep", "light sleeper, always waking up",
+        "i need help sleeping", "how do i fall asleep", "help i can't sleep", "insomnia", "i sleep badly",
+        "i keep waking up", "can't sleep properly", "i'm up all night", "i can't get any sleep", "sleep problems",
+        "i lie in bed and can't sleep", "i haven't slept well in weeks", "trouble getting to sleep",
+        "i'm not able to sleep", "unable to sleep", "i sleep two hours a night", "my sleep is broken",
+        "i can't sleep and it's 2am", "i cant sleep", "awake at night", "i'm sleeping poorly"
+      ],
+      "responses": [
+        "For trouble sleeping, keep a regular bedtime and wake time, avoid caffeine after midday, and put screens away an hour before bed. A cool, dark, quiet bedroom helps. If you can't fall asleep after about 20 minutes, get up and do something calm until you feel sleepy.",
+        "Stress often keeps people awake. Try a wind-down routine, like reading, a warm shower, or slow breathing. Avoid long daytime naps and heavy meals late at night. If poor sleep lasts for weeks or affects your daytime life, talk to a doctor.",
+        "Alcohol can make sleep worse later in the night. Daylight and exercise during the day help set your body clock. Ongoing insomnia is very treatable, and a doctor can suggest approaches like CBT for insomnia."
+      ]
+    },
+    {
+      "tag": "allergy",
+      "patterns": [
+        "i think i have allergies", "my allergies are acting up", "hay fever", "i keep sneezing and my eyes are itchy",
+        "itchy watery eyes", "seasonal allergies", "pollen allergy", "i'm allergic to cats and my eyes are swollen",
+        "my eyes are red and itchy", "allergic reaction", "i keep sneezing", "sneezing a lot", "itchy eyes and nose",
+        "i'm allergic to something", "allergy symptoms", "my hay fever is bad today", "i'm sneezing nonstop",
+        "dust allergy", "my nose and eyes itch", "allergies", "itchy throat and sneezing", "allergic to pollen",
+        "i get allergies every spring", "my eyes are puffy from allergies", "i keep sneezing in the morning",
+        "allergy season is killing me", "watery eyes", "i'm allergic to dogs", "pet allergy", "my allergies are so bad",
+        "allergic rhinitis", "i have hayfever", "sneezing fits", "itchy roof of my mouth and sneezing",
+        "i think i'm having a mild allergic reaction", "red itchy eyes", "allergys", "i have allergy problems",
+        "constant sneezing", "my eyes won't stop watering", "allergic to grass", "i'm allergic to mold",
+        "allergy flare up", "my allergies make my eyes itch", "sneezy and itchy", "i'm reacting to pollen",
+        "eyes itchy and sneezing", "allergic to dust mites", "itchy eyes", "my eyes are swollen and itchy",
+        "i get sneezy around cats", "my allergies are worse today", "hay fever symptoms", "i keep rubbing my itchy eyes",
+        "allergy attack", "sneezing and itchy nose", "i'm allergic and my eyes are watering", "seasonal hay fever",
+        "allergies are bothering me", "i sneeze every time i go outside"
+      ],
+      "responses": [
+        "For hay fever or mild allergies, an over-the-counter antihistamine often helps, and saline rinses or eye drops can ease symptoms. Keep windows closed on high-pollen days and shower after being outdoors. A pharmacist can help you pick a suitable product.",
+        "Try to avoid your trigger where possible, whether pollen, dust, or pets. Washing bedding in hot water and using a damp cloth for dusting reduce dust mites. See a doctor if allergies affect your sleep or daily life, or if you also wheeze.",
+        "Mild allergy symptoms are usually manageable at home. Get emergency help right away if you have swelling of the lips, tongue, or throat, or difficulty breathing after contact with an allergen."
+      ]
+    },
+    {
+      "tag": "skin_rash",
+      "patterns": [
+        "i have a rash", "there's a red rash on my arm", "itchy rash", "my skin is itchy", "i broke out in hives",
+        "hives", "red spots on my skin", "my skin is red and irritated", "i have a rash on my face", "itchy skin",
+        "bumps on my skin", "a rash on my chest", "i have eczema", "my eczema is flaring", "dry itchy skin",
+        "my skin is flaky and itchy", "i got a rash from a new soap", "rash on my legs", "skin irritation",
+        "my skin is breaking out", "red itchy patches", "i have a heat rash", "rash after the sun", "i have an itchy rash on my neck",
+        "my baby has a rash", "a rash that won't go away", "raised red bumps", "my skin burns and itches",
+        "i have spots all over", "blotchy skin", "my skin itches like crazy", "rashes", "rash on my hands",
+        "i have a red patch of skin", "itchy bumps", "i think i have contact dermatitis", "rash under my arms",
+        "i have a skin rash", "my skin is red", "welts on my skin", "itchy red skin", "skin rash on my back",
+        "a rash appeared overnight", "i'm itching all over", "pimple like rash", "my skin is bumpy and red",
+        "dry patches of skin", "rash", "itchy spots", "allergic rash on my skin", "my arm has a rash",
+        "i got hives after eating", "rash and itching", "my skin is inflamed", "red rash on my stomach",
+        "itchy rash between my fingers", "my skin is scaly", "irritated skin", "a rash on my feet", "my rash is spreading"
+      ],
+      "responses": [
+        "Many rashes settle on their own. Keep the skin cool and moisturized, avoid scratching, and stop using any new soap, cream, or detergent that might have caused it. An over-the-counter antihistamine or hydrocortisone cream may help itching. See a doctor if the rash spreads quickly, blisters, or you feel unwell.",
+        "For itchy skin, use fragrance-free moisturizer, lukewarm (not hot) showers, and loose cotton clothing. Get urgent care if a rash comes with fever, or if it doesn't fade when you press a glass against it.",
+        "Hives often come and go within a day. Note any new food, medicine, or product. Get emergency help if hives come with swelling of the face or throat, or trouble breathing."
+      ]
+    },
+    {
+      "tag": "fever",
+      "patterns": [
+        "i'm running a temperature", "my temperature is 101", "i feel hot and feverish", "i've got a temp",
+        "i have a high temperature", "my kid has a fever", "fever of 102", "i keep getting chills and sweats",
+        "i'm burning up", "my forehead is really hot", "i think i'm feverish", "low grade fever", "fever since last night",
+        "i have chills", "hot and cold flushes", "my temp is 38.5", "i've had a fever for three days",
+        "night sweats and fever", "i feel hot all over", "fevr", "i feel feverish and shivery", "mild fever",
+        "my thermometer says 100.4", "temperature keeps going up", "shivering and hot", "i'm hot and sweaty with a fever",
+        "a slight temperature", "feverish", "i woke up with a fever", "my fever won't break"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "cold",
+      "patterns": [
+        "i think i caught a cold", "my nose won't stop running", "runny nose and sneezing", "i have the sniffles",
+        "head cold", "i've got a cold coming on", "sniffly and tired", "i caught a chill and now have a cold",
+        "i have a runny nose", "common cold", "a bit of a cold", "cold symptoms started yesterday",
+        "my nose is runny and my throat is scratchy", "i feel like i'm getting a cold", "cold and runny nose",
+        "sneezy and runny nose", "i've had a cold for a week", "i'm coming down with something, runny nose",
+        "my nose keeps dripping", "just a cold i think", "i have a cold", "got the sniffles", "nasty cold",
+        "i've caught a cold from my kids", "runny nose", "colds keep coming back", "cold symptoms", "i'm full of cold",
+        "watery runny nose", "i have a mild cold"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "flu",
+      "patterns": [
+        "i think i have the flu", "flu symptoms", "i have influenza", "i feel like i have the flu", "fever and body aches, maybe flu",
+        "i got the flu", "i feel fluish", "flu like symptoms", "my whole family has the flu", "the flu hit me hard",
+        "i have a bad flu", "do i have the flu", "i caught the flu", "flu", "high fever, chills and aches, i think it's flu",
+        "i feel terrible, probably flu", "i tested positive for flu", "i'm sick with the flu", "flu season got me",
+        "i've had the flu for 3 days", "influenza symptoms", "i might have the flu", "i'm down with flu",
+        "feels like flu", "flue", "bad case of flu", "stomach and flu symptoms", "came down with the flu",
+        "i have flu", "flu like illness"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "cough",
+      "patterns": [
+        "i can't stop coughing", "i have a cough", "dry cough", "chesty cough", "my cough won't go away",
+        "i'm coughing up phlegm", "coughing at night", "tickly cough", "i've been coughing for a week",
+        "wet cough", "a cough that keeps me up", "my kid has a bad cough", "hacking cough", "coughing fits",
+        "i keep coughing", "persistent cough", "coughing a lot", "i have a nasty cough", "cough and mucus",
+        "barking cough", "smokers cough", "coff", "my cough is getting worse", "cough for two weeks",
+        "dry tickly cough", "coughing up mucus", "i have a bad cough", "constant coughing", "productive cough",
+        "coughing all day"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "sore_throat",
+      "patterns": [
+        "my throat hurts", "it hurts to swallow", "my throat is scratchy", "my throat is really sore",
+        "throat pain when i swallow", "my throat feels raw", "scratchy throat", "my throat is killing me today",
+        "painful throat", "my throat is on fire", "swollen throat", "my tonsils hurt", "i think i have strep throat",
+        "my throat is irritated", "throat feels rough", "sore throat for three days", "i have a sore throat",
+        "my throat hurts when i talk", "throat ache", "my voice is hoarse and my throat hurts", "tonsillitis",
+        "my throat is dry and sore", "sore throte", "pain in my throat", "my throat has been sore all week",
+        "it's painful to swallow food", "sore and scratchy throat", "throat hurts so bad", "red sore throat",
+        "my kid has a sore throat"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "congestion",
+      "patterns": [
+        "my nose is blocked", "stuffy nose", "i can't breathe through my nose", "my sinuses are blocked",
+        "sinus pressure", "nasal congestion", "my nose is so stuffy", "blocked sinuses", "my head feels congested",
+        "stuffed up nose", "i'm all stuffed up", "sinus headache and stuffiness", "my nose is clogged",
+        "sinusitis", "sinus infection", "pressure behind my eyes and blocked nose", "congested", "i'm congested",
+        "can't smell anything, nose blocked", "blocked nose at night", "my nose is plugged", "sinus congestion",
+        "mucus in my nose", "my nasal passages are blocked", "congeston", "stuffy and congested", "sinuses hurt",
+        "nose is completely blocked", "chest and nose congestion", "my baby's nose is stuffy"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "shortness_of_breath",
+      "patterns": [
+        "i get out of breath easily", "i'm short of breath", "i get winded climbing stairs", "breathless after walking",
+        "i feel out of breath", "short of breath when i exercise", "i'm wheezing", "wheezing at night",
+        "my breathing feels tight", "i get breathless", "hard to catch my breath", "i'm puffing after a short walk",
+        "my asthma is acting up", "asthma flare", "i get winded", "breathing feels harder than usual",
+        "i'm a bit short of breath", "out of breath all the time", "shortness of breath", "breathlessness",
+        "i'm wheezy", "my chest is wheezy", "breathing is difficult when i lie down", "i get out of breath talking",
+        "short of breth", "can't catch my breath after stairs", "my breathing is shallow", "i'm huffing and puffing",
+        "my inhaler isn't helping much", "i'm breathless today"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "headache",
+      "patterns": [
+        "my head hurts", "my head is pounding", "i have a migraine", "headache since this morning", "my head is killing me",
+        "throbbing headache", "tension headache", "pain in my forehead", "pain at the back of my head", "splitting headache",
+        "my temples hurt", "migraine with sensitivity to light", "i keep getting headaches", "headache every afternoon",
+        "my head aches", "head pain", "i've had a headache for two days", "dull headache", "headach", "migranes",
+        "my head feels like it's going to explode", "pressure in my head", "headache behind my eyes",
+        "pounding head", "a bad headache", "my head hurts so much", "constant headaches", "hangover headache",
+        "my head hurts when i stand up", "headache and stiff neck"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi", "hello there", "hey", "hiya", "good morning", "good evening", "hey there", "yo", "hello!", "hi bot",
+        "hey chatbot", "greetings", "howdy", "hi, i need some help", "hello, anyone there?", "heyy", "helo",
+        "morning", "hi there, i have a question", "good afternoon"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": [
+        "how are you", "how's it going", "how are you doing today", "are you doing ok", "how have you been",
+        "how are things", "you good?", "how's your day", "how r u"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks", "thank you so much", "thanks for the help", "that's helpful, thanks", "cheers", "thx", "ty",
+        "thanks a lot", "appreciate it", "thank u", "great, thanks", "thanks, that helps", "much appreciated",
+        "perfect, thank you", "thanks for the advice"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye", "goodbye", "see you", "talk later", "i'm done, bye", "that's all, thanks bye", "see ya", "good night",
+        "catch you later", "i have to go", "bye bye", "later", "ok bye", "cya", "have a good day"
+      ],
+      "responses": []
+    },
+    {
+      "tag": "capabilities",
+      "patterns": [
+        "what can you do", "what can you help me with", "what do you know about", "how can you help me",
+        "what are you", "who are you", "are you a doctor", "are you a real person", "are you a bot",
+        "what symptoms do you know", "what kind of questions can i ask", "help", "what is this", "how does this work",
+        "can you diagnose me", "what illnesses do you cover", "what are you able to do", "what can i ask you",
+        "are you an ai", "what's your purpose", "tell me what you can do", "which symptoms can you help with",
+        "are you human", "can you give medical advice", "what do you do", "list what you can help with",
+        "how do i use this", "is this a real doctor", "what topics do you cover", "who made you"
+      ],
+      "responses": [
+        "I'm an automated symptom chatbot, not a doctor. I can give general self-care tips for common symptoms: fever, cold, flu, cough, sore throat, congestion, shortness of breath, headache, stomach ache, nausea, diarrhea, back pain, body aches, ear pain, toothache, dizziness, tiredness, trouble sleeping, allergies, and skin rashes. Just tell me how you're feeling.",
+        "I'm a demo health chatbot. Describe a symptom in your own words, like \"my stomach hurts\" or \"I can't sleep\", and I'll share general advice and when to see a doctor. I can't diagnose conditions or replace a medical professional.",
+        "I'm software, not a person or a doctor. I recognize about 20 common symptoms and share general guidance. For anything serious or urgent, please contact a healthcare professional or emergency services."
+      ]
+    },
+    {
+      "tag": "out_of_scope",
+      "patterns": [
+        "how long does a cold usually last", "should i go to the emergency room", "when should i see a doctor",
+        "is it contagious", "can i go to work tomorrow", "what medicine should i take", "how much ibuprofen can i take",
+        "do i need antibiotics", "is it safe to exercise while sick", "can kids get this too", "what causes this",
+        "will it go away on its own", "can i get a vaccine for this", "is this normal for my age",
+        "how do i prevent getting sick again", "am i going to be okay", "can i book an appointment",
+        "what are your opening hours", "where is the nearest pharmacy", "do you accept my insurance",
+        "i need a refill of my prescription", "how much does a consultation cost", "cancel my appointment please",
+        "can you send my test results", "i need a sick note for work", "what's the address of the clinic",
+        "how do i reset my password", "can i change my doctor", "do you have weekend availability",
+        "i want to update my phone number", "what's the weather like today", "tell me a joke", "who won the game last night",
+        "what is the capital of france", "recommend a good movie", "play some music", "how do i cook pasta",
+        "what's 25 times 4", "translate hello into spanish", "i like turtles", "order me a pizza", "asdfghjkl",
+        "set an alarm for 7am", "how tall is mount everest", "recommend a book", "what's the best phone to buy",
+        "i twisted my ankle", "i think i broke my finger", "there's blood in my urine", "it burns when i pee",
+        "my ears are ringing", "i have a lump in my breast", "my period is late", "i'm pregnant, is that ok",
+        "what's my bmi", "how many calories should i eat", "is coffee bad for you", "can i drink alcohol on antibiotics",
+        "what does high blood pressure mean", "how do i lose weight", "my dog is sick", "my cat isn't eating",
+        "what vitamins should i take", "is it okay to mix ibuprofen and paracetamol", "how do i quit smoking",
+        "what is diabetes", "my blood sugar is high", "i cut my finger", "i have a splinter", "i got stung by a bee"
+      ],
+      "responses": [
+        "Sorry, that's outside what I can help with. I can give general self-care tips for common symptoms like fever, cough, sore throat, stomach ache, back pain, dizziness, or trouble sleeping. For anything else, please ask a pharmacist or doctor.",
+        "I'm not able to help with that one. I'm a simple symptom chatbot. Tell me about a symptom you're having, or contact a healthcare professional for other questions."
+      ]
+    }
+  ]
+}

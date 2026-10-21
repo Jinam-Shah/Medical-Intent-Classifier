@@ -1,0 +1,456 @@
+{
+  "seed": 42,
+  "intents": [
+    "allergy",
+    "back_pain",
+    "body_aches",
+    "capabilities",
+    "cold",
+    "congestion",
+    "cough",
+    "diarrhea",
+    "dizziness",
+    "ear_pain",
+    "fatigue",
+    "fever",
+    "flu",
+    "goodbye",
+    "greeting",
+    "headache",
+    "how_are_you",
+    "insomnia",
+    "nausea_vomiting",
+    "out_of_scope",
+    "shortness_of_breath",
+    "skin_rash",
+    "sore_throat",
+    "stomach_ache",
+    "thanks",
+    "toothache"
+  ],
+  "sources": {
+    "v1": "data/intents.json",
+    "authored": "data/v2/authored.json",
+    "clinc": {
+      "repo": "clinc/clinc_oos",
+      "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+      "config": "plus",
+      "license": "CC BY 3.0",
+      "citation": "Larson et al., 2019. An Evaluation Dataset for Intent Classification and Out-of-Scope Prediction. EMNLP-IJCNLP."
+    }
+  },
+  "own_rows_hash": "a5e03aa13302f4ce9550b2019ff01fc821429bf7d6914c190094f52c88f86df2",
+  "dropped_conflicting_own_patterns": [
+    "ciao"
+  ],
+  "dropped_cross_source_rows": [
+    {
+      "text": "catch you later",
+      "intent": "goodbye",
+      "split": "test",
+      "source": "clinc"
+    },
+    {
+      "text": "hello there",
+      "intent": "greeting",
+      "split": "test",
+      "source": "clinc"
+    },
+    {
+      "text": "Thank you goodbye",
+      "intent": "goodbye",
+      "split": "val",
+      "source": "v1"
+    },
+    {
+      "text": "See you later",
+      "intent": "goodbye",
+      "split": "val",
+      "source": "v1"
+    },
+    {
+      "text": "farewell",
+      "intent": "goodbye",
+      "split": "val",
+      "source": "clinc"
+    },
+    {
+      "text": "hey how's it going",
+      "intent": "how_are_you",
+      "split": "val",
+      "source": "clinc"
+    },
+    {
+      "text": "hello",
+      "intent": "greeting",
+      "split": "val",
+      "source": "clinc"
+    },
+    {
+      "text": "thank you for the help",
+      "intent": "thanks",
+      "split": "val",
+      "source": "clinc"
+    },
+    {
+      "text": "thanks for your help",
+      "intent": "thanks",
+      "split": "val",
+      "source": "clinc"
+    },
+    {
+      "text": "Wassup",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Until next time",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Later",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hiya",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hi how are you",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Thank you very much",
+      "intent": "thanks",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Signing off",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Goodbye",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Bye",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hey",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hey there",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hey what's up",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Hey how's it going",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "Thanks so much",
+      "intent": "thanks",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "are you human",
+      "intent": "capabilities",
+      "split": "train",
+      "source": "authored"
+    },
+    {
+      "text": "how can you help me",
+      "intent": "capabilities",
+      "split": "train",
+      "source": "authored"
+    },
+    {
+      "text": "Hi",
+      "intent": "greeting",
+      "split": "train",
+      "source": "v1"
+    },
+    {
+      "text": "see you soon",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "see ya",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "peace out",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "bye for now",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "good night",
+      "intent": "goodbye",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "hola",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "hi how are you",
+      "intent": "how_are_you",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "good to see you",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "good day",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "how are you",
+      "intent": "how_are_you",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "how have you been",
+      "intent": "how_are_you",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "are you doing ok",
+      "intent": "how_are_you",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "yo",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "hey what's up",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "good evening",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "bonjour",
+      "intent": "greeting",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "thanks",
+      "intent": "thanks",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "appreciate the help",
+      "intent": "thanks",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "thanks for the help",
+      "intent": "thanks",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "thanks for that",
+      "intent": "thanks",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "thank you so much",
+      "intent": "thanks",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "what can you do",
+      "intent": "capabilities",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "what can you help me with",
+      "intent": "capabilities",
+      "split": "train",
+      "source": "clinc"
+    },
+    {
+      "text": "what can i ask you",
+      "intent": "capabilities",
+      "split": "train",
+      "source": "clinc"
+    }
+  ],
+  "counts": {
+    "test": 673,
+    "val": 518,
+    "train": 1818
+  },
+  "counts_by_source": {
+    "test": {
+      "authored": 164,
+      "clinc": 388,
+      "v1": 121
+    },
+    "val": {
+      "authored": 154,
+      "clinc": 235,
+      "v1": 129
+    },
+    "train": {
+      "authored": 727,
+      "clinc": 506,
+      "v1": 585
+    }
+  },
+  "per_intent": {
+    "test": {
+      "allergy": 9,
+      "back_pain": 9,
+      "body_aches": 9,
+      "capabilities": 64,
+      "cold": 14,
+      "congestion": 14,
+      "cough": 14,
+      "diarrhea": 9,
+      "dizziness": 9,
+      "ear_pain": 9,
+      "fatigue": 9,
+      "fever": 15,
+      "flu": 14,
+      "goodbye": 43,
+      "greeting": 23,
+      "headache": 15,
+      "how_are_you": 25,
+      "insomnia": 9,
+      "nausea_vomiting": 9,
+      "out_of_scope": 251,
+      "shortness_of_breath": 15,
+      "skin_rash": 9,
+      "sore_throat": 14,
+      "stomach_ache": 9,
+      "thanks": 44,
+      "toothache": 9
+    },
+    "val": {
+      "allergy": 9,
+      "back_pain": 9,
+      "body_aches": 9,
+      "capabilities": 25,
+      "cold": 14,
+      "congestion": 15,
+      "cough": 13,
+      "diarrhea": 9,
+      "dizziness": 9,
+      "ear_pain": 9,
+      "fatigue": 9,
+      "fever": 14,
+      "flu": 14,
+      "goodbye": 20,
+      "greeting": 25,
+      "headache": 14,
+      "how_are_you": 14,
+      "insomnia": 9,
+      "nausea_vomiting": 9,
+      "out_of_scope": 190,
+      "shortness_of_breath": 15,
+      "skin_rash": 9,
+      "sore_throat": 15,
+      "stomach_ache": 9,
+      "thanks": 22,
+      "toothache": 9
+    },
+    "train": {
+      "allergy": 42,
+      "back_pain": 42,
+      "body_aches": 42,
+      "capabilities": 96,
+      "cold": 67,
+      "congestion": 67,
+      "cough": 63,
+      "diarrhea": 42,
+      "dizziness": 42,
+      "ear_pain": 42,
+      "fatigue": 42,
+      "fever": 68,
+      "flu": 66,
+      "goodbye": 93,
+      "greeting": 85,
+      "headache": 66,
+      "how_are_you": 70,
+      "insomnia": 42,
+      "nausea_vomiting": 42,
+      "out_of_scope": 339,
+      "shortness_of_breath": 70,
+      "skin_rash": 42,
+      "sore_throat": 67,
+      "stomach_ache": 42,
+      "thanks": 97,
+      "toothache": 42
+    }
+  }
+}
