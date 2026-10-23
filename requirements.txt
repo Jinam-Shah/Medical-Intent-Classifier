@@ -23,5 +23,5 @@ onnxruntime==1.31.0
 transformers==5.20.2
 tokenizers==0.23.3
 mlflow==3.17.2
-pyarrow==26.0.0
+pyarrow==25.0.1
 huggingface_hub==2.2.0

@@ -21,7 +21,7 @@ env:
 jobs:
   lint:
     name: Lint (ruff)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -32,7 +32,7 @@ jobs:
 
   test:
     name: Tests (pytest)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -46,6 +46,8 @@ jobs:
         run: |
           pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
           pip install -r requirements-dev.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Check pinned versions are mutually compatible
+        run: pip check
       - name: Download NLTK tokenizer data
         run: python -m nltk.downloader punkt_tab
       - name: Run tests
@@ -53,7 +55,7 @@ jobs:
 
   docker:
     name: Docker build + smoke test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [lint, test]
     steps:
       - uses: actions/checkout@v7
