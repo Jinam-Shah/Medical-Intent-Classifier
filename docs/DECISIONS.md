@@ -239,3 +239,13 @@ Short records of the significant choices in this project: the problem, the optio
 **Choice.** Three GitHub Actions jobs: ruff, the full test suite, and a Docker job that builds the image the way Render does (model from the Hugging Face revision pinned in `render.yaml`), runs it under the free-tier limits (512 MB, 0.1 CPU), and runs the smoke test against it. `render.yaml` uses `autoDeployTrigger: checksPass`. `tests/test_deploy_config.py` adds fast checks for the same failure class: a full commit hash is pinned, the last Dockerfile stage is the served one (Render can't pick a target), and its backend matches the model type.
 
 **Cost.** Free for a public repository. The Docker job reuses layers through the GitHub Actions cache.
+
+## D32. Right-size the BiLSTM with a small validation-only sweep, run in a Linux container
+
+**Problem.** The BiLSTM had 16.6 M parameters for 1,818 training sentences, and its best epoch came early (15 of 45). Training also wasn't logged to MLflow, unlike the transformers.
+
+**Choice.** `src/train.py` now logs params, per-epoch curves, the summary, and the reports to MLflow. `src/sweep.py` trains six configs (hidden 128 to 512, 1 to 3 layers, dropout 0.3 to 0.7, LR 0.001 or 0.003) with a shared, shorter patience, and picks the best validation accuracy, using validation loss as a tie-break. The test split isn't read. The winner (256 hidden, 2 layers, dropout 0.5, LR 0.003) is saved as `configs/bilstm_v2_tuned.yaml`, and a test checks the two stay in sync. The original config is kept so the old numbers stay reproducible.
+
+**What we learned.** The same seed, data, and config gave 0.757 on Windows and 0.851 in Linux. A single BiLSTM run is therefore noisy by several points, and the ranking among the top configs shouldn't be over-read. The solid finding is the size: the 3.1 M model matched or beat the 16.6 M one at a sixth of the training time. On test, the tuned BiLSTM got 0.875 (original 0.741), still below MiniLM's 0.947, so the deployed model doesn't change. Multiple seeds per config would make the ranking firmer. That's cheap now that the small models train in under two minutes, but it isn't done yet.
+
+**Why a container.** Windows Smart App Control began blocking scikit-learn and matplotlib DLLs on the development laptop. Turning Smart App Control off can't be undone without reinstalling Windows, so training and evaluation ran in a `python:3.11` container with the pinned `requirements.txt` (the same environment CI uses), with the repo mounted so outputs land in the usual folders.

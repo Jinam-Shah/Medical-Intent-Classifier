@@ -174,3 +174,29 @@ Validation by source: BiLSTM 0.675 (own) / 0.855 (CLINC); MiniLM 0.947 (own) / 0
 | 2026-10-21 | Live `/predict` latency over HTTPS, 30 sequential requests | p50 131 ms, p95 150 ms, min 115 ms, max 191 ms | Render free + client A | same command |
 | 2026-10-21 | Web chat image (no Gradio), built from HF revision `4b3f12d` | 703 MB (was 990 MB with Gradio) | A, Docker 29.6.2 | `docker build --build-arg MODEL_SOURCE=hub ...`, then `docker images` |
 | 2026-10-21 | Web chat image under Render limits (`--memory 512m --cpus 0.1`) | container start to ready 24 s (was 54 s); memory 181.4 MiB (was 240.6 MiB); smoke test passed including a 3-turn `/chat` conversation; `/predict` p50 100 ms, p95 201 ms over 20 requests | A, Docker | `docker run --memory 512m --cpus 0.1 ...`; `docker logs -t`; `docker stats`; `python scripts/smoke_test.py http://127.0.0.1:8798 --requests 20` |
+
+## Phase 1: BiLSTM hyperparameter sweep on dataset v2 (2026-10-22)
+
+**Environment B:** Linux container (`python:3.11` image, Python 3.11.17, torch 2.14.1+cpu, packages from `requirements.txt`, `pip check` clean) under Docker Desktop's WSL 2 VM (16 CPUs, 7.8 GB) on the Environment A laptop. Used because Windows Smart App Control started blocking scikit-learn and matplotlib DLLs on Environment A (DECISIONS D32). Each run is logged to MLflow (`mlruns/sweep-linux.db`).
+
+All six configs start from `configs/bilstm_v2.yaml` and share early-stopping patience 10 and LR-scheduler patience 5 (the base config uses 30 and 20). Selection is on validation accuracy only, n=518, where one sentence is worth 0.19 points and the 95% CI is about ±2.5 points. Command: `python -m src.sweep`; results in `reports/v2/bilstm_sweep/results.json`.
+
+| Config | Hidden / layers / dropout / LR | Params | Val accuracy | Val macro F1 | Best val loss | Best epoch / run | Train time |
+|---|---|---|---|---|---|---|---|
+| **h256_L2_d05_lr3 (selected)** | 256 / 2 / 0.5 / 0.003 | 3,108,635 | **0.9054** | **0.8791** | **0.5834** | 16 / 26 | 82 s |
+| h512_L3_d07 (original architecture) | 512 / 3 / 0.7 / 0.003 | 16,632,859 | 0.8919 | 0.8521 | 0.7291 | 28 / 38 | 537 s |
+| h256_L1_d03 | 256 / 1 / 0.3 / 0.001 | 1,531,675 | 0.8745 | 0.8517 | 0.6297 | 9 / 19 | 32 s |
+| h256_L2_d05 | 256 / 2 / 0.5 / 0.001 | 3,108,635 | 0.8707 | 0.8423 | 0.5951 | 12 / 22 | 116 s |
+| h128_L1_d05 | 128 / 1 / 0.5 / 0.001 | 772,251 | 0.8224 | 0.7821 | 0.6959 | 10 / 20 | 23 s |
+| h128_L2_d03_lr3 | 128 / 2 / 0.3 / 0.003 | 1,167,515 | 0.7954 | 0.7148 | 0.6128 | 5 / 15 | 29 s |
+
+**Control run.** The unchanged `configs/bilstm_v2.yaml` (original patience 30/20), retrained in Environment B: val accuracy 0.8514, macro F1 0.7735, best epoch 25 of 55, 790.5 s (`reports/v2/bilstm_linux_control/`). The same config in Environment A gave 0.7568. So the BiLSTM's result changes by about 9 points between two environments with the same seed and data. The sweep's differences of 1 to 3 points between the top configs are within that run-to-run variation; what the sweep does show is that a model a fifth the size, trained 6.5× faster, does at least as well.
+
+### Selected BiLSTM, calibrated on validation and evaluated on test once (Environment B)
+
+| Split | Accuracy (95% CI) | Macro F1 | Weighted F1 | Acc. on CLINC | Acc. on own | End-to-end | OOS rejected | In-scope answered | T / threshold |
+|---|---|---|---|---|---|---|---|---|---|
+| Validation | 0.9054 (0.877 to 0.928) | 0.8791 | 0.9062 | 0.9319 (n=235) | 0.8834 (n=283) | 0.9035 | 0.958 | 0.939 | 2.060 / 0.26 |
+| **Test** | **0.8752 (0.848 to 0.898)** | **0.8276** | 0.8781 | 0.8995 (n=388) | 0.8421 (n=285) | 0.8811 | 0.940 | 0.953 | same |
+
+Commands: `python -m src.evaluate_v2 calibrate --backend pytorch --model-path outputs/models/bilstm_v2_sweep/h256_L2_d05_lr3/model.pt --name bilstm_v2_tuned`, then the same with `test`. Reports: `reports/v2/bilstm_v2_tuned/`. Compared with the original BiLSTM v2 (test 0.7415), the tuned one is 13.4 points better on test but still 7.1 points below the deployed MiniLM (0.9465), so MiniLM stays deployed. The tuned BiLSTM's latency was not measured.

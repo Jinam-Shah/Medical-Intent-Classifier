@@ -19,7 +19,8 @@ Dataset v2: 26 intents, 3,009 sentences, fixed split of 1,818 train / 518 valida
 
 | Model | Params | Val accuracy | **Test accuracy** (95% CI) | Test macro F1 | CPU latency, 1 thread (ONNX, p50) |
 |---|---|---|---|---|---|
-| BiLSTM + attention (from scratch) | 16.6 M | 0.757 | 0.741 (0.707 to 0.773) | 0.551 | 4.1 ms |
+| BiLSTM + attention (from scratch), original settings | 16.6 M | 0.757 | 0.741 (0.707 to 0.773) | 0.551 | 4.1 ms |
+| BiLSTM + attention, tuned by sweep (Linux) | 3.1 M | 0.905 | 0.875 (0.848 to 0.898) | 0.828 | not measured |
 | DistilBERT, fine-tuned | 67.0 M | 0.946 | 0.936 (0.915 to 0.952) | 0.931 | 10.3 ms |
 | **MiniLM-L6, fine-tuned (deployed)** | 22.7 M | **0.956** | **0.947** (0.927 to 0.961) | **0.942** | **2.4 ms** |
 
@@ -106,6 +107,8 @@ python -m src.data_v2
 python -m src.transformer train --config configs/minilm_v2.yaml
 python -m src.transformer train --config configs/distilbert_v2.yaml
 python -m src.train --config configs/bilstm_v2.yaml          # BiLSTM baseline on v2
+python -m src.sweep                                          # BiLSTM sweep, chosen on validation (MLflow)
+python -m src.train --config configs/bilstm_v2_tuned.yaml    # the sweep winner
 
 # Compare on validation; fit temperature + fallback threshold (writes serving.json next to the model)
 python -m src.evaluate_v2 calibrate --backend transformer --model-path outputs/models/minilm_v2/hf --name minilm_v2
@@ -339,7 +342,7 @@ BiLSTM v2 on the same test split, for comparison:
 ## Roadmap
 
 - [x] Phase 0: audit, reproducible pipeline, fixed split, honest metrics
-- [x] Phase 1 (partly): MLflow tracking for transformer training, all evaluations, and the model registry. Still to do: MLflow logging in the BiLSTM training script, and a hyperparameter sweep
+- [x] Phase 1: MLflow tracking for all training, evaluations, and the model registry; a validation-only BiLSTM sweep (16.6 M → 3.1 M parameters, test 0.741 → 0.875; D32)
 - [x] Phase 2: DistilBERT fine-tuning and comparison, plus MiniLM (deployed)
 - [x] Phase 3 (reworked): dataset v2 with 14 new intents and CLINC150 data, replacing the planned small top-up of v1
 - [x] Phase 4: FastAPI service, calibrated low-confidence fallback, ONNX export, Docker
