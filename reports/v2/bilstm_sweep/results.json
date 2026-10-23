@@ -1,0 +1,100 @@
+{
+  "shared": {
+    "training.early_stopping_patience": 10,
+    "training.lr_scheduler_patience": 5
+  },
+  "selected_on": "val_accuracy",
+  "best": "h256_L2_d05_lr3",
+  "results": [
+    {
+      "name": "h512_L3_d07",
+      "model.hidden_dim": 512,
+      "model.num_layers": 3,
+      "model.dropout": 0.7,
+      "training.learning_rate": 0.003,
+      "best_epoch": 28,
+      "best_val_loss": 0.7290922249843206,
+      "epochs_run": 38,
+      "train_seconds": 537.2,
+      "parameters": 16632859,
+      "val_accuracy": 0.8918918918918919,
+      "val_f1_weighted": 0.8944511554459502,
+      "val_f1_macro": 0.8521108737353003
+    },
+    {
+      "name": "h256_L2_d05",
+      "model.hidden_dim": 256,
+      "model.num_layers": 2,
+      "model.dropout": 0.5,
+      "training.learning_rate": 0.001,
+      "best_epoch": 12,
+      "best_val_loss": 0.5951069521944266,
+      "epochs_run": 22,
+      "train_seconds": 116.1,
+      "parameters": 3108635,
+      "val_accuracy": 0.8706563706563707,
+      "val_f1_weighted": 0.8774585586605956,
+      "val_f1_macro": 0.8423362501406034
+    },
+    {
+      "name": "h256_L2_d05_lr3",
+      "model.hidden_dim": 256,
+      "model.num_layers": 2,
+      "model.dropout": 0.5,
+      "training.learning_rate": 0.003,
+      "best_epoch": 16,
+      "best_val_loss": 0.5833752044145337,
+      "epochs_run": 26,
+      "train_seconds": 81.6,
+      "parameters": 3108635,
+      "val_accuracy": 0.9054054054054054,
+      "val_f1_weighted": 0.906189299052403,
+      "val_f1_macro": 0.8791345529028052
+    },
+    {
+      "name": "h256_L1_d03",
+      "model.hidden_dim": 256,
+      "model.num_layers": 1,
+      "model.dropout": 0.3,
+      "training.learning_rate": 0.001,
+      "best_epoch": 9,
+      "best_val_loss": 0.6297313820959058,
+      "epochs_run": 19,
+      "train_seconds": 32.2,
+      "parameters": 1531675,
+      "val_accuracy": 0.8745173745173745,
+      "val_f1_weighted": 0.880161823213531,
+      "val_f1_macro": 0.851680533012478
+    },
+    {
+      "name": "h128_L1_d05",
+      "model.hidden_dim": 128,
+      "model.num_layers": 1,
+      "model.dropout": 0.5,
+      "training.learning_rate": 0.001,
+      "best_epoch": 10,
+      "best_val_loss": 0.6959437832351357,
+      "epochs_run": 20,
+      "train_seconds": 22.9,
+      "parameters": 772251,
+      "val_accuracy": 0.8223938223938224,
+      "val_f1_weighted": 0.8316068419748935,
+      "val_f1_macro": 0.7820843336468375
+    },
+    {
+      "name": "h128_L2_d03_lr3",
+      "model.hidden_dim": 128,
+      "model.num_layers": 2,
+      "model.dropout": 0.3,
+      "training.learning_rate": 0.003,
+      "best_epoch": 5,
+      "best_val_loss": 0.6127737589238003,
+      "epochs_run": 15,
+      "train_seconds": 28.6,
+      "parameters": 1167515,
+      "val_accuracy": 0.7953667953667953,
+      "val_f1_weighted": 0.8041170244721704,
+      "val_f1_macro": 0.7148209701466013
+    }
+  ]
+}

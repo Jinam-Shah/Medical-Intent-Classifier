@@ -1,0 +1,590 @@
+[
+  {
+    "text": "i'm allergic to dogs",
+    "true": "allergy",
+    "pred": "out_of_scope",
+    "confidence": 0.19092318415641785,
+    "source": "authored"
+  },
+  {
+    "text": "itchy throat and sneezing",
+    "true": "allergy",
+    "pred": "sore_throat",
+    "confidence": 0.8653196692466736,
+    "source": "authored"
+  },
+  {
+    "text": "backache",
+    "true": "back_pain",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "authored"
+  },
+  {
+    "text": "lumbar pain",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.5983972549438477,
+    "source": "authored"
+  },
+  {
+    "text": "sore from head to toe",
+    "true": "body_aches",
+    "pred": "headache",
+    "confidence": 0.3727321922779083,
+    "source": "authored"
+  },
+  {
+    "text": "how do i use this",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.8369890451431274,
+    "source": "authored"
+  },
+  {
+    "text": "are you human",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.7306260466575623,
+    "source": "clinc"
+  },
+  {
+    "text": "could you be human",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.33578598499298096,
+    "source": "clinc"
+  },
+  {
+    "text": "how can you help me",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.3953912556171417,
+    "source": "clinc"
+  },
+  {
+    "text": "what can you do to make yourself useful",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9680331945419312,
+    "source": "clinc"
+  },
+  {
+    "text": "runny nose and sneezing",
+    "true": "cold",
+    "pred": "allergy",
+    "confidence": 0.8878499865531921,
+    "source": "authored"
+  },
+  {
+    "text": "Cold and flu",
+    "true": "cold",
+    "pred": "flu",
+    "confidence": 0.9771345257759094,
+    "source": "v1"
+  },
+  {
+    "text": "mucus in my nose",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.8500531315803528,
+    "source": "authored"
+  },
+  {
+    "text": "i've got diarrhoea",
+    "true": "diarrhea",
+    "pred": "fatigue",
+    "confidence": 0.41104432940483093,
+    "source": "authored"
+  },
+  {
+    "text": "feeling woozy",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.5307761430740356,
+    "source": "authored"
+  },
+  {
+    "text": "i feel like the floor is moving",
+    "true": "dizziness",
+    "pred": "stomach_ache",
+    "confidence": 0.45530471205711365,
+    "source": "authored"
+  },
+  {
+    "text": "i feel wobbly",
+    "true": "dizziness",
+    "pred": "fatigue",
+    "confidence": 0.5999782085418701,
+    "source": "authored"
+  },
+  {
+    "text": "light headed",
+    "true": "dizziness",
+    "pred": "shortness_of_breath",
+    "confidence": 0.7526228427886963,
+    "source": "authored"
+  },
+  {
+    "text": "i have chills",
+    "true": "fever",
+    "pred": "allergy",
+    "confidence": 0.678787887096405,
+    "source": "authored"
+  },
+  {
+    "text": "fever and body aches, maybe flu",
+    "true": "flu",
+    "pred": "fever",
+    "confidence": 0.4617256224155426,
+    "source": "authored"
+  },
+  {
+    "text": "i feel fluish",
+    "true": "flu",
+    "pred": "fatigue",
+    "confidence": 0.5999782085418701,
+    "source": "authored"
+  },
+  {
+    "text": "great talk, thanks",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.9840710163116455,
+    "source": "clinc"
+  },
+  {
+    "text": "it was a pleasure talking to you",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.23260189592838287,
+    "source": "clinc"
+  },
+  {
+    "text": "regards",
+    "true": "goodbye",
+    "pred": "out_of_scope",
+    "confidence": 0.32691505551338196,
+    "source": "clinc"
+  },
+  {
+    "text": "thanks for your help, goodbye!",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.8247775435447693,
+    "source": "clinc"
+  },
+  {
+    "text": "that will be all have a nice day!",
+    "true": "goodbye",
+    "pred": "out_of_scope",
+    "confidence": 0.9670475721359253,
+    "source": "clinc"
+  },
+  {
+    "text": "that's all i need, i'm going now",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.3416258990764618,
+    "source": "clinc"
+  },
+  {
+    "text": "Have a good day",
+    "true": "goodbye",
+    "pred": "how_are_you",
+    "confidence": 0.1575046181678772,
+    "source": "v1"
+  },
+  {
+    "text": "I have to go",
+    "true": "goodbye",
+    "pred": "allergy",
+    "confidence": 0.740700900554657,
+    "source": "v1"
+  },
+  {
+    "text": "I'm heading out",
+    "true": "goodbye",
+    "pred": "shortness_of_breath",
+    "confidence": 0.5963988304138184,
+    "source": "v1"
+  },
+  {
+    "text": "I'm out",
+    "true": "goodbye",
+    "pred": "allergy",
+    "confidence": 0.2755740284919739,
+    "source": "v1"
+  },
+  {
+    "text": "Thanks goodbye",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.8311830759048462,
+    "source": "v1"
+  },
+  {
+    "text": "Aloha",
+    "true": "greeting",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "v1"
+  },
+  {
+    "text": "Bonjour",
+    "true": "greeting",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "v1"
+  },
+  {
+    "text": "G'day",
+    "true": "greeting",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "v1"
+  },
+  {
+    "text": "Hello I have a question",
+    "true": "greeting",
+    "pred": "capabilities",
+    "confidence": 0.6089560389518738,
+    "source": "v1"
+  },
+  {
+    "text": "Heya",
+    "true": "greeting",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "v1"
+  },
+  {
+    "text": "my head hurts when i stand up",
+    "true": "headache",
+    "pred": "dizziness",
+    "confidence": 0.35178738832473755,
+    "source": "authored"
+  },
+  {
+    "text": "My head is pounding",
+    "true": "headache",
+    "pred": "shortness_of_breath",
+    "confidence": 0.18586790561676025,
+    "source": "v1"
+  },
+  {
+    "text": "Pounding head",
+    "true": "headache",
+    "pred": "shortness_of_breath",
+    "confidence": 0.8078351020812988,
+    "source": "v1"
+  },
+  {
+    "text": "hey, how are you",
+    "true": "how_are_you",
+    "pred": "greeting",
+    "confidence": 0.36413469910621643,
+    "source": "clinc"
+  },
+  {
+    "text": "i need to know how you are doing today",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.5089842677116394,
+    "source": "clinc"
+  },
+  {
+    "text": "i want to know how you are doing",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.806275486946106,
+    "source": "clinc"
+  },
+  {
+    "text": "i'd like to know how you are doing",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.4832356870174408,
+    "source": "clinc"
+  },
+  {
+    "text": "let me know how you are doing",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.753043532371521,
+    "source": "clinc"
+  },
+  {
+    "text": "will you tell me how the ai is doing",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.6316861510276794,
+    "source": "clinc"
+  },
+  {
+    "text": "would you tell me how the ai is doing",
+    "true": "how_are_you",
+    "pred": "capabilities",
+    "confidence": 0.7832136750221252,
+    "source": "clinc"
+  },
+  {
+    "text": "i can't switch off at night",
+    "true": "insomnia",
+    "pred": "out_of_scope",
+    "confidence": 0.38811543583869934,
+    "source": "authored"
+  },
+  {
+    "text": "barfing",
+    "true": "nausea_vomiting",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "authored"
+  },
+  {
+    "text": "can't keep food down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.9985496401786804,
+    "source": "authored"
+  },
+  {
+    "text": "i feel nauseus",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.5999782085418701,
+    "source": "authored"
+  },
+  {
+    "text": "i get nauseous in the car",
+    "true": "nausea_vomiting",
+    "pred": "diarrhea",
+    "confidence": 0.31354373693466187,
+    "source": "authored"
+  },
+  {
+    "text": "i'm nauseated",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.35451170802116394,
+    "source": "authored"
+  },
+  {
+    "text": "nauseous and weak",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.9201968312263489,
+    "source": "authored"
+  },
+  {
+    "text": "upset stomach and nausea",
+    "true": "nausea_vomiting",
+    "pred": "stomach_ache",
+    "confidence": 0.8990094065666199,
+    "source": "authored"
+  },
+  {
+    "text": "i'm pregnant, is that ok",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.28995758295059204,
+    "source": "authored"
+  },
+  {
+    "text": "my cat isn't eating",
+    "true": "out_of_scope",
+    "pred": "shortness_of_breath",
+    "confidence": 0.43015342950820923,
+    "source": "authored"
+  },
+  {
+    "text": "my ears are ringing",
+    "true": "out_of_scope",
+    "pred": "ear_pain",
+    "confidence": 0.9997864365577698,
+    "source": "authored"
+  },
+  {
+    "text": "are you from around here",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.724972128868103,
+    "source": "clinc"
+  },
+  {
+    "text": "check to see if i still have allergy medication",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.22327648103237152,
+    "source": "clinc"
+  },
+  {
+    "text": "could i get some more checkbooks sent to me, please",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.25365132093429565,
+    "source": "clinc"
+  },
+  {
+    "text": "flip a coin, i'm heads",
+    "true": "out_of_scope",
+    "pred": "shortness_of_breath",
+    "confidence": 0.19121311604976654,
+    "source": "clinc"
+  },
+  {
+    "text": "how much do i earn",
+    "true": "out_of_scope",
+    "pred": "thanks",
+    "confidence": 0.38612014055252075,
+    "source": "clinc"
+  },
+  {
+    "text": "how much time is left on my laundry",
+    "true": "out_of_scope",
+    "pred": "thanks",
+    "confidence": 0.44588834047317505,
+    "source": "clinc"
+  },
+  {
+    "text": "how young are you",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.5402873754501343,
+    "source": "clinc"
+  },
+  {
+    "text": "i have a rash, what can i use for it",
+    "true": "out_of_scope",
+    "pred": "skin_rash",
+    "confidence": 0.9669719338417053,
+    "source": "clinc"
+  },
+  {
+    "text": "i'd like for this person to know my location",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.37700769305229187,
+    "source": "clinc"
+  },
+  {
+    "text": "let me know who programmed you",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.9188886284828186,
+    "source": "clinc"
+  },
+  {
+    "text": "okay",
+    "true": "out_of_scope",
+    "pred": "allergy",
+    "confidence": 0.1569065898656845,
+    "source": "clinc"
+  },
+  {
+    "text": "pardon, i didn't hear you",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.25460055470466614,
+    "source": "clinc"
+  },
+  {
+    "text": "read text",
+    "true": "out_of_scope",
+    "pred": "body_aches",
+    "confidence": 0.5532723665237427,
+    "source": "clinc"
+  },
+  {
+    "text": "send me videos of how to do a smoky eye",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.21867793798446655,
+    "source": "clinc"
+  },
+  {
+    "text": "slow down your voice",
+    "true": "out_of_scope",
+    "pred": "fatigue",
+    "confidence": 0.41977548599243164,
+    "source": "clinc"
+  },
+  {
+    "text": "so, hang out around this house often",
+    "true": "out_of_scope",
+    "pred": "allergy",
+    "confidence": 0.6036944389343262,
+    "source": "clinc"
+  },
+  {
+    "text": "start whisper mode",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.24433580040931702,
+    "source": "clinc"
+  },
+  {
+    "text": "what kinds of hobbies do you have",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.4027545750141144,
+    "source": "clinc"
+  },
+  {
+    "text": "whom do you work for",
+    "true": "out_of_scope",
+    "pred": "thanks",
+    "confidence": 0.34526440501213074,
+    "source": "clinc"
+  },
+  {
+    "text": "i'm huffing and puffing",
+    "true": "shortness_of_breath",
+    "pred": "fatigue",
+    "confidence": 0.681702196598053,
+    "source": "authored"
+  },
+  {
+    "text": "it's painful to swallow food",
+    "true": "sore_throat",
+    "pred": "stomach_ache",
+    "confidence": 0.5844222903251648,
+    "source": "authored"
+  },
+  {
+    "text": "my throat is scratchy",
+    "true": "sore_throat",
+    "pred": "headache",
+    "confidence": 0.3064019978046417,
+    "source": "authored"
+  },
+  {
+    "text": "ai is a helpful item to have in my home, thank you",
+    "true": "thanks",
+    "pred": "out_of_scope",
+    "confidence": 0.9083343148231506,
+    "source": "clinc"
+  },
+  {
+    "text": "i appeciate it",
+    "true": "thanks",
+    "pred": "fatigue",
+    "confidence": 0.3070620000362396,
+    "source": "clinc"
+  },
+  {
+    "text": "i apprecaite the help from you",
+    "true": "thanks",
+    "pred": "allergy",
+    "confidence": 0.11321615427732468,
+    "source": "clinc"
+  },
+  {
+    "text": "Ty",
+    "true": "thanks",
+    "pred": "diarrhea",
+    "confidence": 0.1812180131673813,
+    "source": "v1"
+  }
+]

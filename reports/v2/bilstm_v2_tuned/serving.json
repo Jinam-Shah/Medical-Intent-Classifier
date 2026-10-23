@@ -1,0 +1,5 @@
+{
+  "temperature": 2.059990063944859,
+  "confidence_threshold": 0.26,
+  "chosen_on": "v2 validation split, see reports/v2/bilstm_v2_tuned/calibration.json"
+}

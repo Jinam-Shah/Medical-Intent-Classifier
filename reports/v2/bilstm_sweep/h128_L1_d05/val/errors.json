@@ -1,0 +1,554 @@
+[
+  {
+    "text": "allergies are bothering me",
+    "true": "allergy",
+    "pred": "goodbye",
+    "confidence": 0.8834125399589539
+  },
+  {
+    "text": "i keep sneezing in the morning",
+    "true": "allergy",
+    "pred": "dizziness",
+    "confidence": 0.6547292470932007
+  },
+  {
+    "text": "sneezing a lot",
+    "true": "allergy",
+    "pred": "goodbye",
+    "confidence": 0.8097399473190308
+  },
+  {
+    "text": "back pain after a long drive",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.6490247249603271
+  },
+  {
+    "text": "back pain from sleeping wrong",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.47149431705474854
+  },
+  {
+    "text": "i can barely stand up straight because of my back",
+    "true": "back_pain",
+    "pred": "out_of_scope",
+    "confidence": 0.9234822392463684
+  },
+  {
+    "text": "my back hurts when i sit too long",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.5467121601104736
+  },
+  {
+    "text": "my spine hurts",
+    "true": "back_pain",
+    "pred": "stomach_ache",
+    "confidence": 0.3879632353782654
+  },
+  {
+    "text": "can you give medical advice",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.6280224919319153
+  },
+  {
+    "text": "help",
+    "true": "capabilities",
+    "pred": "thanks",
+    "confidence": 0.8129541277885437
+  },
+  {
+    "text": "what's your purpose",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.9398214221000671
+  },
+  {
+    "text": "clear something up, are you a robot",
+    "true": "capabilities",
+    "pred": "greeting",
+    "confidence": 0.5233809351921082
+  },
+  {
+    "text": "i would like to know if you are an artificial intelligence being",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.9999231100082397
+  },
+  {
+    "text": "what topics can you answer questions on",
+    "true": "capabilities",
+    "pred": "how_are_you",
+    "confidence": 0.4915941059589386
+  },
+  {
+    "text": "would you be classified as a bot",
+    "true": "capabilities",
+    "pred": "out_of_scope",
+    "confidence": 0.8102867007255554
+  },
+  {
+    "text": "my baby's nose is stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.9346151351928711
+  },
+  {
+    "text": "my nose is clogged",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.8244516253471375
+  },
+  {
+    "text": "my nose is so stuffy",
+    "true": "congestion",
+    "pred": "cold",
+    "confidence": 0.921180248260498
+  },
+  {
+    "text": "pressure behind my eyes and blocked nose",
+    "true": "congestion",
+    "pred": "sore_throat",
+    "confidence": 0.6435965299606323
+  },
+  {
+    "text": "my cough is getting worse",
+    "true": "cough",
+    "pred": "congestion",
+    "confidence": 0.573401927947998
+  },
+  {
+    "text": "had diarrhea this morning",
+    "true": "diarrhea",
+    "pred": "goodbye",
+    "confidence": 0.6662175059318542
+  },
+  {
+    "text": "i had diarrhea all night",
+    "true": "diarrhea",
+    "pred": "insomnia",
+    "confidence": 0.7868417501449585
+  },
+  {
+    "text": "the runs",
+    "true": "diarrhea",
+    "pred": "goodbye",
+    "confidence": 0.3748103380203247
+  },
+  {
+    "text": "i feel woozy",
+    "true": "dizziness",
+    "pred": "nausea_vomiting",
+    "confidence": 0.5269930362701416
+  },
+  {
+    "text": "my head feels light",
+    "true": "dizziness",
+    "pred": "headache",
+    "confidence": 0.6596498489379883
+  },
+  {
+    "text": "i feel sluggish",
+    "true": "fatigue",
+    "pred": "nausea_vomiting",
+    "confidence": 0.5269930362701416
+  },
+  {
+    "text": "i'm tired even after sleeping",
+    "true": "fatigue",
+    "pred": "insomnia",
+    "confidence": 0.9803820848464966
+  },
+  {
+    "text": "i'm wiped",
+    "true": "fatigue",
+    "pred": "nausea_vomiting",
+    "confidence": 0.6849666237831116
+  },
+  {
+    "text": "i'm wiped out",
+    "true": "fatigue",
+    "pred": "allergy",
+    "confidence": 0.37681901454925537
+  },
+  {
+    "text": "i'm worn out",
+    "true": "fatigue",
+    "pred": "allergy",
+    "confidence": 0.37681901454925537
+  },
+  {
+    "text": "i keep getting chills and sweats",
+    "true": "fever",
+    "pred": "skin_rash",
+    "confidence": 0.5074574947357178
+  },
+  {
+    "text": "My body temperature is high",
+    "true": "fever",
+    "pred": "nausea_vomiting",
+    "confidence": 0.6061223745346069
+  },
+  {
+    "text": "flu season got me",
+    "true": "flu",
+    "pred": "headache",
+    "confidence": 0.5773003101348877
+  },
+  {
+    "text": "this was a nice conversation",
+    "true": "goodbye",
+    "pred": "diarrhea",
+    "confidence": 0.595266580581665
+  },
+  {
+    "text": "until next time",
+    "true": "goodbye",
+    "pred": "allergy",
+    "confidence": 0.406695693731308
+  },
+  {
+    "text": "Farewell",
+    "true": "goodbye",
+    "pred": "allergy",
+    "confidence": 0.49475929141044617
+  },
+  {
+    "text": "Stop",
+    "true": "goodbye",
+    "pred": "dizziness",
+    "confidence": 0.3385962247848511
+  },
+  {
+    "text": "Thank you that's all",
+    "true": "goodbye",
+    "pred": "thanks",
+    "confidence": 0.5116263628005981
+  },
+  {
+    "text": "That's all",
+    "true": "goodbye",
+    "pred": "diarrhea",
+    "confidence": 0.6588764190673828
+  },
+  {
+    "text": "heyo",
+    "true": "greeting",
+    "pred": "nausea_vomiting",
+    "confidence": 0.11799802631139755
+  },
+  {
+    "text": "hows are ya",
+    "true": "greeting",
+    "pred": "how_are_you",
+    "confidence": 0.9798173308372498
+  },
+  {
+    "text": "wassup",
+    "true": "greeting",
+    "pred": "nausea_vomiting",
+    "confidence": 0.11799802631139755
+  },
+  {
+    "text": "Hi I'm not feeling well",
+    "true": "greeting",
+    "pred": "goodbye",
+    "confidence": 0.4953390955924988
+  },
+  {
+    "text": "Top of the morning",
+    "true": "greeting",
+    "pred": "insomnia",
+    "confidence": 0.2689204514026642
+  },
+  {
+    "text": "my head hurts so much",
+    "true": "headache",
+    "pred": "stomach_ache",
+    "confidence": 0.4292094111442566
+  },
+  {
+    "text": "Head hurts",
+    "true": "headache",
+    "pred": "sore_throat",
+    "confidence": 0.39460352063179016
+  },
+  {
+    "text": "i can't stay asleep",
+    "true": "insomnia",
+    "pred": "skin_rash",
+    "confidence": 0.5364729166030884
+  },
+  {
+    "text": "insomina",
+    "true": "insomnia",
+    "pred": "nausea_vomiting",
+    "confidence": 0.11799802631139755
+  },
+  {
+    "text": "can't keep anything down",
+    "true": "nausea_vomiting",
+    "pred": "fatigue",
+    "confidence": 0.981187105178833
+  },
+  {
+    "text": "my child keeps vomiting",
+    "true": "nausea_vomiting",
+    "pred": "allergy",
+    "confidence": 0.4121110141277313
+  },
+  {
+    "text": "i got stung by a bee",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.8539434671401978
+  },
+  {
+    "text": "my period is late",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.38753628730773926
+  },
+  {
+    "text": "play some music",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.6882383823394775
+  },
+  {
+    "text": "what causes this",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.8186050653457642
+  },
+  {
+    "text": "a show on broadway",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.6012770533561707
+  },
+  {
+    "text": "absolutely not",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.6534163355827332
+  },
+  {
+    "text": "are you from here",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.9906078577041626
+  },
+  {
+    "text": "can you raise your speaking speed",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.9734367728233337
+  },
+  {
+    "text": "confirm my friday reservation at 2:00",
+    "true": "out_of_scope",
+    "pred": "skin_rash",
+    "confidence": 0.2923346161842346
+  },
+  {
+    "text": "enable whisper mode",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.42549601197242737
+  },
+  {
+    "text": "help me, i don't know where my phone is",
+    "true": "out_of_scope",
+    "pred": "thanks",
+    "confidence": 0.556264340877533
+  },
+  {
+    "text": "hey, have you approved my vacation time yet",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.8249555230140686
+  },
+  {
+    "text": "how does a democracy work",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.478230744600296
+  },
+  {
+    "text": "how is the word umbrella spelled",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.5722719430923462
+  },
+  {
+    "text": "how many firewalls should i have and what type",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.6540354490280151
+  },
+  {
+    "text": "how much is my bill for capital one",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.6442885994911194
+  },
+  {
+    "text": "i need you to stop talking",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.5013461709022522
+  },
+  {
+    "text": "i want to call you maggie",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.7217167615890503
+  },
+  {
+    "text": "i want to hear something hilarious",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.2512331008911133
+  },
+  {
+    "text": "king of acid",
+    "true": "out_of_scope",
+    "pred": "skin_rash",
+    "confidence": 0.9100775718688965
+  },
+  {
+    "text": "location currently, where",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.40481647849082947
+  },
+  {
+    "text": "nice song what is it",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.2746397852897644
+  },
+  {
+    "text": "now restore the original settings",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.5376205444335938
+  },
+  {
+    "text": "possibly either one",
+    "true": "out_of_scope",
+    "pred": "diarrhea",
+    "confidence": 0.386379599571228
+  },
+  {
+    "text": "roll an 8 sided dice",
+    "true": "out_of_scope",
+    "pred": "shortness_of_breath",
+    "confidence": 0.7866570353507996
+  },
+  {
+    "text": "schedule my meeting with jim at 3pm",
+    "true": "out_of_scope",
+    "pred": "nausea_vomiting",
+    "confidence": 0.7331686019897461
+  },
+  {
+    "text": "that's definitely true",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.7127736806869507
+  },
+  {
+    "text": "the birds fly with there wings",
+    "true": "out_of_scope",
+    "pred": "insomnia",
+    "confidence": 0.6087777614593506
+  },
+  {
+    "text": "what side in chess has the general advantage",
+    "true": "out_of_scope",
+    "pred": "skin_rash",
+    "confidence": 0.8934231400489807
+  },
+  {
+    "text": "what was said",
+    "true": "out_of_scope",
+    "pred": "greeting",
+    "confidence": 0.4179324507713318
+  },
+  {
+    "text": "who conjured you",
+    "true": "out_of_scope",
+    "pred": "capabilities",
+    "confidence": 0.4805341064929962
+  },
+  {
+    "text": "why do we dream",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.5625453591346741
+  },
+  {
+    "text": "you want to know about current time now",
+    "true": "out_of_scope",
+    "pred": "how_are_you",
+    "confidence": 0.4554246962070465
+  },
+  {
+    "text": "Gasping for air",
+    "true": "shortness_of_breath",
+    "pred": "out_of_scope",
+    "confidence": 0.9004809856414795
+  },
+  {
+    "text": "itchy rash between my fingers",
+    "true": "skin_rash",
+    "pred": "nausea_vomiting",
+    "confidence": 0.6684575080871582
+  },
+  {
+    "text": "abdomen is tender and sore",
+    "true": "stomach_ache",
+    "pred": "fatigue",
+    "confidence": 0.6305288672447205
+  },
+  {
+    "text": "indigestion after dinner",
+    "true": "stomach_ache",
+    "pred": "back_pain",
+    "confidence": 0.4755868911743164
+  },
+  {
+    "text": "i am happy you did that for me",
+    "true": "thanks",
+    "pred": "how_are_you",
+    "confidence": 0.9547396302223206
+  },
+  {
+    "text": "i owe you one",
+    "true": "thanks",
+    "pred": "goodbye",
+    "confidence": 0.7401316165924072
+  },
+  {
+    "text": "you have my sincere gratitude",
+    "true": "thanks",
+    "pred": "how_are_you",
+    "confidence": 0.7283890247344971
+  },
+  {
+    "text": "abscess in my mouth",
+    "true": "toothache",
+    "pred": "dizziness",
+    "confidence": 0.4243256747722626
+  },
+  {
+    "text": "dental pain",
+    "true": "toothache",
+    "pred": "stomach_ache",
+    "confidence": 0.7475431561470032
+  }
+]

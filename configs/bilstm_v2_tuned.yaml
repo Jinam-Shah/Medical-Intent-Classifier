@@ -1,0 +1,42 @@
+# BiLSTM + attention on dataset v2, tuned: the winner of the validation-only sweep (python -m src.sweep,
+# reports/v2/bilstm_sweep/results.json, DECISIONS D32). configs/bilstm_v2.yaml keeps the original settings.
+
+seed: 42
+
+data:
+  intents_file: data/v2/intents.json   # written by `python -m src.data_v2`; patterns + responses
+  splits_dir: data/v2/splits
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+
+preprocessing:
+  max_seq_length: 50
+  stemming: true
+
+embeddings:
+  dim: 256
+  window: 5
+  min_count: 1
+  epochs: 20
+  skip_gram: true
+
+model:
+  hidden_dim: 256
+  num_layers: 2
+  dropout: 0.5
+  bidirectional: true
+
+training:
+  batch_size: 16
+  learning_rate: 0.003
+  weight_decay: 1.0e-5
+  max_epochs: 1000
+  grad_clip_norm: 5.0
+  early_stopping_patience: 10
+  early_stopping_min_delta: 0.001
+  lr_scheduler_factor: 0.5
+  lr_scheduler_patience: 5
+
+output_dir: outputs/models/bilstm_v2_tuned
+reports_dir: reports/v2/bilstm_tuned

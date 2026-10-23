@@ -1,0 +1,32 @@
+                     precision    recall  f1-score   support
+
+            allergy     0.5455    0.6667    0.6000         9
+          back_pain     0.8000    0.4444    0.5714         9
+         body_aches     1.0000    1.0000    1.0000         9
+       capabilities     0.8182    0.7200    0.7660        25
+               cold     0.8235    1.0000    0.9032        14
+         congestion     0.9167    0.7333    0.8148        15
+              cough     1.0000    0.9231    0.9600        13
+           diarrhea     0.5455    0.6667    0.6000         9
+          dizziness     0.7000    0.7778    0.7368         9
+           ear_pain     1.0000    1.0000    1.0000         9
+            fatigue     0.6667    0.4444    0.5333         9
+              fever     1.0000    0.8571    0.9231        14
+                flu     1.0000    0.9286    0.9630        14
+            goodbye     0.7000    0.7000    0.7000        20
+           greeting     0.8333    0.8000    0.8163        25
+           headache     0.8571    0.8571    0.8571        14
+        how_are_you     0.5185    1.0000    0.6829        14
+           insomnia     0.4118    0.7778    0.5385         9
+    nausea_vomiting     0.3684    0.7778    0.5000         9
+       out_of_scope     0.9752    0.8263    0.8946       190
+shortness_of_breath     0.9333    0.9333    0.9333        15
+          skin_rash     0.6154    0.8889    0.7273         9
+        sore_throat     0.8824    1.0000    0.9375        15
+       stomach_ache     0.5385    0.7778    0.6364         9
+             thanks     0.8636    0.8636    0.8636        22
+          toothache     1.0000    0.7778    0.8750         9
+
+           accuracy                         0.8224       518
+          macro avg     0.7813    0.8132    0.7821       518
+       weighted avg     0.8611    0.8224    0.8316       518
