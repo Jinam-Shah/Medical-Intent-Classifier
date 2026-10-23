@@ -28,6 +28,7 @@ from src.data import Vocabulary, encode_texts, load_split, preprocess  # noqa: E
 from src.evaluate import evaluate  # noqa: E402
 from src.model import BiLSTMAttention, count_parameters  # noqa: E402
 from src.predict import IntentClassifier  # noqa: E402
+from src.tracking import start_run  # noqa: E402
 
 
 def build_embedding_matrix(token_lists, vocab, ecfg, seed):
@@ -86,6 +87,20 @@ def plot_history(history, path):
 
 
 def train(cfg):
+    """Train with the given config, logging params, per-epoch curves and results to MLflow."""
+    run_name = cfg.get("run_name", "bilstm")
+    with start_run(run_name, tags={"model_family": "bilstm", "dataset": cfg["data"]["splits_dir"]}) as run:
+        run.params({k: cfg[k] for k in ("seed", "preprocessing", "embeddings", "model", "training")})
+        summary = _train(cfg, run)
+        run.metrics(summary)
+        run.artifacts(resolve(cfg["output_dir"]) / "summary.json")
+        run.artifacts(resolve(cfg["output_dir"]) / "history.json")
+        run.artifacts(resolve(cfg["reports_dir"]), artifact_path="reports")
+        summary["mlflow_run_id"] = run.run_id
+    return summary
+
+
+def _train(cfg, run):
     seed = cfg["seed"]
     set_seed(seed)
     pcfg, tcfg, mcfg = cfg["preprocessing"], cfg["training"], cfg["model"]
@@ -144,6 +159,7 @@ def train(cfg):
         scheduler.step(val_loss)
         history.append({"epoch": epoch, "train_loss": train_loss, "train_acc": train_acc,
                         "val_loss": val_loss, "val_acc": val_acc, "lr": optimizer.param_groups[0]["lr"]})
+        run.metrics({k: v for k, v in history[-1].items() if k != "epoch"}, step=epoch)
         print(f"epoch {epoch:4d}  train_loss={train_loss:.4f} train_acc={train_acc:.4f}  "
               f"val_loss={val_loss:.4f} val_acc={val_acc:.4f}")
 
@@ -180,6 +196,7 @@ def train(cfg):
     val_metrics, _ = evaluate(clf, val_rows, "val", reports_dir / "val")
     summary = {
         "best_epoch": best["epoch"],
+        "best_val_loss": best["val_loss"],
         "epochs_run": len(history),
         "train_seconds": round(train_seconds, 1),
         "parameters": count_parameters(model),
