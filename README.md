@@ -32,7 +32,8 @@ For the deployed MiniLM model on the test split:
 | Accuracy on the 285 project-written test sentences (same author as the training data, so possibly optimistic) | 0.954 |
 | End-to-end accuracy with the low-confidence fallback (off-topic counted correct if rejected) | 0.944 |
 | Off-topic messages rejected | 96.0% |
-| Latency on Render-like limits (0.1 CPU, 512 MB), over HTTP | p50 72 ms, p95 96 ms; 241 MB memory |
+| Latency on Render-like limits (0.1 CPU, 512 MB), over HTTP, served image | p50 100 ms, p95 201 ms; 181 MB memory |
+| Live latency over HTTPS (Render free tier, warm, includes the internet round trip) | p50 131 ms, p95 150 ms |
 
 Why MiniLM: the BiLSTM learns words from scratch, so unseen words and typos ("stomache", "tummy") become `<UNK>`. A pretrained transformer splits them into known subwords and already understands paraphrases. MiniLM matched DistilBERT's accuracy at a third of the size and a quarter of the latency ([docs/DECISIONS.md](docs/DECISIONS.md) D26).
 
@@ -178,7 +179,7 @@ uvicorn api.main:app --port 8000
 | `GET` | `/model-info` | model name, labels, parameter count, threshold |
 | `POST` | `/chat` | `{"message": "...", "state": {...}}` runs one turn of the symptom conversation (see below) |
 
-If the top confidence is below the threshold, the response says `"intent": "unsure"` and asks the user to rephrase. Before the model runs, a rule-based check (`src/safety.py`) looks for emergency and crisis phrases such as chest pain or self-harm. On a match, `safety_alert` is set and `message` points to emergency help. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
+If the model predicts `out_of_scope`, or its top confidence is below the threshold (then `"intent": "unsure"`), `is_confident` is false and the response asks the user to rephrase. Before the model runs, a rule-based check (`src/safety.py`) looks for emergency and crisis phrases such as chest pain or self-harm. On a match, `safety_alert` is set and `message` points to emergency help. The best guess is still listed in `top_k`. Every response includes the medical disclaimer.
 
 ### The chat conversation (`POST /chat`)
 
@@ -197,33 +198,31 @@ You:  pretty bad                       -> self-care advice + "Because it's sever
 
 ### How the threshold is chosen
 
-The raw model is overconfident: most messages, including off-topic ones, score above 0.99. So the confidences are first **calibrated with temperature scaling**: the logits are divided by one number, T = 1.85, fitted on the validation set. This doesn't change any prediction; it only spreads out the confidences. The threshold (0.98) is then chosen on validation against 40 hand-written out-of-scope messages (`data/out_of_scope.json`), and the other 40 are kept for test.
+Off-topic messages are handled in two ways. The model has an explicit `out_of_scope` class, trained on CLINC150's out-of-scope sentences. As a second net, confidences are **calibrated with temperature scaling**: the logits are divided by one number, T = 1.08, fitted on the validation set. This doesn't change any prediction; it only makes the confidences honest. A threshold (0.49) is then chosen on validation to balance answering genuine messages against rejecting off-topic ones; both are written to `serving.json` next to the model.
 
 ```bash
-python -m src.threshold --split val    # fit T, choose the threshold, write serving.json next to the model
-python -m src.threshold --split test   # report once
+python -m src.evaluate_v2 calibrate --backend transformer --model-path outputs/models/minilm_v2/hf --name minilm_v2
 ```
 
-![Threshold selection on validation](reports/bilstm/threshold/val_curve.png)
-
-The fallback trades coverage for safety: about 1 in 6 genuine messages get "please rephrase" (see [docs/DECISIONS.md](docs/DECISIONS.md) D15).
+On test, 96.0% of off-topic messages are rejected and 96.7% of genuine messages are answered ([METRICS.md](METRICS.md)).
 
 ```bash
-curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"text": "Hola"}'
+curl -X POST localhost:8000/predict -H "Content-Type: application/json" -d '{"text": "what is the weather tomorrow"}'
 ```
 ```json
 {
-  "text": "Hola",
-  "intent": "unsure",
-  "confidence": 0.294,
+  "text": "what is the weather tomorrow",
+  "intent": "out_of_scope",
+  "confidence": 0.9937,
   "is_confident": false,
-  "top_k": [{"intent": "fever", "confidence": 0.294}, ...],
+  "top_k": [{"intent": "out_of_scope", "confidence": 0.9937}, ...],
   "message": "I'm not sure what you mean. Could you rephrase, or describe your main symptom?",
+  "safety_alert": null,
   "disclaimer": "This service is a demo intent classifier and does not provide medical advice. ..."
 }
 ```
 
-Configuration (environment variables): `MODEL_BACKEND` (`pytorch` by default, or `onnx` to serve the exported model with ONNX Runtime, which needs no torch), `MODEL_PATH` (defaults to `outputs/models/bilstm/model.pt` or `model.onnx`), and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`.
+Configuration (environment variables): `MODEL_BACKEND` (`transformer-onnx` for the deployed MiniLM; also `transformer`, `onnx` and `pytorch` for the BiLSTM, which is the default when unset), `MODEL_PATH`, `INTENTS_FILE` (`data/v2/intents.json` for the v2 model), and, optionally, `CONFIDENCE_THRESHOLD` to override the validated threshold stored in `serving.json`. The Docker image sets all of these.
 
 ## Docker
 
@@ -246,7 +245,7 @@ To build from the published Hugging Face Hub model instead of local files (this 
 docker build --build-arg MODEL_SOURCE=hub --build-arg HF_MODEL_REPO=<user>/<repo> --build-arg HF_MODEL_REVISION=<commit> -t medical-intent-classifier .
 ```
 
-The image runs one ONNX Runtime thread (`ORT_NUM_THREADS=1`), because free hosting tiers give a fraction of a CPU. At 0.1 CPU and 512 MB it uses about 230 MB and answers `/predict` in about 8 ms ([METRICS.md](METRICS.md)).
+The image runs one ONNX Runtime thread (`ORT_NUM_THREADS=1`), because free hosting tiers give a fraction of a CPU. At 0.1 CPU and 512 MB it uses about 181 MB, is ready 24 s after starting, and answers `/predict` over HTTP with a p50 of 100 ms ([METRICS.md](METRICS.md)).
 
 The container reads `PORT` (default 8000), `MODEL_BACKEND`, `MODEL_PATH`, `CONFIDENCE_THRESHOLD`, `INTENTS_FILE` and `ORT_NUM_THREADS`. Why the image doesn't train the model itself: [docs/DECISIONS.md](docs/DECISIONS.md) D18.
 
@@ -276,17 +275,23 @@ pytest
 ruff check src tests
 ```
 
-Tests cover text preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, model output shapes, a check that a sentence gets the same prediction regardless of how much padding it has, and the API (every endpoint, the low-confidence path, batch/single consistency, and input validation) via FastAPI's `TestClient`, plus temperature fitting and threshold scoring, ONNX/PyTorch parity, and a check that the ONNX serving path runs with torch imports blocked. API tests use a tiny randomly initialised checkpoint, so they need no trained model.
+119 tests, none of which need a trained model (they use tiny randomly initialised models). They cover:
+
+- **Data:** preprocessing, vocabulary encoding (padding, truncation, unknown words, empty input), deduplication, split stratification and disjointness, and the dataset v2 build (CLINC mapping, cross-source conflicts, no unintended red-flag phrases in training data).
+- **Models:** output shapes, the same prediction regardless of padding, transformer training and ONNX export, ONNX/PyTorch parity, temperature fitting and threshold scoring, and the ONNX serving path with torch imports blocked.
+- **API and chat:** every endpoint via FastAPI's `TestClient`, the low-confidence path, batch/single consistency, input validation, the safety rules (including known false alarms), and the multi-turn conversation engine.
+- **Config:** the deploy (pinned model revision, served Dockerfile stage), and that the tuned BiLSTM config matches the sweep winner.
 
 ## Project structure
 
 ```
-configs/bilstm.yaml      hyperparameters and paths
+configs/                 hyperparameters and paths: bilstm (v1), bilstm_v2, bilstm_v2_tuned, minilm_v2, distilbert_v2
 data/intents.json        labeled patterns and responses
 data/splits/             fixed train/val/test split + manifest
 src/data.py              preprocessing, splitting, vocabulary
 src/model.py             BiLSTM + attention
-src/train.py             training with early stopping on validation
+src/train.py             BiLSTM training with early stopping on validation (MLflow-logged)
+src/sweep.py             BiLSTM hyperparameter sweep, chosen on validation
 src/evaluate.py          metrics, report, confusion matrix, error list
 src/predict.py           IntentClassifier for inference
 src/benchmark.py         latency measurement
@@ -314,7 +319,9 @@ scripts/smoke_test.py    end-to-end checks against any running deployment
 .github/workflows/ci.yml lint, tests, Docker build + smoke test on every push
 requirements-serve.txt   runtime-only dependencies for the slim image
 chatbot.py, run.py       command-line interface
-reports/bilstm/          committed evaluation results and figures
+reports/v2/              committed v2 evaluation results, figures, and sweep results
+reports/bilstm/          committed v1 evaluation results and figures
+tests/                   pytest suite
 docs/AUDIT.md            what the original code did, and what was fixed
 docs/DECISIONS.md        design decisions
 METRICS.md               every measured number, with commands
@@ -333,10 +340,10 @@ BiLSTM v2 on the same test split, for comparison:
 ## Known limitations
 
 - **Symptom data is partly self-written.** Most symptom examples were written for this project, by the same author for train and test, so the 0.954 on those sentences may be optimistic. The 0.941 on independently written CLINC150 sentences is the more trustworthy number, but CLINC covers only the conversational and out-of-scope intents. Each new symptom intent has just 9 test sentences.
-- **One intent per message:** "I have a fever and a cough" gets a single label (`cough`).
+- **One intent per prediction:** `/predict` gives one label per message. The chat handles "a fever and a cough" by splitting the message into clauses with rules, so unusual phrasings of several symptoms can still be merged into one.
 - **Gaps in coverage:** injuries aren't an intent ("I broke my leg" is misread as `body_aches`), and questions about a symptom ("how long does the flu last?") get that symptom's general advice.
 - **Safety rules are a net, not triage:** the emergency check is a short phrase list. It can miss unusual wordings and deliberately errs toward false alarms.
-- **No conversation memory:** each message is classified on its own.
+- **Rule-based follow-ups:** the chat remembers the current symptom, duration, and severity, but durations and severities are parsed with rules, and the advice is general self-care guidance, not clinical logic.
 - **Cold starts on the free tier:** after 15 idle minutes, Render takes a minute or two to wake the service.
 
 ## Roadmap
